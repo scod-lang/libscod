@@ -1,0 +1,683 @@
+
+#+options: toc:nil
+
+* Syntax
+
+#+html: {{page>.:grammar:README&noheader&nofooter}}
+
+** Specification
+
+#+begin_src
+Specification ::= Header Definitions
+#+end_src
+
+#+html: {{page>.:grammar:Specification&noheader&nofooter}}
+
+
+** Header
+
+#+begin_src
+Header ::= Attributes "SCOD"
+         | "SCOD"
+#+end_src
+
+#+html: {{page>.:grammar:Header&noheader&nofooter}}
+
+
+** Definitions
+
+#+begin_src
+Definitions ::= Definitions AttributedDefinition
+              | AttributedDefinition
+#+end_src
+
+#+html: {{page>.:grammar:Definitions&noheader&nofooter}}
+
+
+** AttributedDefinition
+
+#+begin_src
+AttributedDefinition ::= Attributes Definition
+                       | Definition
+#+end_src
+
+#+html: {{page>.:grammar:AttributedDefinition&noheader&nofooter}}
+
+
+** Definition
+
+#+begin_src
+Definition ::= MemoryDefinition
+             | RegisterDefinition
+             | FieldDefinition
+             | FormatDefinition
+             | BufferDefinition
+             | InstructionDefinition
+             | OptionDefinition
+             | EnumerationDefinition
+             | UsingDefinition
+#+end_src
+
+#+html: {{page>.:grammar:Definition&noheader&nofooter}}
+
+
+** MemoryDefinition
+
+#+begin_src
+MemoryDefinition ::= "memory" Identifier ":" MappingType
+#+end_src
+
+#+html: {{page>.:grammar:MemoryDefinition&noheader&nofooter}}
+
+
+** RegisterDefinition
+
+#+begin_src
+RegisterDefinition ::= "register" Identifier ":" Type
+#+end_src
+
+#+html: {{page>.:grammar:RegisterDefinition&noheader&nofooter}}
+
+
+** FieldDefinition
+
+#+begin_src
+FieldDefinition ::= "field" Identifier ":" Type
+#+end_src
+
+#+html: {{page>.:grammar:FieldDefinition&noheader&nofooter}}
+
+
+** FormatDefinition
+
+#+begin_src
+FormatDefinition ::= "format" Identifier ":" PropertyType "=" FormatFields
+#+end_src
+
+#+html: {{page>.:grammar:FormatDefinition&noheader&nofooter}}
+
+
+** FormatFields
+
+#+begin_src
+FormatFields ::= MappingLiteral
+#+end_src
+
+#+html: {{page>.:grammar:FormatFields&noheader&nofooter}}
+
+
+** BufferDefinition
+
+#+begin_src
+BufferDefinition ::= "buffer" Identifier ":" Type "=" Term
+#+end_src
+
+#+html: {{page>.:grammar:BufferDefinition&noheader&nofooter}}
+
+
+** InstructionDefinition
+
+#+begin_src
+InstructionDefinition ::= "instruction" Identifier ":" BasicType "=" Statement
+                        | "instruction" Identifier ":" BasicType "=" Statement Options
+#+end_src
+
+#+html: {{page>.:grammar:InstructionDefinition&noheader&nofooter}}
+
+
+** OptionDefinition
+
+#+begin_src
+OptionDefinition ::= ReferenceLiteral DecodingOption
+                   | ReferenceLiteral SyntaxOption
+                   | ReferenceLiteral ExpansionOption
+#+end_src
+
+#+html: {{page>.:grammar:OptionDefinition&noheader&nofooter}}
+
+
+** EnumerationDefinition
+
+#+begin_src
+EnumerationDefinition ::= "enumeration" Identifier "=" Enumerators
+#+end_src
+
+#+html: {{page>.:grammar:EnumerationDefinition&noheader&nofooter}}
+
+
+** Enumerators
+
+#+begin_src
+Enumerators ::= SetLiteral
+#+end_src
+
+#+html: {{page>.:grammar:Enumerators&noheader&nofooter}}
+
+
+** UsingDefinition
+
+#+begin_src
+UsingDefinition ::= "using" Identifier "=" Type
+#+end_src
+
+#+html: {{page>.:grammar:UsingDefinition&noheader&nofooter}}
+
+
+** Options
+
+#+begin_src
+Options ::= Options Option
+          | Option
+#+end_src
+
+#+html: {{page>.:grammar:Options&noheader&nofooter}}
+
+
+** Option
+
+#+begin_src
+Option ::= DecodingOption
+         | SyntaxOption
+         | ExpansionOption
+#+end_src
+
+#+html: {{page>.:grammar:Option&noheader&nofooter}}
+
+
+** DecodingOption
+
+#+begin_src
+DecodingOption ::= "decoding" "=" RecordLiteral
+#+end_src
+
+#+html: {{page>.:grammar:DecodingOption&noheader&nofooter}}
+
+
+** SyntaxOption
+
+#+begin_src
+SyntaxOption ::= "syntax" "=" SetLiteral
+#+end_src
+
+#+html: {{page>.:grammar:SyntaxOption&noheader&nofooter}}
+
+
+** ExpansionOption
+
+#+begin_src
+ExpansionOption ::= "expansion" "=" SetLiteral
+#+end_src
+
+#+html: {{page>.:grammar:ExpansionOption&noheader&nofooter}}
+
+
+** Statements
+
+#+begin_src
+Statements ::= Statements Statement
+             | Statement
+#+end_src
+
+#+html: {{page>.:grammar:Statements&noheader&nofooter}}
+
+
+** Statement
+
+#+begin_src
+Statement ::= SkipStatement
+            | AbstractStatement
+            | BlockStatement
+            | LetStatement
+            | AssignmentStatement
+            | ConditionalStatement
+#+end_src
+
+#+html: {{page>.:grammar:Statement&noheader&nofooter}}
+
+
+** SkipStatement
+
+#+begin_src
+SkipStatement ::= "skip"
+#+end_src
+
+#+html: {{page>.:grammar:SkipStatement&noheader&nofooter}}
+
+
+** AbstractStatement
+
+#+begin_src
+AbstractStatement ::= "abstract"
+#+end_src
+
+#+html: {{page>.:grammar:AbstractStatement&noheader&nofooter}}
+
+
+** BlockStatement
+
+#+begin_src
+BlockStatement ::= "{" Statements "}"
+#+end_src
+
+#+html: {{page>.:grammar:BlockStatement&noheader&nofooter}}
+
+
+** LetStatement
+
+#+begin_src
+LetStatement ::= "let" VariableBindings "in" Statement
+#+end_src
+
+#+html: {{page>.:grammar:LetStatement&noheader&nofooter}}
+
+
+** AssignmentStatement
+
+#+begin_src
+AssignmentStatement ::= DirectCallExpression ":=" Term
+#+end_src
+
+#+html: {{page>.:grammar:AssignmentStatement&noheader&nofooter}}
+
+
+** ConditionalStatement
+
+#+begin_src
+ConditionalStatement ::= "if" Term "then" Statement
+                       | "if" Term "then" Statement "else" Statement
+#+end_src
+
+#+html: {{page>.:grammar:ConditionalStatement&noheader&nofooter}}
+
+
+** Terms
+
+#+begin_src
+Terms ::= Terms "," Term
+        | Term
+#+end_src
+
+#+html: {{page>.:grammar:Terms&noheader&nofooter}}
+
+
+** Term
+
+#+begin_src
+Term ::= Expression
+       | OperatorExpression
+#+end_src
+
+#+html: {{page>.:grammar:Term&noheader&nofooter}}
+
+
+** Expression
+
+#+begin_src
+Expression ::= "(" Term ")"
+             | CallExpression
+             | Literal
+             | "+" Term
+             | "-" Term
+#+end_src
+
+#+html: {{page>.:grammar:Expression&noheader&nofooter}}
+
+
+** OperatorExpression
+
+#+begin_src
+OperatorExpression ::= "not" Term
+                     | Term "and" Term
+                     | Term "or" Term
+                     | Term "xor" Term
+                     | Term "implies" Term
+                     | Term "=>" Term
+                     | Term "+" Term
+                     | Term "-" Term
+                     | Term "*" Term
+                     | Term "=" Term
+                     | Term "!=" Term
+                     | Term "<" Term
+                     | Term "<=" Term
+                     | Term ">" Term
+                     | Term ">=" Term
+#+end_src
+
+#+html: {{page>.:grammar:OperatorExpression&noheader&nofooter}}
+
+
+** CallExpression
+
+#+begin_src
+CallExpression ::= DirectCallExpression
+#+end_src
+
+#+html: {{page>.:grammar:CallExpression&noheader&nofooter}}
+
+
+** DirectCallExpression
+
+#+begin_src
+DirectCallExpression ::= IdentifierPath
+                       | IdentifierPath "(" ")"
+                       | IdentifierPath "(" Terms ")"
+#+end_src
+
+#+html: {{page>.:grammar:DirectCallExpression&noheader&nofooter}}
+
+
+** Literal
+
+#+begin_src
+Literal ::= BooleanLiteral
+          | IntegerLiteral
+          | BinaryLiteral
+          | StringLiteral
+          | SetLiteral
+          | RecordLiteral
+          | MappingLiteral
+          | ReferenceLiteral
+          | GrammarLiteral
+#+end_src
+
+#+html: {{page>.:grammar:Literal&noheader&nofooter}}
+
+
+** BooleanLiteral
+
+#+begin_src
+BooleanLiteral ::= "true"
+                 | "false"
+#+end_src
+
+#+html: {{page>.:grammar:BooleanLiteral&noheader&nofooter}}
+
+
+** IntegerLiteral
+
+#+begin_src
+IntegerLiteral ::= "[0-9][0-9']*[0-9]*"
+#+end_src
+
+#+html: {{page>.:grammar:IntegerLiteral&noheader&nofooter}}
+
+
+** BinaryLiteral
+
+#+begin_src
+BinaryLiteral ::= "0[bB][01][01']*[01]*"
+                | "0[xX][0-9a-fA-F][0-9a-fA-F']*[0-9a-fA-F]*"
+#+end_src
+
+#+html: {{page>.:grammar:BinaryLiteral&noheader&nofooter}}
+
+
+** StringLiteral
+
+#+begin_src
+StringLiteral ::= '"'.*'"'
+#+end_src
+
+#+html: {{page>.:grammar:StringLiteral&noheader&nofooter}}
+
+
+** SetLiteral
+
+#+begin_src
+SetLiteral ::= "{" Terms "}"
+#+end_src
+
+#+html: {{page>.:grammar:SetLiteral&noheader&nofooter}}
+
+
+** RecordLiteral
+
+#+begin_src
+RecordLiteral ::= "{" Assignments "}"
+#+end_src
+
+#+html: {{page>.:grammar:RecordLiteral&noheader&nofooter}}
+
+
+** Assignments
+
+#+begin_src
+Assignments ::= Assignments "," Assignment
+              | Assignment
+#+end_src
+
+#+html: {{page>.:grammar:Assignments&noheader&nofooter}}
+
+
+** Assignment
+
+#+begin_src
+Assignment ::= Identifier ":" Term
+#+end_src
+
+#+html: {{page>.:grammar:Assignment&noheader&nofooter}}
+
+
+** MappingLiteral
+
+#+begin_src
+MappingLiteral ::= "{" Mappings "}"
+#+end_src
+
+#+html: {{page>.:grammar:MappingLiteral&noheader&nofooter}}
+
+
+** Mappings
+
+#+begin_src
+Mappings ::= Mappings "," Mapping
+           | Mapping
+#+end_src
+
+#+html: {{page>.:grammar:Mappings&noheader&nofooter}}
+
+
+** Mapping
+
+#+begin_src
+Mapping ::= Term "->" Term
+          | "(" Terms ")" "->" Term
+#+end_src
+
+#+html: {{page>.:grammar:Mapping&noheader&nofooter}}
+
+
+** ReferenceLiteral
+
+#+begin_src
+ReferenceLiteral ::= "@" IdentifierPath
+#+end_src
+
+#+html: {{page>.:grammar:ReferenceLiteral&noheader&nofooter}}
+
+
+** GrammarLiteral
+
+#+begin_src
+GrammarLiteral ::= "::" Terminals ";"
+#+end_src
+
+#+html: {{page>.:grammar:GrammarLiteral&noheader&nofooter}}
+
+
+** Terminals
+
+#+begin_src
+Terminals ::= Terminals Terminal
+            | Terminal
+#+end_src
+
+#+html: {{page>.:grammar:Terminals&noheader&nofooter}}
+
+
+** Terminal
+
+#+begin_src
+Terminal ::= DirectCallExpression
+           | IntegerLiteral
+           | BinaryLiteral
+           | StringLiteral
+           | ReferenceLiteral
+#+end_src
+
+#+html: {{page>.:grammar:Terminal&noheader&nofooter}}
+
+
+** Type
+
+#+begin_src
+Type ::= BasicType
+       | MappingType
+#+end_src
+
+#+html: {{page>.:grammar:Type&noheader&nofooter}}
+
+
+** BasicType
+
+#+begin_src
+BasicType ::= IdentifierPath
+            | PropertyType
+#+end_src
+
+#+html: {{page>.:grammar:BasicType&noheader&nofooter}}
+
+
+** PropertyType
+
+#+begin_src
+PropertyType ::= IdentifierPath "'" IntegerLiteral
+#+end_src
+
+#+html: {{page>.:grammar:PropertyType&noheader&nofooter}}
+
+
+** MappingType
+
+#+begin_src
+MappingType ::= ArgumentTypes "->" BasicType
+#+end_src
+
+#+html: {{page>.:grammar:MappingType&noheader&nofooter}}
+
+
+** ArgumentTypes
+
+#+begin_src
+ArgumentTypes ::= ArgumentTypes "*" BasicType
+                | Type
+#+end_src
+
+#+html: {{page>.:grammar:ArgumentTypes&noheader&nofooter}}
+
+
+** VariableBindings
+
+#+begin_src
+VariableBindings ::= VariableBindings "," VariableBinding
+                   | VariableBinding
+#+end_src
+
+#+html: {{page>.:grammar:VariableBindings&noheader&nofooter}}
+
+
+** VariableBinding
+
+#+begin_src
+VariableBinding ::= AttributedVariable "=" Term
+#+end_src
+
+#+html: {{page>.:grammar:VariableBinding&noheader&nofooter}}
+
+
+** AttributedVariable
+
+#+begin_src
+AttributedVariable ::= Attributes Variable
+                     | Variable
+#+end_src
+
+#+html: {{page>.:grammar:AttributedVariable&noheader&nofooter}}
+
+
+** Variable
+
+#+begin_src
+Variable ::= TypedVariable
+           | Identifier
+#+end_src
+
+#+html: {{page>.:grammar:Variable&noheader&nofooter}}
+
+
+** TypedVariable
+
+#+begin_src
+TypedVariable ::= Identifier ":" Type
+#+end_src
+
+#+html: {{page>.:grammar:TypedVariable&noheader&nofooter}}
+
+
+** Identifier
+
+#+begin_src
+Identifier ::= "([a-ZA-Z_]|UTF8){([a-zA-Z_0-9]|UTF8)}*"
+             | "in"
+#+end_src
+
+#+html: {{page>.:grammar:Identifier&noheader&nofooter}}
+
+
+** IdentifierPath
+
+#+begin_src
+IdentifierPath ::= IdentifierPath "::" Identifier
+                 | Identifier
+#+end_src
+
+#+html: {{page>.:grammar:IdentifierPath&noheader&nofooter}}
+
+
+** Attributes
+
+#+begin_src
+Attributes ::= Attributes Attribute
+             | Attribute
+#+end_src
+
+#+html: {{page>.:grammar:Attributes&noheader&nofooter}}
+
+
+** Attribute
+
+#+begin_src
+Attribute ::= "[" BasicAttribute "]"
+            | "[" ExpressionAttribute "]"
+#+end_src
+
+#+html: {{page>.:grammar:Attribute&noheader&nofooter}}
+
+
+** BasicAttribute
+
+#+begin_src
+BasicAttribute ::= Identifier
+#+end_src
+
+#+html: {{page>.:grammar:BasicAttribute&noheader&nofooter}}
+
+
+** ExpressionAttribute
+
+#+begin_src
+ExpressionAttribute ::= Identifier Term
+#+end_src
+
+#+html: {{page>.:grammar:ExpressionAttribute&noheader&nofooter}}
+
