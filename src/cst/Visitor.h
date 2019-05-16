@@ -56,6 +56,9 @@ namespace libscod
         class FormatDefinition;
         class BufferDefinition;
         class InstructionDefinition;
+        class MicroProcessorDefinition;
+        class CacheDefinition;
+        class InterconnectDefinition;
         class OptionDefinition;
         class EnumerationDefinition;
         class UsingDefinition;
@@ -65,9 +68,11 @@ namespace libscod
         class DecodingOption;
         class SyntaxOption;
         class ExpansionOption;
+        class StageOption;
 
         class SkipStatement;
         class BlockStatement;
+        class CallStatement;
         class LetStatement;
         class AssignmentStatement;
         class ConditionalStatement;
@@ -75,12 +80,17 @@ namespace libscod
         class EmbracedExpression;
         class NamedExpression;
         class MappedExpression;
+        class LetExpression;
+        class ConditionalExpression;
         class DirectCallExpression;
+        class MethodCallExpression;
         class UnaryExpression;
         class BinaryExpression;
 
         class ValueLiteral;
         class SetLiteral;
+        class ListLiteral;
+        class RangeLiteral;
         class RecordLiteral;
         class MappingLiteral;
         class ReferenceLiteral;
@@ -117,6 +127,9 @@ namespace libscod
             virtual void visit( FormatDefinition& node ) = 0;
             virtual void visit( BufferDefinition& node ) = 0;
             virtual void visit( InstructionDefinition& node ) = 0;
+            virtual void visit( MicroProcessorDefinition& node ) = 0;
+            virtual void visit( CacheDefinition& node ) = 0;
+            virtual void visit( InterconnectDefinition& node ) = 0;
             virtual void visit( OptionDefinition& node ) = 0;
             virtual void visit( EnumerationDefinition& node ) = 0;
             virtual void visit( UsingDefinition& node ) = 0;
@@ -126,9 +139,11 @@ namespace libscod
             virtual void visit( DecodingOption& node ) = 0;
             virtual void visit( SyntaxOption& node ) = 0;
             virtual void visit( ExpansionOption& node ) = 0;
+            virtual void visit( StageOption& node ) = 0;
 
             virtual void visit( SkipStatement& node ) = 0;
             virtual void visit( BlockStatement& node ) = 0;
+            virtual void visit( CallStatement& node ) = 0;
             virtual void visit( LetStatement& node ) = 0;
             virtual void visit( AssignmentStatement& node ) = 0;
             virtual void visit( ConditionalStatement& node ) = 0;
@@ -136,12 +151,17 @@ namespace libscod
             virtual void visit( EmbracedExpression& node ) = 0;
             virtual void visit( NamedExpression& node ) = 0;
             virtual void visit( MappedExpression& node ) = 0;
+            virtual void visit( LetExpression& node ) = 0;
+            virtual void visit( ConditionalExpression& node ) = 0;
             virtual void visit( DirectCallExpression& node ) = 0;
+            virtual void visit( MethodCallExpression& node ) = 0;
             virtual void visit( UnaryExpression& node ) = 0;
             virtual void visit( BinaryExpression& node ) = 0;
 
             virtual void visit( ValueLiteral& node ) = 0;
             virtual void visit( SetLiteral& node ) = 0;
+            virtual void visit( ListLiteral& node ) = 0;
+            virtual void visit( RangeLiteral& node ) = 0;
             virtual void visit( RecordLiteral& node ) = 0;
             virtual void visit( MappingLiteral& node ) = 0;
             virtual void visit( ReferenceLiteral& node ) = 0;
@@ -174,6 +194,9 @@ namespace libscod
             void visit( FormatDefinition& node ) override;
             void visit( BufferDefinition& node ) override;
             void visit( InstructionDefinition& node ) override;
+            void visit( MicroProcessorDefinition& node ) override;
+            void visit( CacheDefinition& node ) override;
+            void visit( InterconnectDefinition& node ) override;
             void visit( OptionDefinition& node ) override;
             void visit( EnumerationDefinition& node ) override;
             void visit( UsingDefinition& node ) override;
@@ -183,9 +206,11 @@ namespace libscod
             void visit( DecodingOption& node ) override;
             void visit( SyntaxOption& node ) override;
             void visit( ExpansionOption& node ) override;
+            void visit( StageOption& node ) override;
 
             void visit( SkipStatement& node ) override;
             void visit( BlockStatement& node ) override;
+            void visit( CallStatement& node ) override;
             void visit( LetStatement& node ) override;
             void visit( AssignmentStatement& node ) override;
             void visit( ConditionalStatement& node ) override;
@@ -193,12 +218,17 @@ namespace libscod
             void visit( EmbracedExpression& node ) override;
             void visit( NamedExpression& node ) override;
             void visit( MappedExpression& node ) override;
+            void visit( LetExpression& node ) override;
+            void visit( ConditionalExpression& node ) override;
             void visit( DirectCallExpression& node ) override;
+            void visit( MethodCallExpression& node ) override;
             void visit( UnaryExpression& node ) override;
             void visit( BinaryExpression& node ) override;
 
             void visit( ValueLiteral& node ) override;
             void visit( SetLiteral& node ) override;
+            void visit( ListLiteral& node ) override;
+            void visit( RangeLiteral& node ) override;
             void visit( RecordLiteral& node ) override;
             void visit( MappingLiteral& node ) override;
             void visit( ReferenceLiteral& node ) override;
@@ -231,6 +261,9 @@ namespace libscod
             void visit( FormatDefinition& node ) override;
             void visit( BufferDefinition& node ) override;
             void visit( InstructionDefinition& node ) override;
+            void visit( MicroProcessorDefinition& node ) override;
+            void visit( CacheDefinition& node ) override;
+            void visit( InterconnectDefinition& node ) override;
             void visit( OptionDefinition& node ) override;
             void visit( EnumerationDefinition& node ) override;
             void visit( UsingDefinition& node ) override;
@@ -240,9 +273,11 @@ namespace libscod
             void visit( DecodingOption& node ) override;
             void visit( SyntaxOption& node ) override;
             void visit( ExpansionOption& node ) override;
+            void visit( StageOption& node ) override;
 
             void visit( SkipStatement& node ) override;
             void visit( BlockStatement& node ) override;
+            void visit( CallStatement& node ) override;
             void visit( LetStatement& node ) override;
             void visit( AssignmentStatement& node ) override;
             void visit( ConditionalStatement& node ) override;
@@ -250,12 +285,17 @@ namespace libscod
             void visit( EmbracedExpression& node ) override;
             void visit( NamedExpression& node ) override;
             void visit( MappedExpression& node ) override;
+            void visit( LetExpression& node ) override;
+            void visit( ConditionalExpression& node ) override;
             void visit( DirectCallExpression& node ) override;
+            void visit( MethodCallExpression& node ) override;
             void visit( UnaryExpression& node ) override;
             void visit( BinaryExpression& node ) override;
 
             void visit( ValueLiteral& node ) override;
             void visit( SetLiteral& node ) override;
+            void visit( ListLiteral& node ) override;
+            void visit( RangeLiteral& node ) override;
             void visit( RecordLiteral& node ) override;
             void visit( MappingLiteral& node ) override;
             void visit( ReferenceLiteral& node ) override;

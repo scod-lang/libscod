@@ -133,13 +133,46 @@ void RecursiveVisitor::visit( InstructionDefinition& node )
     node.mappingType()->accept( *this );
     node.equalToken()->accept( *this );
     node.statement()->accept( *this );
+    node.options()->accept( *this );
+}
+
+void RecursiveVisitor::visit( MicroProcessorDefinition& node )
+{
+    node.attributes()->accept( *this );
+    node.token()->accept( *this );
+    node.identifier()->accept( *this );
+    node.colonToken()->accept( *this );
+    node.programCounter()->accept( *this );
+    node.equalToken()->accept( *this );
+    node.statement()->accept( *this );
+    node.options()->accept( *this );
+}
+
+void RecursiveVisitor::visit( CacheDefinition& node )
+{
+    node.attributes()->accept( *this );
+    node.token()->accept( *this );
+    node.identifier()->accept( *this );
+    node.colonToken()->accept( *this );
+    node.mappingType()->accept( *this );
+    node.equalToken()->accept( *this );
+    node.connection()->accept( *this );
+}
+
+void RecursiveVisitor::visit( InterconnectDefinition& node )
+{
+    node.attributes()->accept( *this );
+    node.token()->accept( *this );
+    node.identifier()->accept( *this );
+    node.colonToken()->accept( *this );
+    node.mappingType()->accept( *this );
+    node.equalToken()->accept( *this );
+    node.connection()->accept( *this );
 }
 
 void RecursiveVisitor::visit( OptionDefinition& node )
 {
     node.attributes()->accept( *this );
-    // node.token()->accept( *this );
-    // node.identifier()->accept( *this );
     node.reference()->accept( *this );
     node.option()->accept( *this );
 }
@@ -198,6 +231,14 @@ void RecursiveVisitor::visit( ExpansionOption& node )
     node.value()->accept( *this );
 }
 
+void RecursiveVisitor::visit( StageOption& node )
+{
+    node.optionToken()->accept( *this );
+    node.identifier()->accept( *this );
+    node.equalToken()->accept( *this );
+    node.statement()->accept( *this );
+}
+
 void RecursiveVisitor::visit( SkipStatement& node )
 {
     node.skipToken()->accept( *this );
@@ -208,6 +249,11 @@ void RecursiveVisitor::visit( BlockStatement& node )
     node.leftBraceToken()->accept( *this );
     node.statements()->accept( *this );
     node.rightBraceToken()->accept( *this );
+}
+
+void RecursiveVisitor::visit( CallStatement& node )
+{
+    node.target()->accept( *this );
 }
 
 void RecursiveVisitor::visit( LetStatement& node )
@@ -261,10 +307,40 @@ void RecursiveVisitor::visit( MappedExpression& node )
     node.value()->accept( *this );
 }
 
+void RecursiveVisitor::visit( LetExpression& node )
+{
+    node.delimiterToken()->accept( *this );
+    node.letToken()->accept( *this );
+    node.variableBindings()->accept( *this );
+    node.inToken()->accept( *this );
+    node.expression()->accept( *this );
+}
+
+void RecursiveVisitor::visit( ConditionalExpression& node )
+{
+    node.ifToken()->accept( *this );
+    node.condition()->accept( *this );
+    node.thenToken()->accept( *this );
+    node.thenExpression()->accept( *this );
+    node.elseToken()->accept( *this );
+    node.elseExpression()->accept( *this );
+}
+
 void RecursiveVisitor::visit( DirectCallExpression& node )
 {
     node.delimiterToken()->accept( *this );
     node.name()->accept( *this );
+    node.leftBracketToken()->accept( *this );
+    node.arguments()->accept( *this );
+    node.rightBracketToken()->accept( *this );
+}
+
+void RecursiveVisitor::visit( MethodCallExpression& node )
+{
+    node.delimiterToken()->accept( *this );
+    node.object()->accept( *this );
+    node.dotToken()->accept( *this );
+    node.method()->accept( *this );
     node.leftBracketToken()->accept( *this );
     node.arguments()->accept( *this );
     node.rightBracketToken()->accept( *this );
@@ -299,6 +375,26 @@ void RecursiveVisitor::visit( SetLiteral& node )
     node.spans()->accept( *this );
     node.leftBracket()->accept( *this );
     node.expressions()->accept( *this );
+    node.rightBracket()->accept( *this );
+}
+
+void RecursiveVisitor::visit( ListLiteral& node )
+{
+    node.delimiterToken()->accept( *this );
+    node.spans()->accept( *this );
+    node.leftBracket()->accept( *this );
+    node.expressions()->accept( *this );
+    node.rightBracket()->accept( *this );
+}
+
+void RecursiveVisitor::visit( RangeLiteral& node )
+{
+    node.delimiterToken()->accept( *this );
+    node.spans()->accept( *this );
+    node.leftBracket()->accept( *this );
+    node.from()->accept( *this );
+    node.dotdotToken()->accept( *this );
+    node.to()->accept( *this );
     node.rightBracket()->accept( *this );
 }
 
@@ -447,6 +543,18 @@ void EmptyVisitor::visit( InstructionDefinition& )
 {
 }
 
+void EmptyVisitor::visit( MicroProcessorDefinition& )
+{
+}
+
+void EmptyVisitor::visit( CacheDefinition& )
+{
+}
+
+void EmptyVisitor::visit( InterconnectDefinition& )
+{
+}
+
 void EmptyVisitor::visit( OptionDefinition& )
 {
 }
@@ -479,11 +587,19 @@ void EmptyVisitor::visit( ExpansionOption& )
 {
 }
 
+void EmptyVisitor::visit( StageOption& )
+{
+}
+
 void EmptyVisitor::visit( SkipStatement& )
 {
 }
 
 void EmptyVisitor::visit( BlockStatement& )
+{
+}
+
+void EmptyVisitor::visit( CallStatement& )
 {
 }
 
@@ -511,7 +627,19 @@ void EmptyVisitor::visit( MappedExpression& )
 {
 }
 
+void EmptyVisitor::visit( LetExpression& )
+{
+}
+
+void EmptyVisitor::visit( ConditionalExpression& )
+{
+}
+
 void EmptyVisitor::visit( DirectCallExpression& )
+{
+}
+
+void EmptyVisitor::visit( MethodCallExpression& )
 {
 }
 
@@ -528,6 +656,14 @@ void EmptyVisitor::visit( ValueLiteral& )
 }
 
 void EmptyVisitor::visit( SetLiteral& )
+{
+}
+
+void EmptyVisitor::visit( ListLiteral& )
+{
+}
+
+void EmptyVisitor::visit( RangeLiteral& )
 {
 }
 
