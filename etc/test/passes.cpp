@@ -78,18 +78,20 @@ format F : Binary'32 =
 ,  0 -> value
 }
 
-buffer SignExtendedValue : F -> Binary'32 = 
-{ /*16{value[15]},*/ immediate }
+buffer AdjustedValue : F -> Binary'32 =
+[ value(15).repeat(18), value([14..2]) ]
 
 [ description "Addition" ]
 instruction add : F = {
     let lhs = GPR(source) in
-    let rhs = SignExtendedValue in
-    let res = lhs + rhs in {
+    let rhs = AdjustedValue in
+    let res = lhs (+) rhs in {
         GPR(target) := res
         PC := PC + 4
+        if res.carry then
+            CSR(Signal) := true
     }
-} 
+}
 decoding = { 
   opcode : 0b00'1100
 }
