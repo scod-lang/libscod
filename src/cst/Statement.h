@@ -100,6 +100,21 @@ namespace libscod
             const Token::Ptr m_rightBraceToken;
         };
 
+        class CallStatement final : public Statement
+        {
+          public:
+            using Ptr = std::shared_ptr< CallStatement >;
+
+            explicit CallStatement( const CallExpression::Ptr& target );
+
+            const CallExpression::Ptr& target( void ) const;
+
+            void accept( Visitor& visitor ) override final;
+
+          private:
+            const CallExpression::Ptr m_target;
+        };
+
         class LetStatement final : public Statement
         {
           public:

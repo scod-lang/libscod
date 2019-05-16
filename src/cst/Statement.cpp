@@ -119,6 +119,27 @@ void BlockStatement::accept( Visitor& visitor )
 
 //
 //
+// CallStatement
+//
+
+CallStatement::CallStatement( const CallExpression::Ptr& target )
+: Statement( Node::ID::CALL_STATEMENT )
+, m_target( target )
+{
+}
+
+const CallExpression::Ptr& CallStatement::target( void ) const
+{
+    return m_target;
+}
+
+void CallStatement::accept( Visitor& visitor )
+{
+    visitor.visit( *this );
+}
+
+//
+//
 // LetStatement
 //
 
