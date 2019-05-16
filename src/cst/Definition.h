@@ -269,6 +269,88 @@ namespace libscod
             const Options::Ptr m_options;
         };
 
+        class MicroProcessorDefinition final : public Definition
+        {
+          public:
+            using Ptr = std::shared_ptr< MicroProcessorDefinition >;
+
+            MicroProcessorDefinition(
+                const Token::Ptr& microProcessorToken,
+                const Identifier::Ptr& identifier,
+                const Token::Ptr& colonToken,
+                const IdentifierPath::Ptr& programCounter,
+                const Token::Ptr& equalToken,
+                const Statement::Ptr& statement,
+                const Options::Ptr& options );
+
+            const Token::Ptr& colonToken( void ) const;
+
+            const IdentifierPath::Ptr& programCounter( void ) const;
+
+            const Token::Ptr& equalToken( void ) const;
+
+            const Statement::Ptr& statement( void ) const;
+
+            const Options::Ptr& options( void ) const;
+
+            void accept( Visitor& visitor ) override final;
+
+          private:
+            const Token::Ptr m_colonToken;
+            const IdentifierPath::Ptr m_programCounter;
+            const Token::Ptr m_equalToken;
+            const Statement::Ptr m_statement;
+            const Options::Ptr m_options;
+        };
+
+        class CacheDefinition final : public FunctionDefinition
+        {
+          public:
+            using Ptr = std::shared_ptr< CacheDefinition >;
+
+            CacheDefinition(
+                const Token::Ptr& cacheToken,
+                const Identifier::Ptr& identifier,
+                const Token::Ptr& colonToken,
+                const Type::Ptr& type,
+                const Token::Ptr& equalToken,
+                const MappingLiteral::Ptr& connection );
+
+            const Token::Ptr& equalToken( void ) const;
+
+            const MappingLiteral::Ptr& connection( void ) const;
+
+            void accept( Visitor& visitor ) override final;
+
+          private:
+            const Token::Ptr m_equalToken;
+            const MappingLiteral::Ptr m_connection;
+        };
+
+        class InterconnectDefinition final : public FunctionDefinition
+        {
+          public:
+            using Ptr = std::shared_ptr< InterconnectDefinition >;
+
+            InterconnectDefinition(
+                const Token::Ptr& interconnectToken,
+                const Identifier::Ptr& identifier,
+                const Token::Ptr& colonToken,
+                const Type::Ptr& type,
+                const Token::Ptr& equalToken,
+                const MappingLiteral::Ptr& connection );
+
+            const Token::Ptr& equalToken( void ) const;
+
+            const MappingLiteral::Ptr& connection( void ) const;
+
+            void accept( Visitor& visitor ) override final;
+
+          private:
+            const Token::Ptr m_equalToken;
+            const MappingLiteral::Ptr m_connection;
+        };
+
         class EnumerationDefinition final : public Definition
         {
           public:

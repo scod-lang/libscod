@@ -342,6 +342,125 @@ void InstructionDefinition::accept( Visitor& visitor )
 
 //
 //
+// MicroProcessorDefinition
+//
+
+MicroProcessorDefinition::MicroProcessorDefinition(
+    const Token::Ptr& microProcessorToken,
+    const Identifier::Ptr& identifier,
+    const Token::Ptr& colonToken,
+    const IdentifierPath::Ptr& programCounter,
+    const Token::Ptr& equalToken,
+    const Statement::Ptr& statement,
+    const Options::Ptr& options )
+: Definition( Node::ID::MICRO_PROCESSOR_DEFINITION, microProcessorToken, identifier )
+, m_colonToken( colonToken )
+, m_programCounter( programCounter )
+, m_equalToken( equalToken )
+, m_statement( statement )
+, m_options( options )
+{
+}
+
+const Token::Ptr& MicroProcessorDefinition::colonToken( void ) const
+{
+    return m_colonToken;
+}
+
+const IdentifierPath::Ptr& MicroProcessorDefinition::programCounter( void ) const
+{
+    return m_programCounter;
+}
+
+const Token::Ptr& MicroProcessorDefinition::equalToken( void ) const
+{
+    return m_equalToken;
+}
+
+const Statement::Ptr& MicroProcessorDefinition::statement( void ) const
+{
+    return m_statement;
+}
+
+const Options::Ptr& MicroProcessorDefinition::options( void ) const
+{
+    return m_options;
+}
+
+void MicroProcessorDefinition::accept( Visitor& visitor )
+{
+    visitor.visit( *this );
+}
+
+//
+//
+// CacheDefinition
+//
+
+CacheDefinition::CacheDefinition(
+    const Token::Ptr& cacheToken,
+    const Identifier::Ptr& identifier,
+    const Token::Ptr& colonToken,
+    const Type::Ptr& type,
+    const Token::Ptr& equalToken,
+    const MappingLiteral::Ptr& connection )
+: FunctionDefinition( Node::ID::CACHE_DEFINITION, cacheToken, identifier, colonToken, type )
+, m_equalToken( equalToken )
+, m_connection( connection )
+{
+}
+
+const Token::Ptr& CacheDefinition::equalToken( void ) const
+{
+    return m_equalToken;
+}
+
+const MappingLiteral::Ptr& CacheDefinition::connection( void ) const
+{
+    return m_connection;
+}
+
+void CacheDefinition::accept( Visitor& visitor )
+{
+    visitor.visit( *this );
+}
+
+//
+//
+// InterconnectDefinition
+//
+
+InterconnectDefinition::InterconnectDefinition(
+    const Token::Ptr& interconnectToken,
+    const Identifier::Ptr& identifier,
+    const Token::Ptr& colonToken,
+    const Type::Ptr& type,
+    const Token::Ptr& equalToken,
+    const MappingLiteral::Ptr& connection )
+: FunctionDefinition(
+      Node::ID::INTERCONNECT_DEFINITION, interconnectToken, identifier, colonToken, type )
+, m_equalToken( equalToken )
+, m_connection( connection )
+{
+}
+
+const Token::Ptr& InterconnectDefinition::equalToken( void ) const
+{
+    return m_equalToken;
+}
+
+const MappingLiteral::Ptr& InterconnectDefinition::connection( void ) const
+{
+    return m_connection;
+}
+
+void InterconnectDefinition::accept( Visitor& visitor )
+{
+    visitor.visit( *this );
+}
+
+//
+//
 // EnumerationDefinition
 //
 
