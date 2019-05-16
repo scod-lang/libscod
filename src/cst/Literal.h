@@ -122,6 +122,45 @@ namespace libscod
             const Expressions::Ptr m_expressions;
         };
 
+        class ListLiteral final : public Literal
+        {
+          public:
+            using Ptr = std::shared_ptr< ListLiteral >;
+
+            explicit ListLiteral( const Expressions::Ptr& expressions );
+
+            const Expressions::Ptr& expressions( void ) const;
+
+            void accept( Visitor& visitor ) override final;
+
+          private:
+            const Expressions::Ptr m_expressions;
+        };
+
+        class RangeLiteral final : public Literal
+        {
+          public:
+            using Ptr = std::shared_ptr< RangeLiteral >;
+
+            explicit RangeLiteral(
+                const Expression::Ptr& from,
+                const Token::Ptr& dotdotToken,
+                const Expression::Ptr& to );
+
+            const Expression::Ptr& from( void ) const;
+
+            const Token::Ptr& dotdotToken( void ) const;
+
+            const Expression::Ptr& to( void ) const;
+
+            void accept( Visitor& visitor ) override final;
+
+          private:
+            const Expression::Ptr m_from;
+            const Token::Ptr m_dotdotToken;
+            const Expression::Ptr m_to;
+        };
+
         class RecordLiteral final : public Literal
         {
           public:

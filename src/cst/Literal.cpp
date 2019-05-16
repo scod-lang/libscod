@@ -150,6 +150,61 @@ void SetLiteral::accept( Visitor& visitor )
 
 //
 //
+// ListLiteral
+//
+
+ListLiteral::ListLiteral( const Expressions::Ptr& expressions )
+: Literal( Node::ID::LIST_LITERAL )
+, m_expressions( expressions )
+{
+}
+
+const Expressions::Ptr& ListLiteral::expressions( void ) const
+{
+    return m_expressions;
+}
+
+void ListLiteral::accept( Visitor& visitor )
+{
+    visitor.visit( *this );
+}
+
+//
+//
+// RangeLiteral
+//
+
+RangeLiteral::RangeLiteral(
+    const Expression::Ptr& from, const Token::Ptr& dotdotToken, const Expression::Ptr& to )
+: Literal( Node::ID::RANGE_LITERAL )
+, m_from( from )
+, m_dotdotToken( dotdotToken )
+, m_to( to )
+{
+}
+
+const Expression::Ptr& RangeLiteral::from( void ) const
+{
+    return m_from;
+}
+
+const Token::Ptr& RangeLiteral::dotdotToken( void ) const
+{
+    return m_dotdotToken;
+}
+
+const Expression::Ptr& RangeLiteral::to( void ) const
+{
+    return m_to;
+}
+
+void RangeLiteral::accept( Visitor& visitor )
+{
+    visitor.visit( *this );
+}
+
+//
+//
 // RecordLiteral
 //
 
