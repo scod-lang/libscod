@@ -117,6 +117,9 @@ namespace libscod
             void visit( FormatDefinition& node ) override;
             void visit( BufferDefinition& node ) override;
             void visit( InstructionDefinition& node ) override;
+            void visit( MicroProcessorDefinition& node ) override;
+            void visit( CacheDefinition& node ) override;
+            void visit( InterconnectDefinition& node ) override;
             void visit( OptionDefinition& node ) override;
             void visit( EnumerationDefinition& node ) override;
             void visit( UsingDefinition& node ) override;
@@ -126,9 +129,11 @@ namespace libscod
             void visit( DecodingOption& node ) override;
             void visit( SyntaxOption& node ) override;
             void visit( ExpansionOption& node ) override;
+            void visit( StageOption& node ) override;
 
             void visit( SkipStatement& node ) override;
             void visit( BlockStatement& node ) override;
+            void visit( CallStatement& node ) override;
             void visit( LetStatement& node ) override;
             void visit( AssignmentStatement& node ) override;
             void visit( ConditionalStatement& node ) override;
@@ -136,12 +141,17 @@ namespace libscod
             void visit( EmbracedExpression& node ) override;
             void visit( NamedExpression& node ) override;
             void visit( MappedExpression& node ) override;
+            void visit( LetExpression& node ) override;
+            void visit( ConditionalExpression& node ) override;
             void visit( DirectCallExpression& node ) override;
+            void visit( MethodCallExpression& node ) override;
             void visit( UnaryExpression& node ) override;
             void visit( BinaryExpression& node ) override;
 
             void visit( ValueLiteral& node ) override;
             void visit( SetLiteral& node ) override;
+            void visit( ListLiteral& node ) override;
+            void visit( RangeLiteral& node ) override;
             void visit( RecordLiteral& node ) override;
             void visit( MappingLiteral& node ) override;
             void visit( ReferenceLiteral& node ) override;
@@ -259,6 +269,27 @@ void CSTDumpDotVisitor::visit( InstructionDefinition& node )
     RecursiveVisitor::visit( node );
 }
 
+void CSTDumpDotVisitor::visit( MicroProcessorDefinition& node )
+{
+    DotLink link( this, &node );
+    dumpNode( node );
+    RecursiveVisitor::visit( node );
+}
+
+void CSTDumpDotVisitor::visit( CacheDefinition& node )
+{
+    DotLink link( this, &node );
+    dumpNode( node );
+    RecursiveVisitor::visit( node );
+}
+
+void CSTDumpDotVisitor::visit( InterconnectDefinition& node )
+{
+    DotLink link( this, &node );
+    dumpNode( node );
+    RecursiveVisitor::visit( node );
+}
+
 void CSTDumpDotVisitor::visit( OptionDefinition& node )
 {
     DotLink link( this, &node );
@@ -315,6 +346,13 @@ void CSTDumpDotVisitor::visit( ExpansionOption& node )
     RecursiveVisitor::visit( node );
 }
 
+void CSTDumpDotVisitor::visit( StageOption& node )
+{
+    DotLink link( this, &node );
+    dumpNode( node );
+    RecursiveVisitor::visit( node );
+}
+
 void CSTDumpDotVisitor::visit( SkipStatement& node )
 {
     DotLink link( this, &node );
@@ -323,6 +361,13 @@ void CSTDumpDotVisitor::visit( SkipStatement& node )
 }
 
 void CSTDumpDotVisitor::visit( BlockStatement& node )
+{
+    DotLink link( this, &node );
+    dumpNode( node );
+    RecursiveVisitor::visit( node );
+}
+
+void CSTDumpDotVisitor::visit( CallStatement& node )
 {
     DotLink link( this, &node );
     dumpNode( node );
@@ -371,7 +416,28 @@ void CSTDumpDotVisitor::visit( MappedExpression& node )
     RecursiveVisitor::visit( node );
 }
 
+void CSTDumpDotVisitor::visit( LetExpression& node )
+{
+    DotLink link( this, &node );
+    dumpNode( node );
+    RecursiveVisitor::visit( node );
+}
+
+void CSTDumpDotVisitor::visit( ConditionalExpression& node )
+{
+    DotLink link( this, &node );
+    dumpNode( node );
+    RecursiveVisitor::visit( node );
+}
+
 void CSTDumpDotVisitor::visit( DirectCallExpression& node )
+{
+    DotLink link( this, &node );
+    dumpNode( node );
+    RecursiveVisitor::visit( node );
+}
+
+void CSTDumpDotVisitor::visit( MethodCallExpression& node )
 {
     DotLink link( this, &node );
     dumpNode( node );
@@ -400,6 +466,20 @@ void CSTDumpDotVisitor::visit( ValueLiteral& node )
 }
 
 void CSTDumpDotVisitor::visit( SetLiteral& node )
+{
+    DotLink link( this, &node );
+    dumpNode( node );
+    RecursiveVisitor::visit( node );
+}
+
+void CSTDumpDotVisitor::visit( ListLiteral& node )
+{
+    DotLink link( this, &node );
+    dumpNode( node );
+    RecursiveVisitor::visit( node );
+}
+
+void CSTDumpDotVisitor::visit( RangeLiteral& node )
 {
     DotLink link( this, &node );
     dumpNode( node );
