@@ -111,6 +111,18 @@ std::string Node::description( void ) const
         {
             return "memory definition";
         }
+        case ID::MICRO_PROCESSOR_DEFINITION:
+        {
+            return "microprocessor definition";
+        }
+        case ID::CACHE_DEFINITION:
+        {
+            return "cache definition";
+        }
+        case ID::INTERCONNECT_DEFINITION:
+        {
+            return "interconnect definition";
+        }
         case ID::OPTION_DEFINITION:
         {
             return "option definition";
@@ -145,6 +157,10 @@ std::string Node::description( void ) const
         {
             return "expansion option";
         }
+        case ID::STAGE_OPTION:
+        {
+            return "stage option";
+        }
 
         // statements
         case ID::SKIP_STATEMENT:
@@ -154,6 +170,10 @@ std::string Node::description( void ) const
         case ID::BLOCK_STATEMENT:
         {
             return "block statement";
+        }
+        case ID::CALL_STATEMENT:
+        {
+            return "call statement";
         }
         case ID::LET_STATEMENT:
         {
@@ -181,9 +201,21 @@ std::string Node::description( void ) const
         {
             return "mapped expression";
         }
+        case ID::LET_EXPRESSION:
+        {
+            return "let expression";
+        }
+        case ID::CONDITIONAL_EXPRESSION:
+        {
+            return "conditional expression";
+        }
         case ID::DIRECT_CALL_EXPRESSION:
         {
             return "direct call expression";
+        }
+        case ID::METHOD_CALL_EXPRESSION:
+        {
+            return "method call expression";
         }
         case ID::UNARY_EXPRESSION:
         {
@@ -202,6 +234,14 @@ std::string Node::description( void ) const
         case ID::SET_LITERAL:
         {
             return "set literal";
+        }
+        case ID::LIST_LITERAL:
+        {
+            return "list literal";
+        }
+        case ID::RANGE_LITERAL:
+        {
+            return "range literal";
         }
         case ID::RECORD_LITERAL:
         {

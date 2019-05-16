@@ -71,6 +71,9 @@ namespace libscod
                 FORMAT_DEFINITION,
                 BUFFER_DEFINITION,
                 INSTRUCTION_DEFINITION,
+                MICRO_PROCESSOR_DEFINITION,
+                CACHE_DEFINITION,
+                INTERCONNECT_DEFINITION,
                 OPTION_DEFINITION,
                 ENUMERATION_DEFINITION,
                 USING_DEFINITION,
@@ -81,10 +84,12 @@ namespace libscod
                 DECODING_OPTION,
                 SYNTAX_OPTION,
                 EXPANSION_OPTION,
+                STAGE_OPTION,
 
                 // statements
                 SKIP_STATEMENT,
                 BLOCK_STATEMENT,
+                CALL_STATEMENT,
                 LET_STATEMENT,
                 ASSIGNMENT_STATEMENT,
                 CONDITIONAL_STATEMENT,
@@ -93,7 +98,10 @@ namespace libscod
                 EMBRACED_EXPRESSION,
                 NAMED_EXPRESSION,
                 MAPPED_EXPRESSION,
+                LET_EXPRESSION,
+                CONDITIONAL_EXPRESSION,
                 DIRECT_CALL_EXPRESSION,
+                METHOD_CALL_EXPRESSION,
                 UNARY_EXPRESSION,
                 BINARY_EXPRESSION,
 
@@ -106,6 +114,8 @@ namespace libscod
                 // literals
                 VALUE_LITERAL,
                 SET_LITERAL,
+                LIST_LITERAL,
+                RANGE_LITERAL,
                 RECORD_LITERAL,
                 MAPPING_LITERAL,
                 REFERENCE_LITERAL,
