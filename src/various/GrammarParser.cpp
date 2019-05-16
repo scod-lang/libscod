@@ -41,7 +41,7 @@
 
 
 // Unqualified %code blocks.
-#line 93 "../../obj/src/GrammarParser.y"
+#line 94 "../../obj/src/GrammarParser.y"
 
     #include "../../src/Lexer.h"
 
@@ -142,7 +142,7 @@
 #define YYERROR         goto yyerrorlab
 #define YYRECOVERING()  (!!yyerrstatus_)
 
-#line 47 "../../obj/src/GrammarParser.y"
+#line 48 "../../obj/src/GrammarParser.y"
 namespace libscod {
 #line 148 "GrammarParser.cpp"
 
@@ -256,27 +256,27 @@ namespace libscod {
   {
     switch (that.type_get ())
     {
-      case 86: // AssignmentStatement
+      case 105: // AssignmentStatement
         value.YY_MOVE_OR_COPY< AssignmentStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 123: // Attribute
+      case 147: // Attribute
         value.YY_MOVE_OR_COPY< Attribute::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 122: // Attributes
+      case 146: // Attributes
         value.YY_MOVE_OR_COPY< Attributes::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 124: // BasicAttribute
+      case 148: // BasicAttribute
         value.YY_MOVE_OR_COPY< BasicAttribute::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 84: // BlockStatement
+      case 102: // BlockStatement
         value.YY_MOVE_OR_COPY< BlockStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 69: // BufferDefinition
+      case 81: // BufferDefinition
         value.YY_MOVE_OR_COPY< BufferDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
@@ -287,253 +287,307 @@ namespace libscod {
       case 7: // "format"
       case 8: // "buffer"
       case 9: // "instruction"
-      case 10: // "decoding"
-      case 11: // "syntax"
-      case 12: // "expansion"
-      case 13: // "enumeration"
-      case 14: // "using"
-      case 15: // "skip"
-      case 16: // "abstract"
-      case 17: // "let"
-      case 18: // "in"
-      case 19: // "if"
-      case 20: // "then"
-      case 21: // "else"
-      case 22: // "false"
-      case 23: // "true"
-      case 24: // "not"
-      case 25: // "and"
-      case 26: // "or"
-      case 27: // "xor"
-      case 28: // "implies"
-      case 29: // "=>"
-      case 30: // "+"
-      case 31: // "-"
-      case 32: // "*"
-      case 33: // "="
-      case 34: // "!="
-      case 35: // "<"
-      case 36: // "<="
-      case 37: // ">"
-      case 38: // ">="
-      case 39: // ":="
-      case 40: // "->"
-      case 41: // "'"
-      case 42: // ":"
-      case 43: // ";"
-      case 44: // "::"
-      case 45: // "("
-      case 46: // ")"
-      case 47: // "["
-      case 48: // "]"
-      case 49: // "{"
-      case 50: // "}"
-      case 51: // "@"
-      case 52: // ","
+      case 10: // "microprocessor"
+      case 11: // "cache"
+      case 12: // "interconnect"
+      case 13: // "decoding"
+      case 14: // "syntax"
+      case 15: // "expansion"
+      case 16: // "stage"
+      case 17: // "enumeration"
+      case 18: // "using"
+      case 19: // "skip"
+      case 20: // "abstract"
+      case 21: // "let"
+      case 22: // "in"
+      case 23: // "if"
+      case 24: // "then"
+      case 25: // "else"
+      case 26: // "false"
+      case 27: // "true"
+      case 28: // "not"
+      case 29: // "and"
+      case 30: // "or"
+      case 31: // "xor"
+      case 32: // "implies"
+      case 33: // "=>"
+      case 34: // "+"
+      case 35: // "(+)"
+      case 36: // "-"
+      case 37: // "(-)"
+      case 38: // "*"
+      case 39: // "<<"
+      case 40: // "(<<)"
+      case 41: // ">>"
+      case 42: // "(>>)"
+      case 43: // "="
+      case 44: // "!="
+      case 45: // "<"
+      case 46: // "<="
+      case 47: // ">"
+      case 48: // ">="
+      case 49: // ":="
+      case 50: // "->"
+      case 51: // "'"
+      case 52: // ":"
+      case 53: // ";"
+      case 54: // "::"
+      case 55: // "("
+      case 56: // ")"
+      case 57: // "["
+      case 58: // "]"
+      case 59: // "{"
+      case 60: // "}"
+      case 61: // "@"
+      case 62: // ","
+      case 63: // "."
+      case 64: // ".."
         value.YY_MOVE_OR_COPY< CST::Token::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 92: // CallExpression
+      case 84: // CacheDefinition
+        value.YY_MOVE_OR_COPY< CacheDefinition::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 113: // CallExpression
         value.YY_MOVE_OR_COPY< CallExpression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 87: // ConditionalStatement
+      case 103: // CallStatement
+        value.YY_MOVE_OR_COPY< CallStatement::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 111: // ConditionalExpression
+        value.YY_MOVE_OR_COPY< ConditionalExpression::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 106: // ConditionalStatement
         value.YY_MOVE_OR_COPY< ConditionalStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 77: // DecodingOption
+      case 92: // DecodingOption
         value.YY_MOVE_OR_COPY< DecodingOption::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 62: // AttributedDefinition
-      case 63: // Definition
+      case 74: // AttributedDefinition
+      case 75: // Definition
         value.YY_MOVE_OR_COPY< Definition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 61: // Definitions
+      case 73: // Definitions
         value.YY_MOVE_OR_COPY< Definitions::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 93: // DirectCallExpression
+      case 114: // DirectCallExpression
         value.YY_MOVE_OR_COPY< DirectCallExpression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 72: // EnumerationDefinition
+      case 87: // EnumerationDefinition
         value.YY_MOVE_OR_COPY< EnumerationDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 79: // ExpansionOption
+      case 94: // ExpansionOption
         value.YY_MOVE_OR_COPY< ExpansionOption::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 89: // Term
-      case 90: // Expression
-      case 91: // OperatorExpression
-      case 109: // Terminal
+      case 108: // Term
+      case 109: // Expression
+      case 112: // OperatorExpression
+      case 133: // Terminal
         value.YY_MOVE_OR_COPY< Expression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 125: // ExpressionAttribute
+      case 149: // ExpressionAttribute
         value.YY_MOVE_OR_COPY< ExpressionAttribute::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 88: // Terms
-      case 108: // Terminals
+      case 107: // Terms
+      case 132: // Terminals
         value.YY_MOVE_OR_COPY< Expressions::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 66: // FieldDefinition
+      case 78: // FieldDefinition
         value.YY_MOVE_OR_COPY< FieldDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 67: // FormatDefinition
+      case 79: // FormatDefinition
         value.YY_MOVE_OR_COPY< FormatDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 107: // GrammarLiteral
+      case 131: // GrammarLiteral
         value.YY_MOVE_OR_COPY< GrammarLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 60: // Header
+      case 72: // Header
         value.YY_MOVE_OR_COPY< HeaderDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 57: // "identifier"
-      case 120: // Identifier
+      case 69: // "identifier"
+      case 144: // Identifier
         value.YY_MOVE_OR_COPY< Identifier::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 121: // IdentifierPath
+      case 145: // IdentifierPath
         value.YY_MOVE_OR_COPY< IdentifierPath::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 70: // InstructionDefinition
+      case 82: // InstructionDefinition
         value.YY_MOVE_OR_COPY< InstructionDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 85: // LetStatement
+      case 85: // InterconnectDefinition
+        value.YY_MOVE_OR_COPY< InterconnectDefinition::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 110: // LetExpression
+        value.YY_MOVE_OR_COPY< LetExpression::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 104: // LetStatement
         value.YY_MOVE_OR_COPY< LetStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 94: // Literal
+      case 122: // ListLiteral
+        value.YY_MOVE_OR_COPY< ListLiteral::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 116: // Literal
         value.YY_MOVE_OR_COPY< Literal::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 105: // Mapping
+      case 129: // Mapping
         value.YY_MOVE_OR_COPY< MappedExpression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 104: // Mappings
+      case 128: // Mappings
         value.YY_MOVE_OR_COPY< MappedExpressions::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 68: // FormatFields
-      case 103: // MappingLiteral
+      case 80: // FormatFields
+      case 127: // MappingLiteral
         value.YY_MOVE_OR_COPY< MappingLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 113: // MappingType
+      case 137: // MappingType
         value.YY_MOVE_OR_COPY< MappingType::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 64: // MemoryDefinition
+      case 76: // MemoryDefinition
         value.YY_MOVE_OR_COPY< MemoryDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 102: // Assignment
+      case 115: // MethodCallExpression
+        value.YY_MOVE_OR_COPY< MethodCallExpression::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 83: // MicroProcessorDefinition
+        value.YY_MOVE_OR_COPY< MicroProcessorDefinition::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 126: // Assignment
         value.YY_MOVE_OR_COPY< NamedExpression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 101: // Assignments
+      case 125: // Assignments
         value.YY_MOVE_OR_COPY< NamedExpressions::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 76: // Option
+      case 91: // InstructionOption
+      case 96: // MicroProcessorOption
         value.YY_MOVE_OR_COPY< Option::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 71: // OptionDefinition
+      case 86: // OptionDefinition
         value.YY_MOVE_OR_COPY< OptionDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 75: // Options
+      case 90: // InstructionOptions
+      case 95: // MicroProcessorOptions
         value.YY_MOVE_OR_COPY< Options::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 100: // RecordLiteral
+      case 123: // RangeLiteral
+        value.YY_MOVE_OR_COPY< RangeLiteral::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 124: // RecordLiteral
         value.YY_MOVE_OR_COPY< RecordLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 106: // ReferenceLiteral
+      case 130: // ReferenceLiteral
         value.YY_MOVE_OR_COPY< ReferenceLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 65: // RegisterDefinition
+      case 77: // RegisterDefinition
         value.YY_MOVE_OR_COPY< RegisterDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 73: // Enumerators
-      case 99: // SetLiteral
+      case 88: // Enumerators
+      case 121: // SetLiteral
         value.YY_MOVE_OR_COPY< SetLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 82: // SkipStatement
-      case 83: // AbstractStatement
+      case 100: // SkipStatement
+      case 101: // AbstractStatement
         value.YY_MOVE_OR_COPY< SkipStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 59: // Specification
+      case 71: // Specification
         value.YY_MOVE_OR_COPY< Specification::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 81: // Statement
+      case 97: // StageOption
+        value.YY_MOVE_OR_COPY< StageOption::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 99: // Statement
         value.YY_MOVE_OR_COPY< Statement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 80: // Statements
+      case 98: // Statements
         value.YY_MOVE_OR_COPY< Statements::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 78: // SyntaxOption
+      case 93: // SyntaxOption
         value.YY_MOVE_OR_COPY< SyntaxOption::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 114: // ArgumentTypes
+      case 138: // ArgumentTypes
         value.YY_MOVE_OR_COPY< Types::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 74: // UsingDefinition
+      case 89: // UsingDefinition
         value.YY_MOVE_OR_COPY< UsingDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 53: // "integer"
-      case 54: // "binary"
-      case 55: // "hexadecimal"
-      case 56: // "string"
-      case 95: // BooleanLiteral
-      case 96: // IntegerLiteral
-      case 97: // BinaryLiteral
-      case 98: // StringLiteral
+      case 65: // "integer"
+      case 66: // "binary"
+      case 67: // "hexadecimal"
+      case 68: // "string"
+      case 117: // BooleanLiteral
+      case 118: // IntegerLiteral
+      case 119: // BinaryLiteral
+      case 120: // StringLiteral
         value.YY_MOVE_OR_COPY< ValueLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 116: // VariableBinding
+      case 140: // VariableBinding
         value.YY_MOVE_OR_COPY< VariableBinding::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 115: // VariableBindings
+      case 139: // VariableBindings
         value.YY_MOVE_OR_COPY< VariableBindings::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 117: // AttributedVariable
-      case 118: // Variable
-      case 119: // TypedVariable
+      case 141: // AttributedVariable
+      case 142: // Variable
+      case 143: // TypedVariable
         value.YY_MOVE_OR_COPY< VariableDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 110: // Type
-      case 111: // BasicType
-      case 112: // PropertyType
+      case 134: // Type
+      case 135: // BasicType
+      case 136: // PropertyType
         value.YY_MOVE_OR_COPY< libscod::CST::Type::Ptr > (YY_MOVE (that.value));
         break;
 
@@ -552,27 +606,27 @@ namespace libscod {
   {
     switch (that.type_get ())
     {
-      case 86: // AssignmentStatement
+      case 105: // AssignmentStatement
         value.move< AssignmentStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 123: // Attribute
+      case 147: // Attribute
         value.move< Attribute::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 122: // Attributes
+      case 146: // Attributes
         value.move< Attributes::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 124: // BasicAttribute
+      case 148: // BasicAttribute
         value.move< BasicAttribute::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 84: // BlockStatement
+      case 102: // BlockStatement
         value.move< BlockStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 69: // BufferDefinition
+      case 81: // BufferDefinition
         value.move< BufferDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
@@ -583,253 +637,307 @@ namespace libscod {
       case 7: // "format"
       case 8: // "buffer"
       case 9: // "instruction"
-      case 10: // "decoding"
-      case 11: // "syntax"
-      case 12: // "expansion"
-      case 13: // "enumeration"
-      case 14: // "using"
-      case 15: // "skip"
-      case 16: // "abstract"
-      case 17: // "let"
-      case 18: // "in"
-      case 19: // "if"
-      case 20: // "then"
-      case 21: // "else"
-      case 22: // "false"
-      case 23: // "true"
-      case 24: // "not"
-      case 25: // "and"
-      case 26: // "or"
-      case 27: // "xor"
-      case 28: // "implies"
-      case 29: // "=>"
-      case 30: // "+"
-      case 31: // "-"
-      case 32: // "*"
-      case 33: // "="
-      case 34: // "!="
-      case 35: // "<"
-      case 36: // "<="
-      case 37: // ">"
-      case 38: // ">="
-      case 39: // ":="
-      case 40: // "->"
-      case 41: // "'"
-      case 42: // ":"
-      case 43: // ";"
-      case 44: // "::"
-      case 45: // "("
-      case 46: // ")"
-      case 47: // "["
-      case 48: // "]"
-      case 49: // "{"
-      case 50: // "}"
-      case 51: // "@"
-      case 52: // ","
+      case 10: // "microprocessor"
+      case 11: // "cache"
+      case 12: // "interconnect"
+      case 13: // "decoding"
+      case 14: // "syntax"
+      case 15: // "expansion"
+      case 16: // "stage"
+      case 17: // "enumeration"
+      case 18: // "using"
+      case 19: // "skip"
+      case 20: // "abstract"
+      case 21: // "let"
+      case 22: // "in"
+      case 23: // "if"
+      case 24: // "then"
+      case 25: // "else"
+      case 26: // "false"
+      case 27: // "true"
+      case 28: // "not"
+      case 29: // "and"
+      case 30: // "or"
+      case 31: // "xor"
+      case 32: // "implies"
+      case 33: // "=>"
+      case 34: // "+"
+      case 35: // "(+)"
+      case 36: // "-"
+      case 37: // "(-)"
+      case 38: // "*"
+      case 39: // "<<"
+      case 40: // "(<<)"
+      case 41: // ">>"
+      case 42: // "(>>)"
+      case 43: // "="
+      case 44: // "!="
+      case 45: // "<"
+      case 46: // "<="
+      case 47: // ">"
+      case 48: // ">="
+      case 49: // ":="
+      case 50: // "->"
+      case 51: // "'"
+      case 52: // ":"
+      case 53: // ";"
+      case 54: // "::"
+      case 55: // "("
+      case 56: // ")"
+      case 57: // "["
+      case 58: // "]"
+      case 59: // "{"
+      case 60: // "}"
+      case 61: // "@"
+      case 62: // ","
+      case 63: // "."
+      case 64: // ".."
         value.move< CST::Token::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 92: // CallExpression
+      case 84: // CacheDefinition
+        value.move< CacheDefinition::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 113: // CallExpression
         value.move< CallExpression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 87: // ConditionalStatement
+      case 103: // CallStatement
+        value.move< CallStatement::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 111: // ConditionalExpression
+        value.move< ConditionalExpression::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 106: // ConditionalStatement
         value.move< ConditionalStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 77: // DecodingOption
+      case 92: // DecodingOption
         value.move< DecodingOption::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 62: // AttributedDefinition
-      case 63: // Definition
+      case 74: // AttributedDefinition
+      case 75: // Definition
         value.move< Definition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 61: // Definitions
+      case 73: // Definitions
         value.move< Definitions::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 93: // DirectCallExpression
+      case 114: // DirectCallExpression
         value.move< DirectCallExpression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 72: // EnumerationDefinition
+      case 87: // EnumerationDefinition
         value.move< EnumerationDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 79: // ExpansionOption
+      case 94: // ExpansionOption
         value.move< ExpansionOption::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 89: // Term
-      case 90: // Expression
-      case 91: // OperatorExpression
-      case 109: // Terminal
+      case 108: // Term
+      case 109: // Expression
+      case 112: // OperatorExpression
+      case 133: // Terminal
         value.move< Expression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 125: // ExpressionAttribute
+      case 149: // ExpressionAttribute
         value.move< ExpressionAttribute::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 88: // Terms
-      case 108: // Terminals
+      case 107: // Terms
+      case 132: // Terminals
         value.move< Expressions::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 66: // FieldDefinition
+      case 78: // FieldDefinition
         value.move< FieldDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 67: // FormatDefinition
+      case 79: // FormatDefinition
         value.move< FormatDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 107: // GrammarLiteral
+      case 131: // GrammarLiteral
         value.move< GrammarLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 60: // Header
+      case 72: // Header
         value.move< HeaderDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 57: // "identifier"
-      case 120: // Identifier
+      case 69: // "identifier"
+      case 144: // Identifier
         value.move< Identifier::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 121: // IdentifierPath
+      case 145: // IdentifierPath
         value.move< IdentifierPath::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 70: // InstructionDefinition
+      case 82: // InstructionDefinition
         value.move< InstructionDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 85: // LetStatement
+      case 85: // InterconnectDefinition
+        value.move< InterconnectDefinition::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 110: // LetExpression
+        value.move< LetExpression::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 104: // LetStatement
         value.move< LetStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 94: // Literal
+      case 122: // ListLiteral
+        value.move< ListLiteral::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 116: // Literal
         value.move< Literal::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 105: // Mapping
+      case 129: // Mapping
         value.move< MappedExpression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 104: // Mappings
+      case 128: // Mappings
         value.move< MappedExpressions::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 68: // FormatFields
-      case 103: // MappingLiteral
+      case 80: // FormatFields
+      case 127: // MappingLiteral
         value.move< MappingLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 113: // MappingType
+      case 137: // MappingType
         value.move< MappingType::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 64: // MemoryDefinition
+      case 76: // MemoryDefinition
         value.move< MemoryDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 102: // Assignment
+      case 115: // MethodCallExpression
+        value.move< MethodCallExpression::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 83: // MicroProcessorDefinition
+        value.move< MicroProcessorDefinition::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 126: // Assignment
         value.move< NamedExpression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 101: // Assignments
+      case 125: // Assignments
         value.move< NamedExpressions::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 76: // Option
+      case 91: // InstructionOption
+      case 96: // MicroProcessorOption
         value.move< Option::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 71: // OptionDefinition
+      case 86: // OptionDefinition
         value.move< OptionDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 75: // Options
+      case 90: // InstructionOptions
+      case 95: // MicroProcessorOptions
         value.move< Options::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 100: // RecordLiteral
+      case 123: // RangeLiteral
+        value.move< RangeLiteral::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 124: // RecordLiteral
         value.move< RecordLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 106: // ReferenceLiteral
+      case 130: // ReferenceLiteral
         value.move< ReferenceLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 65: // RegisterDefinition
+      case 77: // RegisterDefinition
         value.move< RegisterDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 73: // Enumerators
-      case 99: // SetLiteral
+      case 88: // Enumerators
+      case 121: // SetLiteral
         value.move< SetLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 82: // SkipStatement
-      case 83: // AbstractStatement
+      case 100: // SkipStatement
+      case 101: // AbstractStatement
         value.move< SkipStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 59: // Specification
+      case 71: // Specification
         value.move< Specification::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 81: // Statement
+      case 97: // StageOption
+        value.move< StageOption::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 99: // Statement
         value.move< Statement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 80: // Statements
+      case 98: // Statements
         value.move< Statements::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 78: // SyntaxOption
+      case 93: // SyntaxOption
         value.move< SyntaxOption::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 114: // ArgumentTypes
+      case 138: // ArgumentTypes
         value.move< Types::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 74: // UsingDefinition
+      case 89: // UsingDefinition
         value.move< UsingDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 53: // "integer"
-      case 54: // "binary"
-      case 55: // "hexadecimal"
-      case 56: // "string"
-      case 95: // BooleanLiteral
-      case 96: // IntegerLiteral
-      case 97: // BinaryLiteral
-      case 98: // StringLiteral
+      case 65: // "integer"
+      case 66: // "binary"
+      case 67: // "hexadecimal"
+      case 68: // "string"
+      case 117: // BooleanLiteral
+      case 118: // IntegerLiteral
+      case 119: // BinaryLiteral
+      case 120: // StringLiteral
         value.move< ValueLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 116: // VariableBinding
+      case 140: // VariableBinding
         value.move< VariableBinding::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 115: // VariableBindings
+      case 139: // VariableBindings
         value.move< VariableBindings::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 117: // AttributedVariable
-      case 118: // Variable
-      case 119: // TypedVariable
+      case 141: // AttributedVariable
+      case 142: // Variable
+      case 143: // TypedVariable
         value.move< VariableDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 110: // Type
-      case 111: // BasicType
-      case 112: // PropertyType
+      case 134: // Type
+      case 135: // BasicType
+      case 136: // PropertyType
         value.move< libscod::CST::Type::Ptr > (YY_MOVE (that.value));
         break;
 
@@ -848,27 +956,27 @@ namespace libscod {
     state = that.state;
     switch (that.type_get ())
     {
-      case 86: // AssignmentStatement
+      case 105: // AssignmentStatement
         value.copy< AssignmentStatement::Ptr > (that.value);
         break;
 
-      case 123: // Attribute
+      case 147: // Attribute
         value.copy< Attribute::Ptr > (that.value);
         break;
 
-      case 122: // Attributes
+      case 146: // Attributes
         value.copy< Attributes::Ptr > (that.value);
         break;
 
-      case 124: // BasicAttribute
+      case 148: // BasicAttribute
         value.copy< BasicAttribute::Ptr > (that.value);
         break;
 
-      case 84: // BlockStatement
+      case 102: // BlockStatement
         value.copy< BlockStatement::Ptr > (that.value);
         break;
 
-      case 69: // BufferDefinition
+      case 81: // BufferDefinition
         value.copy< BufferDefinition::Ptr > (that.value);
         break;
 
@@ -879,253 +987,307 @@ namespace libscod {
       case 7: // "format"
       case 8: // "buffer"
       case 9: // "instruction"
-      case 10: // "decoding"
-      case 11: // "syntax"
-      case 12: // "expansion"
-      case 13: // "enumeration"
-      case 14: // "using"
-      case 15: // "skip"
-      case 16: // "abstract"
-      case 17: // "let"
-      case 18: // "in"
-      case 19: // "if"
-      case 20: // "then"
-      case 21: // "else"
-      case 22: // "false"
-      case 23: // "true"
-      case 24: // "not"
-      case 25: // "and"
-      case 26: // "or"
-      case 27: // "xor"
-      case 28: // "implies"
-      case 29: // "=>"
-      case 30: // "+"
-      case 31: // "-"
-      case 32: // "*"
-      case 33: // "="
-      case 34: // "!="
-      case 35: // "<"
-      case 36: // "<="
-      case 37: // ">"
-      case 38: // ">="
-      case 39: // ":="
-      case 40: // "->"
-      case 41: // "'"
-      case 42: // ":"
-      case 43: // ";"
-      case 44: // "::"
-      case 45: // "("
-      case 46: // ")"
-      case 47: // "["
-      case 48: // "]"
-      case 49: // "{"
-      case 50: // "}"
-      case 51: // "@"
-      case 52: // ","
+      case 10: // "microprocessor"
+      case 11: // "cache"
+      case 12: // "interconnect"
+      case 13: // "decoding"
+      case 14: // "syntax"
+      case 15: // "expansion"
+      case 16: // "stage"
+      case 17: // "enumeration"
+      case 18: // "using"
+      case 19: // "skip"
+      case 20: // "abstract"
+      case 21: // "let"
+      case 22: // "in"
+      case 23: // "if"
+      case 24: // "then"
+      case 25: // "else"
+      case 26: // "false"
+      case 27: // "true"
+      case 28: // "not"
+      case 29: // "and"
+      case 30: // "or"
+      case 31: // "xor"
+      case 32: // "implies"
+      case 33: // "=>"
+      case 34: // "+"
+      case 35: // "(+)"
+      case 36: // "-"
+      case 37: // "(-)"
+      case 38: // "*"
+      case 39: // "<<"
+      case 40: // "(<<)"
+      case 41: // ">>"
+      case 42: // "(>>)"
+      case 43: // "="
+      case 44: // "!="
+      case 45: // "<"
+      case 46: // "<="
+      case 47: // ">"
+      case 48: // ">="
+      case 49: // ":="
+      case 50: // "->"
+      case 51: // "'"
+      case 52: // ":"
+      case 53: // ";"
+      case 54: // "::"
+      case 55: // "("
+      case 56: // ")"
+      case 57: // "["
+      case 58: // "]"
+      case 59: // "{"
+      case 60: // "}"
+      case 61: // "@"
+      case 62: // ","
+      case 63: // "."
+      case 64: // ".."
         value.copy< CST::Token::Ptr > (that.value);
         break;
 
-      case 92: // CallExpression
+      case 84: // CacheDefinition
+        value.copy< CacheDefinition::Ptr > (that.value);
+        break;
+
+      case 113: // CallExpression
         value.copy< CallExpression::Ptr > (that.value);
         break;
 
-      case 87: // ConditionalStatement
+      case 103: // CallStatement
+        value.copy< CallStatement::Ptr > (that.value);
+        break;
+
+      case 111: // ConditionalExpression
+        value.copy< ConditionalExpression::Ptr > (that.value);
+        break;
+
+      case 106: // ConditionalStatement
         value.copy< ConditionalStatement::Ptr > (that.value);
         break;
 
-      case 77: // DecodingOption
+      case 92: // DecodingOption
         value.copy< DecodingOption::Ptr > (that.value);
         break;
 
-      case 62: // AttributedDefinition
-      case 63: // Definition
+      case 74: // AttributedDefinition
+      case 75: // Definition
         value.copy< Definition::Ptr > (that.value);
         break;
 
-      case 61: // Definitions
+      case 73: // Definitions
         value.copy< Definitions::Ptr > (that.value);
         break;
 
-      case 93: // DirectCallExpression
+      case 114: // DirectCallExpression
         value.copy< DirectCallExpression::Ptr > (that.value);
         break;
 
-      case 72: // EnumerationDefinition
+      case 87: // EnumerationDefinition
         value.copy< EnumerationDefinition::Ptr > (that.value);
         break;
 
-      case 79: // ExpansionOption
+      case 94: // ExpansionOption
         value.copy< ExpansionOption::Ptr > (that.value);
         break;
 
-      case 89: // Term
-      case 90: // Expression
-      case 91: // OperatorExpression
-      case 109: // Terminal
+      case 108: // Term
+      case 109: // Expression
+      case 112: // OperatorExpression
+      case 133: // Terminal
         value.copy< Expression::Ptr > (that.value);
         break;
 
-      case 125: // ExpressionAttribute
+      case 149: // ExpressionAttribute
         value.copy< ExpressionAttribute::Ptr > (that.value);
         break;
 
-      case 88: // Terms
-      case 108: // Terminals
+      case 107: // Terms
+      case 132: // Terminals
         value.copy< Expressions::Ptr > (that.value);
         break;
 
-      case 66: // FieldDefinition
+      case 78: // FieldDefinition
         value.copy< FieldDefinition::Ptr > (that.value);
         break;
 
-      case 67: // FormatDefinition
+      case 79: // FormatDefinition
         value.copy< FormatDefinition::Ptr > (that.value);
         break;
 
-      case 107: // GrammarLiteral
+      case 131: // GrammarLiteral
         value.copy< GrammarLiteral::Ptr > (that.value);
         break;
 
-      case 60: // Header
+      case 72: // Header
         value.copy< HeaderDefinition::Ptr > (that.value);
         break;
 
-      case 57: // "identifier"
-      case 120: // Identifier
+      case 69: // "identifier"
+      case 144: // Identifier
         value.copy< Identifier::Ptr > (that.value);
         break;
 
-      case 121: // IdentifierPath
+      case 145: // IdentifierPath
         value.copy< IdentifierPath::Ptr > (that.value);
         break;
 
-      case 70: // InstructionDefinition
+      case 82: // InstructionDefinition
         value.copy< InstructionDefinition::Ptr > (that.value);
         break;
 
-      case 85: // LetStatement
+      case 85: // InterconnectDefinition
+        value.copy< InterconnectDefinition::Ptr > (that.value);
+        break;
+
+      case 110: // LetExpression
+        value.copy< LetExpression::Ptr > (that.value);
+        break;
+
+      case 104: // LetStatement
         value.copy< LetStatement::Ptr > (that.value);
         break;
 
-      case 94: // Literal
+      case 122: // ListLiteral
+        value.copy< ListLiteral::Ptr > (that.value);
+        break;
+
+      case 116: // Literal
         value.copy< Literal::Ptr > (that.value);
         break;
 
-      case 105: // Mapping
+      case 129: // Mapping
         value.copy< MappedExpression::Ptr > (that.value);
         break;
 
-      case 104: // Mappings
+      case 128: // Mappings
         value.copy< MappedExpressions::Ptr > (that.value);
         break;
 
-      case 68: // FormatFields
-      case 103: // MappingLiteral
+      case 80: // FormatFields
+      case 127: // MappingLiteral
         value.copy< MappingLiteral::Ptr > (that.value);
         break;
 
-      case 113: // MappingType
+      case 137: // MappingType
         value.copy< MappingType::Ptr > (that.value);
         break;
 
-      case 64: // MemoryDefinition
+      case 76: // MemoryDefinition
         value.copy< MemoryDefinition::Ptr > (that.value);
         break;
 
-      case 102: // Assignment
+      case 115: // MethodCallExpression
+        value.copy< MethodCallExpression::Ptr > (that.value);
+        break;
+
+      case 83: // MicroProcessorDefinition
+        value.copy< MicroProcessorDefinition::Ptr > (that.value);
+        break;
+
+      case 126: // Assignment
         value.copy< NamedExpression::Ptr > (that.value);
         break;
 
-      case 101: // Assignments
+      case 125: // Assignments
         value.copy< NamedExpressions::Ptr > (that.value);
         break;
 
-      case 76: // Option
+      case 91: // InstructionOption
+      case 96: // MicroProcessorOption
         value.copy< Option::Ptr > (that.value);
         break;
 
-      case 71: // OptionDefinition
+      case 86: // OptionDefinition
         value.copy< OptionDefinition::Ptr > (that.value);
         break;
 
-      case 75: // Options
+      case 90: // InstructionOptions
+      case 95: // MicroProcessorOptions
         value.copy< Options::Ptr > (that.value);
         break;
 
-      case 100: // RecordLiteral
+      case 123: // RangeLiteral
+        value.copy< RangeLiteral::Ptr > (that.value);
+        break;
+
+      case 124: // RecordLiteral
         value.copy< RecordLiteral::Ptr > (that.value);
         break;
 
-      case 106: // ReferenceLiteral
+      case 130: // ReferenceLiteral
         value.copy< ReferenceLiteral::Ptr > (that.value);
         break;
 
-      case 65: // RegisterDefinition
+      case 77: // RegisterDefinition
         value.copy< RegisterDefinition::Ptr > (that.value);
         break;
 
-      case 73: // Enumerators
-      case 99: // SetLiteral
+      case 88: // Enumerators
+      case 121: // SetLiteral
         value.copy< SetLiteral::Ptr > (that.value);
         break;
 
-      case 82: // SkipStatement
-      case 83: // AbstractStatement
+      case 100: // SkipStatement
+      case 101: // AbstractStatement
         value.copy< SkipStatement::Ptr > (that.value);
         break;
 
-      case 59: // Specification
+      case 71: // Specification
         value.copy< Specification::Ptr > (that.value);
         break;
 
-      case 81: // Statement
+      case 97: // StageOption
+        value.copy< StageOption::Ptr > (that.value);
+        break;
+
+      case 99: // Statement
         value.copy< Statement::Ptr > (that.value);
         break;
 
-      case 80: // Statements
+      case 98: // Statements
         value.copy< Statements::Ptr > (that.value);
         break;
 
-      case 78: // SyntaxOption
+      case 93: // SyntaxOption
         value.copy< SyntaxOption::Ptr > (that.value);
         break;
 
-      case 114: // ArgumentTypes
+      case 138: // ArgumentTypes
         value.copy< Types::Ptr > (that.value);
         break;
 
-      case 74: // UsingDefinition
+      case 89: // UsingDefinition
         value.copy< UsingDefinition::Ptr > (that.value);
         break;
 
-      case 53: // "integer"
-      case 54: // "binary"
-      case 55: // "hexadecimal"
-      case 56: // "string"
-      case 95: // BooleanLiteral
-      case 96: // IntegerLiteral
-      case 97: // BinaryLiteral
-      case 98: // StringLiteral
+      case 65: // "integer"
+      case 66: // "binary"
+      case 67: // "hexadecimal"
+      case 68: // "string"
+      case 117: // BooleanLiteral
+      case 118: // IntegerLiteral
+      case 119: // BinaryLiteral
+      case 120: // StringLiteral
         value.copy< ValueLiteral::Ptr > (that.value);
         break;
 
-      case 116: // VariableBinding
+      case 140: // VariableBinding
         value.copy< VariableBinding::Ptr > (that.value);
         break;
 
-      case 115: // VariableBindings
+      case 139: // VariableBindings
         value.copy< VariableBindings::Ptr > (that.value);
         break;
 
-      case 117: // AttributedVariable
-      case 118: // Variable
-      case 119: // TypedVariable
+      case 141: // AttributedVariable
+      case 142: // Variable
+      case 143: // TypedVariable
         value.copy< VariableDefinition::Ptr > (that.value);
         break;
 
-      case 110: // Type
-      case 111: // BasicType
-      case 112: // PropertyType
+      case 134: // Type
+      case 135: // BasicType
+      case 136: // PropertyType
         value.copy< libscod::CST::Type::Ptr > (that.value);
         break;
 
@@ -1143,27 +1305,27 @@ namespace libscod {
     state = that.state;
     switch (that.type_get ())
     {
-      case 86: // AssignmentStatement
+      case 105: // AssignmentStatement
         value.move< AssignmentStatement::Ptr > (that.value);
         break;
 
-      case 123: // Attribute
+      case 147: // Attribute
         value.move< Attribute::Ptr > (that.value);
         break;
 
-      case 122: // Attributes
+      case 146: // Attributes
         value.move< Attributes::Ptr > (that.value);
         break;
 
-      case 124: // BasicAttribute
+      case 148: // BasicAttribute
         value.move< BasicAttribute::Ptr > (that.value);
         break;
 
-      case 84: // BlockStatement
+      case 102: // BlockStatement
         value.move< BlockStatement::Ptr > (that.value);
         break;
 
-      case 69: // BufferDefinition
+      case 81: // BufferDefinition
         value.move< BufferDefinition::Ptr > (that.value);
         break;
 
@@ -1174,253 +1336,307 @@ namespace libscod {
       case 7: // "format"
       case 8: // "buffer"
       case 9: // "instruction"
-      case 10: // "decoding"
-      case 11: // "syntax"
-      case 12: // "expansion"
-      case 13: // "enumeration"
-      case 14: // "using"
-      case 15: // "skip"
-      case 16: // "abstract"
-      case 17: // "let"
-      case 18: // "in"
-      case 19: // "if"
-      case 20: // "then"
-      case 21: // "else"
-      case 22: // "false"
-      case 23: // "true"
-      case 24: // "not"
-      case 25: // "and"
-      case 26: // "or"
-      case 27: // "xor"
-      case 28: // "implies"
-      case 29: // "=>"
-      case 30: // "+"
-      case 31: // "-"
-      case 32: // "*"
-      case 33: // "="
-      case 34: // "!="
-      case 35: // "<"
-      case 36: // "<="
-      case 37: // ">"
-      case 38: // ">="
-      case 39: // ":="
-      case 40: // "->"
-      case 41: // "'"
-      case 42: // ":"
-      case 43: // ";"
-      case 44: // "::"
-      case 45: // "("
-      case 46: // ")"
-      case 47: // "["
-      case 48: // "]"
-      case 49: // "{"
-      case 50: // "}"
-      case 51: // "@"
-      case 52: // ","
+      case 10: // "microprocessor"
+      case 11: // "cache"
+      case 12: // "interconnect"
+      case 13: // "decoding"
+      case 14: // "syntax"
+      case 15: // "expansion"
+      case 16: // "stage"
+      case 17: // "enumeration"
+      case 18: // "using"
+      case 19: // "skip"
+      case 20: // "abstract"
+      case 21: // "let"
+      case 22: // "in"
+      case 23: // "if"
+      case 24: // "then"
+      case 25: // "else"
+      case 26: // "false"
+      case 27: // "true"
+      case 28: // "not"
+      case 29: // "and"
+      case 30: // "or"
+      case 31: // "xor"
+      case 32: // "implies"
+      case 33: // "=>"
+      case 34: // "+"
+      case 35: // "(+)"
+      case 36: // "-"
+      case 37: // "(-)"
+      case 38: // "*"
+      case 39: // "<<"
+      case 40: // "(<<)"
+      case 41: // ">>"
+      case 42: // "(>>)"
+      case 43: // "="
+      case 44: // "!="
+      case 45: // "<"
+      case 46: // "<="
+      case 47: // ">"
+      case 48: // ">="
+      case 49: // ":="
+      case 50: // "->"
+      case 51: // "'"
+      case 52: // ":"
+      case 53: // ";"
+      case 54: // "::"
+      case 55: // "("
+      case 56: // ")"
+      case 57: // "["
+      case 58: // "]"
+      case 59: // "{"
+      case 60: // "}"
+      case 61: // "@"
+      case 62: // ","
+      case 63: // "."
+      case 64: // ".."
         value.move< CST::Token::Ptr > (that.value);
         break;
 
-      case 92: // CallExpression
+      case 84: // CacheDefinition
+        value.move< CacheDefinition::Ptr > (that.value);
+        break;
+
+      case 113: // CallExpression
         value.move< CallExpression::Ptr > (that.value);
         break;
 
-      case 87: // ConditionalStatement
+      case 103: // CallStatement
+        value.move< CallStatement::Ptr > (that.value);
+        break;
+
+      case 111: // ConditionalExpression
+        value.move< ConditionalExpression::Ptr > (that.value);
+        break;
+
+      case 106: // ConditionalStatement
         value.move< ConditionalStatement::Ptr > (that.value);
         break;
 
-      case 77: // DecodingOption
+      case 92: // DecodingOption
         value.move< DecodingOption::Ptr > (that.value);
         break;
 
-      case 62: // AttributedDefinition
-      case 63: // Definition
+      case 74: // AttributedDefinition
+      case 75: // Definition
         value.move< Definition::Ptr > (that.value);
         break;
 
-      case 61: // Definitions
+      case 73: // Definitions
         value.move< Definitions::Ptr > (that.value);
         break;
 
-      case 93: // DirectCallExpression
+      case 114: // DirectCallExpression
         value.move< DirectCallExpression::Ptr > (that.value);
         break;
 
-      case 72: // EnumerationDefinition
+      case 87: // EnumerationDefinition
         value.move< EnumerationDefinition::Ptr > (that.value);
         break;
 
-      case 79: // ExpansionOption
+      case 94: // ExpansionOption
         value.move< ExpansionOption::Ptr > (that.value);
         break;
 
-      case 89: // Term
-      case 90: // Expression
-      case 91: // OperatorExpression
-      case 109: // Terminal
+      case 108: // Term
+      case 109: // Expression
+      case 112: // OperatorExpression
+      case 133: // Terminal
         value.move< Expression::Ptr > (that.value);
         break;
 
-      case 125: // ExpressionAttribute
+      case 149: // ExpressionAttribute
         value.move< ExpressionAttribute::Ptr > (that.value);
         break;
 
-      case 88: // Terms
-      case 108: // Terminals
+      case 107: // Terms
+      case 132: // Terminals
         value.move< Expressions::Ptr > (that.value);
         break;
 
-      case 66: // FieldDefinition
+      case 78: // FieldDefinition
         value.move< FieldDefinition::Ptr > (that.value);
         break;
 
-      case 67: // FormatDefinition
+      case 79: // FormatDefinition
         value.move< FormatDefinition::Ptr > (that.value);
         break;
 
-      case 107: // GrammarLiteral
+      case 131: // GrammarLiteral
         value.move< GrammarLiteral::Ptr > (that.value);
         break;
 
-      case 60: // Header
+      case 72: // Header
         value.move< HeaderDefinition::Ptr > (that.value);
         break;
 
-      case 57: // "identifier"
-      case 120: // Identifier
+      case 69: // "identifier"
+      case 144: // Identifier
         value.move< Identifier::Ptr > (that.value);
         break;
 
-      case 121: // IdentifierPath
+      case 145: // IdentifierPath
         value.move< IdentifierPath::Ptr > (that.value);
         break;
 
-      case 70: // InstructionDefinition
+      case 82: // InstructionDefinition
         value.move< InstructionDefinition::Ptr > (that.value);
         break;
 
-      case 85: // LetStatement
+      case 85: // InterconnectDefinition
+        value.move< InterconnectDefinition::Ptr > (that.value);
+        break;
+
+      case 110: // LetExpression
+        value.move< LetExpression::Ptr > (that.value);
+        break;
+
+      case 104: // LetStatement
         value.move< LetStatement::Ptr > (that.value);
         break;
 
-      case 94: // Literal
+      case 122: // ListLiteral
+        value.move< ListLiteral::Ptr > (that.value);
+        break;
+
+      case 116: // Literal
         value.move< Literal::Ptr > (that.value);
         break;
 
-      case 105: // Mapping
+      case 129: // Mapping
         value.move< MappedExpression::Ptr > (that.value);
         break;
 
-      case 104: // Mappings
+      case 128: // Mappings
         value.move< MappedExpressions::Ptr > (that.value);
         break;
 
-      case 68: // FormatFields
-      case 103: // MappingLiteral
+      case 80: // FormatFields
+      case 127: // MappingLiteral
         value.move< MappingLiteral::Ptr > (that.value);
         break;
 
-      case 113: // MappingType
+      case 137: // MappingType
         value.move< MappingType::Ptr > (that.value);
         break;
 
-      case 64: // MemoryDefinition
+      case 76: // MemoryDefinition
         value.move< MemoryDefinition::Ptr > (that.value);
         break;
 
-      case 102: // Assignment
+      case 115: // MethodCallExpression
+        value.move< MethodCallExpression::Ptr > (that.value);
+        break;
+
+      case 83: // MicroProcessorDefinition
+        value.move< MicroProcessorDefinition::Ptr > (that.value);
+        break;
+
+      case 126: // Assignment
         value.move< NamedExpression::Ptr > (that.value);
         break;
 
-      case 101: // Assignments
+      case 125: // Assignments
         value.move< NamedExpressions::Ptr > (that.value);
         break;
 
-      case 76: // Option
+      case 91: // InstructionOption
+      case 96: // MicroProcessorOption
         value.move< Option::Ptr > (that.value);
         break;
 
-      case 71: // OptionDefinition
+      case 86: // OptionDefinition
         value.move< OptionDefinition::Ptr > (that.value);
         break;
 
-      case 75: // Options
+      case 90: // InstructionOptions
+      case 95: // MicroProcessorOptions
         value.move< Options::Ptr > (that.value);
         break;
 
-      case 100: // RecordLiteral
+      case 123: // RangeLiteral
+        value.move< RangeLiteral::Ptr > (that.value);
+        break;
+
+      case 124: // RecordLiteral
         value.move< RecordLiteral::Ptr > (that.value);
         break;
 
-      case 106: // ReferenceLiteral
+      case 130: // ReferenceLiteral
         value.move< ReferenceLiteral::Ptr > (that.value);
         break;
 
-      case 65: // RegisterDefinition
+      case 77: // RegisterDefinition
         value.move< RegisterDefinition::Ptr > (that.value);
         break;
 
-      case 73: // Enumerators
-      case 99: // SetLiteral
+      case 88: // Enumerators
+      case 121: // SetLiteral
         value.move< SetLiteral::Ptr > (that.value);
         break;
 
-      case 82: // SkipStatement
-      case 83: // AbstractStatement
+      case 100: // SkipStatement
+      case 101: // AbstractStatement
         value.move< SkipStatement::Ptr > (that.value);
         break;
 
-      case 59: // Specification
+      case 71: // Specification
         value.move< Specification::Ptr > (that.value);
         break;
 
-      case 81: // Statement
+      case 97: // StageOption
+        value.move< StageOption::Ptr > (that.value);
+        break;
+
+      case 99: // Statement
         value.move< Statement::Ptr > (that.value);
         break;
 
-      case 80: // Statements
+      case 98: // Statements
         value.move< Statements::Ptr > (that.value);
         break;
 
-      case 78: // SyntaxOption
+      case 93: // SyntaxOption
         value.move< SyntaxOption::Ptr > (that.value);
         break;
 
-      case 114: // ArgumentTypes
+      case 138: // ArgumentTypes
         value.move< Types::Ptr > (that.value);
         break;
 
-      case 74: // UsingDefinition
+      case 89: // UsingDefinition
         value.move< UsingDefinition::Ptr > (that.value);
         break;
 
-      case 53: // "integer"
-      case 54: // "binary"
-      case 55: // "hexadecimal"
-      case 56: // "string"
-      case 95: // BooleanLiteral
-      case 96: // IntegerLiteral
-      case 97: // BinaryLiteral
-      case 98: // StringLiteral
+      case 65: // "integer"
+      case 66: // "binary"
+      case 67: // "hexadecimal"
+      case 68: // "string"
+      case 117: // BooleanLiteral
+      case 118: // IntegerLiteral
+      case 119: // BinaryLiteral
+      case 120: // StringLiteral
         value.move< ValueLiteral::Ptr > (that.value);
         break;
 
-      case 116: // VariableBinding
+      case 140: // VariableBinding
         value.move< VariableBinding::Ptr > (that.value);
         break;
 
-      case 115: // VariableBindings
+      case 139: // VariableBindings
         value.move< VariableBindings::Ptr > (that.value);
         break;
 
-      case 117: // AttributedVariable
-      case 118: // Variable
-      case 119: // TypedVariable
+      case 141: // AttributedVariable
+      case 142: // Variable
+      case 143: // TypedVariable
         value.move< VariableDefinition::Ptr > (that.value);
         break;
 
-      case 110: // Type
-      case 111: // BasicType
-      case 112: // PropertyType
+      case 134: // Type
+      case 135: // BasicType
+      case 136: // PropertyType
         value.move< libscod::CST::Type::Ptr > (that.value);
         break;
 
@@ -1674,27 +1890,27 @@ namespace libscod {
          when using variants.  */
       switch (yyr1_[yyn])
     {
-      case 86: // AssignmentStatement
+      case 105: // AssignmentStatement
         yylhs.value.emplace< AssignmentStatement::Ptr > ();
         break;
 
-      case 123: // Attribute
+      case 147: // Attribute
         yylhs.value.emplace< Attribute::Ptr > ();
         break;
 
-      case 122: // Attributes
+      case 146: // Attributes
         yylhs.value.emplace< Attributes::Ptr > ();
         break;
 
-      case 124: // BasicAttribute
+      case 148: // BasicAttribute
         yylhs.value.emplace< BasicAttribute::Ptr > ();
         break;
 
-      case 84: // BlockStatement
+      case 102: // BlockStatement
         yylhs.value.emplace< BlockStatement::Ptr > ();
         break;
 
-      case 69: // BufferDefinition
+      case 81: // BufferDefinition
         yylhs.value.emplace< BufferDefinition::Ptr > ();
         break;
 
@@ -1705,253 +1921,307 @@ namespace libscod {
       case 7: // "format"
       case 8: // "buffer"
       case 9: // "instruction"
-      case 10: // "decoding"
-      case 11: // "syntax"
-      case 12: // "expansion"
-      case 13: // "enumeration"
-      case 14: // "using"
-      case 15: // "skip"
-      case 16: // "abstract"
-      case 17: // "let"
-      case 18: // "in"
-      case 19: // "if"
-      case 20: // "then"
-      case 21: // "else"
-      case 22: // "false"
-      case 23: // "true"
-      case 24: // "not"
-      case 25: // "and"
-      case 26: // "or"
-      case 27: // "xor"
-      case 28: // "implies"
-      case 29: // "=>"
-      case 30: // "+"
-      case 31: // "-"
-      case 32: // "*"
-      case 33: // "="
-      case 34: // "!="
-      case 35: // "<"
-      case 36: // "<="
-      case 37: // ">"
-      case 38: // ">="
-      case 39: // ":="
-      case 40: // "->"
-      case 41: // "'"
-      case 42: // ":"
-      case 43: // ";"
-      case 44: // "::"
-      case 45: // "("
-      case 46: // ")"
-      case 47: // "["
-      case 48: // "]"
-      case 49: // "{"
-      case 50: // "}"
-      case 51: // "@"
-      case 52: // ","
+      case 10: // "microprocessor"
+      case 11: // "cache"
+      case 12: // "interconnect"
+      case 13: // "decoding"
+      case 14: // "syntax"
+      case 15: // "expansion"
+      case 16: // "stage"
+      case 17: // "enumeration"
+      case 18: // "using"
+      case 19: // "skip"
+      case 20: // "abstract"
+      case 21: // "let"
+      case 22: // "in"
+      case 23: // "if"
+      case 24: // "then"
+      case 25: // "else"
+      case 26: // "false"
+      case 27: // "true"
+      case 28: // "not"
+      case 29: // "and"
+      case 30: // "or"
+      case 31: // "xor"
+      case 32: // "implies"
+      case 33: // "=>"
+      case 34: // "+"
+      case 35: // "(+)"
+      case 36: // "-"
+      case 37: // "(-)"
+      case 38: // "*"
+      case 39: // "<<"
+      case 40: // "(<<)"
+      case 41: // ">>"
+      case 42: // "(>>)"
+      case 43: // "="
+      case 44: // "!="
+      case 45: // "<"
+      case 46: // "<="
+      case 47: // ">"
+      case 48: // ">="
+      case 49: // ":="
+      case 50: // "->"
+      case 51: // "'"
+      case 52: // ":"
+      case 53: // ";"
+      case 54: // "::"
+      case 55: // "("
+      case 56: // ")"
+      case 57: // "["
+      case 58: // "]"
+      case 59: // "{"
+      case 60: // "}"
+      case 61: // "@"
+      case 62: // ","
+      case 63: // "."
+      case 64: // ".."
         yylhs.value.emplace< CST::Token::Ptr > ();
         break;
 
-      case 92: // CallExpression
+      case 84: // CacheDefinition
+        yylhs.value.emplace< CacheDefinition::Ptr > ();
+        break;
+
+      case 113: // CallExpression
         yylhs.value.emplace< CallExpression::Ptr > ();
         break;
 
-      case 87: // ConditionalStatement
+      case 103: // CallStatement
+        yylhs.value.emplace< CallStatement::Ptr > ();
+        break;
+
+      case 111: // ConditionalExpression
+        yylhs.value.emplace< ConditionalExpression::Ptr > ();
+        break;
+
+      case 106: // ConditionalStatement
         yylhs.value.emplace< ConditionalStatement::Ptr > ();
         break;
 
-      case 77: // DecodingOption
+      case 92: // DecodingOption
         yylhs.value.emplace< DecodingOption::Ptr > ();
         break;
 
-      case 62: // AttributedDefinition
-      case 63: // Definition
+      case 74: // AttributedDefinition
+      case 75: // Definition
         yylhs.value.emplace< Definition::Ptr > ();
         break;
 
-      case 61: // Definitions
+      case 73: // Definitions
         yylhs.value.emplace< Definitions::Ptr > ();
         break;
 
-      case 93: // DirectCallExpression
+      case 114: // DirectCallExpression
         yylhs.value.emplace< DirectCallExpression::Ptr > ();
         break;
 
-      case 72: // EnumerationDefinition
+      case 87: // EnumerationDefinition
         yylhs.value.emplace< EnumerationDefinition::Ptr > ();
         break;
 
-      case 79: // ExpansionOption
+      case 94: // ExpansionOption
         yylhs.value.emplace< ExpansionOption::Ptr > ();
         break;
 
-      case 89: // Term
-      case 90: // Expression
-      case 91: // OperatorExpression
-      case 109: // Terminal
+      case 108: // Term
+      case 109: // Expression
+      case 112: // OperatorExpression
+      case 133: // Terminal
         yylhs.value.emplace< Expression::Ptr > ();
         break;
 
-      case 125: // ExpressionAttribute
+      case 149: // ExpressionAttribute
         yylhs.value.emplace< ExpressionAttribute::Ptr > ();
         break;
 
-      case 88: // Terms
-      case 108: // Terminals
+      case 107: // Terms
+      case 132: // Terminals
         yylhs.value.emplace< Expressions::Ptr > ();
         break;
 
-      case 66: // FieldDefinition
+      case 78: // FieldDefinition
         yylhs.value.emplace< FieldDefinition::Ptr > ();
         break;
 
-      case 67: // FormatDefinition
+      case 79: // FormatDefinition
         yylhs.value.emplace< FormatDefinition::Ptr > ();
         break;
 
-      case 107: // GrammarLiteral
+      case 131: // GrammarLiteral
         yylhs.value.emplace< GrammarLiteral::Ptr > ();
         break;
 
-      case 60: // Header
+      case 72: // Header
         yylhs.value.emplace< HeaderDefinition::Ptr > ();
         break;
 
-      case 57: // "identifier"
-      case 120: // Identifier
+      case 69: // "identifier"
+      case 144: // Identifier
         yylhs.value.emplace< Identifier::Ptr > ();
         break;
 
-      case 121: // IdentifierPath
+      case 145: // IdentifierPath
         yylhs.value.emplace< IdentifierPath::Ptr > ();
         break;
 
-      case 70: // InstructionDefinition
+      case 82: // InstructionDefinition
         yylhs.value.emplace< InstructionDefinition::Ptr > ();
         break;
 
-      case 85: // LetStatement
+      case 85: // InterconnectDefinition
+        yylhs.value.emplace< InterconnectDefinition::Ptr > ();
+        break;
+
+      case 110: // LetExpression
+        yylhs.value.emplace< LetExpression::Ptr > ();
+        break;
+
+      case 104: // LetStatement
         yylhs.value.emplace< LetStatement::Ptr > ();
         break;
 
-      case 94: // Literal
+      case 122: // ListLiteral
+        yylhs.value.emplace< ListLiteral::Ptr > ();
+        break;
+
+      case 116: // Literal
         yylhs.value.emplace< Literal::Ptr > ();
         break;
 
-      case 105: // Mapping
+      case 129: // Mapping
         yylhs.value.emplace< MappedExpression::Ptr > ();
         break;
 
-      case 104: // Mappings
+      case 128: // Mappings
         yylhs.value.emplace< MappedExpressions::Ptr > ();
         break;
 
-      case 68: // FormatFields
-      case 103: // MappingLiteral
+      case 80: // FormatFields
+      case 127: // MappingLiteral
         yylhs.value.emplace< MappingLiteral::Ptr > ();
         break;
 
-      case 113: // MappingType
+      case 137: // MappingType
         yylhs.value.emplace< MappingType::Ptr > ();
         break;
 
-      case 64: // MemoryDefinition
+      case 76: // MemoryDefinition
         yylhs.value.emplace< MemoryDefinition::Ptr > ();
         break;
 
-      case 102: // Assignment
+      case 115: // MethodCallExpression
+        yylhs.value.emplace< MethodCallExpression::Ptr > ();
+        break;
+
+      case 83: // MicroProcessorDefinition
+        yylhs.value.emplace< MicroProcessorDefinition::Ptr > ();
+        break;
+
+      case 126: // Assignment
         yylhs.value.emplace< NamedExpression::Ptr > ();
         break;
 
-      case 101: // Assignments
+      case 125: // Assignments
         yylhs.value.emplace< NamedExpressions::Ptr > ();
         break;
 
-      case 76: // Option
+      case 91: // InstructionOption
+      case 96: // MicroProcessorOption
         yylhs.value.emplace< Option::Ptr > ();
         break;
 
-      case 71: // OptionDefinition
+      case 86: // OptionDefinition
         yylhs.value.emplace< OptionDefinition::Ptr > ();
         break;
 
-      case 75: // Options
+      case 90: // InstructionOptions
+      case 95: // MicroProcessorOptions
         yylhs.value.emplace< Options::Ptr > ();
         break;
 
-      case 100: // RecordLiteral
+      case 123: // RangeLiteral
+        yylhs.value.emplace< RangeLiteral::Ptr > ();
+        break;
+
+      case 124: // RecordLiteral
         yylhs.value.emplace< RecordLiteral::Ptr > ();
         break;
 
-      case 106: // ReferenceLiteral
+      case 130: // ReferenceLiteral
         yylhs.value.emplace< ReferenceLiteral::Ptr > ();
         break;
 
-      case 65: // RegisterDefinition
+      case 77: // RegisterDefinition
         yylhs.value.emplace< RegisterDefinition::Ptr > ();
         break;
 
-      case 73: // Enumerators
-      case 99: // SetLiteral
+      case 88: // Enumerators
+      case 121: // SetLiteral
         yylhs.value.emplace< SetLiteral::Ptr > ();
         break;
 
-      case 82: // SkipStatement
-      case 83: // AbstractStatement
+      case 100: // SkipStatement
+      case 101: // AbstractStatement
         yylhs.value.emplace< SkipStatement::Ptr > ();
         break;
 
-      case 59: // Specification
+      case 71: // Specification
         yylhs.value.emplace< Specification::Ptr > ();
         break;
 
-      case 81: // Statement
+      case 97: // StageOption
+        yylhs.value.emplace< StageOption::Ptr > ();
+        break;
+
+      case 99: // Statement
         yylhs.value.emplace< Statement::Ptr > ();
         break;
 
-      case 80: // Statements
+      case 98: // Statements
         yylhs.value.emplace< Statements::Ptr > ();
         break;
 
-      case 78: // SyntaxOption
+      case 93: // SyntaxOption
         yylhs.value.emplace< SyntaxOption::Ptr > ();
         break;
 
-      case 114: // ArgumentTypes
+      case 138: // ArgumentTypes
         yylhs.value.emplace< Types::Ptr > ();
         break;
 
-      case 74: // UsingDefinition
+      case 89: // UsingDefinition
         yylhs.value.emplace< UsingDefinition::Ptr > ();
         break;
 
-      case 53: // "integer"
-      case 54: // "binary"
-      case 55: // "hexadecimal"
-      case 56: // "string"
-      case 95: // BooleanLiteral
-      case 96: // IntegerLiteral
-      case 97: // BinaryLiteral
-      case 98: // StringLiteral
+      case 65: // "integer"
+      case 66: // "binary"
+      case 67: // "hexadecimal"
+      case 68: // "string"
+      case 117: // BooleanLiteral
+      case 118: // IntegerLiteral
+      case 119: // BinaryLiteral
+      case 120: // StringLiteral
         yylhs.value.emplace< ValueLiteral::Ptr > ();
         break;
 
-      case 116: // VariableBinding
+      case 140: // VariableBinding
         yylhs.value.emplace< VariableBinding::Ptr > ();
         break;
 
-      case 115: // VariableBindings
+      case 139: // VariableBindings
         yylhs.value.emplace< VariableBindings::Ptr > ();
         break;
 
-      case 117: // AttributedVariable
-      case 118: // Variable
-      case 119: // TypedVariable
+      case 141: // AttributedVariable
+      case 142: // Variable
+      case 143: // TypedVariable
         yylhs.value.emplace< VariableDefinition::Ptr > ();
         break;
 
-      case 110: // Type
-      case 111: // BasicType
-      case 112: // PropertyType
+      case 134: // Type
+      case 135: // BasicType
+      case 136: // PropertyType
         yylhs.value.emplace< libscod::CST::Type::Ptr > ();
         break;
 
@@ -1976,1254 +2246,1530 @@ namespace libscod {
           switch (yyn)
             {
   case 2:
-#line 331 "../../obj/src/GrammarParser.y"
+#line 366 "../../obj/src/GrammarParser.y"
   {
       const auto& cst = CST::make< CST::Root >(
           yylhs.location, yystack_[1].value.as < HeaderDefinition::Ptr > (), yystack_[0].value.as < Definitions::Ptr > (), m_lexer.fetchSpansAndReset() );
       m_specification.setCst( cst );
   }
-#line 1986 "GrammarParser.cpp"
+#line 2256 "GrammarParser.cpp"
     break;
 
   case 3:
-#line 341 "../../obj/src/GrammarParser.y"
+#line 376 "../../obj/src/GrammarParser.y"
  {
      auto definition = CST::make< HeaderDefinition >( yylhs.location, yystack_[0].value.as < CST::Token::Ptr > () );
      definition->setAttributes( yystack_[1].value.as < Attributes::Ptr > () );
      yylhs.value.as < HeaderDefinition::Ptr > () = definition;
  }
-#line 1996 "GrammarParser.cpp"
+#line 2266 "GrammarParser.cpp"
     break;
 
   case 4:
-#line 347 "../../obj/src/GrammarParser.y"
+#line 382 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < HeaderDefinition::Ptr > () = CST::make< HeaderDefinition >( yylhs.location, yystack_[0].value.as < CST::Token::Ptr > () );
   }
-#line 2004 "GrammarParser.cpp"
+#line 2274 "GrammarParser.cpp"
     break;
 
   case 5:
-#line 355 "../../obj/src/GrammarParser.y"
+#line 390 "../../obj/src/GrammarParser.y"
   {
       auto definitions = yystack_[1].value.as < Definitions::Ptr > ();
       definitions->add( yystack_[0].value.as < Definition::Ptr > () );
       yylhs.value.as < Definitions::Ptr > () = definitions;
   }
-#line 2014 "GrammarParser.cpp"
+#line 2284 "GrammarParser.cpp"
     break;
 
   case 6:
-#line 361 "../../obj/src/GrammarParser.y"
+#line 396 "../../obj/src/GrammarParser.y"
   {
       auto definitions = CST::make< Definitions >( yylhs.location );
       definitions->add( yystack_[0].value.as < Definition::Ptr > () );
       yylhs.value.as < Definitions::Ptr > () = definitions;
   }
-#line 2024 "GrammarParser.cpp"
+#line 2294 "GrammarParser.cpp"
     break;
 
   case 7:
-#line 371 "../../obj/src/GrammarParser.y"
+#line 406 "../../obj/src/GrammarParser.y"
   {
       auto definition = yystack_[0].value.as < Definition::Ptr > ();
       definition->setAttributes( yystack_[1].value.as < Attributes::Ptr > () );
       yylhs.value.as < Definition::Ptr > () = definition;
   }
-#line 2034 "GrammarParser.cpp"
+#line 2304 "GrammarParser.cpp"
     break;
 
   case 8:
-#line 377 "../../obj/src/GrammarParser.y"
+#line 412 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < Definition::Ptr > ();
   }
-#line 2042 "GrammarParser.cpp"
+#line 2312 "GrammarParser.cpp"
     break;
 
   case 9:
-#line 381 "../../obj/src/GrammarParser.y"
+#line 416 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Definition::Ptr > () = nullptr;
   }
-#line 2050 "GrammarParser.cpp"
+#line 2320 "GrammarParser.cpp"
     break;
 
   case 10:
-#line 389 "../../obj/src/GrammarParser.y"
+#line 424 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < MemoryDefinition::Ptr > ();
   }
-#line 2058 "GrammarParser.cpp"
+#line 2328 "GrammarParser.cpp"
     break;
 
   case 11:
-#line 393 "../../obj/src/GrammarParser.y"
+#line 428 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < RegisterDefinition::Ptr > ();
   }
-#line 2066 "GrammarParser.cpp"
+#line 2336 "GrammarParser.cpp"
     break;
 
   case 12:
-#line 397 "../../obj/src/GrammarParser.y"
+#line 432 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < FieldDefinition::Ptr > ();
   }
-#line 2074 "GrammarParser.cpp"
+#line 2344 "GrammarParser.cpp"
     break;
 
   case 13:
-#line 401 "../../obj/src/GrammarParser.y"
+#line 436 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < FormatDefinition::Ptr > ();
   }
-#line 2082 "GrammarParser.cpp"
+#line 2352 "GrammarParser.cpp"
     break;
 
   case 14:
-#line 405 "../../obj/src/GrammarParser.y"
+#line 440 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < BufferDefinition::Ptr > ();
   }
-#line 2090 "GrammarParser.cpp"
+#line 2360 "GrammarParser.cpp"
     break;
 
   case 15:
-#line 409 "../../obj/src/GrammarParser.y"
+#line 444 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < InstructionDefinition::Ptr > ();
   }
-#line 2098 "GrammarParser.cpp"
+#line 2368 "GrammarParser.cpp"
     break;
 
   case 16:
-#line 413 "../../obj/src/GrammarParser.y"
+#line 448 "../../obj/src/GrammarParser.y"
   {
-      yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < OptionDefinition::Ptr > ();
+      yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < MicroProcessorDefinition::Ptr > ();
   }
-#line 2106 "GrammarParser.cpp"
+#line 2376 "GrammarParser.cpp"
     break;
 
   case 17:
-#line 417 "../../obj/src/GrammarParser.y"
+#line 452 "../../obj/src/GrammarParser.y"
   {
-      yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < EnumerationDefinition::Ptr > ();
+      yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < CacheDefinition::Ptr > ();
   }
-#line 2114 "GrammarParser.cpp"
+#line 2384 "GrammarParser.cpp"
     break;
 
   case 18:
-#line 421 "../../obj/src/GrammarParser.y"
+#line 456 "../../obj/src/GrammarParser.y"
   {
-      yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < UsingDefinition::Ptr > ();
+      yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < InterconnectDefinition::Ptr > ();
   }
-#line 2122 "GrammarParser.cpp"
+#line 2392 "GrammarParser.cpp"
     break;
 
   case 19:
-#line 429 "../../obj/src/GrammarParser.y"
+#line 460 "../../obj/src/GrammarParser.y"
   {
-      yylhs.value.as < MemoryDefinition::Ptr > () = CST::make< MemoryDefinition >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Identifier::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < MappingType::Ptr > () );
+      yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < OptionDefinition::Ptr > ();
   }
-#line 2130 "GrammarParser.cpp"
+#line 2400 "GrammarParser.cpp"
     break;
 
   case 20:
-#line 437 "../../obj/src/GrammarParser.y"
+#line 464 "../../obj/src/GrammarParser.y"
   {
-      yylhs.value.as < RegisterDefinition::Ptr > () = CST::make< RegisterDefinition >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Identifier::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < libscod::CST::Type::Ptr > () );
+      yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < EnumerationDefinition::Ptr > ();
   }
-#line 2138 "GrammarParser.cpp"
+#line 2408 "GrammarParser.cpp"
     break;
 
   case 21:
-#line 449 "../../obj/src/GrammarParser.y"
+#line 468 "../../obj/src/GrammarParser.y"
   {
-      yylhs.value.as < FieldDefinition::Ptr > () = CST::make< FieldDefinition >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Identifier::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < libscod::CST::Type::Ptr > () );
+      yylhs.value.as < Definition::Ptr > () = yystack_[0].value.as < UsingDefinition::Ptr > ();
   }
-#line 2146 "GrammarParser.cpp"
+#line 2416 "GrammarParser.cpp"
     break;
 
   case 22:
-#line 457 "../../obj/src/GrammarParser.y"
+#line 476 "../../obj/src/GrammarParser.y"
   {
-      yylhs.value.as < FormatDefinition::Ptr > () = CST::make< FormatDefinition >( yylhs.location, yystack_[5].value.as < CST::Token::Ptr > (), yystack_[4].value.as < Identifier::Ptr > (), yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < libscod::CST::Type::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < MappingLiteral::Ptr > () );
+      yylhs.value.as < MemoryDefinition::Ptr > () = CST::make< MemoryDefinition >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Identifier::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < MappingType::Ptr > () );
   }
-#line 2154 "GrammarParser.cpp"
+#line 2424 "GrammarParser.cpp"
     break;
 
   case 23:
-#line 464 "../../obj/src/GrammarParser.y"
+#line 484 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < RegisterDefinition::Ptr > () = CST::make< RegisterDefinition >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Identifier::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < libscod::CST::Type::Ptr > () );
+  }
+#line 2432 "GrammarParser.cpp"
+    break;
+
+  case 24:
+#line 492 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < FieldDefinition::Ptr > () = CST::make< FieldDefinition >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Identifier::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < libscod::CST::Type::Ptr > () );
+  }
+#line 2440 "GrammarParser.cpp"
+    break;
+
+  case 25:
+#line 500 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < FormatDefinition::Ptr > () = CST::make< FormatDefinition >( yylhs.location, yystack_[5].value.as < CST::Token::Ptr > (), yystack_[4].value.as < Identifier::Ptr > (), yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < libscod::CST::Type::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < MappingLiteral::Ptr > () );
+  }
+#line 2448 "GrammarParser.cpp"
+    break;
+
+  case 26:
+#line 507 "../../obj/src/GrammarParser.y"
 {
     // TODO: check mapping types here or later in validation
     yylhs.value.as < MappingLiteral::Ptr > () = yystack_[0].value.as < MappingLiteral::Ptr > ();
 }
-#line 2163 "GrammarParser.cpp"
+#line 2457 "GrammarParser.cpp"
     break;
 
-  case 24:
-#line 472 "../../obj/src/GrammarParser.y"
+  case 27:
+#line 515 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < BufferDefinition::Ptr > () = CST::make< BufferDefinition >( yylhs.location, yystack_[5].value.as < CST::Token::Ptr > (), yystack_[4].value.as < Identifier::Ptr > (), yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < libscod::CST::Type::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );      
   }
-#line 2171 "GrammarParser.cpp"
+#line 2465 "GrammarParser.cpp"
     break;
 
-  case 25:
-#line 480 "../../obj/src/GrammarParser.y"
+  case 28:
+#line 523 "../../obj/src/GrammarParser.y"
   {
       const auto& options = CST::make< Options >( yylhs.location );
       yylhs.value.as < InstructionDefinition::Ptr > () = CST::make< InstructionDefinition >( yylhs.location, yystack_[5].value.as < CST::Token::Ptr > (), yystack_[4].value.as < Identifier::Ptr > (), yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < libscod::CST::Type::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Statement::Ptr > (), options );
   }
-#line 2180 "GrammarParser.cpp"
-    break;
-
-  case 26:
-#line 485 "../../obj/src/GrammarParser.y"
-  {
-      yylhs.value.as < InstructionDefinition::Ptr > () = CST::make< InstructionDefinition >( yylhs.location, yystack_[6].value.as < CST::Token::Ptr > (), yystack_[5].value.as < Identifier::Ptr > (), yystack_[4].value.as < CST::Token::Ptr > (), yystack_[3].value.as < libscod::CST::Type::Ptr > (), yystack_[2].value.as < CST::Token::Ptr > (), yystack_[1].value.as < Statement::Ptr > (), yystack_[0].value.as < Options::Ptr > () );
-  }
-#line 2188 "GrammarParser.cpp"
-    break;
-
-  case 27:
-#line 493 "../../obj/src/GrammarParser.y"
-  {
-      yylhs.value.as < OptionDefinition::Ptr > () = CST::make< OptionDefinition >( yylhs.location, yystack_[1].value.as < ReferenceLiteral::Ptr > (), yystack_[0].value.as < DecodingOption::Ptr > (), OptionDefinition::Kind::DECODING );
-  }
-#line 2196 "GrammarParser.cpp"
-    break;
-
-  case 28:
-#line 497 "../../obj/src/GrammarParser.y"
-  {
-      yylhs.value.as < OptionDefinition::Ptr > () = CST::make< OptionDefinition >( yylhs.location, yystack_[1].value.as < ReferenceLiteral::Ptr > (), yystack_[0].value.as < SyntaxOption::Ptr > (), OptionDefinition::Kind::SYNTAX );
-  }
-#line 2204 "GrammarParser.cpp"
+#line 2474 "GrammarParser.cpp"
     break;
 
   case 29:
-#line 501 "../../obj/src/GrammarParser.y"
+#line 528 "../../obj/src/GrammarParser.y"
   {
-      yylhs.value.as < OptionDefinition::Ptr > () = CST::make< OptionDefinition >( yylhs.location, yystack_[1].value.as < ReferenceLiteral::Ptr > (), yystack_[0].value.as < ExpansionOption::Ptr > (), OptionDefinition::Kind::EXPANSION );
+      yylhs.value.as < InstructionDefinition::Ptr > () = CST::make< InstructionDefinition >( yylhs.location, yystack_[6].value.as < CST::Token::Ptr > (), yystack_[5].value.as < Identifier::Ptr > (), yystack_[4].value.as < CST::Token::Ptr > (), yystack_[3].value.as < libscod::CST::Type::Ptr > (), yystack_[2].value.as < CST::Token::Ptr > (), yystack_[1].value.as < Statement::Ptr > (), yystack_[0].value.as < Options::Ptr > () );
   }
-#line 2212 "GrammarParser.cpp"
+#line 2482 "GrammarParser.cpp"
     break;
 
   case 30:
-#line 509 "../../obj/src/GrammarParser.y"
+#line 536 "../../obj/src/GrammarParser.y"
   {
-      yylhs.value.as < EnumerationDefinition::Ptr > () = CST::make< EnumerationDefinition >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Identifier::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < SetLiteral::Ptr > () );
+      const auto& options = CST::make< Options >( yylhs.location );
+      yylhs.value.as < MicroProcessorDefinition::Ptr > () = CST::make< MicroProcessorDefinition >( yylhs.location, yystack_[5].value.as < CST::Token::Ptr > (), yystack_[4].value.as < Identifier::Ptr > (), yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < IdentifierPath::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Statement::Ptr > (), options );
   }
-#line 2220 "GrammarParser.cpp"
+#line 2491 "GrammarParser.cpp"
     break;
 
   case 31:
-#line 516 "../../obj/src/GrammarParser.y"
+#line 541 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < MicroProcessorDefinition::Ptr > () = CST::make< MicroProcessorDefinition >( yylhs.location, yystack_[6].value.as < CST::Token::Ptr > (), yystack_[5].value.as < Identifier::Ptr > (), yystack_[4].value.as < CST::Token::Ptr > (), yystack_[3].value.as < IdentifierPath::Ptr > (), yystack_[2].value.as < CST::Token::Ptr > (), yystack_[1].value.as < Statement::Ptr > (), yystack_[0].value.as < Options::Ptr > () );
+  }
+#line 2499 "GrammarParser.cpp"
+    break;
+
+  case 32:
+#line 549 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < CacheDefinition::Ptr > () = CST::make< CacheDefinition >( yylhs.location, yystack_[5].value.as < CST::Token::Ptr > (), yystack_[4].value.as < Identifier::Ptr > (), yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < libscod::CST::Type::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < MappingLiteral::Ptr > () );
+  }
+#line 2507 "GrammarParser.cpp"
+    break;
+
+  case 33:
+#line 557 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < InterconnectDefinition::Ptr > () = CST::make< InterconnectDefinition >( yylhs.location, yystack_[5].value.as < CST::Token::Ptr > (), yystack_[4].value.as < Identifier::Ptr > (), yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < libscod::CST::Type::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < MappingLiteral::Ptr > () );
+  }
+#line 2515 "GrammarParser.cpp"
+    break;
+
+  case 34:
+#line 565 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < OptionDefinition::Ptr > () = CST::make< OptionDefinition >( yylhs.location, yystack_[1].value.as < ReferenceLiteral::Ptr > (), yystack_[0].value.as < DecodingOption::Ptr > (), OptionDefinition::Kind::DECODING );
+  }
+#line 2523 "GrammarParser.cpp"
+    break;
+
+  case 35:
+#line 569 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < OptionDefinition::Ptr > () = CST::make< OptionDefinition >( yylhs.location, yystack_[1].value.as < ReferenceLiteral::Ptr > (), yystack_[0].value.as < SyntaxOption::Ptr > (), OptionDefinition::Kind::SYNTAX );
+  }
+#line 2531 "GrammarParser.cpp"
+    break;
+
+  case 36:
+#line 573 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < OptionDefinition::Ptr > () = CST::make< OptionDefinition >( yylhs.location, yystack_[1].value.as < ReferenceLiteral::Ptr > (), yystack_[0].value.as < ExpansionOption::Ptr > (), OptionDefinition::Kind::EXPANSION );
+  }
+#line 2539 "GrammarParser.cpp"
+    break;
+
+  case 37:
+#line 581 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < EnumerationDefinition::Ptr > () = CST::make< EnumerationDefinition >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Identifier::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < SetLiteral::Ptr > () );
+  }
+#line 2547 "GrammarParser.cpp"
+    break;
+
+  case 38:
+#line 588 "../../obj/src/GrammarParser.y"
   {
       // TODO: add check if identifiers here or later in validation pass
       yylhs.value.as < SetLiteral::Ptr > () = yystack_[0].value.as < SetLiteral::Ptr > ();
   }
-#line 2229 "GrammarParser.cpp"
+#line 2556 "GrammarParser.cpp"
     break;
 
-  case 32:
-#line 525 "../../obj/src/GrammarParser.y"
+  case 39:
+#line 597 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < UsingDefinition::Ptr > () = CST::make< UsingDefinition >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Identifier::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < libscod::CST::Type::Ptr > () );
   }
-#line 2237 "GrammarParser.cpp"
+#line 2564 "GrammarParser.cpp"
     break;
 
-  case 33:
-#line 537 "../../obj/src/GrammarParser.y"
+  case 40:
+#line 609 "../../obj/src/GrammarParser.y"
   {
       const auto& options = yystack_[1].value.as < Options::Ptr > ();
       options->add( yystack_[0].value.as < Option::Ptr > () );
       yylhs.value.as < Options::Ptr > () = options;
   }
-#line 2247 "GrammarParser.cpp"
+#line 2574 "GrammarParser.cpp"
     break;
 
-  case 34:
-#line 543 "../../obj/src/GrammarParser.y"
+  case 41:
+#line 615 "../../obj/src/GrammarParser.y"
   {
       const auto& options = CST::make< Options >( yylhs.location );
       options->add( yystack_[0].value.as < Option::Ptr > () );
       yylhs.value.as < Options::Ptr > () = options;
   }
-#line 2257 "GrammarParser.cpp"
+#line 2584 "GrammarParser.cpp"
     break;
 
-  case 35:
-#line 558 "../../obj/src/GrammarParser.y"
+  case 42:
+#line 625 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Option::Ptr > () = yystack_[0].value.as < DecodingOption::Ptr > ();
   }
-#line 2265 "GrammarParser.cpp"
+#line 2592 "GrammarParser.cpp"
     break;
 
-  case 36:
-#line 562 "../../obj/src/GrammarParser.y"
+  case 43:
+#line 629 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Option::Ptr > () = yystack_[0].value.as < SyntaxOption::Ptr > ();
   }
-#line 2273 "GrammarParser.cpp"
+#line 2600 "GrammarParser.cpp"
     break;
 
-  case 37:
-#line 566 "../../obj/src/GrammarParser.y"
+  case 44:
+#line 633 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Option::Ptr > () = yystack_[0].value.as < ExpansionOption::Ptr > ();
   }
-#line 2281 "GrammarParser.cpp"
+#line 2608 "GrammarParser.cpp"
     break;
 
-  case 38:
-#line 574 "../../obj/src/GrammarParser.y"
+  case 45:
+#line 641 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < DecodingOption::Ptr > () = CST::make< DecodingOption >( yylhs.location, yystack_[2].value.as < CST::Token::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < RecordLiteral::Ptr > () );      
   }
-#line 2289 "GrammarParser.cpp"
+#line 2616 "GrammarParser.cpp"
     break;
 
-  case 39:
-#line 582 "../../obj/src/GrammarParser.y"
+  case 46:
+#line 649 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < SyntaxOption::Ptr > () = CST::make< SyntaxOption >( yylhs.location, yystack_[2].value.as < CST::Token::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < SetLiteral::Ptr > () );      
   }
-#line 2297 "GrammarParser.cpp"
+#line 2624 "GrammarParser.cpp"
     break;
 
-  case 40:
-#line 590 "../../obj/src/GrammarParser.y"
+  case 47:
+#line 657 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < ExpansionOption::Ptr > () = CST::make< ExpansionOption >( yylhs.location, yystack_[2].value.as < CST::Token::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < SetLiteral::Ptr > () );      
   }
-#line 2305 "GrammarParser.cpp"
+#line 2632 "GrammarParser.cpp"
     break;
 
-  case 41:
-#line 602 "../../obj/src/GrammarParser.y"
+  case 48:
+#line 665 "../../obj/src/GrammarParser.y"
+  {
+      const auto& options = yystack_[1].value.as < Options::Ptr > ();
+      options->add( yystack_[0].value.as < Option::Ptr > () );
+      yylhs.value.as < Options::Ptr > () = options;
+  }
+#line 2642 "GrammarParser.cpp"
+    break;
+
+  case 49:
+#line 671 "../../obj/src/GrammarParser.y"
+  {
+      const auto& options = CST::make< Options >( yylhs.location );
+      options->add( yystack_[0].value.as < Option::Ptr > () );
+      yylhs.value.as < Options::Ptr > () = options;
+  }
+#line 2652 "GrammarParser.cpp"
+    break;
+
+  case 50:
+#line 681 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Option::Ptr > () = yystack_[0].value.as < StageOption::Ptr > ();
+  }
+#line 2660 "GrammarParser.cpp"
+    break;
+
+  case 51:
+#line 689 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < StageOption::Ptr > () = CST::make< StageOption >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Identifier::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < BlockStatement::Ptr > () );
+  }
+#line 2668 "GrammarParser.cpp"
+    break;
+
+  case 52:
+#line 701 "../../obj/src/GrammarParser.y"
   {
       const auto& statements = yystack_[1].value.as < Statements::Ptr > ();
       statements->add( yystack_[0].value.as < Statement::Ptr > () );
       yylhs.value.as < Statements::Ptr > () = statements;
   }
-#line 2315 "GrammarParser.cpp"
+#line 2678 "GrammarParser.cpp"
     break;
 
-  case 42:
-#line 608 "../../obj/src/GrammarParser.y"
+  case 53:
+#line 707 "../../obj/src/GrammarParser.y"
   {
       const auto& statements = CST::make< Statements >( yylhs.location );
       statements->add( yystack_[0].value.as < Statement::Ptr > () );
       yylhs.value.as < Statements::Ptr > () = statements;
   }
-#line 2325 "GrammarParser.cpp"
+#line 2688 "GrammarParser.cpp"
     break;
 
-  case 43:
-#line 618 "../../obj/src/GrammarParser.y"
+  case 54:
+#line 717 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Statement::Ptr > () = yystack_[0].value.as < SkipStatement::Ptr > ();
   }
-#line 2333 "GrammarParser.cpp"
+#line 2696 "GrammarParser.cpp"
     break;
 
-  case 44:
-#line 622 "../../obj/src/GrammarParser.y"
+  case 55:
+#line 721 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Statement::Ptr > () = yystack_[0].value.as < SkipStatement::Ptr > ();
   }
-#line 2341 "GrammarParser.cpp"
+#line 2704 "GrammarParser.cpp"
     break;
 
-  case 45:
-#line 626 "../../obj/src/GrammarParser.y"
+  case 56:
+#line 725 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Statement::Ptr > () = yystack_[0].value.as < BlockStatement::Ptr > ();
   }
-#line 2349 "GrammarParser.cpp"
+#line 2712 "GrammarParser.cpp"
     break;
 
-  case 46:
-#line 630 "../../obj/src/GrammarParser.y"
+  case 57:
+#line 729 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Statement::Ptr > () = yystack_[0].value.as < CallStatement::Ptr > ();
+  }
+#line 2720 "GrammarParser.cpp"
+    break;
+
+  case 58:
+#line 733 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Statement::Ptr > () = yystack_[0].value.as < LetStatement::Ptr > ();
   }
-#line 2357 "GrammarParser.cpp"
+#line 2728 "GrammarParser.cpp"
     break;
 
-  case 47:
-#line 634 "../../obj/src/GrammarParser.y"
+  case 59:
+#line 737 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Statement::Ptr > () = yystack_[0].value.as < AssignmentStatement::Ptr > ();
   }
-#line 2365 "GrammarParser.cpp"
+#line 2736 "GrammarParser.cpp"
     break;
 
-  case 48:
-#line 638 "../../obj/src/GrammarParser.y"
+  case 60:
+#line 741 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Statement::Ptr > () = yystack_[0].value.as < ConditionalStatement::Ptr > ();
   }
-#line 2373 "GrammarParser.cpp"
+#line 2744 "GrammarParser.cpp"
     break;
 
-  case 49:
-#line 646 "../../obj/src/GrammarParser.y"
+  case 61:
+#line 749 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < SkipStatement::Ptr > () = CST::make< SkipStatement >( yylhs.location, yystack_[0].value.as < CST::Token::Ptr > () );
   }
-#line 2381 "GrammarParser.cpp"
+#line 2752 "GrammarParser.cpp"
     break;
 
-  case 50:
-#line 654 "../../obj/src/GrammarParser.y"
+  case 62:
+#line 757 "../../obj/src/GrammarParser.y"
   {
       // maybe introduce exclusive CST node!
       yylhs.value.as < SkipStatement::Ptr > () = CST::make< SkipStatement >( yylhs.location, yystack_[0].value.as < CST::Token::Ptr > () );
   }
-#line 2390 "GrammarParser.cpp"
+#line 2761 "GrammarParser.cpp"
     break;
 
-  case 51:
-#line 663 "../../obj/src/GrammarParser.y"
+  case 63:
+#line 766 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < BlockStatement::Ptr > () = CST::make< BlockStatement >( yylhs.location, yystack_[2].value.as < CST::Token::Ptr > (), yystack_[1].value.as < Statements::Ptr > (), yystack_[0].value.as < CST::Token::Ptr > () );
   }
-#line 2398 "GrammarParser.cpp"
+#line 2769 "GrammarParser.cpp"
     break;
 
-  case 52:
-#line 667 "../../obj/src/GrammarParser.y"
+  case 64:
+#line 770 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < BlockStatement::Ptr > () = nullptr;
       yyerrok;
   }
-#line 2407 "GrammarParser.cpp"
+#line 2778 "GrammarParser.cpp"
     break;
 
-  case 53:
-#line 676 "../../obj/src/GrammarParser.y"
+  case 65:
+#line 779 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < CallStatement::Ptr > () = CST::make< CallStatement >( yylhs.location, yystack_[0].value.as < DirectCallExpression::Ptr > () );
+  }
+#line 2786 "GrammarParser.cpp"
+    break;
+
+  case 66:
+#line 787 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < LetStatement::Ptr > () = CST::make< LetStatement >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < VariableBindings::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Statement::Ptr > () );
   }
-#line 2415 "GrammarParser.cpp"
+#line 2794 "GrammarParser.cpp"
     break;
 
-  case 54:
-#line 684 "../../obj/src/GrammarParser.y"
+  case 67:
+#line 795 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < AssignmentStatement::Ptr > () = CST::make< AssignmentStatement >( yylhs.location, yystack_[2].value.as < DirectCallExpression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2423 "GrammarParser.cpp"
+#line 2802 "GrammarParser.cpp"
     break;
 
-  case 55:
-#line 692 "../../obj/src/GrammarParser.y"
+  case 68:
+#line 803 "../../obj/src/GrammarParser.y"
   {
       const auto& elseStatement = CST::make< SkipStatement >( yylhs.location, Token::unresolved() );
       yylhs.value.as < ConditionalStatement::Ptr > () = CST::make< ConditionalStatement >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Statement::Ptr > (), Token::unresolved(), elseStatement );
   }
-#line 2432 "GrammarParser.cpp"
+#line 2811 "GrammarParser.cpp"
     break;
 
-  case 56:
-#line 697 "../../obj/src/GrammarParser.y"
+  case 69:
+#line 808 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < ConditionalStatement::Ptr > () = CST::make< ConditionalStatement >( yylhs.location, yystack_[5].value.as < CST::Token::Ptr > (), yystack_[4].value.as < Expression::Ptr > (), yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Statement::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Statement::Ptr > () );
   }
-#line 2440 "GrammarParser.cpp"
+#line 2819 "GrammarParser.cpp"
     break;
 
-  case 57:
-#line 709 "../../obj/src/GrammarParser.y"
+  case 70:
+#line 820 "../../obj/src/GrammarParser.y"
   {
       const auto& expressions = yystack_[2].value.as < Expressions::Ptr > ();
       yystack_[0].value.as < Expression::Ptr > ()->setDelimiterToken( yystack_[1].value.as < CST::Token::Ptr > () );
       expressions->add( yystack_[0].value.as < Expression::Ptr > () );
       yylhs.value.as < Expressions::Ptr > () = expressions;
   }
-#line 2451 "GrammarParser.cpp"
+#line 2830 "GrammarParser.cpp"
     break;
 
-  case 58:
-#line 716 "../../obj/src/GrammarParser.y"
+  case 71:
+#line 827 "../../obj/src/GrammarParser.y"
   {
       const auto& expressions = CST::make< Expressions >( yylhs.location );
       expressions->add( yystack_[0].value.as < Expression::Ptr > () );
       yylhs.value.as < Expressions::Ptr > () = expressions;
   }
-#line 2461 "GrammarParser.cpp"
+#line 2840 "GrammarParser.cpp"
     break;
 
-  case 59:
-#line 726 "../../obj/src/GrammarParser.y"
+  case 72:
+#line 837 "../../obj/src/GrammarParser.y"
   {
      yylhs.value.as < Expression::Ptr > () = yystack_[0].value.as < Expression::Ptr > ();
   }
-#line 2469 "GrammarParser.cpp"
+#line 2848 "GrammarParser.cpp"
     break;
 
-  case 60:
-#line 730 "../../obj/src/GrammarParser.y"
+  case 73:
+#line 841 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Expression::Ptr > () = yystack_[0].value.as < LetExpression::Ptr > ();
+  }
+#line 2856 "GrammarParser.cpp"
+    break;
+
+  case 74:
+#line 845 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Expression::Ptr > () = yystack_[0].value.as < ConditionalExpression::Ptr > ();
+  }
+#line 2864 "GrammarParser.cpp"
+    break;
+
+  case 75:
+#line 849 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = yystack_[0].value.as < Expression::Ptr > ();
   }
-#line 2477 "GrammarParser.cpp"
+#line 2872 "GrammarParser.cpp"
     break;
 
-  case 61:
-#line 738 "../../obj/src/GrammarParser.y"
+  case 76:
+#line 857 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< CST::EmbracedExpression >( yylhs.location, yystack_[2].value.as < CST::Token::Ptr > (), yystack_[1].value.as < Expression::Ptr > (), yystack_[0].value.as < CST::Token::Ptr > () );
   }
-#line 2485 "GrammarParser.cpp"
+#line 2880 "GrammarParser.cpp"
     break;
 
-  case 62:
-#line 742 "../../obj/src/GrammarParser.y"
+  case 77:
+#line 861 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = yystack_[0].value.as < CallExpression::Ptr > ();
   }
-#line 2493 "GrammarParser.cpp"
+#line 2888 "GrammarParser.cpp"
     break;
 
-  case 63:
-#line 746 "../../obj/src/GrammarParser.y"
+  case 78:
+#line 865 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = yystack_[0].value.as < Literal::Ptr > ();
   }
-#line 2501 "GrammarParser.cpp"
+#line 2896 "GrammarParser.cpp"
     break;
 
-  case 64:
-#line 750 "../../obj/src/GrammarParser.y"
+  case 79:
+#line 869 "../../obj/src/GrammarParser.y"
  {
      yylhs.value.as < Expression::Ptr > () = CST::make< UnaryExpression >( yylhs.location, yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
  }
-#line 2509 "GrammarParser.cpp"
+#line 2904 "GrammarParser.cpp"
     break;
 
-  case 65:
-#line 754 "../../obj/src/GrammarParser.y"
+  case 80:
+#line 873 "../../obj/src/GrammarParser.y"
  {
      yylhs.value.as < Expression::Ptr > () = CST::make< UnaryExpression >( yylhs.location, yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
  }
-#line 2517 "GrammarParser.cpp"
+#line 2912 "GrammarParser.cpp"
     break;
 
-  case 66:
-#line 766 "../../obj/src/GrammarParser.y"
+  case 81:
+#line 881 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < LetExpression::Ptr > () = CST::make< LetExpression >( yylhs.location, yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < VariableBindings::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
+  }
+#line 2920 "GrammarParser.cpp"
+    break;
+
+  case 82:
+#line 889 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < ConditionalExpression::Ptr > () = CST::make< ConditionalExpression >( yylhs.location, yystack_[5].value.as < CST::Token::Ptr > (), yystack_[4].value.as < Expression::Ptr > (), yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
+  }
+#line 2928 "GrammarParser.cpp"
+    break;
+
+  case 83:
+#line 901 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< UnaryExpression >( yylhs.location, yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2525 "GrammarParser.cpp"
+#line 2936 "GrammarParser.cpp"
     break;
 
-  case 67:
-#line 770 "../../obj/src/GrammarParser.y"
+  case 84:
+#line 905 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2533 "GrammarParser.cpp"
+#line 2944 "GrammarParser.cpp"
     break;
 
-  case 68:
-#line 774 "../../obj/src/GrammarParser.y"
+  case 85:
+#line 909 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2541 "GrammarParser.cpp"
+#line 2952 "GrammarParser.cpp"
     break;
 
-  case 69:
-#line 778 "../../obj/src/GrammarParser.y"
+  case 86:
+#line 913 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2549 "GrammarParser.cpp"
+#line 2960 "GrammarParser.cpp"
     break;
 
-  case 70:
-#line 782 "../../obj/src/GrammarParser.y"
+  case 87:
+#line 917 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2557 "GrammarParser.cpp"
+#line 2968 "GrammarParser.cpp"
     break;
 
-  case 71:
-#line 786 "../../obj/src/GrammarParser.y"
+  case 88:
+#line 921 "../../obj/src/GrammarParser.y"
   {
       // equivalent to 'implies'
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2566 "GrammarParser.cpp"
+#line 2977 "GrammarParser.cpp"
     break;
 
-  case 72:
-#line 791 "../../obj/src/GrammarParser.y"
+  case 89:
+#line 926 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2574 "GrammarParser.cpp"
+#line 2985 "GrammarParser.cpp"
     break;
 
-  case 73:
-#line 799 "../../obj/src/GrammarParser.y"
+  case 90:
+#line 930 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2582 "GrammarParser.cpp"
+#line 2993 "GrammarParser.cpp"
     break;
 
-  case 74:
-#line 807 "../../obj/src/GrammarParser.y"
+  case 91:
+#line 934 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2590 "GrammarParser.cpp"
+#line 3001 "GrammarParser.cpp"
     break;
 
-  case 75:
-#line 811 "../../obj/src/GrammarParser.y"
+  case 92:
+#line 938 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2598 "GrammarParser.cpp"
+#line 3009 "GrammarParser.cpp"
     break;
 
-  case 76:
-#line 815 "../../obj/src/GrammarParser.y"
+  case 93:
+#line 942 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2606 "GrammarParser.cpp"
+#line 3017 "GrammarParser.cpp"
     break;
 
-  case 77:
-#line 819 "../../obj/src/GrammarParser.y"
+  case 94:
+#line 946 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2614 "GrammarParser.cpp"
+#line 3025 "GrammarParser.cpp"
     break;
 
-  case 78:
-#line 823 "../../obj/src/GrammarParser.y"
+  case 95:
+#line 950 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2622 "GrammarParser.cpp"
+#line 3033 "GrammarParser.cpp"
     break;
 
-  case 79:
-#line 827 "../../obj/src/GrammarParser.y"
+  case 96:
+#line 954 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2630 "GrammarParser.cpp"
+#line 3041 "GrammarParser.cpp"
     break;
 
-  case 80:
-#line 831 "../../obj/src/GrammarParser.y"
+  case 97:
+#line 958 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2638 "GrammarParser.cpp"
+#line 3049 "GrammarParser.cpp"
     break;
 
-  case 81:
-#line 839 "../../obj/src/GrammarParser.y"
+  case 98:
+#line 962 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
+  }
+#line 3057 "GrammarParser.cpp"
+    break;
+
+  case 99:
+#line 966 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
+  }
+#line 3065 "GrammarParser.cpp"
+    break;
+
+  case 100:
+#line 970 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
+  }
+#line 3073 "GrammarParser.cpp"
+    break;
+
+  case 101:
+#line 974 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
+  }
+#line 3081 "GrammarParser.cpp"
+    break;
+
+  case 102:
+#line 978 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
+  }
+#line 3089 "GrammarParser.cpp"
+    break;
+
+  case 103:
+#line 982 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Expression::Ptr > () = CST::make< BinaryExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
+  }
+#line 3097 "GrammarParser.cpp"
+    break;
+
+  case 104:
+#line 990 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < CallExpression::Ptr > () = yystack_[0].value.as < DirectCallExpression::Ptr > ();
   }
-#line 2646 "GrammarParser.cpp"
+#line 3105 "GrammarParser.cpp"
     break;
 
-  case 82:
-#line 847 "../../obj/src/GrammarParser.y"
+  case 105:
+#line 994 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < CallExpression::Ptr > () = yystack_[0].value.as < MethodCallExpression::Ptr > ();
+  }
+#line 3113 "GrammarParser.cpp"
+    break;
+
+  case 106:
+#line 1002 "../../obj/src/GrammarParser.y"
   {
       const auto& arguments = CST::make< Expressions >( yylhs.location );
       yylhs.value.as < DirectCallExpression::Ptr > () = CST::make< DirectCallExpression >( yylhs.location, yystack_[0].value.as < IdentifierPath::Ptr > (), Token::unresolved(), arguments, Token::unresolved() );
   }
-#line 2655 "GrammarParser.cpp"
+#line 3122 "GrammarParser.cpp"
     break;
 
-  case 83:
-#line 852 "../../obj/src/GrammarParser.y"
+  case 107:
+#line 1007 "../../obj/src/GrammarParser.y"
   {
       const auto& arguments = CST::make< Expressions >( yylhs.location );
       yylhs.value.as < DirectCallExpression::Ptr > () = CST::make< DirectCallExpression >( yylhs.location, yystack_[2].value.as < IdentifierPath::Ptr > (), Token::unresolved(), arguments, Token::unresolved() );
   }
-#line 2664 "GrammarParser.cpp"
+#line 3131 "GrammarParser.cpp"
     break;
 
-  case 84:
-#line 857 "../../obj/src/GrammarParser.y"
+  case 108:
+#line 1012 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < DirectCallExpression::Ptr > () = CST::make< DirectCallExpression >( yylhs.location, yystack_[3].value.as < IdentifierPath::Ptr > (), Token::unresolved(), yystack_[1].value.as < Expressions::Ptr > (), Token::unresolved() );
   }
-#line 2672 "GrammarParser.cpp"
+#line 3139 "GrammarParser.cpp"
     break;
 
-  case 85:
-#line 861 "../../obj/src/GrammarParser.y"
+  case 109:
+#line 1016 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < DirectCallExpression::Ptr > () = nullptr;
   }
-#line 2680 "GrammarParser.cpp"
+#line 3147 "GrammarParser.cpp"
     break;
 
-  case 86:
-#line 953 "../../obj/src/GrammarParser.y"
+  case 110:
+#line 1024 "../../obj/src/GrammarParser.y"
+  {
+      const auto& arguments = CST::make< Expressions >( yylhs.location );
+      yylhs.value.as < MethodCallExpression::Ptr > () = CST::make< MethodCallExpression >( yylhs.location, yystack_[2].value.as < Expression::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Identifier::Ptr > (), Token::unresolved(), arguments, Token::unresolved() );
+  }
+#line 3156 "GrammarParser.cpp"
+    break;
+
+  case 111:
+#line 1029 "../../obj/src/GrammarParser.y"
+  {
+      const auto& arguments = CST::make< Expressions >( yylhs.location );
+      yylhs.value.as < MethodCallExpression::Ptr > () = CST::make< MethodCallExpression >( yylhs.location, yystack_[4].value.as < Expression::Ptr > (), yystack_[3].value.as < CST::Token::Ptr > (), yystack_[2].value.as < Identifier::Ptr > (), Token::unresolved(), arguments, Token::unresolved() );
+  }
+#line 3165 "GrammarParser.cpp"
+    break;
+
+  case 112:
+#line 1034 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < MethodCallExpression::Ptr > () = CST::make< MethodCallExpression >( yylhs.location, yystack_[5].value.as < Expression::Ptr > (), yystack_[4].value.as < CST::Token::Ptr > (), yystack_[3].value.as < Identifier::Ptr > (), Token::unresolved(), yystack_[1].value.as < Expressions::Ptr > (), Token::unresolved() );
+  }
+#line 3173 "GrammarParser.cpp"
+    break;
+
+  case 113:
+#line 1038 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < MethodCallExpression::Ptr > () = nullptr;
+  }
+#line 3181 "GrammarParser.cpp"
+    break;
+
+  case 114:
+#line 1050 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Literal::Ptr > () = yystack_[0].value.as < ValueLiteral::Ptr > ();
   }
-#line 2688 "GrammarParser.cpp"
+#line 3189 "GrammarParser.cpp"
     break;
 
-  case 87:
-#line 957 "../../obj/src/GrammarParser.y"
+  case 115:
+#line 1054 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Literal::Ptr > () = yystack_[0].value.as < ValueLiteral::Ptr > ();
   }
-#line 2696 "GrammarParser.cpp"
+#line 3197 "GrammarParser.cpp"
     break;
 
-  case 88:
-#line 961 "../../obj/src/GrammarParser.y"
+  case 116:
+#line 1058 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Literal::Ptr > () = yystack_[0].value.as < ValueLiteral::Ptr > ();
   }
-#line 2704 "GrammarParser.cpp"
+#line 3205 "GrammarParser.cpp"
     break;
 
-  case 89:
-#line 965 "../../obj/src/GrammarParser.y"
+  case 117:
+#line 1062 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Literal::Ptr > () = yystack_[0].value.as < ValueLiteral::Ptr > ();
   }
-#line 2712 "GrammarParser.cpp"
+#line 3213 "GrammarParser.cpp"
     break;
 
-  case 90:
-#line 969 "../../obj/src/GrammarParser.y"
+  case 118:
+#line 1066 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Literal::Ptr > () = yystack_[0].value.as < SetLiteral::Ptr > ();
   }
-#line 2720 "GrammarParser.cpp"
+#line 3221 "GrammarParser.cpp"
     break;
 
-  case 91:
-#line 973 "../../obj/src/GrammarParser.y"
+  case 119:
+#line 1070 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Literal::Ptr > () = yystack_[0].value.as < ListLiteral::Ptr > ();
+  }
+#line 3229 "GrammarParser.cpp"
+    break;
+
+  case 120:
+#line 1074 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Literal::Ptr > () = yystack_[0].value.as < RangeLiteral::Ptr > ();
+  }
+#line 3237 "GrammarParser.cpp"
+    break;
+
+  case 121:
+#line 1078 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Literal::Ptr > () = yystack_[0].value.as < RecordLiteral::Ptr > ();
   }
-#line 2728 "GrammarParser.cpp"
+#line 3245 "GrammarParser.cpp"
     break;
 
-  case 92:
-#line 977 "../../obj/src/GrammarParser.y"
+  case 122:
+#line 1082 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Literal::Ptr > () = yystack_[0].value.as < MappingLiteral::Ptr > ();
   }
-#line 2736 "GrammarParser.cpp"
+#line 3253 "GrammarParser.cpp"
     break;
 
-  case 93:
-#line 981 "../../obj/src/GrammarParser.y"
+  case 123:
+#line 1086 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Literal::Ptr > () = yystack_[0].value.as < ReferenceLiteral::Ptr > ();
   }
-#line 2744 "GrammarParser.cpp"
+#line 3261 "GrammarParser.cpp"
     break;
 
-  case 94:
-#line 985 "../../obj/src/GrammarParser.y"
+  case 124:
+#line 1090 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Literal::Ptr > () = yystack_[0].value.as < GrammarLiteral::Ptr > ();
   }
-#line 2752 "GrammarParser.cpp"
+#line 3269 "GrammarParser.cpp"
     break;
 
-  case 95:
-#line 993 "../../obj/src/GrammarParser.y"
+  case 125:
+#line 1098 "../../obj/src/GrammarParser.y"
   {
       const auto& value = libstdhl::Type::createBoolean( true );
       yylhs.value.as < ValueLiteral::Ptr > () = CST::make< ValueLiteral >( yylhs.location, value, ValueLiteral::Kind::BOOLEAN );
       yylhs.value.as < ValueLiteral::Ptr > ()->setSpans( yystack_[0].value.as < CST::Token::Ptr > ()->spans() );
   }
-#line 2762 "GrammarParser.cpp"
+#line 3279 "GrammarParser.cpp"
     break;
 
-  case 96:
-#line 999 "../../obj/src/GrammarParser.y"
+  case 126:
+#line 1104 "../../obj/src/GrammarParser.y"
   {
       const auto& value = libstdhl::Type::createBoolean( false );
       yylhs.value.as < ValueLiteral::Ptr > () = CST::make< ValueLiteral >( yylhs.location, value, ValueLiteral::Kind::BOOLEAN );
       yylhs.value.as < ValueLiteral::Ptr > ()->setSpans( yystack_[0].value.as < CST::Token::Ptr > ()->spans() );
   }
-#line 2772 "GrammarParser.cpp"
+#line 3289 "GrammarParser.cpp"
     break;
 
-  case 97:
-#line 1009 "../../obj/src/GrammarParser.y"
+  case 127:
+#line 1114 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < ValueLiteral::Ptr > () = yystack_[0].value.as < ValueLiteral::Ptr > ();
   }
-#line 2780 "GrammarParser.cpp"
+#line 3297 "GrammarParser.cpp"
     break;
 
-  case 98:
-#line 1017 "../../obj/src/GrammarParser.y"
+  case 128:
+#line 1122 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < ValueLiteral::Ptr > () = yystack_[0].value.as < ValueLiteral::Ptr > ();
   }
-#line 2788 "GrammarParser.cpp"
+#line 3305 "GrammarParser.cpp"
     break;
 
-  case 99:
-#line 1021 "../../obj/src/GrammarParser.y"
+  case 129:
+#line 1126 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < ValueLiteral::Ptr > () = yystack_[0].value.as < ValueLiteral::Ptr > ();
   }
-#line 2796 "GrammarParser.cpp"
+#line 3313 "GrammarParser.cpp"
     break;
 
-  case 100:
-#line 1029 "../../obj/src/GrammarParser.y"
+  case 130:
+#line 1134 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < ValueLiteral::Ptr > () = yystack_[0].value.as < ValueLiteral::Ptr > ();
   }
-#line 2804 "GrammarParser.cpp"
+#line 3321 "GrammarParser.cpp"
     break;
 
-  case 101:
-#line 1037 "../../obj/src/GrammarParser.y"
+  case 131:
+#line 1142 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < SetLiteral::Ptr > () = CST::make< SetLiteral >( yylhs.location, yystack_[1].value.as < Expressions::Ptr > () );
       yylhs.value.as < SetLiteral::Ptr > ()->setLeftBracket( yystack_[2].value.as < CST::Token::Ptr > () );
       yylhs.value.as < SetLiteral::Ptr > ()->setRightBracket( yystack_[0].value.as < CST::Token::Ptr > () );
   }
-#line 2814 "GrammarParser.cpp"
+#line 3331 "GrammarParser.cpp"
     break;
 
-  case 102:
-#line 1047 "../../obj/src/GrammarParser.y"
+  case 132:
+#line 1152 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < ListLiteral::Ptr > () = CST::make< ListLiteral >( yylhs.location, yystack_[1].value.as < Expressions::Ptr > () );
+      yylhs.value.as < ListLiteral::Ptr > ()->setLeftBracket( yystack_[2].value.as < CST::Token::Ptr > () );
+      yylhs.value.as < ListLiteral::Ptr > ()->setRightBracket( yystack_[0].value.as < CST::Token::Ptr > () );
+  }
+#line 3341 "GrammarParser.cpp"
+    break;
+
+  case 133:
+#line 1162 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < RangeLiteral::Ptr > () = CST::make< RangeLiteral >( yylhs.location, yystack_[3].value.as < Expression::Ptr > (), yystack_[2].value.as < CST::Token::Ptr > (), yystack_[1].value.as < Expression::Ptr > () );
+      yylhs.value.as < RangeLiteral::Ptr > ()->setLeftBracket( yystack_[4].value.as < CST::Token::Ptr > () );
+      yylhs.value.as < RangeLiteral::Ptr > ()->setRightBracket( yystack_[0].value.as < CST::Token::Ptr > () );
+  }
+#line 3351 "GrammarParser.cpp"
+    break;
+
+  case 134:
+#line 1172 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < RecordLiteral::Ptr > () = CST::make< RecordLiteral >( yylhs.location, yystack_[1].value.as < NamedExpressions::Ptr > () );
       yylhs.value.as < RecordLiteral::Ptr > ()->setLeftBracket( yystack_[2].value.as < CST::Token::Ptr > () );
       yylhs.value.as < RecordLiteral::Ptr > ()->setRightBracket( yystack_[0].value.as < CST::Token::Ptr > () );
   }
-#line 2824 "GrammarParser.cpp"
+#line 3361 "GrammarParser.cpp"
     break;
 
-  case 103:
-#line 1056 "../../obj/src/GrammarParser.y"
+  case 135:
+#line 1181 "../../obj/src/GrammarParser.y"
   {
       auto assignments = yystack_[2].value.as < NamedExpressions::Ptr > ();
       yystack_[0].value.as < NamedExpression::Ptr > ()->setDelimiterToken( yystack_[1].value.as < CST::Token::Ptr > () );
       assignments->add( yystack_[0].value.as < NamedExpression::Ptr > () );
       yylhs.value.as < NamedExpressions::Ptr > () = assignments;
   }
-#line 2835 "GrammarParser.cpp"
+#line 3372 "GrammarParser.cpp"
     break;
 
-  case 104:
-#line 1063 "../../obj/src/GrammarParser.y"
+  case 136:
+#line 1188 "../../obj/src/GrammarParser.y"
   {
       auto assignments = CST::make< NamedExpressions >( yylhs.location );
       assignments->add( yystack_[0].value.as < NamedExpression::Ptr > () );
       yylhs.value.as < NamedExpressions::Ptr > () = assignments;
   }
-#line 2845 "GrammarParser.cpp"
+#line 3382 "GrammarParser.cpp"
     break;
 
-  case 105:
-#line 1072 "../../obj/src/GrammarParser.y"
+  case 137:
+#line 1197 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < NamedExpression::Ptr > () = CST::make< NamedExpression >( yylhs.location, yystack_[2].value.as < Identifier::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2853 "GrammarParser.cpp"
+#line 3390 "GrammarParser.cpp"
     break;
 
-  case 106:
-#line 1080 "../../obj/src/GrammarParser.y"
+  case 138:
+#line 1205 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < MappingLiteral::Ptr > () = CST::make< MappingLiteral >( yylhs.location, yystack_[1].value.as < MappedExpressions::Ptr > () );
       yylhs.value.as < MappingLiteral::Ptr > ()->setLeftBracket( yystack_[2].value.as < CST::Token::Ptr > () );
       yylhs.value.as < MappingLiteral::Ptr > ()->setRightBracket( yystack_[0].value.as < CST::Token::Ptr > () );
   }
-#line 2863 "GrammarParser.cpp"
+#line 3400 "GrammarParser.cpp"
     break;
 
-  case 107:
-#line 1089 "../../obj/src/GrammarParser.y"
+  case 139:
+#line 1214 "../../obj/src/GrammarParser.y"
   {
       auto mappings = yystack_[2].value.as < MappedExpressions::Ptr > ();
       yystack_[0].value.as < MappedExpression::Ptr > ()->setDelimiterToken( yystack_[1].value.as < CST::Token::Ptr > () );
       mappings->add( yystack_[0].value.as < MappedExpression::Ptr > () );
       yylhs.value.as < MappedExpressions::Ptr > () = mappings;
   }
-#line 2874 "GrammarParser.cpp"
+#line 3411 "GrammarParser.cpp"
     break;
 
-  case 108:
-#line 1096 "../../obj/src/GrammarParser.y"
+  case 140:
+#line 1221 "../../obj/src/GrammarParser.y"
   {
       auto mappings = CST::make< MappedExpressions >( yylhs.location );
       mappings->add( yystack_[0].value.as < MappedExpression::Ptr > () );
       yylhs.value.as < MappedExpressions::Ptr > () = mappings;
   }
-#line 2884 "GrammarParser.cpp"
+#line 3421 "GrammarParser.cpp"
     break;
 
-  case 109:
-#line 1105 "../../obj/src/GrammarParser.y"
+  case 141:
+#line 1230 "../../obj/src/GrammarParser.y"
   {
       const auto& expressions = CST::make< Expressions >( yystack_[2].location );
       expressions->add( yystack_[2].value.as < Expression::Ptr > () );
       yylhs.value.as < MappedExpression::Ptr > () = CST::make< MappedExpression >( yylhs.location, Token::unresolved(), expressions, Token::unresolved(), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2894 "GrammarParser.cpp"
+#line 3431 "GrammarParser.cpp"
     break;
 
-  case 110:
-#line 1111 "../../obj/src/GrammarParser.y"
+  case 142:
+#line 1236 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < MappedExpression::Ptr > () = CST::make< MappedExpression >( yylhs.location, yystack_[4].value.as < CST::Token::Ptr > (), yystack_[3].value.as < Expressions::Ptr > (), yystack_[2].value.as < CST::Token::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 2902 "GrammarParser.cpp"
+#line 3439 "GrammarParser.cpp"
     break;
 
-  case 111:
-#line 1119 "../../obj/src/GrammarParser.y"
+  case 143:
+#line 1244 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < ReferenceLiteral::Ptr > () = CST::make< ReferenceLiteral >( yylhs.location, yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < IdentifierPath::Ptr > () );
   }
-#line 2910 "GrammarParser.cpp"
+#line 3447 "GrammarParser.cpp"
     break;
 
-  case 112:
-#line 1127 "../../obj/src/GrammarParser.y"
+  case 144:
+#line 1252 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < GrammarLiteral::Ptr > () = CST::make< GrammarLiteral >( yylhs.location, yystack_[1].value.as < Expressions::Ptr > () );
       yylhs.value.as < GrammarLiteral::Ptr > ()->setLeftBracket( yystack_[2].value.as < CST::Token::Ptr > () );
   }
-#line 2919 "GrammarParser.cpp"
+#line 3456 "GrammarParser.cpp"
     break;
 
-  case 113:
-#line 1136 "../../obj/src/GrammarParser.y"
+  case 145:
+#line 1261 "../../obj/src/GrammarParser.y"
   {
       auto terminals = yystack_[1].value.as < Expressions::Ptr > ();
       terminals->add( yystack_[0].value.as < Expression::Ptr > () );
       yylhs.value.as < Expressions::Ptr > () = terminals;
   }
-#line 2929 "GrammarParser.cpp"
+#line 3466 "GrammarParser.cpp"
     break;
 
-  case 114:
-#line 1142 "../../obj/src/GrammarParser.y"
+  case 146:
+#line 1267 "../../obj/src/GrammarParser.y"
   {
       auto terminals = CST::make< Expressions >( yylhs.location );
       terminals->add( yystack_[0].value.as < Expression::Ptr > () );
       yylhs.value.as < Expressions::Ptr > () = terminals;
   }
-#line 2939 "GrammarParser.cpp"
+#line 3476 "GrammarParser.cpp"
     break;
 
-  case 115:
-#line 1152 "../../obj/src/GrammarParser.y"
+  case 147:
+#line 1277 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = yystack_[0].value.as < DirectCallExpression::Ptr > ();
   }
-#line 2947 "GrammarParser.cpp"
+#line 3484 "GrammarParser.cpp"
     break;
 
-  case 116:
-#line 1156 "../../obj/src/GrammarParser.y"
+  case 148:
+#line 1281 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = yystack_[0].value.as < ValueLiteral::Ptr > ();
   }
-#line 2955 "GrammarParser.cpp"
+#line 3492 "GrammarParser.cpp"
     break;
 
-  case 117:
-#line 1160 "../../obj/src/GrammarParser.y"
+  case 149:
+#line 1285 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = yystack_[0].value.as < ValueLiteral::Ptr > ();
   }
-#line 2963 "GrammarParser.cpp"
+#line 3500 "GrammarParser.cpp"
     break;
 
-  case 118:
-#line 1164 "../../obj/src/GrammarParser.y"
+  case 150:
+#line 1289 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = yystack_[0].value.as < ValueLiteral::Ptr > ();
   }
-#line 2971 "GrammarParser.cpp"
+#line 3508 "GrammarParser.cpp"
     break;
 
-  case 119:
-#line 1168 "../../obj/src/GrammarParser.y"
+  case 151:
+#line 1293 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Expression::Ptr > () = yystack_[0].value.as < ReferenceLiteral::Ptr > ();
   }
-#line 2979 "GrammarParser.cpp"
+#line 3516 "GrammarParser.cpp"
     break;
 
-  case 120:
-#line 1198 "../../obj/src/GrammarParser.y"
+  case 152:
+#line 1323 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < libscod::CST::Type::Ptr > () = yystack_[0].value.as < libscod::CST::Type::Ptr > ();
   }
-#line 2987 "GrammarParser.cpp"
+#line 3524 "GrammarParser.cpp"
     break;
 
-  case 121:
-#line 1202 "../../obj/src/GrammarParser.y"
+  case 153:
+#line 1327 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < libscod::CST::Type::Ptr > () = yystack_[0].value.as < MappingType::Ptr > ();
   }
-#line 2995 "GrammarParser.cpp"
+#line 3532 "GrammarParser.cpp"
     break;
 
-  case 122:
-#line 1210 "../../obj/src/GrammarParser.y"
+  case 154:
+#line 1335 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < libscod::CST::Type::Ptr > () = CST::make< BasicType >( yylhs.location, yystack_[0].value.as < IdentifierPath::Ptr > () );
   }
-#line 3003 "GrammarParser.cpp"
+#line 3540 "GrammarParser.cpp"
     break;
 
-  case 123:
-#line 1214 "../../obj/src/GrammarParser.y"
+  case 155:
+#line 1339 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < libscod::CST::Type::Ptr > () = yystack_[0].value.as < libscod::CST::Type::Ptr > ();
   }
-#line 3011 "GrammarParser.cpp"
+#line 3548 "GrammarParser.cpp"
     break;
 
-  case 124:
-#line 1222 "../../obj/src/GrammarParser.y"
+  case 156:
+#line 1347 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < libscod::CST::Type::Ptr > () = CST::make< PropertyType >( yylhs.location, yystack_[2].value.as < IdentifierPath::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < ValueLiteral::Ptr > () );
   }
-#line 3019 "GrammarParser.cpp"
+#line 3556 "GrammarParser.cpp"
     break;
 
-  case 125:
-#line 1230 "../../obj/src/GrammarParser.y"
+  case 157:
+#line 1355 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < MappingType::Ptr > () = CST::make< MappingType >( yylhs.location, yystack_[2].value.as < Types::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < libscod::CST::Type::Ptr > () );
   }
-#line 3027 "GrammarParser.cpp"
+#line 3564 "GrammarParser.cpp"
     break;
 
-  case 126:
-#line 1238 "../../obj/src/GrammarParser.y"
+  case 158:
+#line 1363 "../../obj/src/GrammarParser.y"
   {
       auto types = yystack_[2].value.as < Types::Ptr > ();
       yystack_[0].value.as < libscod::CST::Type::Ptr > ()->setDelimiterToken( yystack_[1].value.as < CST::Token::Ptr > () );
       types->add( yystack_[0].value.as < libscod::CST::Type::Ptr > () );
       yylhs.value.as < Types::Ptr > () = types;
   }
-#line 3038 "GrammarParser.cpp"
+#line 3575 "GrammarParser.cpp"
     break;
 
-  case 127:
-#line 1245 "../../obj/src/GrammarParser.y"
+  case 159:
+#line 1370 "../../obj/src/GrammarParser.y"
   {
       auto types = CST::make< Types >( yylhs.location );
       types->add( yystack_[0].value.as < libscod::CST::Type::Ptr > () );
       yylhs.value.as < Types::Ptr > () = types;
   }
-#line 3048 "GrammarParser.cpp"
+#line 3585 "GrammarParser.cpp"
     break;
 
-  case 128:
-#line 1259 "../../obj/src/GrammarParser.y"
+  case 160:
+#line 1384 "../../obj/src/GrammarParser.y"
   {
       auto variableBindings = yystack_[2].value.as < VariableBindings::Ptr > ();
       yystack_[0].value.as < VariableBinding::Ptr > ()->setDelimiterToken( yystack_[1].value.as < CST::Token::Ptr > () );
       variableBindings->add( yystack_[0].value.as < VariableBinding::Ptr > () );
       yylhs.value.as < VariableBindings::Ptr > () = variableBindings;
   }
-#line 3059 "GrammarParser.cpp"
+#line 3596 "GrammarParser.cpp"
     break;
 
-  case 129:
-#line 1266 "../../obj/src/GrammarParser.y"
+  case 161:
+#line 1391 "../../obj/src/GrammarParser.y"
   {
       auto variableBindings = CST::make< VariableBindings >( yylhs.location );
       variableBindings->add( yystack_[0].value.as < VariableBinding::Ptr > () );
       yylhs.value.as < VariableBindings::Ptr > () = variableBindings;
   }
-#line 3069 "GrammarParser.cpp"
+#line 3606 "GrammarParser.cpp"
     break;
 
-  case 130:
-#line 1276 "../../obj/src/GrammarParser.y"
+  case 162:
+#line 1401 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < VariableBinding::Ptr > () = CST::make< VariableBinding >( yylhs.location, yystack_[2].value.as < VariableDefinition::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 3077 "GrammarParser.cpp"
+#line 3614 "GrammarParser.cpp"
     break;
 
-  case 131:
-#line 1284 "../../obj/src/GrammarParser.y"
+  case 163:
+#line 1409 "../../obj/src/GrammarParser.y"
   {
       auto variable = yystack_[0].value.as < VariableDefinition::Ptr > ();
       variable->setAttributes( yystack_[1].value.as < Attributes::Ptr > () );
       yylhs.value.as < VariableDefinition::Ptr > () = variable;
   }
-#line 3087 "GrammarParser.cpp"
+#line 3624 "GrammarParser.cpp"
     break;
 
-  case 132:
-#line 1290 "../../obj/src/GrammarParser.y"
+  case 164:
+#line 1415 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < VariableDefinition::Ptr > () = yystack_[0].value.as < VariableDefinition::Ptr > ();
   }
-#line 3095 "GrammarParser.cpp"
+#line 3632 "GrammarParser.cpp"
     break;
 
-  case 133:
-#line 1298 "../../obj/src/GrammarParser.y"
+  case 165:
+#line 1423 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < VariableDefinition::Ptr > () = yystack_[0].value.as < VariableDefinition::Ptr > ();
   }
-#line 3103 "GrammarParser.cpp"
+#line 3640 "GrammarParser.cpp"
     break;
 
-  case 134:
-#line 1302 "../../obj/src/GrammarParser.y"
+  case 166:
+#line 1427 "../../obj/src/GrammarParser.y"
   {
       const auto unresolvedType = CST::make< UnresolvedType >( yylhs.location );
       yylhs.value.as < VariableDefinition::Ptr > () = CST::make< VariableDefinition >( yylhs.location, yystack_[0].value.as < Identifier::Ptr > (), Token::unresolved(), unresolvedType );
   }
-#line 3112 "GrammarParser.cpp"
+#line 3649 "GrammarParser.cpp"
     break;
 
-  case 135:
-#line 1311 "../../obj/src/GrammarParser.y"
+  case 167:
+#line 1436 "../../obj/src/GrammarParser.y"
   {
       auto variable = CST::make< VariableDefinition >( yylhs.location, yystack_[2].value.as < Identifier::Ptr > (), yystack_[1].value.as < CST::Token::Ptr > (), yystack_[0].value.as < libscod::CST::Type::Ptr > () );
       yylhs.value.as < VariableDefinition::Ptr > () = variable;
   }
-#line 3121 "GrammarParser.cpp"
+#line 3658 "GrammarParser.cpp"
     break;
 
-  case 136:
-#line 1325 "../../obj/src/GrammarParser.y"
+  case 168:
+#line 1450 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Identifier::Ptr > () = yystack_[0].value.as < Identifier::Ptr > ();
   }
-#line 3129 "GrammarParser.cpp"
+#line 3666 "GrammarParser.cpp"
     break;
 
-  case 137:
-#line 1329 "../../obj/src/GrammarParser.y"
+  case 169:
+#line 1454 "../../obj/src/GrammarParser.y"
   {
-      yylhs.value.as < Identifier::Ptr > () = CST::make< Identifier >( yylhs.location, "in" );
+      yylhs.value.as < Identifier::Ptr > () = CST::make< Identifier >( yylhs.location, "instruction" );
       yylhs.value.as < Identifier::Ptr > ()->setSpans( m_lexer.fetchSpansAndReset() );
   }
-#line 3138 "GrammarParser.cpp"
+#line 3675 "GrammarParser.cpp"
     break;
 
-  case 138:
-#line 1338 "../../obj/src/GrammarParser.y"
+  case 170:
+#line 1459 "../../obj/src/GrammarParser.y"
+  {
+      yylhs.value.as < Identifier::Ptr > () = CST::make< Identifier >( yylhs.location, "decoding" );
+      yylhs.value.as < Identifier::Ptr > ()->setSpans( m_lexer.fetchSpansAndReset() );
+  }
+#line 3684 "GrammarParser.cpp"
+    break;
+
+  case 171:
+#line 1468 "../../obj/src/GrammarParser.y"
   {
       auto path = yystack_[2].value.as < IdentifierPath::Ptr > ();
       yystack_[0].value.as < Identifier::Ptr > ()->setNamespaceToken( yystack_[1].value.as < CST::Token::Ptr > () );
       path->addIdentifier( yystack_[0].value.as < Identifier::Ptr > () );
       yylhs.value.as < IdentifierPath::Ptr > () = path;
   }
-#line 3149 "GrammarParser.cpp"
+#line 3695 "GrammarParser.cpp"
     break;
 
-  case 139:
-#line 1345 "../../obj/src/GrammarParser.y"
+  case 172:
+#line 1475 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < IdentifierPath::Ptr > () = CST::make< IdentifierPath >( yylhs.location, yystack_[0].value.as < Identifier::Ptr > () );
   }
-#line 3157 "GrammarParser.cpp"
+#line 3703 "GrammarParser.cpp"
     break;
 
-  case 140:
-#line 1357 "../../obj/src/GrammarParser.y"
+  case 173:
+#line 1487 "../../obj/src/GrammarParser.y"
   {
       auto attributes = yystack_[1].value.as < Attributes::Ptr > ();
       attributes->add( yystack_[0].value.as < Attribute::Ptr > () );
       yylhs.value.as < Attributes::Ptr > () = attributes;
   }
-#line 3167 "GrammarParser.cpp"
+#line 3713 "GrammarParser.cpp"
     break;
 
-  case 141:
-#line 1363 "../../obj/src/GrammarParser.y"
+  case 174:
+#line 1493 "../../obj/src/GrammarParser.y"
   {
       auto attributes = CST::make< Attributes >( yylhs.location );
       attributes->add( yystack_[0].value.as < Attribute::Ptr > () );
       yylhs.value.as < Attributes::Ptr > () = attributes;
   }
-#line 3177 "GrammarParser.cpp"
+#line 3723 "GrammarParser.cpp"
     break;
 
-  case 142:
-#line 1372 "../../obj/src/GrammarParser.y"
+  case 175:
+#line 1502 "../../obj/src/GrammarParser.y"
   {
       auto attribute = yystack_[1].value.as < BasicAttribute::Ptr > ();
       yystack_[1].value.as < BasicAttribute::Ptr > ()->setLeftBrace( yystack_[2].value.as < CST::Token::Ptr > () );
       yystack_[1].value.as < BasicAttribute::Ptr > ()->setRightBrace( yystack_[0].value.as < CST::Token::Ptr > () );
       yylhs.value.as < Attribute::Ptr > () = attribute;
   }
-#line 3188 "GrammarParser.cpp"
+#line 3734 "GrammarParser.cpp"
     break;
 
-  case 143:
-#line 1379 "../../obj/src/GrammarParser.y"
+  case 176:
+#line 1509 "../../obj/src/GrammarParser.y"
   {
       auto attribute = yystack_[1].value.as < ExpressionAttribute::Ptr > ();
       yystack_[1].value.as < ExpressionAttribute::Ptr > ()->setLeftBrace( yystack_[2].value.as < CST::Token::Ptr > () );
       yystack_[1].value.as < ExpressionAttribute::Ptr > ()->setRightBrace( yystack_[0].value.as < CST::Token::Ptr > () );
       yylhs.value.as < Attribute::Ptr > () = attribute;
   }
-#line 3199 "GrammarParser.cpp"
+#line 3745 "GrammarParser.cpp"
     break;
 
-  case 144:
-#line 1386 "../../obj/src/GrammarParser.y"
+  case 177:
+#line 1516 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < Attribute::Ptr > () = nullptr;
   }
-#line 3207 "GrammarParser.cpp"
+#line 3753 "GrammarParser.cpp"
     break;
 
-  case 145:
-#line 1393 "../../obj/src/GrammarParser.y"
+  case 178:
+#line 1523 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < BasicAttribute::Ptr > () = CST::make< BasicAttribute >( yylhs.location, yystack_[0].value.as < Identifier::Ptr > () );
   }
-#line 3215 "GrammarParser.cpp"
+#line 3761 "GrammarParser.cpp"
     break;
 
-  case 146:
-#line 1400 "../../obj/src/GrammarParser.y"
+  case 179:
+#line 1530 "../../obj/src/GrammarParser.y"
   {
       yylhs.value.as < ExpressionAttribute::Ptr > () = CST::make< ExpressionAttribute >( yylhs.location, yystack_[1].value.as < Identifier::Ptr > (), yystack_[0].value.as < Expression::Ptr > () );
   }
-#line 3223 "GrammarParser.cpp"
+#line 3769 "GrammarParser.cpp"
     break;
 
 
-#line 3227 "GrammarParser.cpp"
+#line 3773 "GrammarParser.cpp"
 
             default:
               break;
@@ -3494,274 +4040,361 @@ namespace libscod {
   }
 
 
-  const signed char Parser::yypact_ninf_ = -125;
+  const short Parser::yypact_ninf_ = -173;
 
-  const short Parser::yytable_ninf_ = -136;
+  const short Parser::yytable_ninf_ = -168;
 
   const short
   Parser::yypact_[] =
   {
-       6,  -125,    23,    65,    80,    29,  -125,    47,  -125,  -125,
-     263,    51,    77,  -125,  -125,    13,    13,    13,    13,    13,
-      13,    13,    13,    13,   158,  -125,  -125,  -125,  -125,  -125,
-    -125,  -125,  -125,  -125,  -125,  -125,    67,   251,  -125,  -125,
-    -125,  -125,  -125,   263,   263,   263,   172,   263,   303,  -125,
-    -125,  -125,  -125,   388,  -125,  -125,  -125,  -125,  -125,  -125,
-    -125,  -125,  -125,  -125,  -125,  -125,  -125,  -125,  -125,    70,
-    -125,  -125,    84,    90,    94,    95,   118,   126,   137,   140,
-     132,  -125,   144,   155,   156,  -125,  -125,  -125,  -125,  -125,
-     159,   159,  -125,  -125,  -125,  -125,  -125,    99,  -125,   336,
-     263,    -6,   372,     9,  -125,    46,  -125,   145,   263,   263,
-     263,   263,   263,   263,   263,   263,   263,   263,   263,   263,
-     263,   263,    13,   223,    13,    13,    13,    13,    13,    13,
-     143,    13,   146,   143,   143,  -125,  -125,  -125,    89,   336,
-    -125,   263,   263,  -125,    13,  -125,   303,   263,   425,   402,
-     416,   305,   305,   159,   159,  -125,   434,   434,   154,   154,
-     154,   154,  -125,   151,  -125,   123,   388,  -125,  -125,  -125,
-       2,    31,    25,    32,  -125,    32,   165,    25,   166,   169,
-     263,  -125,  -125,    32,    13,  -125,  -125,  -125,   164,   388,
-     388,  -125,   145,   372,  -125,   388,  -125,  -125,    13,    13,
-     150,   161,   263,   163,   263,  -125,  -125,  -125,   303,  -125,
-    -125,   388,  -125,  -125,    73,   263,    11,    67,  -125,  -125,
-    -125,  -125,  -125,  -125,   176,   388,     5,  -125,   175,  -125,
-    -125,   174,    73,   358,   171,    33,  -125,    67,  -125,  -125,
-    -125,  -125,   263,   163,    73,   263,    13,  -125,   163,  -125,
-    -125,  -125,  -125,   388,  -125,  -125,   388,   178,   201,   163,
-    -125
+       8,  -173,    25,    37,   452,    10,  -173,   -48,  -173,  -173,
+    -173,   367,    16,    50,  -173,  -173,    22,    22,    22,    22,
+      22,    22,    22,    22,    22,    22,    22,    22,   357,  -173,
+    -173,  -173,  -173,  -173,  -173,  -173,  -173,  -173,  -173,  -173,
+    -173,  -173,  -173,   250,   467,  -173,  -173,  -173,    23,   367,
+    -173,  -173,   367,   367,   367,    57,   367,   367,   383,  -173,
+    -173,  -173,  -173,   625,    19,  -173,  -173,  -173,  -173,  -173,
+    -173,  -173,  -173,  -173,  -173,  -173,  -173,  -173,  -173,  -173,
+    -173,  -173,  -173,  -173,     4,  -173,  -173,    47,   108,   113,
+     118,   121,   125,   151,   157,   160,   106,   172,    29,  -173,
+     173,   177,   186,  -173,  -173,  -173,  -173,    31,  -173,   189,
+    -173,  -173,   183,    23,   558,  -173,   198,   198,  -173,  -173,
+    -173,  -173,  -173,    20,  -173,   530,    59,   457,   367,    36,
+     603,   140,  -173,   161,  -173,   187,   367,   367,   367,   367,
+     367,   367,   367,   367,   367,   367,   367,   367,   367,   367,
+     367,   367,   367,   367,   367,   367,    22,    22,   271,    22,
+      22,    22,    22,    22,    22,    22,    22,    22,   179,    22,
+     191,   179,   179,   367,    23,   367,    22,  -173,   192,  -173,
+    -173,  -173,  -173,   367,   367,    45,   530,  -173,   367,  -173,
+      22,  -173,   383,   367,   700,   665,   685,   645,   645,   198,
+     198,   198,   198,  -173,   207,   207,   207,   207,   715,   715,
+     515,   515,   515,   515,   193,  -173,   196,  -173,    53,   625,
+    -173,  -173,  -173,   -11,    34,    97,    40,  -173,    40,   213,
+     225,   227,   -13,   228,   230,   367,  -173,  -173,    40,    22,
+    -173,  -173,  -173,   625,  -173,   625,   231,     0,   625,   500,
+     229,   625,  -173,   187,   603,  -173,   625,   287,  -173,  -173,
+      22,    22,   210,   218,   367,   148,   148,   218,   218,   192,
+    -173,   367,   233,  -173,    94,  -173,  -173,  -173,   383,  -173,
+    -173,   625,  -173,  -173,    23,   367,    41,   250,  -173,  -173,
+    -173,  -173,  -173,  -173,  -173,   232,   267,  -173,  -173,    19,
+     625,  -173,  -173,    33,   583,   226,    93,  -173,   250,  -173,
+    -173,  -173,  -173,   367,    22,   267,  -173,  -173,   148,   148,
+    -173,  -173,  -173,  -173,   625,   242,  -173,  -173,   262,   234,
+     148,  -173,  -173
   };
 
   const unsigned char
   Parser::yydefact_[] =
   {
-       0,     4,     0,     0,     0,     0,   141,     0,   137,   136,
-     145,     0,     0,     1,     9,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,     6,     8,    10,    11,    12,
-      13,    14,    15,    16,    17,    18,     0,     0,     3,   140,
-     144,    96,    95,     0,     0,     0,     0,     0,     0,    97,
-      98,    99,   100,   146,    59,    60,    62,    81,    63,    86,
-      87,    88,    89,    90,    91,    92,    93,    94,   139,    82,
-     142,   143,     0,     0,     0,     0,     0,     0,     0,     0,
-     111,     5,     0,     0,     0,    27,    28,    29,     7,    66,
-      64,    65,   115,   116,   117,   118,   119,     0,   114,     0,
-       0,     0,    58,     0,   104,     0,   108,   139,     0,     0,
+       0,     4,     0,     0,     0,     0,   174,     0,   169,   170,
+     168,   178,     0,     0,     1,     9,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     6,
+       8,    10,    11,    12,    13,    14,    15,    16,    17,    18,
+      19,    20,    21,     0,     0,     3,   173,   177,     0,     0,
+     126,   125,     0,     0,     0,     0,     0,     0,     0,   127,
+     128,   129,   130,   179,    72,    73,    74,    75,    77,   104,
+     105,    78,   114,   115,   116,   117,   118,   119,   120,   121,
+     122,   123,   124,   172,   106,   175,   176,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,     0,   143,     5,
+       0,     0,     0,    34,    35,    36,     7,     0,   161,     0,
+     164,   165,   166,     0,     0,    83,    79,    80,   147,   148,
+     149,   150,   151,     0,   146,     0,     0,    71,     0,     0,
+      71,     0,   136,     0,   140,   172,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,   112,   113,    61,     0,    58,
-     101,     0,     0,   102,     0,   106,     0,     0,    67,    68,
-      69,    70,    71,    72,    73,    74,    75,    76,    77,    78,
-      79,    80,   138,     0,    83,     0,    58,   127,   120,   123,
-      19,     0,   122,    20,   121,    21,     0,     0,   127,     0,
-       0,    30,    31,    32,     0,    38,    39,    40,     0,    57,
-     109,   103,     0,     0,   107,   105,    85,    84,     0,     0,
-       0,     0,     0,     0,     0,   126,   125,   124,     0,    22,
-      23,    24,    49,    50,     0,     0,     0,    25,    43,    44,
-      45,    46,    47,    48,     0,   110,     0,   129,     0,   132,
-     133,   134,     0,     0,     0,     0,    42,    26,    34,    35,
-      36,    37,     0,     0,     0,     0,     0,   131,     0,    52,
-      51,    41,    33,    54,    53,   128,   130,   127,    55,     0,
-      56
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,     0,   163,     0,   144,
+     145,    76,   132,     0,     0,     0,    71,   131,     0,   134,
+       0,   138,     0,     0,    84,    85,    86,    87,    88,    89,
+      90,    91,    92,    93,    94,    95,    96,    97,    98,    99,
+     100,   101,   102,   103,   110,   171,     0,   107,     0,    71,
+     159,   152,   155,    22,     0,   154,    23,   153,    24,     0,
+     159,     0,     0,   159,   159,     0,    37,    38,    39,     0,
+      45,    46,    47,    81,   160,   162,   159,     0,    70,     0,
+       0,   141,   135,     0,     0,   139,   137,     0,   109,   108,
+       0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+     133,     0,     0,   111,     0,   158,   157,   156,     0,    25,
+      26,    27,    61,    62,     0,     0,     0,    28,    54,    55,
+      56,    57,    58,    59,    60,    65,    30,    32,    33,    82,
+     142,   113,   112,     0,     0,     0,     0,    53,    29,    41,
+      42,    43,    44,     0,     0,    31,    49,    50,     0,     0,
+      64,    63,    52,    40,    67,     0,    48,    66,    68,     0,
+       0,    51,    69
   };
 
   const short
   Parser::yypgoto_[] =
   {
-    -125,  -125,  -125,  -125,   206,   195,  -125,  -125,  -125,  -125,
-    -125,  -125,  -125,  -125,  -125,  -125,  -125,  -125,    -2,   200,
-     202,   203,  -125,  -119,  -125,  -125,  -125,  -125,  -125,  -125,
-     -67,    -8,  -125,  -125,  -125,   -42,  -125,  -125,   -43,   -35,
-     -24,   -11,   108,  -125,    98,    48,  -125,   102,    21,  -125,
-    -125,   153,  -118,  -124,   124,   128,  -125,  -125,    17,  -125,
-      30,  -125,    -1,    20,     0,     1,  -125,  -125
+    -173,  -173,  -173,  -173,   273,   251,  -173,  -173,  -173,  -173,
+    -173,  -173,  -173,  -173,  -173,  -173,  -173,  -173,  -173,  -173,
+    -173,    -6,   260,   263,   266,  -173,    -4,  -173,  -173,  -108,
+    -173,  -173,   -12,  -173,  -173,  -173,  -173,   -53,    -9,  -172,
+    -173,  -173,  -173,  -173,   -52,  -173,  -173,  -173,   -54,   -47,
+     -46,    14,  -173,  -173,   146,  -173,   128,   -87,  -173,   127,
+      24,  -173,  -173,   197,    64,  -157,  -173,   163,  -173,    49,
+     150,  -173,   216,  -173,    -2,    30,   159,     7,  -173,  -173
   };
 
   const short
   Parser::yydefgoto_[] =
   {
-      -1,     3,     4,    24,    25,    26,    27,    28,    29,    30,
-     209,    31,    32,    33,    34,   181,    35,   237,   238,   239,
-     240,   241,   235,   217,   218,   219,   220,   221,   222,   223,
-     101,   166,    54,    55,    56,    57,    58,    59,    60,    61,
-      62,    63,    64,   103,   104,    65,   105,   106,    66,    67,
-      97,    98,   167,   168,   169,   174,   171,   226,   227,   228,
-     229,   230,    68,    69,    37,     6,    11,    12
+      -1,     3,     4,    28,    29,    30,    31,    32,    33,    34,
+     279,    35,    36,    37,    38,    39,    40,    41,   236,    42,
+     308,   309,   310,   311,   312,   315,   316,   317,   306,   287,
+     288,   289,   290,   291,   292,   293,   294,   129,   219,    64,
+      65,    66,    67,    68,    69,    70,    71,    72,    73,    74,
+      75,    76,    77,    78,    79,   131,   132,    80,   133,   134,
+      81,    82,   123,   124,   220,   221,   222,   227,   224,   107,
+     108,   109,   110,   111,    83,    84,   113,     6,    12,    13
   };
 
   const short
   Parser::yytable_[] =
   {
-       5,    10,    53,    93,    92,   179,    39,   173,   175,     1,
-     178,    94,   234,   183,    72,    73,    74,    75,    76,    77,
-      78,    79,    95,   243,     7,    36,   212,   213,   214,     8,
-     215,     8,    38,   138,  -121,    89,    90,    91,    39,    99,
-     102,     8,  -121,    80,   140,    36,   141,   107,   212,   213,
-     214,     8,   215,     2,    93,    92,   165,   244,    36,   143,
-     216,   144,    94,   198,  -127,    13,   200,    96,     9,   122,
-       9,   199,  -127,    95,   205,   206,     2,    82,    83,    84,
-       9,    14,   216,   250,    15,    16,    17,    18,    19,    20,
-       9,     8,   139,    21,    22,    40,   145,   236,   146,    70,
-     148,   149,   150,   151,   152,   153,   154,   155,   156,   157,
-     158,   159,   160,   161,   122,   123,   251,     8,    96,   182,
-       2,   162,   186,   187,   254,    71,   124,     2,   257,   258,
-       9,    23,   125,   189,   190,   188,   126,   127,   193,   195,
-     260,   141,   135,   192,   172,   172,   172,   177,   172,   172,
-      23,   172,    49,    50,    51,    52,     9,   207,    -2,    14,
-     128,   224,    15,    16,    17,    18,    19,    20,   129,   197,
-     130,    21,    22,   131,   224,   141,   122,   132,   212,   213,
-     214,     8,   215,   192,   113,   114,   115,   147,   133,   134,
-       8,   115,   180,   224,   211,   184,   225,   196,   201,   202,
-     193,   224,   203,    49,   204,     2,   224,   233,   245,    23,
-     208,  -135,   216,   231,   232,   242,   246,   224,   172,   172,
-       9,   249,   259,    23,   163,    49,    50,    51,    52,     9,
-      81,   231,    88,    39,   253,   252,    85,   256,    86,    87,
-     185,     8,   191,   231,   232,    41,    42,    43,   194,   210,
-     136,   176,   170,    44,    45,    15,    16,    17,    18,    19,
-      20,   255,   247,     0,    21,    22,   172,    46,    47,   164,
-       0,     0,    48,     0,    23,     0,    49,    50,    51,    52,
-       9,     8,     0,     0,     0,    41,    42,    43,     0,     0,
-       0,     0,     0,    44,    45,     0,     0,     0,     2,     0,
-       0,     0,    23,     0,     0,     0,     0,    46,    47,     0,
-       0,     0,    48,     0,    23,     0,    49,    50,    51,    52,
-       9,     8,     0,     0,     0,    41,    42,    43,     0,     0,
-     108,   109,   110,    44,    45,   113,   114,   115,   116,   117,
-     118,   119,   120,   121,     0,     0,     0,    46,   100,     0,
-       0,     0,    48,     0,    23,     0,    49,    50,    51,    52,
-       9,   108,   109,   110,   111,   112,   113,   114,   115,   116,
-     117,   118,   119,   120,   121,     0,     0,     0,   248,     0,
-       0,     0,   137,   108,   109,   110,   111,   112,   113,   114,
-     115,   116,   117,   118,   119,   120,   121,   108,   109,   110,
-     111,   112,   113,   114,   115,   116,   117,   118,   119,   120,
-     121,     0,   142,   108,   109,   110,   111,   112,   113,   114,
-     115,   116,   117,   118,   119,   120,   121,   108,     0,   110,
-       0,     0,   113,   114,   115,   116,   117,   118,   119,   120,
-     121,   108,     0,     0,     0,     0,   113,   114,   115,   116,
-     117,   118,   119,   120,   121,   113,   114,   115,   116,   117,
-     118,   119,   120,   121,   113,   114,   115,     0,     0,   118,
-     119,   120,   121
+      11,   119,    63,   118,   126,   229,   247,   231,   120,   121,
+      47,     1,    46,    45,    87,    88,    89,    90,    91,    92,
+      93,    94,    95,    96,    97,   269,     7,  -153,    43,     8,
+     266,     8,     8,     9,     8,     9,     9,    14,     9,  -153,
+     114,   157,   305,   115,   116,   117,   112,   125,   127,   130,
+       8,    46,    43,   173,     9,   318,   135,    98,   157,   158,
+     282,   283,   284,   156,   285,     2,     8,     2,    43,   119,
+       9,   118,   260,   179,    85,   185,   120,   121,  -159,   122,
+       2,    27,   156,   157,   261,    59,    60,    61,    62,    10,
+    -159,    10,    10,   174,    10,   174,   187,   299,   183,   159,
+     286,   250,     8,   275,   276,   218,     9,   183,    86,   259,
+      10,   112,   282,   283,   284,   183,   285,   182,    27,   186,
+      46,   183,    59,    60,    61,    62,    10,   194,   195,   196,
+     197,   198,   199,   200,   201,   202,   203,   204,   205,   206,
+     207,   208,   209,   210,   211,   212,   213,   122,   262,   168,
+     302,   157,   286,   321,   214,   215,   183,     8,   296,     5,
+     160,     9,    10,    44,   243,   161,   245,   282,   283,   284,
+     162,   285,   112,   163,   248,   249,   280,   164,   307,   251,
+     297,   298,   237,   254,   256,   241,   242,    44,   253,   225,
+     225,   225,   225,   225,   225,   232,   225,   225,   322,   225,
+     189,     8,   190,   165,   274,     9,   225,   286,   277,   166,
+     327,   328,   167,   295,   295,   169,   170,    10,    50,    51,
+     171,   191,   332,   192,   226,   228,    53,   230,    54,   172,
+     233,   234,   175,   238,   295,   176,   145,   253,   235,   193,
+     246,   141,   142,   143,   144,   145,    55,    56,   257,    57,
+     239,    58,   258,    27,   295,   281,   263,    59,    60,    61,
+      62,    10,   300,   100,   101,   102,   295,   295,   264,   254,
+     265,   267,   216,   268,  -167,    59,   304,   278,   295,   271,
+       8,   313,   112,   314,     9,   329,   320,   330,   272,   301,
+     225,   225,    48,   286,    49,   106,     8,    50,    51,    52,
+       9,    99,   323,   103,   324,    53,   104,    54,    48,   105,
+      49,   326,   325,    50,    51,    52,   240,   331,   252,   255,
+     180,    53,   223,    54,   244,    55,    56,   217,    57,   177,
+      58,     0,    27,   303,     0,     0,    59,    60,    61,    62,
+      10,    55,    56,   273,    57,     0,    58,     0,    27,     0,
+       0,     0,    59,    60,    61,    62,    10,    -2,    15,     0,
+       0,    16,    17,    18,    19,    20,    21,    22,    23,    24,
+       0,     0,     0,     0,    25,    26,     8,     0,     0,     0,
+       9,     0,     0,     0,     0,     0,     0,     0,    48,     0,
+      49,     0,     8,    50,    51,    52,     9,     0,     0,     0,
+       0,    53,     0,    54,    48,     0,    49,     0,     0,    50,
+      51,    52,     0,     0,     2,     0,     0,    53,    27,    54,
+       0,    55,    56,     0,    57,     0,    58,     0,    27,     0,
+       0,     0,    59,    60,    61,    62,    10,    55,   128,     0,
+      57,     0,    58,     0,    27,     0,     0,     0,    59,    60,
+      61,    62,    10,    15,     0,     0,    16,    17,    18,    19,
+      20,    21,    22,    23,    24,     0,     0,     0,     0,    25,
+      26,    16,    17,    18,    19,    20,    21,    22,    23,    24,
+       0,     0,     0,     0,    25,    26,   136,   137,   138,   139,
+     140,   141,   142,   143,   144,   145,   146,   147,   148,   149,
+     150,   151,   152,   153,   154,   155,     0,     0,     0,     2,
+       0,     0,     0,    27,     0,     0,     0,     0,     0,     0,
+       0,   184,     0,     0,     2,     0,     0,     0,    27,   136,
+     137,   138,   139,   140,   141,   142,   143,   144,   145,   146,
+     147,   148,   149,   150,   151,   152,   153,   154,   155,   141,
+     142,   143,   144,   145,   146,   147,   148,   149,   270,   136,
+     137,   138,   139,   140,   141,   142,   143,   144,   145,   146,
+     147,   148,   149,   150,   151,   152,   153,   154,   155,     0,
+       0,     0,   178,     0,     0,     0,   181,   136,   137,   138,
+     139,   140,   141,   142,   143,   144,   145,   146,   147,   148,
+     149,   150,   151,   152,   153,   154,   155,   319,     0,     0,
+       0,     0,   136,   137,   138,   139,   140,   141,   142,   143,
+     144,   145,   146,   147,   148,   149,   150,   151,   152,   153,
+     154,   155,   136,   137,   138,   139,   140,   141,   142,   143,
+     144,   145,   146,   147,   148,   149,   150,   151,   152,   153,
+     154,   155,     0,   188,   136,   137,   138,   139,   140,   141,
+     142,   143,   144,   145,   146,   147,   148,   149,   150,   151,
+     152,   153,   154,   155,   136,   137,   138,     0,     0,   141,
+     142,   143,   144,   145,   146,   147,   148,   149,   150,   151,
+     152,   153,   154,   155,   136,     0,   138,     0,     0,   141,
+     142,   143,   144,   145,   146,   147,   148,   149,   150,   151,
+     152,   153,   154,   155,   136,     0,     0,     0,     0,   141,
+     142,   143,   144,   145,   146,   147,   148,   149,   150,   151,
+     152,   153,   154,   155,   141,   142,   143,   144,   145,   146,
+     147,   148,   149,   150,   151,   152,   153,   154,   155,   141,
+     142,   143,   144,   145,   146,   147,   148,   149,     0,     0,
+     152,   153,   154,   155
   };
 
   const short
   Parser::yycheck_[] =
   {
-       0,     2,    10,    46,    46,   129,     5,   125,   126,     3,
-     128,    46,     1,   131,    15,    16,    17,    18,    19,    20,
-      21,    22,    46,    18,     1,     4,    15,    16,    17,    18,
-      19,    18,     3,   100,    32,    43,    44,    45,    37,    47,
-      48,    18,    40,    23,    50,    24,    52,    48,    15,    16,
-      17,    18,    19,    47,    97,    97,   123,    52,    37,    50,
-      49,    52,    97,    32,    32,     0,    41,    46,    57,    44,
-      57,    40,    40,    97,   198,   199,    47,    10,    11,    12,
-      57,     1,    49,    50,     4,     5,     6,     7,     8,     9,
-      57,    18,   100,    13,    14,    48,    50,   216,    52,    48,
-     108,   109,   110,   111,   112,   113,   114,   115,   116,   117,
-     118,   119,   120,   121,    44,    45,   235,    18,    97,   130,
-      47,   122,   133,   134,   243,    48,    42,    47,   246,   248,
-      57,    51,    42,   141,   142,    46,    42,    42,   146,   147,
-     259,    52,    43,   144,   124,   125,   126,   127,   128,   129,
-      51,   131,    53,    54,    55,    56,    57,   200,     0,     1,
-      42,   203,     4,     5,     6,     7,     8,     9,    42,    46,
-      33,    13,    14,    33,   216,    52,    44,    33,    15,    16,
-      17,    18,    19,   184,    30,    31,    32,    42,    33,    33,
-      18,    32,    49,   235,   202,    49,   204,    46,    33,    33,
-     208,   243,    33,    53,    40,    47,   248,   215,    33,    51,
-      49,    33,    49,   214,   214,    39,    42,   259,   198,   199,
-      57,    50,    21,    51,     1,    53,    54,    55,    56,    57,
-      24,   232,    37,   232,   242,   237,    36,   245,    36,    36,
-     132,    18,   144,   244,   244,    22,    23,    24,   146,   201,
-      97,   127,   124,    30,    31,     4,     5,     6,     7,     8,
-       9,   244,   232,    -1,    13,    14,   246,    44,    45,    46,
-      -1,    -1,    49,    -1,    51,    -1,    53,    54,    55,    56,
-      57,    18,    -1,    -1,    -1,    22,    23,    24,    -1,    -1,
-      -1,    -1,    -1,    30,    31,    -1,    -1,    -1,    47,    -1,
-      -1,    -1,    51,    -1,    -1,    -1,    -1,    44,    45,    -1,
-      -1,    -1,    49,    -1,    51,    -1,    53,    54,    55,    56,
-      57,    18,    -1,    -1,    -1,    22,    23,    24,    -1,    -1,
-      25,    26,    27,    30,    31,    30,    31,    32,    33,    34,
-      35,    36,    37,    38,    -1,    -1,    -1,    44,    45,    -1,
-      -1,    -1,    49,    -1,    51,    -1,    53,    54,    55,    56,
-      57,    25,    26,    27,    28,    29,    30,    31,    32,    33,
-      34,    35,    36,    37,    38,    -1,    -1,    -1,    20,    -1,
-      -1,    -1,    46,    25,    26,    27,    28,    29,    30,    31,
-      32,    33,    34,    35,    36,    37,    38,    25,    26,    27,
-      28,    29,    30,    31,    32,    33,    34,    35,    36,    37,
-      38,    -1,    40,    25,    26,    27,    28,    29,    30,    31,
-      32,    33,    34,    35,    36,    37,    38,    25,    -1,    27,
-      -1,    -1,    30,    31,    32,    33,    34,    35,    36,    37,
-      38,    25,    -1,    -1,    -1,    -1,    30,    31,    32,    33,
-      34,    35,    36,    37,    38,    30,    31,    32,    33,    34,
-      35,    36,    37,    38,    30,    31,    32,    -1,    -1,    35,
-      36,    37,    38
+       2,    55,    11,    55,    57,   162,   178,   164,    55,    55,
+      58,     3,     5,     3,    16,    17,    18,    19,    20,    21,
+      22,    23,    24,    25,    26,    25,     1,    38,     4,     9,
+      43,     9,     9,    13,     9,    13,    13,     0,    13,    50,
+      49,    54,     1,    52,    53,    54,    48,    56,    57,    58,
+       9,    44,    28,    22,    13,    22,    58,    27,    54,    55,
+      19,    20,    21,    63,    23,    57,     9,    57,    44,   123,
+      13,   123,    38,    53,    58,   128,   123,   123,    38,    55,
+      57,    61,    63,    54,    50,    65,    66,    67,    68,    69,
+      50,    69,    69,    62,    69,    62,    60,   269,    62,    52,
+      59,    56,     9,   260,   261,   158,    13,    62,    58,    56,
+      69,   113,    19,    20,    21,    62,    23,    58,    61,   128,
+     113,    62,    65,    66,    67,    68,    69,   136,   137,   138,
+     139,   140,   141,   142,   143,   144,   145,   146,   147,   148,
+     149,   150,   151,   152,   153,   154,   155,   123,    51,    43,
+      56,    54,    59,    60,   156,   157,    62,     9,   266,     0,
+      52,    13,    69,     4,   173,    52,   175,    19,    20,    21,
+      52,    23,   174,    52,   183,   184,   263,    52,   286,   188,
+     267,   268,   168,   192,   193,   171,   172,    28,   190,   159,
+     160,   161,   162,   163,   164,   165,   166,   167,   306,   169,
+      60,     9,    62,    52,   257,    13,   176,    59,   262,    52,
+     318,   319,    52,   265,   266,    43,    43,    69,    26,    27,
+      43,    60,   330,    62,   160,   161,    34,   163,    36,    43,
+     166,   167,    43,   169,   286,    52,    38,   239,    59,    52,
+     176,    34,    35,    36,    37,    38,    54,    55,    55,    57,
+      59,    59,    56,    61,   306,   264,    43,    65,    66,    67,
+      68,    69,   271,    13,    14,    15,   318,   319,    43,   278,
+      43,    43,     1,    43,    43,    65,   285,    59,   330,    50,
+       9,    49,   284,    16,    13,    43,    60,    25,     1,    56,
+     260,   261,    21,    59,    23,    44,     9,    26,    27,    28,
+      13,    28,   308,    43,   313,    34,    43,    36,    21,    43,
+      23,   315,   314,    26,    27,    28,   170,   329,   190,   192,
+     123,    34,   159,    36,   174,    54,    55,    56,    57,   113,
+      59,    -1,    61,   284,    -1,    -1,    65,    66,    67,    68,
+      69,    54,    55,    56,    57,    -1,    59,    -1,    61,    -1,
+      -1,    -1,    65,    66,    67,    68,    69,     0,     1,    -1,
+      -1,     4,     5,     6,     7,     8,     9,    10,    11,    12,
+      -1,    -1,    -1,    -1,    17,    18,     9,    -1,    -1,    -1,
+      13,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    21,    -1,
+      23,    -1,     9,    26,    27,    28,    13,    -1,    -1,    -1,
+      -1,    34,    -1,    36,    21,    -1,    23,    -1,    -1,    26,
+      27,    28,    -1,    -1,    57,    -1,    -1,    34,    61,    36,
+      -1,    54,    55,    -1,    57,    -1,    59,    -1,    61,    -1,
+      -1,    -1,    65,    66,    67,    68,    69,    54,    55,    -1,
+      57,    -1,    59,    -1,    61,    -1,    -1,    -1,    65,    66,
+      67,    68,    69,     1,    -1,    -1,     4,     5,     6,     7,
+       8,     9,    10,    11,    12,    -1,    -1,    -1,    -1,    17,
+      18,     4,     5,     6,     7,     8,     9,    10,    11,    12,
+      -1,    -1,    -1,    -1,    17,    18,    29,    30,    31,    32,
+      33,    34,    35,    36,    37,    38,    39,    40,    41,    42,
+      43,    44,    45,    46,    47,    48,    -1,    -1,    -1,    57,
+      -1,    -1,    -1,    61,    -1,    -1,    -1,    -1,    -1,    -1,
+      -1,    64,    -1,    -1,    57,    -1,    -1,    -1,    61,    29,
+      30,    31,    32,    33,    34,    35,    36,    37,    38,    39,
+      40,    41,    42,    43,    44,    45,    46,    47,    48,    34,
+      35,    36,    37,    38,    39,    40,    41,    42,    58,    29,
+      30,    31,    32,    33,    34,    35,    36,    37,    38,    39,
+      40,    41,    42,    43,    44,    45,    46,    47,    48,    -1,
+      -1,    -1,    24,    -1,    -1,    -1,    56,    29,    30,    31,
+      32,    33,    34,    35,    36,    37,    38,    39,    40,    41,
+      42,    43,    44,    45,    46,    47,    48,    24,    -1,    -1,
+      -1,    -1,    29,    30,    31,    32,    33,    34,    35,    36,
+      37,    38,    39,    40,    41,    42,    43,    44,    45,    46,
+      47,    48,    29,    30,    31,    32,    33,    34,    35,    36,
+      37,    38,    39,    40,    41,    42,    43,    44,    45,    46,
+      47,    48,    -1,    50,    29,    30,    31,    32,    33,    34,
+      35,    36,    37,    38,    39,    40,    41,    42,    43,    44,
+      45,    46,    47,    48,    29,    30,    31,    -1,    -1,    34,
+      35,    36,    37,    38,    39,    40,    41,    42,    43,    44,
+      45,    46,    47,    48,    29,    -1,    31,    -1,    -1,    34,
+      35,    36,    37,    38,    39,    40,    41,    42,    43,    44,
+      45,    46,    47,    48,    29,    -1,    -1,    -1,    -1,    34,
+      35,    36,    37,    38,    39,    40,    41,    42,    43,    44,
+      45,    46,    47,    48,    34,    35,    36,    37,    38,    39,
+      40,    41,    42,    43,    44,    45,    46,    47,    48,    34,
+      35,    36,    37,    38,    39,    40,    41,    42,    -1,    -1,
+      45,    46,    47,    48
   };
 
-  const signed char
+  const unsigned char
   Parser::yystos_[] =
   {
-       0,     3,    47,    59,    60,   122,   123,     1,    18,    57,
-     120,   124,   125,     0,     1,     4,     5,     6,     7,     8,
-       9,    13,    14,    51,    61,    62,    63,    64,    65,    66,
-      67,    69,    70,    71,    72,    74,   106,   122,     3,   123,
-      48,    22,    23,    24,    30,    31,    44,    45,    49,    53,
-      54,    55,    56,    89,    90,    91,    92,    93,    94,    95,
-      96,    97,    98,    99,   100,   103,   106,   107,   120,   121,
-      48,    48,   120,   120,   120,   120,   120,   120,   120,   120,
-     121,    62,    10,    11,    12,    77,    78,    79,    63,    89,
-      89,    89,    93,    96,    97,    98,   106,   108,   109,    89,
-      45,    88,    89,   101,   102,   104,   105,   120,    25,    26,
-      27,    28,    29,    30,    31,    32,    33,    34,    35,    36,
-      37,    38,    44,    45,    42,    42,    42,    42,    42,    42,
-      33,    33,    33,    33,    33,    43,   109,    46,    88,    89,
-      50,    52,    40,    50,    52,    50,    52,    42,    89,    89,
-      89,    89,    89,    89,    89,    89,    89,    89,    89,    89,
-      89,    89,   120,     1,    46,    88,    89,   110,   111,   112,
-     113,   114,   121,   110,   113,   110,   112,   121,   110,   111,
-      49,    73,    99,   110,    49,   100,    99,    99,    46,    89,
-      89,   102,   120,    89,   105,    89,    46,    46,    32,    40,
-      41,    33,    33,    33,    40,   111,   111,    96,    49,    68,
-     103,    89,    15,    16,    17,    19,    49,    81,    82,    83,
-      84,    85,    86,    87,    93,    89,   115,   116,   117,   118,
-     119,   120,   122,    89,     1,    80,    81,    75,    76,    77,
-      78,    79,    39,    18,    52,    33,    42,   118,    20,    50,
-      50,    81,    76,    89,    81,   116,    89,   110,    81,    21,
-      81
+       0,     3,    57,    71,    72,   146,   147,     1,     9,    13,
+      69,   144,   148,   149,     0,     1,     4,     5,     6,     7,
+       8,     9,    10,    11,    12,    17,    18,    61,    73,    74,
+      75,    76,    77,    78,    79,    81,    82,    83,    84,    85,
+      86,    87,    89,   130,   146,     3,   147,    58,    21,    23,
+      26,    27,    28,    34,    36,    54,    55,    57,    59,    65,
+      66,    67,    68,   108,   109,   110,   111,   112,   113,   114,
+     115,   116,   117,   118,   119,   120,   121,   122,   123,   124,
+     127,   130,   131,   144,   145,    58,    58,   144,   144,   144,
+     144,   144,   144,   144,   144,   144,   144,   144,   145,    74,
+      13,    14,    15,    92,    93,    94,    75,   139,   140,   141,
+     142,   143,   144,   146,   108,   108,   108,   108,   114,   118,
+     119,   120,   130,   132,   133,   108,   107,   108,    55,   107,
+     108,   125,   126,   128,   129,   144,    29,    30,    31,    32,
+      33,    34,    35,    36,    37,    38,    39,    40,    41,    42,
+      43,    44,    45,    46,    47,    48,    63,    54,    55,    52,
+      52,    52,    52,    52,    52,    52,    52,    52,    43,    43,
+      43,    43,    43,    22,    62,    43,    52,   142,    24,    53,
+     133,    56,    58,    62,    64,   107,   108,    60,    50,    60,
+      62,    60,    62,    52,   108,   108,   108,   108,   108,   108,
+     108,   108,   108,   108,   108,   108,   108,   108,   108,   108,
+     108,   108,   108,   108,   144,   144,     1,    56,   107,   108,
+     134,   135,   136,   137,   138,   145,   134,   137,   134,   135,
+     134,   135,   145,   134,   134,    59,    88,   121,   134,    59,
+     124,   121,   121,   108,   140,   108,   134,   109,   108,   108,
+      56,   108,   126,   144,   108,   129,   108,    55,    56,    56,
+      38,    50,    51,    43,    43,    43,    43,    43,    43,    25,
+      58,    50,     1,    56,   107,   135,   135,   118,    59,    80,
+     127,   108,    19,    20,    21,    23,    59,    99,   100,   101,
+     102,   103,   104,   105,   106,   114,    99,   127,   127,   109,
+     108,    56,    56,   139,   108,     1,    98,    99,    90,    91,
+      92,    93,    94,    49,    16,    95,    96,    97,    22,    24,
+      60,    60,    99,    91,   108,   144,    96,    99,    99,    43,
+      25,   102,    99
   };
 
-  const signed char
+  const unsigned char
   Parser::yyr1_[] =
   {
-       0,    58,    59,    60,    60,    61,    61,    62,    62,    62,
-      63,    63,    63,    63,    63,    63,    63,    63,    63,    64,
-      65,    66,    67,    68,    69,    70,    70,    71,    71,    71,
-      72,    73,    74,    75,    75,    76,    76,    76,    77,    78,
-      79,    80,    80,    81,    81,    81,    81,    81,    81,    82,
-      83,    84,    84,    85,    86,    87,    87,    88,    88,    89,
-      89,    90,    90,    90,    90,    90,    91,    91,    91,    91,
-      91,    91,    91,    91,    91,    91,    91,    91,    91,    91,
-      91,    92,    93,    93,    93,    93,    94,    94,    94,    94,
-      94,    94,    94,    94,    94,    95,    95,    96,    97,    97,
-      98,    99,   100,   101,   101,   102,   103,   104,   104,   105,
-     105,   106,   107,   108,   108,   109,   109,   109,   109,   109,
-     110,   110,   111,   111,   112,   113,   114,   114,   115,   115,
-     116,   117,   117,   118,   118,   119,   120,   120,   121,   121,
-     122,   122,   123,   123,   123,   124,   125
+       0,    70,    71,    72,    72,    73,    73,    74,    74,    74,
+      75,    75,    75,    75,    75,    75,    75,    75,    75,    75,
+      75,    75,    76,    77,    78,    79,    80,    81,    82,    82,
+      83,    83,    84,    85,    86,    86,    86,    87,    88,    89,
+      90,    90,    91,    91,    91,    92,    93,    94,    95,    95,
+      96,    97,    98,    98,    99,    99,    99,    99,    99,    99,
+      99,   100,   101,   102,   102,   103,   104,   105,   106,   106,
+     107,   107,   108,   108,   108,   108,   109,   109,   109,   109,
+     109,   110,   111,   112,   112,   112,   112,   112,   112,   112,
+     112,   112,   112,   112,   112,   112,   112,   112,   112,   112,
+     112,   112,   112,   112,   113,   113,   114,   114,   114,   114,
+     115,   115,   115,   115,   116,   116,   116,   116,   116,   116,
+     116,   116,   116,   116,   116,   117,   117,   118,   119,   119,
+     120,   121,   122,   123,   124,   125,   125,   126,   127,   128,
+     128,   129,   129,   130,   131,   132,   132,   133,   133,   133,
+     133,   133,   134,   134,   135,   135,   136,   137,   138,   138,
+     139,   139,   140,   141,   141,   142,   142,   143,   144,   144,
+     144,   145,   145,   146,   146,   147,   147,   147,   148,   149
   };
 
   const signed char
   Parser::yyr2_[] =
   {
        0,     2,     2,     2,     1,     2,     1,     2,     1,     1,
-       1,     1,     1,     1,     1,     1,     1,     1,     1,     4,
-       4,     4,     6,     1,     6,     6,     7,     2,     2,     2,
-       4,     1,     4,     2,     1,     1,     1,     1,     3,     3,
-       3,     2,     1,     1,     1,     1,     1,     1,     1,     1,
-       1,     3,     3,     4,     3,     4,     6,     3,     1,     1,
-       1,     3,     1,     1,     2,     2,     2,     3,     3,     3,
-       3,     3,     3,     3,     3,     3,     3,     3,     3,     3,
-       3,     1,     1,     3,     4,     4,     1,     1,     1,     1,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
-       1,     3,     3,     3,     1,     3,     3,     3,     1,     3,
-       5,     2,     3,     2,     1,     1,     1,     1,     1,     1,
-       1,     1,     1,     1,     3,     3,     3,     1,     3,     1,
-       3,     2,     1,     1,     1,     3,     1,     1,     3,     1,
-       2,     1,     3,     3,     3,     1,     2
+       1,     1,     4,     4,     4,     6,     1,     6,     6,     7,
+       6,     7,     6,     6,     2,     2,     2,     4,     1,     4,
+       2,     1,     1,     1,     1,     3,     3,     3,     2,     1,
+       1,     4,     2,     1,     1,     1,     1,     1,     1,     1,
+       1,     1,     1,     3,     3,     1,     4,     3,     4,     6,
+       3,     1,     1,     1,     1,     1,     3,     1,     1,     2,
+       2,     4,     6,     2,     3,     3,     3,     3,     3,     3,
+       3,     3,     3,     3,     3,     3,     3,     3,     3,     3,
+       3,     3,     3,     3,     1,     1,     1,     3,     4,     4,
+       3,     5,     6,     6,     1,     1,     1,     1,     1,     1,
+       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
+       1,     3,     3,     5,     3,     3,     1,     3,     3,     3,
+       1,     3,     5,     2,     3,     2,     1,     1,     1,     1,
+       1,     1,     1,     1,     1,     1,     3,     3,     3,     1,
+       3,     1,     3,     2,     1,     1,     1,     3,     1,     1,
+       1,     3,     1,     2,     1,     3,     3,     3,     1,     2
   };
 
 
@@ -3773,26 +4406,32 @@ namespace libscod {
   {
   "\"end of file\"", "error", "$undefined", "\"SCOD\"", "\"memory\"",
   "\"register\"", "\"field\"", "\"format\"", "\"buffer\"",
-  "\"instruction\"", "\"decoding\"", "\"syntax\"", "\"expansion\"",
+  "\"instruction\"", "\"microprocessor\"", "\"cache\"", "\"interconnect\"",
+  "\"decoding\"", "\"syntax\"", "\"expansion\"", "\"stage\"",
   "\"enumeration\"", "\"using\"", "\"skip\"", "\"abstract\"", "\"let\"",
   "\"in\"", "\"if\"", "\"then\"", "\"else\"", "\"false\"", "\"true\"",
   "\"not\"", "\"and\"", "\"or\"", "\"xor\"", "\"implies\"", "\"=>\"",
-  "\"+\"", "\"-\"", "\"*\"", "\"=\"", "\"!=\"", "\"<\"", "\"<=\"", "\">\"",
+  "\"+\"", "\"(+)\"", "\"-\"", "\"(-)\"", "\"*\"", "\"<<\"", "\"(<<)\"",
+  "\">>\"", "\"(>>)\"", "\"=\"", "\"!=\"", "\"<\"", "\"<=\"", "\">\"",
   "\">=\"", "\":=\"", "\"->\"", "\"'\"", "\":\"", "\";\"", "\"::\"",
   "\"(\"", "\")\"", "\"[\"", "\"]\"", "\"{\"", "\"}\"", "\"@\"", "\",\"",
-  "\"integer\"", "\"binary\"", "\"hexadecimal\"", "\"string\"",
-  "\"identifier\"", "$accept", "Specification", "Header", "Definitions",
-  "AttributedDefinition", "Definition", "MemoryDefinition",
+  "\".\"", "\"..\"", "\"integer\"", "\"binary\"", "\"hexadecimal\"",
+  "\"string\"", "\"identifier\"", "$accept", "Specification", "Header",
+  "Definitions", "AttributedDefinition", "Definition", "MemoryDefinition",
   "RegisterDefinition", "FieldDefinition", "FormatDefinition",
   "FormatFields", "BufferDefinition", "InstructionDefinition",
+  "MicroProcessorDefinition", "CacheDefinition", "InterconnectDefinition",
   "OptionDefinition", "EnumerationDefinition", "Enumerators",
-  "UsingDefinition", "Options", "Option", "DecodingOption", "SyntaxOption",
-  "ExpansionOption", "Statements", "Statement", "SkipStatement",
-  "AbstractStatement", "BlockStatement", "LetStatement",
-  "AssignmentStatement", "ConditionalStatement", "Terms", "Term",
-  "Expression", "OperatorExpression", "CallExpression",
-  "DirectCallExpression", "Literal", "BooleanLiteral", "IntegerLiteral",
-  "BinaryLiteral", "StringLiteral", "SetLiteral", "RecordLiteral",
+  "UsingDefinition", "InstructionOptions", "InstructionOption",
+  "DecodingOption", "SyntaxOption", "ExpansionOption",
+  "MicroProcessorOptions", "MicroProcessorOption", "StageOption",
+  "Statements", "Statement", "SkipStatement", "AbstractStatement",
+  "BlockStatement", "CallStatement", "LetStatement", "AssignmentStatement",
+  "ConditionalStatement", "Terms", "Term", "Expression", "LetExpression",
+  "ConditionalExpression", "OperatorExpression", "CallExpression",
+  "DirectCallExpression", "MethodCallExpression", "Literal",
+  "BooleanLiteral", "IntegerLiteral", "BinaryLiteral", "StringLiteral",
+  "SetLiteral", "ListLiteral", "RangeLiteral", "RecordLiteral",
   "Assignments", "Assignment", "MappingLiteral", "Mappings", "Mapping",
   "ReferenceLiteral", "GrammarLiteral", "Terminals", "Terminal", "Type",
   "BasicType", "PropertyType", "MappingType", "ArgumentTypes",
@@ -3805,21 +4444,24 @@ namespace libscod {
   const short
   Parser::yyrline_[] =
   {
-       0,   330,   330,   340,   346,   354,   360,   370,   376,   380,
-     388,   392,   396,   400,   404,   408,   412,   416,   420,   428,
-     436,   448,   456,   463,   471,   479,   484,   492,   496,   500,
-     508,   515,   524,   536,   542,   557,   561,   565,   573,   581,
-     589,   601,   607,   617,   621,   625,   629,   633,   637,   645,
-     653,   662,   666,   675,   683,   691,   696,   708,   715,   725,
-     729,   737,   741,   745,   749,   753,   765,   769,   773,   777,
-     781,   785,   790,   798,   806,   810,   814,   818,   822,   826,
-     830,   838,   846,   851,   856,   860,   952,   956,   960,   964,
-     968,   972,   976,   980,   984,   992,   998,  1008,  1016,  1020,
-    1028,  1036,  1046,  1055,  1062,  1071,  1079,  1088,  1095,  1104,
-    1110,  1118,  1126,  1135,  1141,  1151,  1155,  1159,  1163,  1167,
-    1197,  1201,  1209,  1213,  1221,  1229,  1237,  1244,  1258,  1265,
-    1275,  1283,  1289,  1297,  1301,  1310,  1324,  1328,  1337,  1344,
-    1356,  1362,  1371,  1378,  1385,  1392,  1399
+       0,   365,   365,   375,   381,   389,   395,   405,   411,   415,
+     423,   427,   431,   435,   439,   443,   447,   451,   455,   459,
+     463,   467,   475,   483,   491,   499,   506,   514,   522,   527,
+     535,   540,   548,   556,   564,   568,   572,   580,   587,   596,
+     608,   614,   624,   628,   632,   640,   648,   656,   664,   670,
+     680,   688,   700,   706,   716,   720,   724,   728,   732,   736,
+     740,   748,   756,   765,   769,   778,   786,   794,   802,   807,
+     819,   826,   836,   840,   844,   848,   856,   860,   864,   868,
+     872,   880,   888,   900,   904,   908,   912,   916,   920,   925,
+     929,   933,   937,   941,   945,   949,   953,   957,   961,   965,
+     969,   973,   977,   981,   989,   993,  1001,  1006,  1011,  1015,
+    1023,  1028,  1033,  1037,  1049,  1053,  1057,  1061,  1065,  1069,
+    1073,  1077,  1081,  1085,  1089,  1097,  1103,  1113,  1121,  1125,
+    1133,  1141,  1151,  1161,  1171,  1180,  1187,  1196,  1204,  1213,
+    1220,  1229,  1235,  1243,  1251,  1260,  1266,  1276,  1280,  1284,
+    1288,  1292,  1322,  1326,  1334,  1338,  1346,  1354,  1362,  1369,
+    1383,  1390,  1400,  1408,  1414,  1422,  1426,  1435,  1449,  1453,
+    1458,  1467,  1474,  1486,  1492,  1501,  1508,  1515,  1522,  1529
   };
 
   // Print the state stack on the debug stream.
@@ -3852,11 +4494,11 @@ namespace libscod {
 #endif // YYDEBUG
 
 
-#line 47 "../../obj/src/GrammarParser.y"
+#line 48 "../../obj/src/GrammarParser.y"
 } // libscod
-#line 3858 "GrammarParser.cpp"
+#line 4500 "GrammarParser.cpp"
 
-#line 1405 "../../obj/src/GrammarParser.y"
+#line 1535 "../../obj/src/GrammarParser.y"
 
 
 void Parser::error( const libstdhl::SourceLocation& location, const std::string& message )

@@ -44,7 +44,7 @@
 #ifndef YY_YY_GRAMMARPARSER_TAB_H_INCLUDED
 # define YY_YY_GRAMMARPARSER_TAB_H_INCLUDED
 // "%code requires" blocks.
-#line 60 "../../obj/src/GrammarParser.y"
+#line 61 "../../obj/src/GrammarParser.y"
 
     namespace libscod
     {
@@ -205,7 +205,7 @@
 # define YYDEBUG 1
 #endif
 
-#line 47 "../../obj/src/GrammarParser.y"
+#line 48 "../../obj/src/GrammarParser.y"
 namespace libscod {
 #line 211 "GrammarParser.tab.h"
 
@@ -436,9 +436,13 @@ namespace libscod {
       // "format"
       // "buffer"
       // "instruction"
+      // "microprocessor"
+      // "cache"
+      // "interconnect"
       // "decoding"
       // "syntax"
       // "expansion"
+      // "stage"
       // "enumeration"
       // "using"
       // "skip"
@@ -457,8 +461,14 @@ namespace libscod {
       // "implies"
       // "=>"
       // "+"
+      // "(+)"
       // "-"
+      // "(-)"
       // "*"
+      // "<<"
+      // "(<<)"
+      // ">>"
+      // "(>>)"
       // "="
       // "!="
       // "<"
@@ -479,139 +489,173 @@ namespace libscod {
       // "}"
       // "@"
       // ","
+      // "."
+      // ".."
       char dummy7[sizeof (CST::Token::Ptr)];
 
+      // CacheDefinition
+      char dummy8[sizeof (CacheDefinition::Ptr)];
+
       // CallExpression
-      char dummy8[sizeof (CallExpression::Ptr)];
+      char dummy9[sizeof (CallExpression::Ptr)];
+
+      // CallStatement
+      char dummy10[sizeof (CallStatement::Ptr)];
+
+      // ConditionalExpression
+      char dummy11[sizeof (ConditionalExpression::Ptr)];
 
       // ConditionalStatement
-      char dummy9[sizeof (ConditionalStatement::Ptr)];
+      char dummy12[sizeof (ConditionalStatement::Ptr)];
 
       // DecodingOption
-      char dummy10[sizeof (DecodingOption::Ptr)];
+      char dummy13[sizeof (DecodingOption::Ptr)];
 
       // AttributedDefinition
       // Definition
-      char dummy11[sizeof (Definition::Ptr)];
+      char dummy14[sizeof (Definition::Ptr)];
 
       // Definitions
-      char dummy12[sizeof (Definitions::Ptr)];
+      char dummy15[sizeof (Definitions::Ptr)];
 
       // DirectCallExpression
-      char dummy13[sizeof (DirectCallExpression::Ptr)];
+      char dummy16[sizeof (DirectCallExpression::Ptr)];
 
       // EnumerationDefinition
-      char dummy14[sizeof (EnumerationDefinition::Ptr)];
+      char dummy17[sizeof (EnumerationDefinition::Ptr)];
 
       // ExpansionOption
-      char dummy15[sizeof (ExpansionOption::Ptr)];
+      char dummy18[sizeof (ExpansionOption::Ptr)];
 
       // Term
       // Expression
       // OperatorExpression
       // Terminal
-      char dummy16[sizeof (Expression::Ptr)];
+      char dummy19[sizeof (Expression::Ptr)];
 
       // ExpressionAttribute
-      char dummy17[sizeof (ExpressionAttribute::Ptr)];
+      char dummy20[sizeof (ExpressionAttribute::Ptr)];
 
       // Terms
       // Terminals
-      char dummy18[sizeof (Expressions::Ptr)];
+      char dummy21[sizeof (Expressions::Ptr)];
 
       // FieldDefinition
-      char dummy19[sizeof (FieldDefinition::Ptr)];
+      char dummy22[sizeof (FieldDefinition::Ptr)];
 
       // FormatDefinition
-      char dummy20[sizeof (FormatDefinition::Ptr)];
+      char dummy23[sizeof (FormatDefinition::Ptr)];
 
       // GrammarLiteral
-      char dummy21[sizeof (GrammarLiteral::Ptr)];
+      char dummy24[sizeof (GrammarLiteral::Ptr)];
 
       // Header
-      char dummy22[sizeof (HeaderDefinition::Ptr)];
+      char dummy25[sizeof (HeaderDefinition::Ptr)];
 
       // "identifier"
       // Identifier
-      char dummy23[sizeof (Identifier::Ptr)];
+      char dummy26[sizeof (Identifier::Ptr)];
 
       // IdentifierPath
-      char dummy24[sizeof (IdentifierPath::Ptr)];
+      char dummy27[sizeof (IdentifierPath::Ptr)];
 
       // InstructionDefinition
-      char dummy25[sizeof (InstructionDefinition::Ptr)];
+      char dummy28[sizeof (InstructionDefinition::Ptr)];
+
+      // InterconnectDefinition
+      char dummy29[sizeof (InterconnectDefinition::Ptr)];
+
+      // LetExpression
+      char dummy30[sizeof (LetExpression::Ptr)];
 
       // LetStatement
-      char dummy26[sizeof (LetStatement::Ptr)];
+      char dummy31[sizeof (LetStatement::Ptr)];
+
+      // ListLiteral
+      char dummy32[sizeof (ListLiteral::Ptr)];
 
       // Literal
-      char dummy27[sizeof (Literal::Ptr)];
+      char dummy33[sizeof (Literal::Ptr)];
 
       // Mapping
-      char dummy28[sizeof (MappedExpression::Ptr)];
+      char dummy34[sizeof (MappedExpression::Ptr)];
 
       // Mappings
-      char dummy29[sizeof (MappedExpressions::Ptr)];
+      char dummy35[sizeof (MappedExpressions::Ptr)];
 
       // FormatFields
       // MappingLiteral
-      char dummy30[sizeof (MappingLiteral::Ptr)];
+      char dummy36[sizeof (MappingLiteral::Ptr)];
 
       // MappingType
-      char dummy31[sizeof (MappingType::Ptr)];
+      char dummy37[sizeof (MappingType::Ptr)];
 
       // MemoryDefinition
-      char dummy32[sizeof (MemoryDefinition::Ptr)];
+      char dummy38[sizeof (MemoryDefinition::Ptr)];
+
+      // MethodCallExpression
+      char dummy39[sizeof (MethodCallExpression::Ptr)];
+
+      // MicroProcessorDefinition
+      char dummy40[sizeof (MicroProcessorDefinition::Ptr)];
 
       // Assignment
-      char dummy33[sizeof (NamedExpression::Ptr)];
+      char dummy41[sizeof (NamedExpression::Ptr)];
 
       // Assignments
-      char dummy34[sizeof (NamedExpressions::Ptr)];
+      char dummy42[sizeof (NamedExpressions::Ptr)];
 
-      // Option
-      char dummy35[sizeof (Option::Ptr)];
+      // InstructionOption
+      // MicroProcessorOption
+      char dummy43[sizeof (Option::Ptr)];
 
       // OptionDefinition
-      char dummy36[sizeof (OptionDefinition::Ptr)];
+      char dummy44[sizeof (OptionDefinition::Ptr)];
 
-      // Options
-      char dummy37[sizeof (Options::Ptr)];
+      // InstructionOptions
+      // MicroProcessorOptions
+      char dummy45[sizeof (Options::Ptr)];
+
+      // RangeLiteral
+      char dummy46[sizeof (RangeLiteral::Ptr)];
 
       // RecordLiteral
-      char dummy38[sizeof (RecordLiteral::Ptr)];
+      char dummy47[sizeof (RecordLiteral::Ptr)];
 
       // ReferenceLiteral
-      char dummy39[sizeof (ReferenceLiteral::Ptr)];
+      char dummy48[sizeof (ReferenceLiteral::Ptr)];
 
       // RegisterDefinition
-      char dummy40[sizeof (RegisterDefinition::Ptr)];
+      char dummy49[sizeof (RegisterDefinition::Ptr)];
 
       // Enumerators
       // SetLiteral
-      char dummy41[sizeof (SetLiteral::Ptr)];
+      char dummy50[sizeof (SetLiteral::Ptr)];
 
       // SkipStatement
       // AbstractStatement
-      char dummy42[sizeof (SkipStatement::Ptr)];
+      char dummy51[sizeof (SkipStatement::Ptr)];
 
       // Specification
-      char dummy43[sizeof (Specification::Ptr)];
+      char dummy52[sizeof (Specification::Ptr)];
+
+      // StageOption
+      char dummy53[sizeof (StageOption::Ptr)];
 
       // Statement
-      char dummy44[sizeof (Statement::Ptr)];
+      char dummy54[sizeof (Statement::Ptr)];
 
       // Statements
-      char dummy45[sizeof (Statements::Ptr)];
+      char dummy55[sizeof (Statements::Ptr)];
 
       // SyntaxOption
-      char dummy46[sizeof (SyntaxOption::Ptr)];
+      char dummy56[sizeof (SyntaxOption::Ptr)];
 
       // ArgumentTypes
-      char dummy47[sizeof (Types::Ptr)];
+      char dummy57[sizeof (Types::Ptr)];
 
       // UsingDefinition
-      char dummy48[sizeof (UsingDefinition::Ptr)];
+      char dummy58[sizeof (UsingDefinition::Ptr)];
 
       // "integer"
       // "binary"
@@ -621,23 +665,23 @@ namespace libscod {
       // IntegerLiteral
       // BinaryLiteral
       // StringLiteral
-      char dummy49[sizeof (ValueLiteral::Ptr)];
+      char dummy59[sizeof (ValueLiteral::Ptr)];
 
       // VariableBinding
-      char dummy50[sizeof (VariableBinding::Ptr)];
+      char dummy60[sizeof (VariableBinding::Ptr)];
 
       // VariableBindings
-      char dummy51[sizeof (VariableBindings::Ptr)];
+      char dummy61[sizeof (VariableBindings::Ptr)];
 
       // AttributedVariable
       // Variable
       // TypedVariable
-      char dummy52[sizeof (VariableDefinition::Ptr)];
+      char dummy62[sizeof (VariableDefinition::Ptr)];
 
       // Type
       // BasicType
       // PropertyType
-      char dummy53[sizeof (libscod::CST::Type::Ptr)];
+      char dummy63[sizeof (libscod::CST::Type::Ptr)];
     };
 
     /// The size of the largest semantic type.
@@ -693,54 +737,66 @@ namespace libscod {
         FORMAT = 262,
         BUFFER = 263,
         INSTRUCTION = 264,
-        DECODING = 265,
-        SYNTAX = 266,
-        EXPANSION = 267,
-        ENUMERATION = 268,
-        USING = 269,
-        SKIP = 270,
-        ABSTRACT = 271,
-        LET = 272,
-        IN = 273,
-        IF = 274,
-        THEN = 275,
-        ELSE = 276,
-        FALSE = 277,
-        TRUE = 278,
-        NOT = 279,
-        AND = 280,
-        OR = 281,
-        XOR = 282,
-        IMPLIES = 283,
-        ARROW = 284,
-        PLUS = 285,
-        MINUS = 286,
-        ASTERIX = 287,
-        EQUAL = 288,
-        NEQUAL = 289,
-        LESSER = 290,
-        LESSEQ = 291,
-        GREATER = 292,
-        GREATEREQ = 293,
-        ASSIGNMENT = 294,
-        MAPS = 295,
-        MARK = 296,
-        COLON = 297,
-        SEMICOLON = 298,
-        NAMESPACE = 299,
-        LPAREN = 300,
-        RPAREN = 301,
-        LSQPAREN = 302,
-        RSQPAREN = 303,
-        LCURPAREN = 304,
-        RCURPAREN = 305,
-        AT = 306,
-        COMMA = 307,
-        INTEGER = 308,
-        BINARY = 309,
-        HEXADECIMAL = 310,
-        STRING = 311,
-        IDENTIFIER = 312
+        MICROPROCESSOR = 265,
+        CACHE = 266,
+        INTERCONNECT = 267,
+        DECODING = 268,
+        SYNTAX = 269,
+        EXPANSION = 270,
+        STAGE = 271,
+        ENUMERATION = 272,
+        USING = 273,
+        SKIP = 274,
+        ABSTRACT = 275,
+        LET = 276,
+        IN = 277,
+        IF = 278,
+        THEN = 279,
+        ELSE = 280,
+        FALSE = 281,
+        TRUE = 282,
+        NOT = 283,
+        AND = 284,
+        OR = 285,
+        XOR = 286,
+        IMPLIES = 287,
+        ARROW = 288,
+        PLUS = 289,
+        CARRYPLUS = 290,
+        MINUS = 291,
+        CARRYMINUS = 292,
+        ASTERIX = 293,
+        LSHIFT = 294,
+        RLSHIFT = 295,
+        RSHIFT = 296,
+        RRSHIFT = 297,
+        EQUAL = 298,
+        NEQUAL = 299,
+        LESSER = 300,
+        LESSEQ = 301,
+        GREATER = 302,
+        GREATEREQ = 303,
+        ASSIGNMENT = 304,
+        MAPS = 305,
+        MARK = 306,
+        COLON = 307,
+        SEMICOLON = 308,
+        NAMESPACE = 309,
+        LPAREN = 310,
+        RPAREN = 311,
+        LSQPAREN = 312,
+        RSQPAREN = 313,
+        LCURPAREN = 314,
+        RCURPAREN = 315,
+        AT = 316,
+        COMMA = 317,
+        DOT = 318,
+        DOTDOT = 319,
+        INTEGER = 320,
+        BINARY = 321,
+        HEXADECIMAL = 322,
+        STRING = 323,
+        IDENTIFIER = 324
       };
     };
 
@@ -886,6 +942,19 @@ namespace libscod {
       {}
 #endif
 #if 201103L <= YY_CPLUSPLUS
+      basic_symbol (typename Base::kind_type t, CacheDefinition::Ptr&& v, location_type&& l)
+        : Base (t)
+        , value (std::move (v))
+        , location (std::move (l))
+      {}
+#else
+      basic_symbol (typename Base::kind_type t, const CacheDefinition::Ptr& v, const location_type& l)
+        : Base (t)
+        , value (v)
+        , location (l)
+      {}
+#endif
+#if 201103L <= YY_CPLUSPLUS
       basic_symbol (typename Base::kind_type t, CallExpression::Ptr&& v, location_type&& l)
         : Base (t)
         , value (std::move (v))
@@ -893,6 +962,32 @@ namespace libscod {
       {}
 #else
       basic_symbol (typename Base::kind_type t, const CallExpression::Ptr& v, const location_type& l)
+        : Base (t)
+        , value (v)
+        , location (l)
+      {}
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      basic_symbol (typename Base::kind_type t, CallStatement::Ptr&& v, location_type&& l)
+        : Base (t)
+        , value (std::move (v))
+        , location (std::move (l))
+      {}
+#else
+      basic_symbol (typename Base::kind_type t, const CallStatement::Ptr& v, const location_type& l)
+        : Base (t)
+        , value (v)
+        , location (l)
+      {}
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      basic_symbol (typename Base::kind_type t, ConditionalExpression::Ptr&& v, location_type&& l)
+        : Base (t)
+        , value (std::move (v))
+        , location (std::move (l))
+      {}
+#else
+      basic_symbol (typename Base::kind_type t, const ConditionalExpression::Ptr& v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1120,6 +1215,32 @@ namespace libscod {
       {}
 #endif
 #if 201103L <= YY_CPLUSPLUS
+      basic_symbol (typename Base::kind_type t, InterconnectDefinition::Ptr&& v, location_type&& l)
+        : Base (t)
+        , value (std::move (v))
+        , location (std::move (l))
+      {}
+#else
+      basic_symbol (typename Base::kind_type t, const InterconnectDefinition::Ptr& v, const location_type& l)
+        : Base (t)
+        , value (v)
+        , location (l)
+      {}
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      basic_symbol (typename Base::kind_type t, LetExpression::Ptr&& v, location_type&& l)
+        : Base (t)
+        , value (std::move (v))
+        , location (std::move (l))
+      {}
+#else
+      basic_symbol (typename Base::kind_type t, const LetExpression::Ptr& v, const location_type& l)
+        : Base (t)
+        , value (v)
+        , location (l)
+      {}
+#endif
+#if 201103L <= YY_CPLUSPLUS
       basic_symbol (typename Base::kind_type t, LetStatement::Ptr&& v, location_type&& l)
         : Base (t)
         , value (std::move (v))
@@ -1127,6 +1248,19 @@ namespace libscod {
       {}
 #else
       basic_symbol (typename Base::kind_type t, const LetStatement::Ptr& v, const location_type& l)
+        : Base (t)
+        , value (v)
+        , location (l)
+      {}
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      basic_symbol (typename Base::kind_type t, ListLiteral::Ptr&& v, location_type&& l)
+        : Base (t)
+        , value (std::move (v))
+        , location (std::move (l))
+      {}
+#else
+      basic_symbol (typename Base::kind_type t, const ListLiteral::Ptr& v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1211,6 +1345,32 @@ namespace libscod {
       {}
 #endif
 #if 201103L <= YY_CPLUSPLUS
+      basic_symbol (typename Base::kind_type t, MethodCallExpression::Ptr&& v, location_type&& l)
+        : Base (t)
+        , value (std::move (v))
+        , location (std::move (l))
+      {}
+#else
+      basic_symbol (typename Base::kind_type t, const MethodCallExpression::Ptr& v, const location_type& l)
+        : Base (t)
+        , value (v)
+        , location (l)
+      {}
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      basic_symbol (typename Base::kind_type t, MicroProcessorDefinition::Ptr&& v, location_type&& l)
+        : Base (t)
+        , value (std::move (v))
+        , location (std::move (l))
+      {}
+#else
+      basic_symbol (typename Base::kind_type t, const MicroProcessorDefinition::Ptr& v, const location_type& l)
+        : Base (t)
+        , value (v)
+        , location (l)
+      {}
+#endif
+#if 201103L <= YY_CPLUSPLUS
       basic_symbol (typename Base::kind_type t, NamedExpression::Ptr&& v, location_type&& l)
         : Base (t)
         , value (std::move (v))
@@ -1270,6 +1430,19 @@ namespace libscod {
       {}
 #else
       basic_symbol (typename Base::kind_type t, const Options::Ptr& v, const location_type& l)
+        : Base (t)
+        , value (v)
+        , location (l)
+      {}
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      basic_symbol (typename Base::kind_type t, RangeLiteral::Ptr&& v, location_type&& l)
+        : Base (t)
+        , value (std::move (v))
+        , location (std::move (l))
+      {}
+#else
+      basic_symbol (typename Base::kind_type t, const RangeLiteral::Ptr& v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1348,6 +1521,19 @@ namespace libscod {
       {}
 #else
       basic_symbol (typename Base::kind_type t, const Specification::Ptr& v, const location_type& l)
+        : Base (t)
+        , value (v)
+        , location (l)
+      {}
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      basic_symbol (typename Base::kind_type t, StageOption::Ptr&& v, location_type&& l)
+        : Base (t)
+        , value (std::move (v))
+        , location (std::move (l))
+      {}
+#else
+      basic_symbol (typename Base::kind_type t, const StageOption::Ptr& v, const location_type& l)
         : Base (t)
         , value (v)
         , location (l)
@@ -1506,27 +1692,27 @@ namespace libscod {
         // Type destructor.
 switch (yytype)
     {
-      case 86: // AssignmentStatement
+      case 105: // AssignmentStatement
         value.template destroy< AssignmentStatement::Ptr > ();
         break;
 
-      case 123: // Attribute
+      case 147: // Attribute
         value.template destroy< Attribute::Ptr > ();
         break;
 
-      case 122: // Attributes
+      case 146: // Attributes
         value.template destroy< Attributes::Ptr > ();
         break;
 
-      case 124: // BasicAttribute
+      case 148: // BasicAttribute
         value.template destroy< BasicAttribute::Ptr > ();
         break;
 
-      case 84: // BlockStatement
+      case 102: // BlockStatement
         value.template destroy< BlockStatement::Ptr > ();
         break;
 
-      case 69: // BufferDefinition
+      case 81: // BufferDefinition
         value.template destroy< BufferDefinition::Ptr > ();
         break;
 
@@ -1537,253 +1723,307 @@ switch (yytype)
       case 7: // "format"
       case 8: // "buffer"
       case 9: // "instruction"
-      case 10: // "decoding"
-      case 11: // "syntax"
-      case 12: // "expansion"
-      case 13: // "enumeration"
-      case 14: // "using"
-      case 15: // "skip"
-      case 16: // "abstract"
-      case 17: // "let"
-      case 18: // "in"
-      case 19: // "if"
-      case 20: // "then"
-      case 21: // "else"
-      case 22: // "false"
-      case 23: // "true"
-      case 24: // "not"
-      case 25: // "and"
-      case 26: // "or"
-      case 27: // "xor"
-      case 28: // "implies"
-      case 29: // "=>"
-      case 30: // "+"
-      case 31: // "-"
-      case 32: // "*"
-      case 33: // "="
-      case 34: // "!="
-      case 35: // "<"
-      case 36: // "<="
-      case 37: // ">"
-      case 38: // ">="
-      case 39: // ":="
-      case 40: // "->"
-      case 41: // "'"
-      case 42: // ":"
-      case 43: // ";"
-      case 44: // "::"
-      case 45: // "("
-      case 46: // ")"
-      case 47: // "["
-      case 48: // "]"
-      case 49: // "{"
-      case 50: // "}"
-      case 51: // "@"
-      case 52: // ","
+      case 10: // "microprocessor"
+      case 11: // "cache"
+      case 12: // "interconnect"
+      case 13: // "decoding"
+      case 14: // "syntax"
+      case 15: // "expansion"
+      case 16: // "stage"
+      case 17: // "enumeration"
+      case 18: // "using"
+      case 19: // "skip"
+      case 20: // "abstract"
+      case 21: // "let"
+      case 22: // "in"
+      case 23: // "if"
+      case 24: // "then"
+      case 25: // "else"
+      case 26: // "false"
+      case 27: // "true"
+      case 28: // "not"
+      case 29: // "and"
+      case 30: // "or"
+      case 31: // "xor"
+      case 32: // "implies"
+      case 33: // "=>"
+      case 34: // "+"
+      case 35: // "(+)"
+      case 36: // "-"
+      case 37: // "(-)"
+      case 38: // "*"
+      case 39: // "<<"
+      case 40: // "(<<)"
+      case 41: // ">>"
+      case 42: // "(>>)"
+      case 43: // "="
+      case 44: // "!="
+      case 45: // "<"
+      case 46: // "<="
+      case 47: // ">"
+      case 48: // ">="
+      case 49: // ":="
+      case 50: // "->"
+      case 51: // "'"
+      case 52: // ":"
+      case 53: // ";"
+      case 54: // "::"
+      case 55: // "("
+      case 56: // ")"
+      case 57: // "["
+      case 58: // "]"
+      case 59: // "{"
+      case 60: // "}"
+      case 61: // "@"
+      case 62: // ","
+      case 63: // "."
+      case 64: // ".."
         value.template destroy< CST::Token::Ptr > ();
         break;
 
-      case 92: // CallExpression
+      case 84: // CacheDefinition
+        value.template destroy< CacheDefinition::Ptr > ();
+        break;
+
+      case 113: // CallExpression
         value.template destroy< CallExpression::Ptr > ();
         break;
 
-      case 87: // ConditionalStatement
+      case 103: // CallStatement
+        value.template destroy< CallStatement::Ptr > ();
+        break;
+
+      case 111: // ConditionalExpression
+        value.template destroy< ConditionalExpression::Ptr > ();
+        break;
+
+      case 106: // ConditionalStatement
         value.template destroy< ConditionalStatement::Ptr > ();
         break;
 
-      case 77: // DecodingOption
+      case 92: // DecodingOption
         value.template destroy< DecodingOption::Ptr > ();
         break;
 
-      case 62: // AttributedDefinition
-      case 63: // Definition
+      case 74: // AttributedDefinition
+      case 75: // Definition
         value.template destroy< Definition::Ptr > ();
         break;
 
-      case 61: // Definitions
+      case 73: // Definitions
         value.template destroy< Definitions::Ptr > ();
         break;
 
-      case 93: // DirectCallExpression
+      case 114: // DirectCallExpression
         value.template destroy< DirectCallExpression::Ptr > ();
         break;
 
-      case 72: // EnumerationDefinition
+      case 87: // EnumerationDefinition
         value.template destroy< EnumerationDefinition::Ptr > ();
         break;
 
-      case 79: // ExpansionOption
+      case 94: // ExpansionOption
         value.template destroy< ExpansionOption::Ptr > ();
         break;
 
-      case 89: // Term
-      case 90: // Expression
-      case 91: // OperatorExpression
-      case 109: // Terminal
+      case 108: // Term
+      case 109: // Expression
+      case 112: // OperatorExpression
+      case 133: // Terminal
         value.template destroy< Expression::Ptr > ();
         break;
 
-      case 125: // ExpressionAttribute
+      case 149: // ExpressionAttribute
         value.template destroy< ExpressionAttribute::Ptr > ();
         break;
 
-      case 88: // Terms
-      case 108: // Terminals
+      case 107: // Terms
+      case 132: // Terminals
         value.template destroy< Expressions::Ptr > ();
         break;
 
-      case 66: // FieldDefinition
+      case 78: // FieldDefinition
         value.template destroy< FieldDefinition::Ptr > ();
         break;
 
-      case 67: // FormatDefinition
+      case 79: // FormatDefinition
         value.template destroy< FormatDefinition::Ptr > ();
         break;
 
-      case 107: // GrammarLiteral
+      case 131: // GrammarLiteral
         value.template destroy< GrammarLiteral::Ptr > ();
         break;
 
-      case 60: // Header
+      case 72: // Header
         value.template destroy< HeaderDefinition::Ptr > ();
         break;
 
-      case 57: // "identifier"
-      case 120: // Identifier
+      case 69: // "identifier"
+      case 144: // Identifier
         value.template destroy< Identifier::Ptr > ();
         break;
 
-      case 121: // IdentifierPath
+      case 145: // IdentifierPath
         value.template destroy< IdentifierPath::Ptr > ();
         break;
 
-      case 70: // InstructionDefinition
+      case 82: // InstructionDefinition
         value.template destroy< InstructionDefinition::Ptr > ();
         break;
 
-      case 85: // LetStatement
+      case 85: // InterconnectDefinition
+        value.template destroy< InterconnectDefinition::Ptr > ();
+        break;
+
+      case 110: // LetExpression
+        value.template destroy< LetExpression::Ptr > ();
+        break;
+
+      case 104: // LetStatement
         value.template destroy< LetStatement::Ptr > ();
         break;
 
-      case 94: // Literal
+      case 122: // ListLiteral
+        value.template destroy< ListLiteral::Ptr > ();
+        break;
+
+      case 116: // Literal
         value.template destroy< Literal::Ptr > ();
         break;
 
-      case 105: // Mapping
+      case 129: // Mapping
         value.template destroy< MappedExpression::Ptr > ();
         break;
 
-      case 104: // Mappings
+      case 128: // Mappings
         value.template destroy< MappedExpressions::Ptr > ();
         break;
 
-      case 68: // FormatFields
-      case 103: // MappingLiteral
+      case 80: // FormatFields
+      case 127: // MappingLiteral
         value.template destroy< MappingLiteral::Ptr > ();
         break;
 
-      case 113: // MappingType
+      case 137: // MappingType
         value.template destroy< MappingType::Ptr > ();
         break;
 
-      case 64: // MemoryDefinition
+      case 76: // MemoryDefinition
         value.template destroy< MemoryDefinition::Ptr > ();
         break;
 
-      case 102: // Assignment
+      case 115: // MethodCallExpression
+        value.template destroy< MethodCallExpression::Ptr > ();
+        break;
+
+      case 83: // MicroProcessorDefinition
+        value.template destroy< MicroProcessorDefinition::Ptr > ();
+        break;
+
+      case 126: // Assignment
         value.template destroy< NamedExpression::Ptr > ();
         break;
 
-      case 101: // Assignments
+      case 125: // Assignments
         value.template destroy< NamedExpressions::Ptr > ();
         break;
 
-      case 76: // Option
+      case 91: // InstructionOption
+      case 96: // MicroProcessorOption
         value.template destroy< Option::Ptr > ();
         break;
 
-      case 71: // OptionDefinition
+      case 86: // OptionDefinition
         value.template destroy< OptionDefinition::Ptr > ();
         break;
 
-      case 75: // Options
+      case 90: // InstructionOptions
+      case 95: // MicroProcessorOptions
         value.template destroy< Options::Ptr > ();
         break;
 
-      case 100: // RecordLiteral
+      case 123: // RangeLiteral
+        value.template destroy< RangeLiteral::Ptr > ();
+        break;
+
+      case 124: // RecordLiteral
         value.template destroy< RecordLiteral::Ptr > ();
         break;
 
-      case 106: // ReferenceLiteral
+      case 130: // ReferenceLiteral
         value.template destroy< ReferenceLiteral::Ptr > ();
         break;
 
-      case 65: // RegisterDefinition
+      case 77: // RegisterDefinition
         value.template destroy< RegisterDefinition::Ptr > ();
         break;
 
-      case 73: // Enumerators
-      case 99: // SetLiteral
+      case 88: // Enumerators
+      case 121: // SetLiteral
         value.template destroy< SetLiteral::Ptr > ();
         break;
 
-      case 82: // SkipStatement
-      case 83: // AbstractStatement
+      case 100: // SkipStatement
+      case 101: // AbstractStatement
         value.template destroy< SkipStatement::Ptr > ();
         break;
 
-      case 59: // Specification
+      case 71: // Specification
         value.template destroy< Specification::Ptr > ();
         break;
 
-      case 81: // Statement
+      case 97: // StageOption
+        value.template destroy< StageOption::Ptr > ();
+        break;
+
+      case 99: // Statement
         value.template destroy< Statement::Ptr > ();
         break;
 
-      case 80: // Statements
+      case 98: // Statements
         value.template destroy< Statements::Ptr > ();
         break;
 
-      case 78: // SyntaxOption
+      case 93: // SyntaxOption
         value.template destroy< SyntaxOption::Ptr > ();
         break;
 
-      case 114: // ArgumentTypes
+      case 138: // ArgumentTypes
         value.template destroy< Types::Ptr > ();
         break;
 
-      case 74: // UsingDefinition
+      case 89: // UsingDefinition
         value.template destroy< UsingDefinition::Ptr > ();
         break;
 
-      case 53: // "integer"
-      case 54: // "binary"
-      case 55: // "hexadecimal"
-      case 56: // "string"
-      case 95: // BooleanLiteral
-      case 96: // IntegerLiteral
-      case 97: // BinaryLiteral
-      case 98: // StringLiteral
+      case 65: // "integer"
+      case 66: // "binary"
+      case 67: // "hexadecimal"
+      case 68: // "string"
+      case 117: // BooleanLiteral
+      case 118: // IntegerLiteral
+      case 119: // BinaryLiteral
+      case 120: // StringLiteral
         value.template destroy< ValueLiteral::Ptr > ();
         break;
 
-      case 116: // VariableBinding
+      case 140: // VariableBinding
         value.template destroy< VariableBinding::Ptr > ();
         break;
 
-      case 115: // VariableBindings
+      case 139: // VariableBindings
         value.template destroy< VariableBindings::Ptr > ();
         break;
 
-      case 117: // AttributedVariable
-      case 118: // Variable
-      case 119: // TypedVariable
+      case 141: // AttributedVariable
+      case 142: // Variable
+      case 143: // TypedVariable
         value.template destroy< VariableDefinition::Ptr > ();
         break;
 
-      case 110: // Type
-      case 111: // BasicType
-      case 112: // PropertyType
+      case 134: // Type
+      case 135: // BasicType
+      case 136: // PropertyType
         value.template destroy< libscod::CST::Type::Ptr > ();
         break;
 
@@ -1876,13 +2116,13 @@ switch (yytype)
       symbol_type (int tok, CST::Token::Ptr v, location_type l)
         : super_type(token_type (tok), std::move (v), std::move (l))
       {
-        YY_ASSERT (tok == token::SCOD || tok == token::MEMORY || tok == token::REGISTER || tok == token::FIELD || tok == token::FORMAT || tok == token::BUFFER || tok == token::INSTRUCTION || tok == token::DECODING || tok == token::SYNTAX || tok == token::EXPANSION || tok == token::ENUMERATION || tok == token::USING || tok == token::SKIP || tok == token::ABSTRACT || tok == token::LET || tok == token::IN || tok == token::IF || tok == token::THEN || tok == token::ELSE || tok == token::FALSE || tok == token::TRUE || tok == token::NOT || tok == token::AND || tok == token::OR || tok == token::XOR || tok == token::IMPLIES || tok == token::ARROW || tok == token::PLUS || tok == token::MINUS || tok == token::ASTERIX || tok == token::EQUAL || tok == token::NEQUAL || tok == token::LESSER || tok == token::LESSEQ || tok == token::GREATER || tok == token::GREATEREQ || tok == token::ASSIGNMENT || tok == token::MAPS || tok == token::MARK || tok == token::COLON || tok == token::SEMICOLON || tok == token::NAMESPACE || tok == token::LPAREN || tok == token::RPAREN || tok == token::LSQPAREN || tok == token::RSQPAREN || tok == token::LCURPAREN || tok == token::RCURPAREN || tok == token::AT || tok == token::COMMA);
+        YY_ASSERT (tok == token::SCOD || tok == token::MEMORY || tok == token::REGISTER || tok == token::FIELD || tok == token::FORMAT || tok == token::BUFFER || tok == token::INSTRUCTION || tok == token::MICROPROCESSOR || tok == token::CACHE || tok == token::INTERCONNECT || tok == token::DECODING || tok == token::SYNTAX || tok == token::EXPANSION || tok == token::STAGE || tok == token::ENUMERATION || tok == token::USING || tok == token::SKIP || tok == token::ABSTRACT || tok == token::LET || tok == token::IN || tok == token::IF || tok == token::THEN || tok == token::ELSE || tok == token::FALSE || tok == token::TRUE || tok == token::NOT || tok == token::AND || tok == token::OR || tok == token::XOR || tok == token::IMPLIES || tok == token::ARROW || tok == token::PLUS || tok == token::CARRYPLUS || tok == token::MINUS || tok == token::CARRYMINUS || tok == token::ASTERIX || tok == token::LSHIFT || tok == token::RLSHIFT || tok == token::RSHIFT || tok == token::RRSHIFT || tok == token::EQUAL || tok == token::NEQUAL || tok == token::LESSER || tok == token::LESSEQ || tok == token::GREATER || tok == token::GREATEREQ || tok == token::ASSIGNMENT || tok == token::MAPS || tok == token::MARK || tok == token::COLON || tok == token::SEMICOLON || tok == token::NAMESPACE || tok == token::LPAREN || tok == token::RPAREN || tok == token::LSQPAREN || tok == token::RSQPAREN || tok == token::LCURPAREN || tok == token::RCURPAREN || tok == token::AT || tok == token::COMMA || tok == token::DOT || tok == token::DOTDOT);
       }
 #else
       symbol_type (int tok, const CST::Token::Ptr& v, const location_type& l)
         : super_type(token_type (tok), v, l)
       {
-        YY_ASSERT (tok == token::SCOD || tok == token::MEMORY || tok == token::REGISTER || tok == token::FIELD || tok == token::FORMAT || tok == token::BUFFER || tok == token::INSTRUCTION || tok == token::DECODING || tok == token::SYNTAX || tok == token::EXPANSION || tok == token::ENUMERATION || tok == token::USING || tok == token::SKIP || tok == token::ABSTRACT || tok == token::LET || tok == token::IN || tok == token::IF || tok == token::THEN || tok == token::ELSE || tok == token::FALSE || tok == token::TRUE || tok == token::NOT || tok == token::AND || tok == token::OR || tok == token::XOR || tok == token::IMPLIES || tok == token::ARROW || tok == token::PLUS || tok == token::MINUS || tok == token::ASTERIX || tok == token::EQUAL || tok == token::NEQUAL || tok == token::LESSER || tok == token::LESSEQ || tok == token::GREATER || tok == token::GREATEREQ || tok == token::ASSIGNMENT || tok == token::MAPS || tok == token::MARK || tok == token::COLON || tok == token::SEMICOLON || tok == token::NAMESPACE || tok == token::LPAREN || tok == token::RPAREN || tok == token::LSQPAREN || tok == token::RSQPAREN || tok == token::LCURPAREN || tok == token::RCURPAREN || tok == token::AT || tok == token::COMMA);
+        YY_ASSERT (tok == token::SCOD || tok == token::MEMORY || tok == token::REGISTER || tok == token::FIELD || tok == token::FORMAT || tok == token::BUFFER || tok == token::INSTRUCTION || tok == token::MICROPROCESSOR || tok == token::CACHE || tok == token::INTERCONNECT || tok == token::DECODING || tok == token::SYNTAX || tok == token::EXPANSION || tok == token::STAGE || tok == token::ENUMERATION || tok == token::USING || tok == token::SKIP || tok == token::ABSTRACT || tok == token::LET || tok == token::IN || tok == token::IF || tok == token::THEN || tok == token::ELSE || tok == token::FALSE || tok == token::TRUE || tok == token::NOT || tok == token::AND || tok == token::OR || tok == token::XOR || tok == token::IMPLIES || tok == token::ARROW || tok == token::PLUS || tok == token::CARRYPLUS || tok == token::MINUS || tok == token::CARRYMINUS || tok == token::ASTERIX || tok == token::LSHIFT || tok == token::RLSHIFT || tok == token::RSHIFT || tok == token::RRSHIFT || tok == token::EQUAL || tok == token::NEQUAL || tok == token::LESSER || tok == token::LESSEQ || tok == token::GREATER || tok == token::GREATEREQ || tok == token::ASSIGNMENT || tok == token::MAPS || tok == token::MARK || tok == token::COLON || tok == token::SEMICOLON || tok == token::NAMESPACE || tok == token::LPAREN || tok == token::RPAREN || tok == token::LSQPAREN || tok == token::RSQPAREN || tok == token::LCURPAREN || tok == token::RCURPAREN || tok == token::AT || tok == token::COMMA || tok == token::DOT || tok == token::DOTDOT);
       }
 #endif
 #if 201103L <= YY_CPLUSPLUS
@@ -2071,6 +2311,51 @@ switch (yytype)
 #if 201103L <= YY_CPLUSPLUS
       static
       symbol_type
+      make_MICROPROCESSOR (CST::Token::Ptr v, location_type l)
+      {
+        return symbol_type (token::MICROPROCESSOR, std::move (v), std::move (l));
+      }
+#else
+      static
+      symbol_type
+      make_MICROPROCESSOR (const CST::Token::Ptr& v, const location_type& l)
+      {
+        return symbol_type (token::MICROPROCESSOR, v, l);
+      }
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      static
+      symbol_type
+      make_CACHE (CST::Token::Ptr v, location_type l)
+      {
+        return symbol_type (token::CACHE, std::move (v), std::move (l));
+      }
+#else
+      static
+      symbol_type
+      make_CACHE (const CST::Token::Ptr& v, const location_type& l)
+      {
+        return symbol_type (token::CACHE, v, l);
+      }
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      static
+      symbol_type
+      make_INTERCONNECT (CST::Token::Ptr v, location_type l)
+      {
+        return symbol_type (token::INTERCONNECT, std::move (v), std::move (l));
+      }
+#else
+      static
+      symbol_type
+      make_INTERCONNECT (const CST::Token::Ptr& v, const location_type& l)
+      {
+        return symbol_type (token::INTERCONNECT, v, l);
+      }
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      static
+      symbol_type
       make_DECODING (CST::Token::Ptr v, location_type l)
       {
         return symbol_type (token::DECODING, std::move (v), std::move (l));
@@ -2111,6 +2396,21 @@ switch (yytype)
       make_EXPANSION (const CST::Token::Ptr& v, const location_type& l)
       {
         return symbol_type (token::EXPANSION, v, l);
+      }
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      static
+      symbol_type
+      make_STAGE (CST::Token::Ptr v, location_type l)
+      {
+        return symbol_type (token::STAGE, std::move (v), std::move (l));
+      }
+#else
+      static
+      symbol_type
+      make_STAGE (const CST::Token::Ptr& v, const location_type& l)
+      {
+        return symbol_type (token::STAGE, v, l);
       }
 #endif
 #if 201103L <= YY_CPLUSPLUS
@@ -2386,6 +2686,21 @@ switch (yytype)
 #if 201103L <= YY_CPLUSPLUS
       static
       symbol_type
+      make_CARRYPLUS (CST::Token::Ptr v, location_type l)
+      {
+        return symbol_type (token::CARRYPLUS, std::move (v), std::move (l));
+      }
+#else
+      static
+      symbol_type
+      make_CARRYPLUS (const CST::Token::Ptr& v, const location_type& l)
+      {
+        return symbol_type (token::CARRYPLUS, v, l);
+      }
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      static
+      symbol_type
       make_MINUS (CST::Token::Ptr v, location_type l)
       {
         return symbol_type (token::MINUS, std::move (v), std::move (l));
@@ -2401,6 +2716,21 @@ switch (yytype)
 #if 201103L <= YY_CPLUSPLUS
       static
       symbol_type
+      make_CARRYMINUS (CST::Token::Ptr v, location_type l)
+      {
+        return symbol_type (token::CARRYMINUS, std::move (v), std::move (l));
+      }
+#else
+      static
+      symbol_type
+      make_CARRYMINUS (const CST::Token::Ptr& v, const location_type& l)
+      {
+        return symbol_type (token::CARRYMINUS, v, l);
+      }
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      static
+      symbol_type
       make_ASTERIX (CST::Token::Ptr v, location_type l)
       {
         return symbol_type (token::ASTERIX, std::move (v), std::move (l));
@@ -2411,6 +2741,66 @@ switch (yytype)
       make_ASTERIX (const CST::Token::Ptr& v, const location_type& l)
       {
         return symbol_type (token::ASTERIX, v, l);
+      }
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      static
+      symbol_type
+      make_LSHIFT (CST::Token::Ptr v, location_type l)
+      {
+        return symbol_type (token::LSHIFT, std::move (v), std::move (l));
+      }
+#else
+      static
+      symbol_type
+      make_LSHIFT (const CST::Token::Ptr& v, const location_type& l)
+      {
+        return symbol_type (token::LSHIFT, v, l);
+      }
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      static
+      symbol_type
+      make_RLSHIFT (CST::Token::Ptr v, location_type l)
+      {
+        return symbol_type (token::RLSHIFT, std::move (v), std::move (l));
+      }
+#else
+      static
+      symbol_type
+      make_RLSHIFT (const CST::Token::Ptr& v, const location_type& l)
+      {
+        return symbol_type (token::RLSHIFT, v, l);
+      }
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      static
+      symbol_type
+      make_RSHIFT (CST::Token::Ptr v, location_type l)
+      {
+        return symbol_type (token::RSHIFT, std::move (v), std::move (l));
+      }
+#else
+      static
+      symbol_type
+      make_RSHIFT (const CST::Token::Ptr& v, const location_type& l)
+      {
+        return symbol_type (token::RSHIFT, v, l);
+      }
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      static
+      symbol_type
+      make_RRSHIFT (CST::Token::Ptr v, location_type l)
+      {
+        return symbol_type (token::RRSHIFT, std::move (v), std::move (l));
+      }
+#else
+      static
+      symbol_type
+      make_RRSHIFT (const CST::Token::Ptr& v, const location_type& l)
+      {
+        return symbol_type (token::RRSHIFT, v, l);
       }
 #endif
 #if 201103L <= YY_CPLUSPLUS
@@ -2716,6 +3106,36 @@ switch (yytype)
 #if 201103L <= YY_CPLUSPLUS
       static
       symbol_type
+      make_DOT (CST::Token::Ptr v, location_type l)
+      {
+        return symbol_type (token::DOT, std::move (v), std::move (l));
+      }
+#else
+      static
+      symbol_type
+      make_DOT (const CST::Token::Ptr& v, const location_type& l)
+      {
+        return symbol_type (token::DOT, v, l);
+      }
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      static
+      symbol_type
+      make_DOTDOT (CST::Token::Ptr v, location_type l)
+      {
+        return symbol_type (token::DOTDOT, std::move (v), std::move (l));
+      }
+#else
+      static
+      symbol_type
+      make_DOTDOT (const CST::Token::Ptr& v, const location_type& l)
+      {
+        return symbol_type (token::DOTDOT, v, l);
+      }
+#endif
+#if 201103L <= YY_CPLUSPLUS
+      static
+      symbol_type
       make_INTEGER (ValueLiteral::Ptr v, location_type l)
       {
         return symbol_type (token::INTEGER, std::move (v), std::move (l));
@@ -2817,7 +3237,7 @@ switch (yytype)
     /// \param yyvalue   the value to check
     static bool yy_table_value_is_error_ (int yyvalue);
 
-    static const signed char yypact_ninf_;
+    static const short yypact_ninf_;
     static const short yytable_ninf_;
 
     /// Convert a scanner token number \a t to a symbol number.
@@ -2850,10 +3270,10 @@ switch (yytype)
 
     // YYSTOS[STATE-NUM] -- The (internal number of the) accessing
     // symbol of state STATE-NUM.
-    static const signed char yystos_[];
+    static const unsigned char yystos_[];
 
     // YYR1[YYN] -- Symbol number of symbol that rule YYN derives.
-    static const signed char yyr1_[];
+    static const unsigned char yyr1_[];
 
     // YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.
     static const signed char yyr2_[];
@@ -3094,10 +3514,10 @@ switch (yytype)
     enum
     {
       yyeof_ = 0,
-      yylast_ = 472,     ///< Last index in yytable_.
-      yynnts_ = 68,  ///< Number of nonterminal symbols.
-      yyfinal_ = 13, ///< Termination state number.
-      yyntokens_ = 58  ///< Number of tokens.
+      yylast_ = 763,     ///< Last index in yytable_.
+      yynnts_ = 80,  ///< Number of nonterminal symbols.
+      yyfinal_ = 14, ///< Termination state number.
+      yyntokens_ = 70  ///< Number of tokens.
     };
 
 
@@ -3148,9 +3568,10 @@ switch (yytype)
       25,    26,    27,    28,    29,    30,    31,    32,    33,    34,
       35,    36,    37,    38,    39,    40,    41,    42,    43,    44,
       45,    46,    47,    48,    49,    50,    51,    52,    53,    54,
-      55,    56,    57
+      55,    56,    57,    58,    59,    60,    61,    62,    63,    64,
+      65,    66,    67,    68,    69
     };
-    const int user_token_number_max_ = 312;
+    const int user_token_number_max_ = 324;
 
     if (t <= 0)
       return yyeof_;
@@ -3170,27 +3591,27 @@ switch (yytype)
   {
     switch (this->type_get ())
     {
-      case 86: // AssignmentStatement
+      case 105: // AssignmentStatement
         value.move< AssignmentStatement::Ptr > (std::move (that.value));
         break;
 
-      case 123: // Attribute
+      case 147: // Attribute
         value.move< Attribute::Ptr > (std::move (that.value));
         break;
 
-      case 122: // Attributes
+      case 146: // Attributes
         value.move< Attributes::Ptr > (std::move (that.value));
         break;
 
-      case 124: // BasicAttribute
+      case 148: // BasicAttribute
         value.move< BasicAttribute::Ptr > (std::move (that.value));
         break;
 
-      case 84: // BlockStatement
+      case 102: // BlockStatement
         value.move< BlockStatement::Ptr > (std::move (that.value));
         break;
 
-      case 69: // BufferDefinition
+      case 81: // BufferDefinition
         value.move< BufferDefinition::Ptr > (std::move (that.value));
         break;
 
@@ -3201,253 +3622,307 @@ switch (yytype)
       case 7: // "format"
       case 8: // "buffer"
       case 9: // "instruction"
-      case 10: // "decoding"
-      case 11: // "syntax"
-      case 12: // "expansion"
-      case 13: // "enumeration"
-      case 14: // "using"
-      case 15: // "skip"
-      case 16: // "abstract"
-      case 17: // "let"
-      case 18: // "in"
-      case 19: // "if"
-      case 20: // "then"
-      case 21: // "else"
-      case 22: // "false"
-      case 23: // "true"
-      case 24: // "not"
-      case 25: // "and"
-      case 26: // "or"
-      case 27: // "xor"
-      case 28: // "implies"
-      case 29: // "=>"
-      case 30: // "+"
-      case 31: // "-"
-      case 32: // "*"
-      case 33: // "="
-      case 34: // "!="
-      case 35: // "<"
-      case 36: // "<="
-      case 37: // ">"
-      case 38: // ">="
-      case 39: // ":="
-      case 40: // "->"
-      case 41: // "'"
-      case 42: // ":"
-      case 43: // ";"
-      case 44: // "::"
-      case 45: // "("
-      case 46: // ")"
-      case 47: // "["
-      case 48: // "]"
-      case 49: // "{"
-      case 50: // "}"
-      case 51: // "@"
-      case 52: // ","
+      case 10: // "microprocessor"
+      case 11: // "cache"
+      case 12: // "interconnect"
+      case 13: // "decoding"
+      case 14: // "syntax"
+      case 15: // "expansion"
+      case 16: // "stage"
+      case 17: // "enumeration"
+      case 18: // "using"
+      case 19: // "skip"
+      case 20: // "abstract"
+      case 21: // "let"
+      case 22: // "in"
+      case 23: // "if"
+      case 24: // "then"
+      case 25: // "else"
+      case 26: // "false"
+      case 27: // "true"
+      case 28: // "not"
+      case 29: // "and"
+      case 30: // "or"
+      case 31: // "xor"
+      case 32: // "implies"
+      case 33: // "=>"
+      case 34: // "+"
+      case 35: // "(+)"
+      case 36: // "-"
+      case 37: // "(-)"
+      case 38: // "*"
+      case 39: // "<<"
+      case 40: // "(<<)"
+      case 41: // ">>"
+      case 42: // "(>>)"
+      case 43: // "="
+      case 44: // "!="
+      case 45: // "<"
+      case 46: // "<="
+      case 47: // ">"
+      case 48: // ">="
+      case 49: // ":="
+      case 50: // "->"
+      case 51: // "'"
+      case 52: // ":"
+      case 53: // ";"
+      case 54: // "::"
+      case 55: // "("
+      case 56: // ")"
+      case 57: // "["
+      case 58: // "]"
+      case 59: // "{"
+      case 60: // "}"
+      case 61: // "@"
+      case 62: // ","
+      case 63: // "."
+      case 64: // ".."
         value.move< CST::Token::Ptr > (std::move (that.value));
         break;
 
-      case 92: // CallExpression
+      case 84: // CacheDefinition
+        value.move< CacheDefinition::Ptr > (std::move (that.value));
+        break;
+
+      case 113: // CallExpression
         value.move< CallExpression::Ptr > (std::move (that.value));
         break;
 
-      case 87: // ConditionalStatement
+      case 103: // CallStatement
+        value.move< CallStatement::Ptr > (std::move (that.value));
+        break;
+
+      case 111: // ConditionalExpression
+        value.move< ConditionalExpression::Ptr > (std::move (that.value));
+        break;
+
+      case 106: // ConditionalStatement
         value.move< ConditionalStatement::Ptr > (std::move (that.value));
         break;
 
-      case 77: // DecodingOption
+      case 92: // DecodingOption
         value.move< DecodingOption::Ptr > (std::move (that.value));
         break;
 
-      case 62: // AttributedDefinition
-      case 63: // Definition
+      case 74: // AttributedDefinition
+      case 75: // Definition
         value.move< Definition::Ptr > (std::move (that.value));
         break;
 
-      case 61: // Definitions
+      case 73: // Definitions
         value.move< Definitions::Ptr > (std::move (that.value));
         break;
 
-      case 93: // DirectCallExpression
+      case 114: // DirectCallExpression
         value.move< DirectCallExpression::Ptr > (std::move (that.value));
         break;
 
-      case 72: // EnumerationDefinition
+      case 87: // EnumerationDefinition
         value.move< EnumerationDefinition::Ptr > (std::move (that.value));
         break;
 
-      case 79: // ExpansionOption
+      case 94: // ExpansionOption
         value.move< ExpansionOption::Ptr > (std::move (that.value));
         break;
 
-      case 89: // Term
-      case 90: // Expression
-      case 91: // OperatorExpression
-      case 109: // Terminal
+      case 108: // Term
+      case 109: // Expression
+      case 112: // OperatorExpression
+      case 133: // Terminal
         value.move< Expression::Ptr > (std::move (that.value));
         break;
 
-      case 125: // ExpressionAttribute
+      case 149: // ExpressionAttribute
         value.move< ExpressionAttribute::Ptr > (std::move (that.value));
         break;
 
-      case 88: // Terms
-      case 108: // Terminals
+      case 107: // Terms
+      case 132: // Terminals
         value.move< Expressions::Ptr > (std::move (that.value));
         break;
 
-      case 66: // FieldDefinition
+      case 78: // FieldDefinition
         value.move< FieldDefinition::Ptr > (std::move (that.value));
         break;
 
-      case 67: // FormatDefinition
+      case 79: // FormatDefinition
         value.move< FormatDefinition::Ptr > (std::move (that.value));
         break;
 
-      case 107: // GrammarLiteral
+      case 131: // GrammarLiteral
         value.move< GrammarLiteral::Ptr > (std::move (that.value));
         break;
 
-      case 60: // Header
+      case 72: // Header
         value.move< HeaderDefinition::Ptr > (std::move (that.value));
         break;
 
-      case 57: // "identifier"
-      case 120: // Identifier
+      case 69: // "identifier"
+      case 144: // Identifier
         value.move< Identifier::Ptr > (std::move (that.value));
         break;
 
-      case 121: // IdentifierPath
+      case 145: // IdentifierPath
         value.move< IdentifierPath::Ptr > (std::move (that.value));
         break;
 
-      case 70: // InstructionDefinition
+      case 82: // InstructionDefinition
         value.move< InstructionDefinition::Ptr > (std::move (that.value));
         break;
 
-      case 85: // LetStatement
+      case 85: // InterconnectDefinition
+        value.move< InterconnectDefinition::Ptr > (std::move (that.value));
+        break;
+
+      case 110: // LetExpression
+        value.move< LetExpression::Ptr > (std::move (that.value));
+        break;
+
+      case 104: // LetStatement
         value.move< LetStatement::Ptr > (std::move (that.value));
         break;
 
-      case 94: // Literal
+      case 122: // ListLiteral
+        value.move< ListLiteral::Ptr > (std::move (that.value));
+        break;
+
+      case 116: // Literal
         value.move< Literal::Ptr > (std::move (that.value));
         break;
 
-      case 105: // Mapping
+      case 129: // Mapping
         value.move< MappedExpression::Ptr > (std::move (that.value));
         break;
 
-      case 104: // Mappings
+      case 128: // Mappings
         value.move< MappedExpressions::Ptr > (std::move (that.value));
         break;
 
-      case 68: // FormatFields
-      case 103: // MappingLiteral
+      case 80: // FormatFields
+      case 127: // MappingLiteral
         value.move< MappingLiteral::Ptr > (std::move (that.value));
         break;
 
-      case 113: // MappingType
+      case 137: // MappingType
         value.move< MappingType::Ptr > (std::move (that.value));
         break;
 
-      case 64: // MemoryDefinition
+      case 76: // MemoryDefinition
         value.move< MemoryDefinition::Ptr > (std::move (that.value));
         break;
 
-      case 102: // Assignment
+      case 115: // MethodCallExpression
+        value.move< MethodCallExpression::Ptr > (std::move (that.value));
+        break;
+
+      case 83: // MicroProcessorDefinition
+        value.move< MicroProcessorDefinition::Ptr > (std::move (that.value));
+        break;
+
+      case 126: // Assignment
         value.move< NamedExpression::Ptr > (std::move (that.value));
         break;
 
-      case 101: // Assignments
+      case 125: // Assignments
         value.move< NamedExpressions::Ptr > (std::move (that.value));
         break;
 
-      case 76: // Option
+      case 91: // InstructionOption
+      case 96: // MicroProcessorOption
         value.move< Option::Ptr > (std::move (that.value));
         break;
 
-      case 71: // OptionDefinition
+      case 86: // OptionDefinition
         value.move< OptionDefinition::Ptr > (std::move (that.value));
         break;
 
-      case 75: // Options
+      case 90: // InstructionOptions
+      case 95: // MicroProcessorOptions
         value.move< Options::Ptr > (std::move (that.value));
         break;
 
-      case 100: // RecordLiteral
+      case 123: // RangeLiteral
+        value.move< RangeLiteral::Ptr > (std::move (that.value));
+        break;
+
+      case 124: // RecordLiteral
         value.move< RecordLiteral::Ptr > (std::move (that.value));
         break;
 
-      case 106: // ReferenceLiteral
+      case 130: // ReferenceLiteral
         value.move< ReferenceLiteral::Ptr > (std::move (that.value));
         break;
 
-      case 65: // RegisterDefinition
+      case 77: // RegisterDefinition
         value.move< RegisterDefinition::Ptr > (std::move (that.value));
         break;
 
-      case 73: // Enumerators
-      case 99: // SetLiteral
+      case 88: // Enumerators
+      case 121: // SetLiteral
         value.move< SetLiteral::Ptr > (std::move (that.value));
         break;
 
-      case 82: // SkipStatement
-      case 83: // AbstractStatement
+      case 100: // SkipStatement
+      case 101: // AbstractStatement
         value.move< SkipStatement::Ptr > (std::move (that.value));
         break;
 
-      case 59: // Specification
+      case 71: // Specification
         value.move< Specification::Ptr > (std::move (that.value));
         break;
 
-      case 81: // Statement
+      case 97: // StageOption
+        value.move< StageOption::Ptr > (std::move (that.value));
+        break;
+
+      case 99: // Statement
         value.move< Statement::Ptr > (std::move (that.value));
         break;
 
-      case 80: // Statements
+      case 98: // Statements
         value.move< Statements::Ptr > (std::move (that.value));
         break;
 
-      case 78: // SyntaxOption
+      case 93: // SyntaxOption
         value.move< SyntaxOption::Ptr > (std::move (that.value));
         break;
 
-      case 114: // ArgumentTypes
+      case 138: // ArgumentTypes
         value.move< Types::Ptr > (std::move (that.value));
         break;
 
-      case 74: // UsingDefinition
+      case 89: // UsingDefinition
         value.move< UsingDefinition::Ptr > (std::move (that.value));
         break;
 
-      case 53: // "integer"
-      case 54: // "binary"
-      case 55: // "hexadecimal"
-      case 56: // "string"
-      case 95: // BooleanLiteral
-      case 96: // IntegerLiteral
-      case 97: // BinaryLiteral
-      case 98: // StringLiteral
+      case 65: // "integer"
+      case 66: // "binary"
+      case 67: // "hexadecimal"
+      case 68: // "string"
+      case 117: // BooleanLiteral
+      case 118: // IntegerLiteral
+      case 119: // BinaryLiteral
+      case 120: // StringLiteral
         value.move< ValueLiteral::Ptr > (std::move (that.value));
         break;
 
-      case 116: // VariableBinding
+      case 140: // VariableBinding
         value.move< VariableBinding::Ptr > (std::move (that.value));
         break;
 
-      case 115: // VariableBindings
+      case 139: // VariableBindings
         value.move< VariableBindings::Ptr > (std::move (that.value));
         break;
 
-      case 117: // AttributedVariable
-      case 118: // Variable
-      case 119: // TypedVariable
+      case 141: // AttributedVariable
+      case 142: // Variable
+      case 143: // TypedVariable
         value.move< VariableDefinition::Ptr > (std::move (that.value));
         break;
 
-      case 110: // Type
-      case 111: // BasicType
-      case 112: // PropertyType
+      case 134: // Type
+      case 135: // BasicType
+      case 136: // PropertyType
         value.move< libscod::CST::Type::Ptr > (std::move (that.value));
         break;
 
@@ -3466,27 +3941,27 @@ switch (yytype)
   {
     switch (this->type_get ())
     {
-      case 86: // AssignmentStatement
+      case 105: // AssignmentStatement
         value.copy< AssignmentStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 123: // Attribute
+      case 147: // Attribute
         value.copy< Attribute::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 122: // Attributes
+      case 146: // Attributes
         value.copy< Attributes::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 124: // BasicAttribute
+      case 148: // BasicAttribute
         value.copy< BasicAttribute::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 84: // BlockStatement
+      case 102: // BlockStatement
         value.copy< BlockStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 69: // BufferDefinition
+      case 81: // BufferDefinition
         value.copy< BufferDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
@@ -3497,253 +3972,307 @@ switch (yytype)
       case 7: // "format"
       case 8: // "buffer"
       case 9: // "instruction"
-      case 10: // "decoding"
-      case 11: // "syntax"
-      case 12: // "expansion"
-      case 13: // "enumeration"
-      case 14: // "using"
-      case 15: // "skip"
-      case 16: // "abstract"
-      case 17: // "let"
-      case 18: // "in"
-      case 19: // "if"
-      case 20: // "then"
-      case 21: // "else"
-      case 22: // "false"
-      case 23: // "true"
-      case 24: // "not"
-      case 25: // "and"
-      case 26: // "or"
-      case 27: // "xor"
-      case 28: // "implies"
-      case 29: // "=>"
-      case 30: // "+"
-      case 31: // "-"
-      case 32: // "*"
-      case 33: // "="
-      case 34: // "!="
-      case 35: // "<"
-      case 36: // "<="
-      case 37: // ">"
-      case 38: // ">="
-      case 39: // ":="
-      case 40: // "->"
-      case 41: // "'"
-      case 42: // ":"
-      case 43: // ";"
-      case 44: // "::"
-      case 45: // "("
-      case 46: // ")"
-      case 47: // "["
-      case 48: // "]"
-      case 49: // "{"
-      case 50: // "}"
-      case 51: // "@"
-      case 52: // ","
+      case 10: // "microprocessor"
+      case 11: // "cache"
+      case 12: // "interconnect"
+      case 13: // "decoding"
+      case 14: // "syntax"
+      case 15: // "expansion"
+      case 16: // "stage"
+      case 17: // "enumeration"
+      case 18: // "using"
+      case 19: // "skip"
+      case 20: // "abstract"
+      case 21: // "let"
+      case 22: // "in"
+      case 23: // "if"
+      case 24: // "then"
+      case 25: // "else"
+      case 26: // "false"
+      case 27: // "true"
+      case 28: // "not"
+      case 29: // "and"
+      case 30: // "or"
+      case 31: // "xor"
+      case 32: // "implies"
+      case 33: // "=>"
+      case 34: // "+"
+      case 35: // "(+)"
+      case 36: // "-"
+      case 37: // "(-)"
+      case 38: // "*"
+      case 39: // "<<"
+      case 40: // "(<<)"
+      case 41: // ">>"
+      case 42: // "(>>)"
+      case 43: // "="
+      case 44: // "!="
+      case 45: // "<"
+      case 46: // "<="
+      case 47: // ">"
+      case 48: // ">="
+      case 49: // ":="
+      case 50: // "->"
+      case 51: // "'"
+      case 52: // ":"
+      case 53: // ";"
+      case 54: // "::"
+      case 55: // "("
+      case 56: // ")"
+      case 57: // "["
+      case 58: // "]"
+      case 59: // "{"
+      case 60: // "}"
+      case 61: // "@"
+      case 62: // ","
+      case 63: // "."
+      case 64: // ".."
         value.copy< CST::Token::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 92: // CallExpression
+      case 84: // CacheDefinition
+        value.copy< CacheDefinition::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 113: // CallExpression
         value.copy< CallExpression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 87: // ConditionalStatement
+      case 103: // CallStatement
+        value.copy< CallStatement::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 111: // ConditionalExpression
+        value.copy< ConditionalExpression::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 106: // ConditionalStatement
         value.copy< ConditionalStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 77: // DecodingOption
+      case 92: // DecodingOption
         value.copy< DecodingOption::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 62: // AttributedDefinition
-      case 63: // Definition
+      case 74: // AttributedDefinition
+      case 75: // Definition
         value.copy< Definition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 61: // Definitions
+      case 73: // Definitions
         value.copy< Definitions::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 93: // DirectCallExpression
+      case 114: // DirectCallExpression
         value.copy< DirectCallExpression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 72: // EnumerationDefinition
+      case 87: // EnumerationDefinition
         value.copy< EnumerationDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 79: // ExpansionOption
+      case 94: // ExpansionOption
         value.copy< ExpansionOption::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 89: // Term
-      case 90: // Expression
-      case 91: // OperatorExpression
-      case 109: // Terminal
+      case 108: // Term
+      case 109: // Expression
+      case 112: // OperatorExpression
+      case 133: // Terminal
         value.copy< Expression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 125: // ExpressionAttribute
+      case 149: // ExpressionAttribute
         value.copy< ExpressionAttribute::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 88: // Terms
-      case 108: // Terminals
+      case 107: // Terms
+      case 132: // Terminals
         value.copy< Expressions::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 66: // FieldDefinition
+      case 78: // FieldDefinition
         value.copy< FieldDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 67: // FormatDefinition
+      case 79: // FormatDefinition
         value.copy< FormatDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 107: // GrammarLiteral
+      case 131: // GrammarLiteral
         value.copy< GrammarLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 60: // Header
+      case 72: // Header
         value.copy< HeaderDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 57: // "identifier"
-      case 120: // Identifier
+      case 69: // "identifier"
+      case 144: // Identifier
         value.copy< Identifier::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 121: // IdentifierPath
+      case 145: // IdentifierPath
         value.copy< IdentifierPath::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 70: // InstructionDefinition
+      case 82: // InstructionDefinition
         value.copy< InstructionDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 85: // LetStatement
+      case 85: // InterconnectDefinition
+        value.copy< InterconnectDefinition::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 110: // LetExpression
+        value.copy< LetExpression::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 104: // LetStatement
         value.copy< LetStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 94: // Literal
+      case 122: // ListLiteral
+        value.copy< ListLiteral::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 116: // Literal
         value.copy< Literal::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 105: // Mapping
+      case 129: // Mapping
         value.copy< MappedExpression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 104: // Mappings
+      case 128: // Mappings
         value.copy< MappedExpressions::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 68: // FormatFields
-      case 103: // MappingLiteral
+      case 80: // FormatFields
+      case 127: // MappingLiteral
         value.copy< MappingLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 113: // MappingType
+      case 137: // MappingType
         value.copy< MappingType::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 64: // MemoryDefinition
+      case 76: // MemoryDefinition
         value.copy< MemoryDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 102: // Assignment
+      case 115: // MethodCallExpression
+        value.copy< MethodCallExpression::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 83: // MicroProcessorDefinition
+        value.copy< MicroProcessorDefinition::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 126: // Assignment
         value.copy< NamedExpression::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 101: // Assignments
+      case 125: // Assignments
         value.copy< NamedExpressions::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 76: // Option
+      case 91: // InstructionOption
+      case 96: // MicroProcessorOption
         value.copy< Option::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 71: // OptionDefinition
+      case 86: // OptionDefinition
         value.copy< OptionDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 75: // Options
+      case 90: // InstructionOptions
+      case 95: // MicroProcessorOptions
         value.copy< Options::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 100: // RecordLiteral
+      case 123: // RangeLiteral
+        value.copy< RangeLiteral::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 124: // RecordLiteral
         value.copy< RecordLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 106: // ReferenceLiteral
+      case 130: // ReferenceLiteral
         value.copy< ReferenceLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 65: // RegisterDefinition
+      case 77: // RegisterDefinition
         value.copy< RegisterDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 73: // Enumerators
-      case 99: // SetLiteral
+      case 88: // Enumerators
+      case 121: // SetLiteral
         value.copy< SetLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 82: // SkipStatement
-      case 83: // AbstractStatement
+      case 100: // SkipStatement
+      case 101: // AbstractStatement
         value.copy< SkipStatement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 59: // Specification
+      case 71: // Specification
         value.copy< Specification::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 81: // Statement
+      case 97: // StageOption
+        value.copy< StageOption::Ptr > (YY_MOVE (that.value));
+        break;
+
+      case 99: // Statement
         value.copy< Statement::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 80: // Statements
+      case 98: // Statements
         value.copy< Statements::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 78: // SyntaxOption
+      case 93: // SyntaxOption
         value.copy< SyntaxOption::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 114: // ArgumentTypes
+      case 138: // ArgumentTypes
         value.copy< Types::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 74: // UsingDefinition
+      case 89: // UsingDefinition
         value.copy< UsingDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 53: // "integer"
-      case 54: // "binary"
-      case 55: // "hexadecimal"
-      case 56: // "string"
-      case 95: // BooleanLiteral
-      case 96: // IntegerLiteral
-      case 97: // BinaryLiteral
-      case 98: // StringLiteral
+      case 65: // "integer"
+      case 66: // "binary"
+      case 67: // "hexadecimal"
+      case 68: // "string"
+      case 117: // BooleanLiteral
+      case 118: // IntegerLiteral
+      case 119: // BinaryLiteral
+      case 120: // StringLiteral
         value.copy< ValueLiteral::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 116: // VariableBinding
+      case 140: // VariableBinding
         value.copy< VariableBinding::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 115: // VariableBindings
+      case 139: // VariableBindings
         value.copy< VariableBindings::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 117: // AttributedVariable
-      case 118: // Variable
-      case 119: // TypedVariable
+      case 141: // AttributedVariable
+      case 142: // Variable
+      case 143: // TypedVariable
         value.copy< VariableDefinition::Ptr > (YY_MOVE (that.value));
         break;
 
-      case 110: // Type
-      case 111: // BasicType
-      case 112: // PropertyType
+      case 134: // Type
+      case 135: // BasicType
+      case 136: // PropertyType
         value.copy< libscod::CST::Type::Ptr > (YY_MOVE (that.value));
         break;
 
@@ -3769,27 +4298,27 @@ switch (yytype)
     super_type::move (s);
     switch (this->type_get ())
     {
-      case 86: // AssignmentStatement
+      case 105: // AssignmentStatement
         value.move< AssignmentStatement::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 123: // Attribute
+      case 147: // Attribute
         value.move< Attribute::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 122: // Attributes
+      case 146: // Attributes
         value.move< Attributes::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 124: // BasicAttribute
+      case 148: // BasicAttribute
         value.move< BasicAttribute::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 84: // BlockStatement
+      case 102: // BlockStatement
         value.move< BlockStatement::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 69: // BufferDefinition
+      case 81: // BufferDefinition
         value.move< BufferDefinition::Ptr > (YY_MOVE (s.value));
         break;
 
@@ -3800,253 +4329,307 @@ switch (yytype)
       case 7: // "format"
       case 8: // "buffer"
       case 9: // "instruction"
-      case 10: // "decoding"
-      case 11: // "syntax"
-      case 12: // "expansion"
-      case 13: // "enumeration"
-      case 14: // "using"
-      case 15: // "skip"
-      case 16: // "abstract"
-      case 17: // "let"
-      case 18: // "in"
-      case 19: // "if"
-      case 20: // "then"
-      case 21: // "else"
-      case 22: // "false"
-      case 23: // "true"
-      case 24: // "not"
-      case 25: // "and"
-      case 26: // "or"
-      case 27: // "xor"
-      case 28: // "implies"
-      case 29: // "=>"
-      case 30: // "+"
-      case 31: // "-"
-      case 32: // "*"
-      case 33: // "="
-      case 34: // "!="
-      case 35: // "<"
-      case 36: // "<="
-      case 37: // ">"
-      case 38: // ">="
-      case 39: // ":="
-      case 40: // "->"
-      case 41: // "'"
-      case 42: // ":"
-      case 43: // ";"
-      case 44: // "::"
-      case 45: // "("
-      case 46: // ")"
-      case 47: // "["
-      case 48: // "]"
-      case 49: // "{"
-      case 50: // "}"
-      case 51: // "@"
-      case 52: // ","
+      case 10: // "microprocessor"
+      case 11: // "cache"
+      case 12: // "interconnect"
+      case 13: // "decoding"
+      case 14: // "syntax"
+      case 15: // "expansion"
+      case 16: // "stage"
+      case 17: // "enumeration"
+      case 18: // "using"
+      case 19: // "skip"
+      case 20: // "abstract"
+      case 21: // "let"
+      case 22: // "in"
+      case 23: // "if"
+      case 24: // "then"
+      case 25: // "else"
+      case 26: // "false"
+      case 27: // "true"
+      case 28: // "not"
+      case 29: // "and"
+      case 30: // "or"
+      case 31: // "xor"
+      case 32: // "implies"
+      case 33: // "=>"
+      case 34: // "+"
+      case 35: // "(+)"
+      case 36: // "-"
+      case 37: // "(-)"
+      case 38: // "*"
+      case 39: // "<<"
+      case 40: // "(<<)"
+      case 41: // ">>"
+      case 42: // "(>>)"
+      case 43: // "="
+      case 44: // "!="
+      case 45: // "<"
+      case 46: // "<="
+      case 47: // ">"
+      case 48: // ">="
+      case 49: // ":="
+      case 50: // "->"
+      case 51: // "'"
+      case 52: // ":"
+      case 53: // ";"
+      case 54: // "::"
+      case 55: // "("
+      case 56: // ")"
+      case 57: // "["
+      case 58: // "]"
+      case 59: // "{"
+      case 60: // "}"
+      case 61: // "@"
+      case 62: // ","
+      case 63: // "."
+      case 64: // ".."
         value.move< CST::Token::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 92: // CallExpression
+      case 84: // CacheDefinition
+        value.move< CacheDefinition::Ptr > (YY_MOVE (s.value));
+        break;
+
+      case 113: // CallExpression
         value.move< CallExpression::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 87: // ConditionalStatement
+      case 103: // CallStatement
+        value.move< CallStatement::Ptr > (YY_MOVE (s.value));
+        break;
+
+      case 111: // ConditionalExpression
+        value.move< ConditionalExpression::Ptr > (YY_MOVE (s.value));
+        break;
+
+      case 106: // ConditionalStatement
         value.move< ConditionalStatement::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 77: // DecodingOption
+      case 92: // DecodingOption
         value.move< DecodingOption::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 62: // AttributedDefinition
-      case 63: // Definition
+      case 74: // AttributedDefinition
+      case 75: // Definition
         value.move< Definition::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 61: // Definitions
+      case 73: // Definitions
         value.move< Definitions::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 93: // DirectCallExpression
+      case 114: // DirectCallExpression
         value.move< DirectCallExpression::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 72: // EnumerationDefinition
+      case 87: // EnumerationDefinition
         value.move< EnumerationDefinition::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 79: // ExpansionOption
+      case 94: // ExpansionOption
         value.move< ExpansionOption::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 89: // Term
-      case 90: // Expression
-      case 91: // OperatorExpression
-      case 109: // Terminal
+      case 108: // Term
+      case 109: // Expression
+      case 112: // OperatorExpression
+      case 133: // Terminal
         value.move< Expression::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 125: // ExpressionAttribute
+      case 149: // ExpressionAttribute
         value.move< ExpressionAttribute::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 88: // Terms
-      case 108: // Terminals
+      case 107: // Terms
+      case 132: // Terminals
         value.move< Expressions::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 66: // FieldDefinition
+      case 78: // FieldDefinition
         value.move< FieldDefinition::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 67: // FormatDefinition
+      case 79: // FormatDefinition
         value.move< FormatDefinition::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 107: // GrammarLiteral
+      case 131: // GrammarLiteral
         value.move< GrammarLiteral::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 60: // Header
+      case 72: // Header
         value.move< HeaderDefinition::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 57: // "identifier"
-      case 120: // Identifier
+      case 69: // "identifier"
+      case 144: // Identifier
         value.move< Identifier::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 121: // IdentifierPath
+      case 145: // IdentifierPath
         value.move< IdentifierPath::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 70: // InstructionDefinition
+      case 82: // InstructionDefinition
         value.move< InstructionDefinition::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 85: // LetStatement
+      case 85: // InterconnectDefinition
+        value.move< InterconnectDefinition::Ptr > (YY_MOVE (s.value));
+        break;
+
+      case 110: // LetExpression
+        value.move< LetExpression::Ptr > (YY_MOVE (s.value));
+        break;
+
+      case 104: // LetStatement
         value.move< LetStatement::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 94: // Literal
+      case 122: // ListLiteral
+        value.move< ListLiteral::Ptr > (YY_MOVE (s.value));
+        break;
+
+      case 116: // Literal
         value.move< Literal::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 105: // Mapping
+      case 129: // Mapping
         value.move< MappedExpression::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 104: // Mappings
+      case 128: // Mappings
         value.move< MappedExpressions::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 68: // FormatFields
-      case 103: // MappingLiteral
+      case 80: // FormatFields
+      case 127: // MappingLiteral
         value.move< MappingLiteral::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 113: // MappingType
+      case 137: // MappingType
         value.move< MappingType::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 64: // MemoryDefinition
+      case 76: // MemoryDefinition
         value.move< MemoryDefinition::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 102: // Assignment
+      case 115: // MethodCallExpression
+        value.move< MethodCallExpression::Ptr > (YY_MOVE (s.value));
+        break;
+
+      case 83: // MicroProcessorDefinition
+        value.move< MicroProcessorDefinition::Ptr > (YY_MOVE (s.value));
+        break;
+
+      case 126: // Assignment
         value.move< NamedExpression::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 101: // Assignments
+      case 125: // Assignments
         value.move< NamedExpressions::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 76: // Option
+      case 91: // InstructionOption
+      case 96: // MicroProcessorOption
         value.move< Option::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 71: // OptionDefinition
+      case 86: // OptionDefinition
         value.move< OptionDefinition::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 75: // Options
+      case 90: // InstructionOptions
+      case 95: // MicroProcessorOptions
         value.move< Options::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 100: // RecordLiteral
+      case 123: // RangeLiteral
+        value.move< RangeLiteral::Ptr > (YY_MOVE (s.value));
+        break;
+
+      case 124: // RecordLiteral
         value.move< RecordLiteral::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 106: // ReferenceLiteral
+      case 130: // ReferenceLiteral
         value.move< ReferenceLiteral::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 65: // RegisterDefinition
+      case 77: // RegisterDefinition
         value.move< RegisterDefinition::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 73: // Enumerators
-      case 99: // SetLiteral
+      case 88: // Enumerators
+      case 121: // SetLiteral
         value.move< SetLiteral::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 82: // SkipStatement
-      case 83: // AbstractStatement
+      case 100: // SkipStatement
+      case 101: // AbstractStatement
         value.move< SkipStatement::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 59: // Specification
+      case 71: // Specification
         value.move< Specification::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 81: // Statement
+      case 97: // StageOption
+        value.move< StageOption::Ptr > (YY_MOVE (s.value));
+        break;
+
+      case 99: // Statement
         value.move< Statement::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 80: // Statements
+      case 98: // Statements
         value.move< Statements::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 78: // SyntaxOption
+      case 93: // SyntaxOption
         value.move< SyntaxOption::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 114: // ArgumentTypes
+      case 138: // ArgumentTypes
         value.move< Types::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 74: // UsingDefinition
+      case 89: // UsingDefinition
         value.move< UsingDefinition::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 53: // "integer"
-      case 54: // "binary"
-      case 55: // "hexadecimal"
-      case 56: // "string"
-      case 95: // BooleanLiteral
-      case 96: // IntegerLiteral
-      case 97: // BinaryLiteral
-      case 98: // StringLiteral
+      case 65: // "integer"
+      case 66: // "binary"
+      case 67: // "hexadecimal"
+      case 68: // "string"
+      case 117: // BooleanLiteral
+      case 118: // IntegerLiteral
+      case 119: // BinaryLiteral
+      case 120: // StringLiteral
         value.move< ValueLiteral::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 116: // VariableBinding
+      case 140: // VariableBinding
         value.move< VariableBinding::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 115: // VariableBindings
+      case 139: // VariableBindings
         value.move< VariableBindings::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 117: // AttributedVariable
-      case 118: // Variable
-      case 119: // TypedVariable
+      case 141: // AttributedVariable
+      case 142: // Variable
+      case 143: // TypedVariable
         value.move< VariableDefinition::Ptr > (YY_MOVE (s.value));
         break;
 
-      case 110: // Type
-      case 111: // BasicType
-      case 112: // PropertyType
+      case 134: // Type
+      case 135: // BasicType
+      case 136: // PropertyType
         value.move< libscod::CST::Type::Ptr > (YY_MOVE (s.value));
         break;
 
@@ -4104,9 +4687,9 @@ switch (yytype)
     return type;
   }
 
-#line 47 "../../obj/src/GrammarParser.y"
+#line 48 "../../obj/src/GrammarParser.y"
 } // libscod
-#line 4110 "GrammarParser.tab.h"
+#line 4693 "GrammarParser.tab.h"
 
 
 

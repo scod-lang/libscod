@@ -3,6 +3,7 @@
 //  All rights reserved.
 //  
 //  Developed by: Philipp Paulweber
+//                Emmanuel Pescosta
 //                <https://github.com/scod-lang/libscod>
 //  
 //  This file is part of libscod.
@@ -60,49 +61,61 @@ namespace libscod
             /*  5 */ FORMAT,
             /*  6 */ BUFFER,
             /*  7 */ INSTRUCTION,
-            /*  8 */ DECODING,
-            /*  9 */ SYNTAX,
-            /* 10 */ EXPANSION,
-            /* 11 */ ENUMERATION,
-            /* 12 */ USING,
-            /* 13 */ SKIP,
-            /* 14 */ ABSTRACT,
-            /* 15 */ LET,
-            /* 16 */ IN,
-            /* 17 */ IF,
-            /* 18 */ THEN,
-            /* 19 */ ELSE,
-            /* 20 */ FALSE,
-            /* 21 */ TRUE,
-            /* 22 */ NOT,
-            /* 23 */ AND,
-            /* 24 */ OR,
-            /* 25 */ XOR,
-            /* 26 */ IMPLIES,
-            /* 27 */ ARROW,
-            /* 28 */ PLUS,
-            /* 29 */ MINUS,
-            /* 30 */ ASTERIX,
-            /* 31 */ EQUAL,
-            /* 32 */ NEQUAL,
-            /* 33 */ LESSER,
-            /* 34 */ LESSEQ,
-            /* 35 */ GREATER,
-            /* 36 */ GREATEREQ,
-            /* 37 */ ASSIGNMENT,
-            /* 38 */ MAPS,
-            /* 39 */ MARK,
-            /* 40 */ COLON,
-            /* 41 */ SEMICOLON,
-            /* 42 */ NAMESPACE,
-            /* 43 */ LPAREN,
-            /* 44 */ RPAREN,
-            /* 45 */ LSQPAREN,
-            /* 46 */ RSQPAREN,
-            /* 47 */ LCURPAREN,
-            /* 48 */ RCURPAREN,
-            /* 49 */ AT,
-            /* 50 */ COMMA,
+            /*  8 */ MICROPROCESSOR,
+            /*  9 */ CACHE,
+            /* 10 */ INTERCONNECT,
+            /* 11 */ DECODING,
+            /* 12 */ SYNTAX,
+            /* 13 */ EXPANSION,
+            /* 14 */ STAGE,
+            /* 15 */ ENUMERATION,
+            /* 16 */ USING,
+            /* 17 */ SKIP,
+            /* 18 */ ABSTRACT,
+            /* 19 */ LET,
+            /* 20 */ IN,
+            /* 21 */ IF,
+            /* 22 */ THEN,
+            /* 23 */ ELSE,
+            /* 24 */ FALSE,
+            /* 25 */ TRUE,
+            /* 26 */ NOT,
+            /* 27 */ AND,
+            /* 28 */ OR,
+            /* 29 */ XOR,
+            /* 30 */ IMPLIES,
+            /* 31 */ ARROW,
+            /* 32 */ PLUS,
+            /* 33 */ CARRYPLUS,
+            /* 34 */ MINUS,
+            /* 35 */ CARRYMINUS,
+            /* 36 */ ASTERIX,
+            /* 37 */ LSHIFT,
+            /* 38 */ RLSHIFT,
+            /* 39 */ RSHIFT,
+            /* 40 */ RRSHIFT,
+            /* 41 */ EQUAL,
+            /* 42 */ NEQUAL,
+            /* 43 */ LESSER,
+            /* 44 */ LESSEQ,
+            /* 45 */ GREATER,
+            /* 46 */ GREATEREQ,
+            /* 47 */ ASSIGNMENT,
+            /* 48 */ MAPS,
+            /* 49 */ MARK,
+            /* 50 */ COLON,
+            /* 51 */ SEMICOLON,
+            /* 52 */ NAMESPACE,
+            /* 53 */ LPAREN,
+            /* 54 */ RPAREN,
+            /* 55 */ LSQPAREN,
+            /* 56 */ RSQPAREN,
+            /* 57 */ LCURPAREN,
+            /* 58 */ RCURPAREN,
+            /* 59 */ AT,
+            /* 60 */ COMMA,
+            /* 61 */ DOT,
+            /* 62 */ DOTDOT,
         };
         
         static std::string tokenAsString( const Token token )
@@ -141,177 +154,225 @@ namespace libscod
                 {
                     return "instruction";
                 }
-                case /*  8 */ Token::DECODING:
+                case /*  8 */ Token::MICROPROCESSOR:
+                {
+                    return "microprocessor";
+                }
+                case /*  9 */ Token::CACHE:
+                {
+                    return "cache";
+                }
+                case /* 10 */ Token::INTERCONNECT:
+                {
+                    return "interconnect";
+                }
+                case /* 11 */ Token::DECODING:
                 {
                     return "decoding";
                 }
-                case /*  9 */ Token::SYNTAX:
+                case /* 12 */ Token::SYNTAX:
                 {
                     return "syntax";
                 }
-                case /* 10 */ Token::EXPANSION:
+                case /* 13 */ Token::EXPANSION:
                 {
                     return "expansion";
                 }
-                case /* 11 */ Token::ENUMERATION:
+                case /* 14 */ Token::STAGE:
+                {
+                    return "stage";
+                }
+                case /* 15 */ Token::ENUMERATION:
                 {
                     return "enumeration";
                 }
-                case /* 12 */ Token::USING:
+                case /* 16 */ Token::USING:
                 {
                     return "using";
                 }
-                case /* 13 */ Token::SKIP:
+                case /* 17 */ Token::SKIP:
                 {
                     return "skip";
                 }
-                case /* 14 */ Token::ABSTRACT:
+                case /* 18 */ Token::ABSTRACT:
                 {
                     return "abstract";
                 }
-                case /* 15 */ Token::LET:
+                case /* 19 */ Token::LET:
                 {
                     return "let";
                 }
-                case /* 16 */ Token::IN:
+                case /* 20 */ Token::IN:
                 {
                     return "in";
                 }
-                case /* 17 */ Token::IF:
+                case /* 21 */ Token::IF:
                 {
                     return "if";
                 }
-                case /* 18 */ Token::THEN:
+                case /* 22 */ Token::THEN:
                 {
                     return "then";
                 }
-                case /* 19 */ Token::ELSE:
+                case /* 23 */ Token::ELSE:
                 {
                     return "else";
                 }
-                case /* 20 */ Token::FALSE:
+                case /* 24 */ Token::FALSE:
                 {
                     return "false";
                 }
-                case /* 21 */ Token::TRUE:
+                case /* 25 */ Token::TRUE:
                 {
                     return "true";
                 }
-                case /* 22 */ Token::NOT:
+                case /* 26 */ Token::NOT:
                 {
                     return "not";
                 }
-                case /* 23 */ Token::AND:
+                case /* 27 */ Token::AND:
                 {
                     return "and";
                 }
-                case /* 24 */ Token::OR:
+                case /* 28 */ Token::OR:
                 {
                     return "or";
                 }
-                case /* 25 */ Token::XOR:
+                case /* 29 */ Token::XOR:
                 {
                     return "xor";
                 }
-                case /* 26 */ Token::IMPLIES:
+                case /* 30 */ Token::IMPLIES:
                 {
                     return "implies";
                 }
-                case /* 27 */ Token::ARROW:
+                case /* 31 */ Token::ARROW:
                 {
                     return "=>";
                 }
-                case /* 28 */ Token::PLUS:
+                case /* 32 */ Token::PLUS:
                 {
                     return "+";
                 }
-                case /* 29 */ Token::MINUS:
+                case /* 33 */ Token::CARRYPLUS:
+                {
+                    return "(+)";
+                }
+                case /* 34 */ Token::MINUS:
                 {
                     return "-";
                 }
-                case /* 30 */ Token::ASTERIX:
+                case /* 35 */ Token::CARRYMINUS:
+                {
+                    return "(-)";
+                }
+                case /* 36 */ Token::ASTERIX:
                 {
                     return "*";
                 }
-                case /* 31 */ Token::EQUAL:
+                case /* 37 */ Token::LSHIFT:
+                {
+                    return "<<";
+                }
+                case /* 38 */ Token::RLSHIFT:
+                {
+                    return "(<<)";
+                }
+                case /* 39 */ Token::RSHIFT:
+                {
+                    return ">>";
+                }
+                case /* 40 */ Token::RRSHIFT:
+                {
+                    return "(>>)";
+                }
+                case /* 41 */ Token::EQUAL:
                 {
                     return "=";
                 }
-                case /* 32 */ Token::NEQUAL:
+                case /* 42 */ Token::NEQUAL:
                 {
                     return "!=";
                 }
-                case /* 33 */ Token::LESSER:
+                case /* 43 */ Token::LESSER:
                 {
                     return "<";
                 }
-                case /* 34 */ Token::LESSEQ:
+                case /* 44 */ Token::LESSEQ:
                 {
                     return "<=";
                 }
-                case /* 35 */ Token::GREATER:
+                case /* 45 */ Token::GREATER:
                 {
                     return ">";
                 }
-                case /* 36 */ Token::GREATEREQ:
+                case /* 46 */ Token::GREATEREQ:
                 {
                     return ">=";
                 }
-                case /* 37 */ Token::ASSIGNMENT:
+                case /* 47 */ Token::ASSIGNMENT:
                 {
                     return ":=";
                 }
-                case /* 38 */ Token::MAPS:
+                case /* 48 */ Token::MAPS:
                 {
                     return "->";
                 }
-                case /* 39 */ Token::MARK:
+                case /* 49 */ Token::MARK:
                 {
                     return "'";
                 }
-                case /* 40 */ Token::COLON:
+                case /* 50 */ Token::COLON:
                 {
                     return ":";
                 }
-                case /* 41 */ Token::SEMICOLON:
+                case /* 51 */ Token::SEMICOLON:
                 {
                     return ";";
                 }
-                case /* 42 */ Token::NAMESPACE:
+                case /* 52 */ Token::NAMESPACE:
                 {
                     return "::";
                 }
-                case /* 43 */ Token::LPAREN:
+                case /* 53 */ Token::LPAREN:
                 {
                     return "(";
                 }
-                case /* 44 */ Token::RPAREN:
+                case /* 54 */ Token::RPAREN:
                 {
                     return ")";
                 }
-                case /* 45 */ Token::LSQPAREN:
+                case /* 55 */ Token::LSQPAREN:
                 {
                     return "[";
                 }
-                case /* 46 */ Token::RSQPAREN:
+                case /* 56 */ Token::RSQPAREN:
                 {
                     return "]";
                 }
-                case /* 47 */ Token::LCURPAREN:
+                case /* 57 */ Token::LCURPAREN:
                 {
                     return "{";
                 }
-                case /* 48 */ Token::RCURPAREN:
+                case /* 58 */ Token::RCURPAREN:
                 {
                     return "}";
                 }
-                case /* 49 */ Token::AT:
+                case /* 59 */ Token::AT:
                 {
                     return "@";
                 }
-                case /* 50 */ Token::COMMA:
+                case /* 60 */ Token::COMMA:
                 {
                     return ",";
+                }
+                case /* 61 */ Token::DOT:
+                {
+                    return ".";
+                }
+                case /* 62 */ Token::DOTDOT:
+                {
+                    return "..";
                 }
             }
             assert( !"internal error" );

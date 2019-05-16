@@ -53,6 +53,9 @@ Definition ::= MemoryDefinition
              | FormatDefinition
              | BufferDefinition
              | InstructionDefinition
+             | MicroProcessorDefinition
+             | CacheDefinition
+             | InterconnectDefinition
              | OptionDefinition
              | EnumerationDefinition
              | UsingDefinition
@@ -91,7 +94,7 @@ FieldDefinition ::= "field" Identifier ":" Type
 ** FormatDefinition
 
 #+begin_src
-FormatDefinition ::= "format" Identifier ":" PropertyType "=" FormatFields
+FormatDefinition ::= "format" Identifier ":" BasicType "=" FormatFields
 #+end_src
 
 #+html: {{page>.:grammar:FormatDefinition&noheader&nofooter}}
@@ -119,10 +122,38 @@ BufferDefinition ::= "buffer" Identifier ":" Type "=" Term
 
 #+begin_src
 InstructionDefinition ::= "instruction" Identifier ":" BasicType "=" Statement
-                        | "instruction" Identifier ":" BasicType "=" Statement Options
+                        | "instruction" Identifier ":" BasicType "=" Statement InstructionOptions
 #+end_src
 
 #+html: {{page>.:grammar:InstructionDefinition&noheader&nofooter}}
+
+
+** MicroProcessorDefinition
+
+#+begin_src
+MicroProcessorDefinition ::= "microprocessor" Identifier ":" IdentifierPath "=" Statement
+                           | "microprocessor" Identifier ":" IdentifierPath "=" Statement MicroProcessorOptions
+#+end_src
+
+#+html: {{page>.:grammar:MicroProcessorDefinition&noheader&nofooter}}
+
+
+** CacheDefinition
+
+#+begin_src
+CacheDefinition ::= "cache" Identifier ":" Type "=" MappingLiteral
+#+end_src
+
+#+html: {{page>.:grammar:CacheDefinition&noheader&nofooter}}
+
+
+** InterconnectDefinition
+
+#+begin_src
+InterconnectDefinition ::= "interconnect" Identifier ":" Type "=" MappingLiteral
+#+end_src
+
+#+html: {{page>.:grammar:InterconnectDefinition&noheader&nofooter}}
 
 
 ** OptionDefinition
@@ -163,25 +194,25 @@ UsingDefinition ::= "using" Identifier "=" Type
 #+html: {{page>.:grammar:UsingDefinition&noheader&nofooter}}
 
 
-** Options
+** InstructionOptions
 
 #+begin_src
-Options ::= Options Option
-          | Option
+InstructionOptions ::= InstructionOptions InstructionOption
+                     | InstructionOption
 #+end_src
 
-#+html: {{page>.:grammar:Options&noheader&nofooter}}
+#+html: {{page>.:grammar:InstructionOptions&noheader&nofooter}}
 
 
-** Option
+** InstructionOption
 
 #+begin_src
-Option ::= DecodingOption
-         | SyntaxOption
-         | ExpansionOption
+InstructionOption ::= DecodingOption
+                    | SyntaxOption
+                    | ExpansionOption
 #+end_src
 
-#+html: {{page>.:grammar:Option&noheader&nofooter}}
+#+html: {{page>.:grammar:InstructionOption&noheader&nofooter}}
 
 
 ** DecodingOption
@@ -211,6 +242,34 @@ ExpansionOption ::= "expansion" "=" SetLiteral
 #+html: {{page>.:grammar:ExpansionOption&noheader&nofooter}}
 
 
+** MicroProcessorOptions
+
+#+begin_src
+MicroProcessorOptions ::= MicroProcessorOptions MicroProcessorOption
+                        | MicroProcessorOption
+#+end_src
+
+#+html: {{page>.:grammar:MicroProcessorOptions&noheader&nofooter}}
+
+
+** MicroProcessorOption
+
+#+begin_src
+MicroProcessorOption ::= StageOption
+#+end_src
+
+#+html: {{page>.:grammar:MicroProcessorOption&noheader&nofooter}}
+
+
+** StageOption
+
+#+begin_src
+StageOption ::= "stage" Identifier "=" BlockStatement
+#+end_src
+
+#+html: {{page>.:grammar:StageOption&noheader&nofooter}}
+
+
 ** Statements
 
 #+begin_src
@@ -227,6 +286,7 @@ Statements ::= Statements Statement
 Statement ::= SkipStatement
             | AbstractStatement
             | BlockStatement
+            | CallStatement
             | LetStatement
             | AssignmentStatement
             | ConditionalStatement
@@ -260,6 +320,15 @@ BlockStatement ::= "{" Statements "}"
 #+end_src
 
 #+html: {{page>.:grammar:BlockStatement&noheader&nofooter}}
+
+
+** CallStatement
+
+#+begin_src
+CallStatement ::= DirectCallExpression
+#+end_src
+
+#+html: {{page>.:grammar:CallStatement&noheader&nofooter}}
 
 
 ** LetStatement
@@ -304,6 +373,8 @@ Terms ::= Terms "," Term
 
 #+begin_src
 Term ::= Expression
+       | LetExpression
+       | ConditionalExpression
        | OperatorExpression
 #+end_src
 
@@ -323,6 +394,24 @@ Expression ::= "(" Term ")"
 #+html: {{page>.:grammar:Expression&noheader&nofooter}}
 
 
+** LetExpression
+
+#+begin_src
+LetExpression ::= "let" VariableBindings "in" Term
+#+end_src
+
+#+html: {{page>.:grammar:LetExpression&noheader&nofooter}}
+
+
+** ConditionalExpression
+
+#+begin_src
+ConditionalExpression ::= "if" Term "then" Expression "else" Expression
+#+end_src
+
+#+html: {{page>.:grammar:ConditionalExpression&noheader&nofooter}}
+
+
 ** OperatorExpression
 
 #+begin_src
@@ -333,8 +422,14 @@ OperatorExpression ::= "not" Term
                      | Term "implies" Term
                      | Term "=>" Term
                      | Term "+" Term
+                     | Term "(+)" Term
                      | Term "-" Term
+                     | Term "(-)" Term
                      | Term "*" Term
+                     | Term "<<" Term
+                     | Term "(<<)" Term
+                     | Term ">>" Term
+                     | Term "(>>)" Term
                      | Term "=" Term
                      | Term "!=" Term
                      | Term "<" Term
@@ -350,6 +445,7 @@ OperatorExpression ::= "not" Term
 
 #+begin_src
 CallExpression ::= DirectCallExpression
+                 | MethodCallExpression
 #+end_src
 
 #+html: {{page>.:grammar:CallExpression&noheader&nofooter}}
@@ -366,6 +462,17 @@ DirectCallExpression ::= IdentifierPath
 #+html: {{page>.:grammar:DirectCallExpression&noheader&nofooter}}
 
 
+** MethodCallExpression
+
+#+begin_src
+MethodCallExpression ::= Expression "." Identifier
+                       | Expression "." Identifier "(" ")"
+                       | Expression "." Identifier "(" Terms ")"
+#+end_src
+
+#+html: {{page>.:grammar:MethodCallExpression&noheader&nofooter}}
+
+
 ** Literal
 
 #+begin_src
@@ -374,6 +481,8 @@ Literal ::= BooleanLiteral
           | BinaryLiteral
           | StringLiteral
           | SetLiteral
+          | ListLiteral
+          | RangeLiteral
           | RecordLiteral
           | MappingLiteral
           | ReferenceLiteral
@@ -428,6 +537,24 @@ SetLiteral ::= "{" Terms "}"
 #+end_src
 
 #+html: {{page>.:grammar:SetLiteral&noheader&nofooter}}
+
+
+** ListLiteral
+
+#+begin_src
+ListLiteral ::= "[" Terms "]"
+#+end_src
+
+#+html: {{page>.:grammar:ListLiteral&noheader&nofooter}}
+
+
+** RangeLiteral
+
+#+begin_src
+RangeLiteral ::= "[" Term ".." Term "]"
+#+end_src
+
+#+html: {{page>.:grammar:RangeLiteral&noheader&nofooter}}
 
 
 ** RecordLiteral
@@ -628,7 +755,8 @@ TypedVariable ::= Identifier ":" Type
 
 #+begin_src
 Identifier ::= "([a-ZA-Z_]|UTF8){([a-zA-Z_0-9]|UTF8)}*"
-             | "in"
+             | "instruction"
+             | "decoding"
 #+end_src
 
 #+html: {{page>.:grammar:Identifier&noheader&nofooter}}
