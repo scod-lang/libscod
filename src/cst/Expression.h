@@ -51,12 +51,8 @@ namespace libscod
 {
     namespace CST
     {
-        // class Type;
-        // class Literal;
-        // class Definition;
-        // class Template;
-        // class VariableDefinition;
-        // using VariableDefinitions = NodeList< VariableDefinition >;
+        class VariableBinding;
+        using VariableBindings = NodeList< VariableBinding >;
 
         class Expression : public Node
         {
@@ -158,6 +154,70 @@ namespace libscod
 
         using MappedExpressions = NodeList< MappedExpression >;
 
+        class LetExpression final : public Expression
+        {
+          public:
+            using Ptr = std::shared_ptr< LetExpression >;
+
+            explicit LetExpression(
+                const Token::Ptr& letToken,
+                const std::shared_ptr< VariableBindings >& variableBindings,
+                const Token::Ptr& inToken,
+                const Expression::Ptr& expression );
+
+            const Token::Ptr& letToken( void ) const;
+
+            const std::shared_ptr< VariableBindings >& variableBindings( void ) const;
+
+            const Token::Ptr& inToken( void ) const;
+
+            const Expression::Ptr& expression( void ) const;
+
+            void accept( Visitor& visitor ) override final;
+
+          private:
+            const Token::Ptr m_letToken;
+            const std::shared_ptr< VariableBindings > m_variableBindings;
+            const Token::Ptr m_inToken;
+            const Expression::Ptr m_expression;
+        };
+
+        class ConditionalExpression final : public Expression
+        {
+          public:
+            using Ptr = std::shared_ptr< ConditionalExpression >;
+
+            explicit ConditionalExpression(
+                const Token::Ptr& ifToken,
+                const Expression::Ptr& condition,
+                const Token::Ptr& thenToken,
+                const Expression::Ptr& thenExpression,
+                const Token::Ptr& elseToken,
+                const Expression::Ptr& elseExpression );
+
+            const Token::Ptr& ifToken( void ) const;
+
+            const Expression::Ptr& condition( void ) const;
+
+            const Token::Ptr& thenToken( void ) const;
+
+            const Expression::Ptr& thenExpression( void ) const;
+
+            const Token::Ptr& elseToken( void ) const;
+
+            const Expression::Ptr& elseExpression( void ) const;
+
+            void accept( Visitor& visitor ) override final;
+
+          private:
+            const Token::Ptr m_ifToken;
+            const Expression::Ptr m_condition;
+            const Token::Ptr m_thenToken;
+            const Expression::Ptr m_thenExpression;
+            const Token::Ptr m_elseToken;
+            const Expression::Ptr m_elseExpression;
+        };
+
         class CallExpression : public Expression
         {
           public:
@@ -198,6 +258,33 @@ namespace libscod
 
           private:
             IdentifierPath::Ptr m_name;
+        };
+
+        class MethodCallExpression final : public CallExpression
+        {
+          public:
+            using Ptr = std::shared_ptr< MethodCallExpression >;
+
+            MethodCallExpression(
+                const Expression::Ptr& object,
+                const Token::Ptr& dotToken,
+                const Identifier::Ptr& method,
+                const Token::Ptr& leftBracketToken,
+                const Expressions::Ptr& arguments,
+                const Token::Ptr& rightBracketToken );
+
+            const Expression::Ptr& object( void ) const;
+
+            const Token::Ptr& dotToken( void ) const;
+
+            const Identifier::Ptr& method( void ) const;
+
+            void accept( Visitor& visitor ) override;
+
+          private:
+            const Expression::Ptr m_object;
+            const Token::Ptr m_dotToken;
+            const Identifier::Ptr m_method;
         };
 
         class UnaryExpression final : public Expression

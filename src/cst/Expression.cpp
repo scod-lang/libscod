@@ -42,7 +42,7 @@
 
 #include "Expression.h"
 
-// #include <libscod/cst/Definition>
+#include <libscod/cst/Binding>
 #include <libscod/cst/Literal>
 #include <libscod/cst/Token>
 #include <libscod/cst/Type>
@@ -198,6 +198,106 @@ void MappedExpression::accept( Visitor& visitor )
 
 //
 //
+// LetExpression
+//
+
+LetExpression::LetExpression(
+    const Token::Ptr& letToken,
+    const VariableBindings::Ptr& variableBindings,
+    const Token::Ptr& inToken,
+    const Expression::Ptr& expression )
+: Expression( Node::ID::LET_EXPRESSION )
+, m_letToken( letToken )
+, m_variableBindings( variableBindings )
+, m_inToken( inToken )
+, m_expression( expression )
+{
+}
+
+const Token::Ptr& LetExpression::letToken( void ) const
+{
+    return m_letToken;
+}
+
+const VariableBindings::Ptr& LetExpression::variableBindings( void ) const
+{
+    return m_variableBindings;
+}
+
+const Token::Ptr& LetExpression::inToken( void ) const
+{
+    return m_inToken;
+}
+
+const Expression::Ptr& LetExpression::expression( void ) const
+{
+    return m_expression;
+}
+
+void LetExpression::accept( Visitor& visitor )
+{
+    visitor.visit( *this );
+}
+
+//
+//
+// ConditionalExpression
+//
+
+ConditionalExpression::ConditionalExpression(
+    const Token::Ptr& ifToken,
+    const Expression::Ptr& condition,
+    const Token::Ptr& thenToken,
+    const Expression::Ptr& thenExpression,
+    const Token::Ptr& elseToken,
+    const Expression::Ptr& elseExpression )
+: Expression( Node::ID::CONDITIONAL_EXPRESSION )
+, m_ifToken( ifToken )
+, m_condition( condition )
+, m_thenToken( thenToken )
+, m_thenExpression( thenExpression )
+, m_elseToken( elseToken )
+, m_elseExpression( elseExpression )
+{
+}
+
+const Token::Ptr& ConditionalExpression::ifToken( void ) const
+{
+    return m_ifToken;
+}
+
+const Expression::Ptr& ConditionalExpression::condition( void ) const
+{
+    return m_condition;
+}
+
+const Token::Ptr& ConditionalExpression::thenToken( void ) const
+{
+    return m_thenToken;
+}
+
+const Expression::Ptr& ConditionalExpression::thenExpression( void ) const
+{
+    return m_thenExpression;
+}
+
+const Token::Ptr& ConditionalExpression::elseToken( void ) const
+{
+    return m_elseToken;
+}
+
+const Expression::Ptr& ConditionalExpression::elseExpression( void ) const
+{
+    return m_elseExpression;
+}
+
+void ConditionalExpression::accept( Visitor& visitor )
+{
+    visitor.visit( *this );
+}
+
+//
+//
 // CallExpression
 //
 
@@ -249,6 +349,45 @@ const IdentifierPath::Ptr& DirectCallExpression::name( void ) const
 }
 
 void DirectCallExpression::accept( Visitor& visitor )
+{
+    visitor.visit( *this );
+}
+
+//
+//
+// MethodCallExpression
+//
+
+MethodCallExpression::MethodCallExpression(
+    const Expression::Ptr& object,
+    const Token::Ptr& dotToken,
+    const Identifier::Ptr& method,
+    const Token::Ptr& leftBracketToken,
+    const Expressions::Ptr& arguments,
+    const Token::Ptr& rightBracketToken )
+: CallExpression( Node::ID::METHOD_CALL_EXPRESSION, leftBracketToken, arguments, rightBracketToken )
+, m_object( object )
+, m_dotToken( dotToken )
+, m_method( method )
+{
+}
+
+const Expression::Ptr& MethodCallExpression::object( void ) const
+{
+    return m_object;
+}
+
+const Token::Ptr& MethodCallExpression::dotToken( void ) const
+{
+    return m_dotToken;
+}
+
+const Identifier::Ptr& MethodCallExpression::method( void ) const
+{
+    return m_method;
+}
+
+void MethodCallExpression::accept( Visitor& visitor )
 {
     visitor.visit( *this );
 }
