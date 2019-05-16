@@ -125,41 +125,53 @@ END       0 "end of file"
 %type <FormatDefinition::Ptr> FormatDefinition
 %type <BufferDefinition::Ptr> BufferDefinition
 %type <InstructionDefinition::Ptr> InstructionDefinition
+%type <MicroProcessorDefinition::Ptr> MicroProcessorDefinition
+%type <CacheDefinition::Ptr> CacheDefinition
+%type <InterconnectDefinition::Ptr> InterconnectDefinition
 %type <OptionDefinition::Ptr> OptionDefinition
 %type <EnumerationDefinition::Ptr> EnumerationDefinition
 %type <UsingDefinition::Ptr> UsingDefinition
 %type <VariableDefinition::Ptr> Variable TypedVariable AttributedVariable
 
 // options
-%type <Options::Ptr> Options
-%type <Option::Ptr> Option
+%type <Options::Ptr> InstructionOptions
+%type <Option::Ptr> InstructionOption
 %type <DecodingOption::Ptr> DecodingOption
 %type <SyntaxOption::Ptr> SyntaxOption
 %type <ExpansionOption::Ptr> ExpansionOption
+%type <Options::Ptr> MicroProcessorOptions
+%type <Option::Ptr> MicroProcessorOption
+%type <StageOption::Ptr> StageOption
 
 // statements
 %type <Statements::Ptr> Statements
 %type <Statement::Ptr> Statement // AttributedStatement
 %type <SkipStatement::Ptr> SkipStatement AbstractStatement
 %type <BlockStatement::Ptr> BlockStatement
+%type <CallStatement::Ptr> CallStatement
 %type <LetStatement::Ptr> LetStatement
 %type <AssignmentStatement::Ptr> AssignmentStatement
 %type <ConditionalStatement::Ptr> ConditionalStatement
 
 // expressions
-%type <Expression::Ptr> Term Expression OperatorExpression Terminal
 %type <Expressions::Ptr> Terms Terminals
+%type <Expression::Ptr> Term Expression OperatorExpression Terminal
+%type <LetExpression::Ptr> LetExpression
+%type <ConditionalExpression::Ptr> ConditionalExpression
 %type <NamedExpression::Ptr> Assignment
 %type <NamedExpressions::Ptr> Assignments
 %type <MappedExpression::Ptr> Mapping
 %type <MappedExpressions::Ptr> Mappings
 %type <CallExpression::Ptr> CallExpression
 %type <DirectCallExpression::Ptr> DirectCallExpression
+%type <MethodCallExpression::Ptr> MethodCallExpression
 
 // literals
 %type <Literal::Ptr> Literal
 %type <ValueLiteral::Ptr> BooleanLiteral IntegerLiteral BinaryLiteral StringLiteral
 %type <SetLiteral::Ptr> SetLiteral Enumerators
+%type <ListLiteral::Ptr> ListLiteral
+%type <RangeLiteral::Ptr> RangeLiteral
 %type <RecordLiteral::Ptr> RecordLiteral
 %type <MappingLiteral::Ptr> MappingLiteral FormatFields
 %type <ReferenceLiteral::Ptr> ReferenceLiteral
@@ -185,16 +197,13 @@ END       0 "end of file"
 %type <IdentifierPath::Ptr> IdentifierPath
 
 
- // %type <Case::Ptr> CaseLabel
-// %type <Cases::Ptr> CaseLabels
-// %type <VariableDefinitions::Ptr> Parameters AttributedVariables
-// %type <VariableBinding::Ptr> VariableBinding
-// %type <VariableBindings::Ptr> VariableBindings
-
 %start Specification
 
 // prefer basic types over the other types
 // %precedence BASIC_TYPE
+
+%precedence IN
+// %precedence DO
 
 %precedence THEN
 %precedence ELSE
@@ -210,11 +219,12 @@ END       0 "end of file"
 %left EQUAL NEQUAL
 %left GREATEREQ LESSEQ GREATER LESSER
 
-%left PLUS MINUS
+%left LSHIFT RSHIFT RLSHIFT RRSHIFT
+%left PLUS MINUS CARRYPLUS CARRYMINUS
 %left ASTERIX // SLASH // PERCENT 
 // %left CARET
 
-// %precedence DOT
+%precedence DOT
 // %precedence UPLUS UMINUS
 %precedence NOT
 
@@ -311,6 +321,18 @@ Definition
   {
       $$ = $1;
   }
+| MicroProcessorDefinition
+  {
+      $$ = $1;
+  }
+| CacheDefinition
+  {
+      $$ = $1;
+  }
+| InterconnectDefinition
+  {
+      $$ = $1;
+  }
 | OptionDefinition
   {
       $$ = $1;
@@ -339,10 +361,6 @@ RegisterDefinition
   {
       $$ = CST::make< RegisterDefinition >( @$, $1, $2, $3, $4 );
   }
-// | REGISTER Identifier COLON Type
-//   {
-//       $$ = CST::make< RegisterDefinition >( @$, $1, $2, $3, $4 );
-//   }
 ;
 
 
@@ -355,7 +373,7 @@ FieldDefinition
 
 
 FormatDefinition
-: FORMAT Identifier COLON PropertyType EQUAL FormatFields
+: FORMAT Identifier COLON BasicType EQUAL FormatFields
   {
       $$ = CST::make< FormatDefinition >( @$, $1, $2, $3, $4, $5, $6 );
   }
@@ -383,9 +401,38 @@ InstructionDefinition
       const auto& options = CST::make< Options >( @$ );
       $$ = CST::make< InstructionDefinition >( @$, $1, $2, $3, $4, $5, $6, options );
   }
-| INSTRUCTION Identifier COLON BasicType EQUAL Statement Options
+| INSTRUCTION Identifier COLON BasicType EQUAL Statement InstructionOptions
   {
       $$ = CST::make< InstructionDefinition >( @$, $1, $2, $3, $4, $5, $6, $7 );
+  }
+;
+
+
+MicroProcessorDefinition
+: MICROPROCESSOR Identifier COLON IdentifierPath EQUAL Statement
+  {
+      const auto& options = CST::make< Options >( @$ );
+      $$ = CST::make< MicroProcessorDefinition >( @$, $1, $2, $3, $4, $5, $6, options );
+  }
+| MICROPROCESSOR Identifier COLON IdentifierPath EQUAL Statement MicroProcessorOptions
+  {
+      $$ = CST::make< MicroProcessorDefinition >( @$, $1, $2, $3, $4, $5, $6, $7 );
+  }
+;
+
+
+CacheDefinition
+: CACHE Identifier COLON Type EQUAL MappingLiteral
+  {
+      $$ = CST::make< CacheDefinition >( @$, $1, $2, $3, $4, $5, $6 );
+  }
+;
+
+
+InterconnectDefinition
+: INTERCONNECT Identifier COLON Type EQUAL MappingLiteral
+  {
+      $$ = CST::make< InterconnectDefinition >( @$, $1, $2, $3, $4, $5, $6 );
   }
 ;
 
@@ -434,28 +481,23 @@ UsingDefinition
 // Options
 //
 
-Options
-: Options Option
+InstructionOptions
+: InstructionOptions InstructionOption
   {
       const auto& options = $1;
       options->add( $2 );
       $$ = options;
   }
-| Option
+| InstructionOption
   {
       const auto& options = CST::make< Options >( @$ );
       options->add( $1 );
       $$ = options;
   }
-// | %empty
-//   {
-//       const auto& options = CST::make< Options >( @$ );
-//       $$ = options;
-//   }
 ;
 
 
-Option
+InstructionOption
 : DecodingOption
   {
       $$ = $1;
@@ -494,6 +536,38 @@ ExpansionOption
   }
 ;
 
+
+MicroProcessorOptions
+: MicroProcessorOptions MicroProcessorOption
+  {
+      const auto& options = $1;
+      options->add( $2 );
+      $$ = options;
+  }
+| MicroProcessorOption
+  {
+      const auto& options = CST::make< Options >( @$ );
+      options->add( $1 );
+      $$ = options;
+  }
+;
+
+
+MicroProcessorOption
+: StageOption
+  {
+      $$ = $1;
+  }
+;
+
+
+StageOption
+: STAGE Identifier EQUAL BlockStatement
+  {
+      $$ = CST::make< StageOption >( @$, $1, $2, $3, $4 );
+  }
+;
+
 //
 //
 // Statements
@@ -525,6 +599,10 @@ Statement
       $$ = $1;
   }
 | BlockStatement
+  {
+      $$ = $1;
+  }
+| CallStatement
   {
       $$ = $1;
   }
@@ -569,6 +647,14 @@ BlockStatement
   {
       $$ = nullptr;
       yyerrok;
+  }
+;
+
+
+CallStatement
+: DirectCallExpression
+  {
+      $$ = CST::make< CallStatement >( @$, $1 );
   }
 ;
 
@@ -628,6 +714,14 @@ Term
   {
      $$ = $1;
   }
+| LetExpression
+  {
+      $$ = $1;
+  }
+| ConditionalExpression
+  {
+      $$ = $1;
+  }
 | OperatorExpression
   {
       $$ = $1;
@@ -656,6 +750,22 @@ Expression
  {
      $$ = CST::make< UnaryExpression >( @$, $1, $2 );
  }
+;
+
+
+LetExpression
+: LET VariableBindings IN Term
+  {
+      $$ = CST::make< LetExpression >( @$, $1, $2, $3, $4 );
+  }
+;
+
+
+ConditionalExpression
+: IF Term THEN Expression ELSE Expression
+  {
+      $$ = CST::make< ConditionalExpression >( @$, $1, $2, $3, $4, $5, $6 );
+  }
 ;
 
 
@@ -693,19 +803,35 @@ OperatorExpression
   {
       $$ = CST::make< BinaryExpression >( @$, $1, $2, $3 );
   }
-// | Term CURLYPLUS Term
-//   {
-//       $$ = CST::make< BinaryExpression >( @$, $1, $2, $3 );
-//   }
+| Term CARRYPLUS Term
+  {
+      $$ = CST::make< BinaryExpression >( @$, $1, $2, $3 );
+  }
 | Term MINUS Term
   {
       $$ = CST::make< BinaryExpression >( @$, $1, $2, $3 );
   }
-// | Term CURLYMINUS Term
-//   {
-//       $$ = CST::make< BinaryExpression >( @$, $1, $2, $3 );
-//   }
+| Term CARRYMINUS Term
+  {
+      $$ = CST::make< BinaryExpression >( @$, $1, $2, $3 );
+  }
 | Term ASTERIX Term
+  {
+      $$ = CST::make< BinaryExpression >( @$, $1, $2, $3 );
+  }
+| Term LSHIFT Term
+  {
+      $$ = CST::make< BinaryExpression >( @$, $1, $2, $3 );
+  }
+| Term RLSHIFT Term
+  {
+      $$ = CST::make< BinaryExpression >( @$, $1, $2, $3 );
+  }
+| Term RSHIFT Term
+  {
+      $$ = CST::make< BinaryExpression >( @$, $1, $2, $3 );
+  }
+| Term RRSHIFT Term
   {
       $$ = CST::make< BinaryExpression >( @$, $1, $2, $3 );
   }
@@ -741,6 +867,10 @@ CallExpression
   {
       $$ = $1;
   }
+| MethodCallExpression
+  {
+      $$ = $1;
+  }
 ;
 
 
@@ -766,84 +896,26 @@ DirectCallExpression
 ;
 
 
-// MethodCallExpression
-// : SimpleOrClaspedTerm DOT Identifier %prec CALL_WITHOUT_ARGS
-//   {
-//       const auto arguments = CST::make< Expressions >( @$ );
-//       $$ = CST::make< MethodCallExpression >( @$, $1, $2, $3, arguments );
-//   }
-// | SimpleOrClaspedTerm DOT Identifier LPAREN RPAREN
-//   {
-//       const auto arguments = CST::make< Expressions >( @$ );
-//       $$ = CST::make< MethodCallExpression >( @$, $1, $2, $3, arguments );
-//       $$->setLeftBracketToken( $4 );
-//       $$->setRightBracketToken( $5 );
-//   }
-// | SimpleOrClaspedTerm DOT Identifier LPAREN Terms RPAREN
-//   {
-//       $$ = CST::make< MethodCallExpression >( @$, $1, $2, $3, $5 );
-//       $$->setLeftBracketToken( $4 );
-//       $$->setRightBracketToken( $6 );
-//   }
-// | SimpleOrClaspedTerm DOT Identifier LPAREN error RPAREN // error recovery
-//   {
-//       $$ = nullptr;
-//   }
-// ;
-// 
-// 
-// LiteralCallExpression
-// : SimpleOrClaspedTerm DOT IntegerLiteral
-//   {
-//       $$ = CST::make< LiteralCallExpression >( @$, $1, $2, $3 );
-//   }
-// ;
-// 
-// 
-// IndirectCallExpression
-// : CallExpression LPAREN RPAREN
-//   {
-//       const auto arguments = CST::make< Expressions >( @$ );
-//       $$ = CST::make< IndirectCallExpression >( @$, $1, arguments );
-//       $$->setLeftBracketToken( $2 );
-//       $$->setRightBracketToken( $3 );
-//   }
-// | CallExpression LPAREN Terms RPAREN
-//   {
-//       $$ = CST::make< IndirectCallExpression >( @$, $1, $3 );
-//       $$->setLeftBracketToken( $2 );
-//       $$->setRightBracketToken( $4 );
-//   }
-// | CallExpression LPAREN error RPAREN // error recovery
-//   {
-//       $$ = nullptr;
-//   }
-// ;
-
-
-// TypeCastingExpression
-// : SimpleOrClaspedTerm AS Type
-//   {
-//       $$ = CST::make< TypeCastingExpression >( @$, $1, $2, $3 );
-//   }
-// ;
-
-
-// LetExpression
-// : LET VariableBindings IN Term
-//   {
-//       $$ = CST::make< LetExpression >( @$, $1, $2, $3, $4 );
-//   }
-// ;
-
-
-// ConditionalExpression
-// : IF Term THEN Term ELSE Term
-//   {
-//       $$ = CST::make< ConditionalExpression >( @$, $1, $2, $3, $4, $5, $6 );
-//   }
-// ;
-
+MethodCallExpression
+: Expression DOT Identifier // %prec CALL_WITHOUT_ARGS
+  {
+      const auto& arguments = CST::make< Expressions >( @$ );
+      $$ = CST::make< MethodCallExpression >( @$, $1, $2, $3, Token::unresolved(), arguments, Token::unresolved() );
+  }
+| Expression DOT Identifier LPAREN RPAREN
+  {
+      const auto& arguments = CST::make< Expressions >( @$ );
+      $$ = CST::make< MethodCallExpression >( @$, $1, $2, $3, Token::unresolved(), arguments, Token::unresolved() );
+  }
+| Expression DOT Identifier LPAREN Terms RPAREN
+  {
+      $$ = CST::make< MethodCallExpression >( @$, $1, $2, $3, Token::unresolved(), $5, Token::unresolved() );
+  }
+| Expression DOT Identifier LPAREN error RPAREN // error recovery
+  {
+      $$ = nullptr;
+  }
+;
 
 //
 //
@@ -868,6 +940,14 @@ Literal
       $$ = $1;
   }
 | SetLiteral
+  {
+      $$ = $1;
+  }
+| ListLiteral
+  {
+      $$ = $1;
+  }
+| RangeLiteral
   {
       $$ = $1;
   }
@@ -940,6 +1020,26 @@ SetLiteral
       $$ = CST::make< SetLiteral >( @$, $2 );
       $$->setLeftBracket( $1 );
       $$->setRightBracket( $3 );
+  }
+;
+
+
+ListLiteral
+: LSQPAREN Terms RSQPAREN
+  {
+      $$ = CST::make< ListLiteral >( @$, $2 );
+      $$->setLeftBracket( $1 );
+      $$->setRightBracket( $3 );
+  }
+;
+
+
+RangeLiteral
+: LSQPAREN Term DOTDOT Term RSQPAREN
+  {
+      $$ = CST::make< RangeLiteral >( @$, $2, $3, $4 );
+      $$->setLeftBracket( $1 );
+      $$->setRightBracket( $5 );
   }
 ;
 
@@ -1227,9 +1327,14 @@ Identifier
   {
       $$ = $1;
   }
-| IN // allow in keyword as identifier
+| INSTRUCTION // allow instruction keyword as identifier
   {
-      $$ = CST::make< Identifier >( @$, "in" );
+      $$ = CST::make< Identifier >( @$, "instruction" );
+      $$->setSpans( m_lexer.fetchSpansAndReset() );
+  }
+| DECODING // allow decoding keyword as identifier
+  {
+      $$ = CST::make< Identifier >( @$, "decoding" );
       $$->setSpans( m_lexer.fetchSpansAndReset() );
   }
 ;

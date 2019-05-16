@@ -48,9 +48,15 @@ FIELD           "field"
 FORMAT          "format"
 BUFFER          "buffer"
 INSTRUCTION     "instruction"
+MICROPROCESSOR  "microprocessor"
+CACHE           "cache"
+INTERCONNECT    "interconnect"
+
 DECODING        "decoding"
 SYNTAX          "syntax"
 EXPANSION       "expansion"
+STAGE           "stage"
+
 ENUMERATION     "enumeration"
 USING           "using"
 
@@ -73,8 +79,14 @@ IMPLIES         "implies"
 ARROW           "=>"
 
 PLUS            "+"
+CARRYPLUS       "(+)"
 MINUS           "-"
+CARRYMINUS      "(-)"
 ASTERIX         "*"
+LSHIFT          "<<"
+RLSHIFT         "(<<)"
+RSHIFT          ">>"
+RRSHIFT         "(>>)"
 
 EQUAL           "="
 NEQUAL          "!="
@@ -100,6 +112,8 @@ RCURPAREN       "}"
 
 AT              "@"
 COMMA           ","
+DOT             "."
+DOTDOT          ".."
 
 //  
 //  Local variables:
