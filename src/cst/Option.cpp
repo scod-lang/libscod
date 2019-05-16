@@ -149,6 +149,37 @@ void ExpansionOption::accept( Visitor& visitor )
 }
 
 //
+//
+// StageOption
+//
+
+StageOption::StageOption(
+    const Token::Ptr& stageToken,
+    const Identifier::Ptr& identifier,
+    const Token::Ptr& equalToken,
+    const BlockStatement::Ptr& statement )
+: Option( Node::ID::STAGE_OPTION, stageToken, equalToken )
+, m_identifier( identifier )
+, m_statement( statement )
+{
+}
+
+const Identifier::Ptr& StageOption::identifier( void ) const
+{
+    return m_identifier;
+}
+
+const BlockStatement::Ptr& StageOption::statement( void ) const
+{
+    return m_statement;
+}
+
+void StageOption::accept( Visitor& visitor )
+{
+    visitor.visit( *this );
+}
+
+//
 //  Local variables:
 //  mode: c++
 //  indent-tabs-mode: nil

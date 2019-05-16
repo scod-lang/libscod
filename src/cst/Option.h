@@ -45,6 +45,7 @@
 
 #include <libscod/cst/Literal>
 #include <libscod/cst/Node>
+#include <libscod/cst/Statement>
 #include <libscod/cst/Token>
 
 namespace libscod
@@ -132,6 +133,28 @@ namespace libscod
 
           private:
             const SetLiteral::Ptr m_value;
+        };
+
+        class StageOption final : public Option
+        {
+          public:
+            using Ptr = std::shared_ptr< StageOption >;
+
+            StageOption(
+                const Token::Ptr& stageToken,
+                const Identifier::Ptr& identifier,
+                const Token::Ptr& equalToken,
+                const BlockStatement::Ptr& statement );
+
+            const Identifier::Ptr& identifier( void ) const;
+
+            const BlockStatement::Ptr& statement( void ) const;
+
+            void accept( Visitor& visitor ) override final;
+
+          private:
+            const Identifier::Ptr m_identifier;
+            const BlockStatement::Ptr m_statement;
         };
     }
 }
