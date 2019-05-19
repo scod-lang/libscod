@@ -47,14 +47,11 @@ include_directories(
 )
 
 add_library( ${PROJECT}-cpp OBJECT
-#  Configuration.cpp
   Exception.cpp
   Lexer.cpp
   Logger.cpp
   Namespace.cpp
-#  Project.cpp
   Specification.cpp
-#  TypeInfo.cpp
 
   cst/Root.cpp
   cst/Attribute.cpp
@@ -71,32 +68,9 @@ add_library( ${PROJECT}-cpp OBJECT
   cst/Type.cpp
   cst/Visitor.cpp
 
-#  analyze/ConsistencyCheckPass.cpp
-#  analyze/TypeCheckPass.cpp
-#  analyze/TypeInferencePass.cpp
-#  analyze/AttributionPass.cpp
-#  analyze/SymbolRegistrationPass.cpp
-#  analyze/SymbolResolverPass.cpp
-#  analyze/FrameSizeDeterminationPass.cpp
-#  analyze/ProjectResolverPass.cpp
-#  analyze/PropertyResolverPass.cpp
-#  analyze/PropertyRevisePass.cpp
+#  analyze/TODO.cpp
 
-#  execute/ExecutionVisitor.cpp
-#  execute/NumericExecutionPass.cpp
-#  execute/HashMapBase.cpp
-#  execute/ReferenceConstant.cpp
-#  execute/Frame.cpp
-#  execute/RuntimeException.cpp
-#  execute/UpdateException.cpp
-
-#  import/FileLoadingStrategy.cpp
-#  import/PathLoadingStrategy.cpp
-#  import/SpecificationLoader.cpp
-#  import/SpecificationRepository.cpp
-#  import/ImportError.cpp
-#  import/LibraryLoaderPass.cpp
-#  import/SpecificationMergerPass.cpp
+#  execute/TODO.cpp
 
   transform/CstDumpPass.cpp
   transform/CstEmitPass.cpp
@@ -151,143 +125,6 @@ install(
   )
 
 
-# ecm_generate_headers( ${PROJECT}_ANALYZE_HEADERS_CPP
-#   ORIGINAL
-#     CAMELCASE
-#   HEADER_NAMES
-#     AttributionPass
-#     ConsistencyCheckPass
-#     SymbolRegistrationPass
-#     SymbolResolverPass
-#     TypeCheckPass
-#     TypeInferencePass
-#     FrameSizeDeterminationPass
-#     ProjectResolverPass
-#     PropertyResolverPass
-#     PropertyRevisePass
-#   PREFIX
-#     ${PROJECT}/analyze
-#   RELATIVE
-#     analyze
-#   REQUIRED_HEADERS
-#     ${PROJECT}_ANALYZE_HEADERS
-#   )
-# install(
-#   FILES
-#     ${${PROJECT}_ANALYZE_HEADERS}
-#     ${${PROJECT}_ANALYZE_HEADERS_CPP}
-#   DESTINATION
-#     "include/${PROJECT}/analyze"
-#   )
-# 
-# 
-# ecm_generate_headers( ${PROJECT}_EXECUTE_HEADERS_CPP
-#   ORIGINAL
-#     CAMELCASE
-#   HEADER_NAMES
-#     ChainedHashMap
-#     ExecutionVisitor
-#     Frame
-#     FunctionState
-#     HashMapBase
-#     LocationRegistry
-#     NumericExecutionPass
-#     ProbingHashMap
-#     ReferenceConstant
-#     RobinHoodHashMap
-#     Stack
-#     UpdateSet
-#     RuntimeException
-#     UpdateException
-#   PREFIX
-#     ${PROJECT}/execute
-#   RELATIVE
-#     execute
-#   REQUIRED_HEADERS
-#     ${PROJECT}_EXECUTE_HEADERS
-#   )
-# install(
-#   FILES
-#     ${${PROJECT}_EXECUTE_HEADERS}
-#     ${${PROJECT}_EXECUTE_HEADERS_CPP}
-#   DESTINATION
-#     "include/${PROJECT}/execute"
-#   )
-# 
-# 
-# ecm_generate_headers( ${PROJECT}_IMPORT_HEADERS_CPP
-#   ORIGINAL
-#     CAMELCASE
-#   HEADER_NAMES
-#     FileLoadingStrategy
-#     PathLoadingStrategy
-#     LoadingStrategy
-#     SpecificationRepository
-#     ImportError
-#     SpecificationLoader
-#     LibraryLoaderPass
-#     SpecificationMergerPass
-#   PREFIX
-#     ${PROJECT}/import
-#   RELATIVE
-#     import
-#   REQUIRED_HEADERS
-#     ${PROJECT}_IMPORT_HEADERS
-#   )
-# install(
-#   FILES
-#     ${${PROJECT}_IMPORT_HEADERS}
-#     ${${PROJECT}_IMPORT_HEADERS_CPP}
-#   DESTINATION
-#     "include/${PROJECT}/import"
-#   )
-
-
-ecm_generate_headers( ${PROJECT}_TRANSFORM_HEADERS_CPP
-  ORIGINAL
-    CAMELCASE
-  HEADER_NAMES
-    CstDumpPass
-    CstEmitPass
-    SourceToCstPass
-  PREFIX
-    ${PROJECT}/transform
-  RELATIVE
-    transform
-  REQUIRED_HEADERS
-    ${PROJECT}_TRANSFORM_HEADERS
-  )
-install(
-  FILES
-    ${${PROJECT}_TRANSFORM_HEADERS}
-    ${${PROJECT}_TRANSFORM_HEADERS_CPP}
-  DESTINATION
-    "include/${PROJECT}/transform"
-  )
-
-
-# ecm_generate_headers( ${PROJECT}_ALLOCATOR_HEADERS_CPP
-#   ORIGINAL
-#     CAMELCASE
-#   HEADER_NAMES
-#     BlockAllocator
-#     MemoryPool
-#   PREFIX
-#     ${PROJECT}/allocator
-#   RELATIVE
-#     allocator
-#   REQUIRED_HEADERS
-#     ${PROJECT}_ALLOCATOR_HEADERS
-#   )
-# install(
-#   FILES
-#     ${${PROJECT}_ALLOCATOR_HEADERS}
-#     ${${PROJECT}_ALLOCATOR_HEADERS_CPP}
-#   DESTINATION
-#     "include/${PROJECT}/allocator"
-#   )
-
-
 ecm_generate_headers( ${PROJECT}_CST_HEADERS_CPP
   ORIGINAL
     CAMELCASE
@@ -319,5 +156,70 @@ install(
     ${${PROJECT}_CST_HEADERS_CPP}
   DESTINATION
     "include/${PROJECT}/cst"
+  )
+
+
+# ecm_generate_headers( ${PROJECT}_ANALYZE_HEADERS_CPP
+#   ORIGINAL
+#     CAMELCASE
+#   HEADER_NAMES
+#     TODO
+#   PREFIX
+#     ${PROJECT}/analyze
+#   RELATIVE
+#     analyze
+#   REQUIRED_HEADERS
+#     ${PROJECT}_ANALYZE_HEADERS
+#   )
+# install(
+#   FILES
+#     ${${PROJECT}_ANALYZE_HEADERS}
+#     ${${PROJECT}_ANALYZE_HEADERS_CPP}
+#   DESTINATION
+#     "include/${PROJECT}/analyze"
+#   )
+
+
+# ecm_generate_headers( ${PROJECT}_EXECUTE_HEADERS_CPP
+#   ORIGINAL
+#     CAMELCASE
+#   HEADER_NAMES
+#     TODO
+#   PREFIX
+#     ${PROJECT}/execute
+#   RELATIVE
+#     execute
+#   REQUIRED_HEADERS
+#     ${PROJECT}_EXECUTE_HEADERS
+#   )
+# install(
+#   FILES
+#     ${${PROJECT}_EXECUTE_HEADERS}
+#     ${${PROJECT}_EXECUTE_HEADERS_CPP}
+#   DESTINATION
+#     "include/${PROJECT}/execute"
+#   )
+
+
+ecm_generate_headers( ${PROJECT}_TRANSFORM_HEADERS_CPP
+  ORIGINAL
+    CAMELCASE
+  HEADER_NAMES
+    CstDumpPass
+    CstEmitPass
+    SourceToCstPass
+  PREFIX
+    ${PROJECT}/transform
+  RELATIVE
+    transform
+  REQUIRED_HEADERS
+    ${PROJECT}_TRANSFORM_HEADERS
+  )
+install(
+  FILES
+    ${${PROJECT}_TRANSFORM_HEADERS}
+    ${${PROJECT}_TRANSFORM_HEADERS_CPP}
+  DESTINATION
+    "include/${PROJECT}/transform"
   )
 
