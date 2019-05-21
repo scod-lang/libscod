@@ -127,6 +127,49 @@ expansion =
 }
 
 
+register instr : Word
+
+microprocessor machine : PC = {
+    PC := 0xdeadbeef
+    GPR(0) := 0
+    instr := 0
+}
+stage fetch = {
+    instr := MEM( PC )
+}
+stage decode = {
+    decoding( instr, { @instruction } )
+}
+stage execute = {
+    instruction( opcode, { @instruction } )
+}
+
+
+cache CMEM : Word -> Word =
+{ MEM -> machine
+}
+
+[ instruction ]
+cache IMEM : Word -> Word =
+{ CMEM -> L2
+}
+
+[ data ]
+cache DMEM : Word -> Word =
+{ CMEM -> L2
+}
+
+cache L2 : Word -> Word =
+{ IMEM -> DRAM
+, DMEM -> DRAM
+}
+
+[ physical ]
+memory DRAM : Binary'24 -> Word
+
+interconnect BUS : Address -> Word =
+{ L2 -> DRAM
+}
 
 )***";
 
