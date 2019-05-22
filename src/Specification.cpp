@@ -61,6 +61,7 @@ Specification::Specification( void )
 : m_name()
 , m_location()
 , m_cst()
+, m_ast()
 // , m_symboltable( std::make_shared< Namespace >() )
 {
 }
@@ -112,6 +113,17 @@ const CST::Root::Ptr& Specification::cst( void ) const
 {
     assert( m_cst and " inconsistent state " );
     return m_cst;
+}
+
+void Specification::setAst( const AST::Root::Ptr& ast )
+{
+    m_ast = ast;
+}
+
+const AST::Root::Ptr& Specification::ast( void ) const
+{
+    assert( m_ast and " inconsistent state " );
+    return m_ast;
 }
 
 // void Specification::setSymboltable( const Namespace::Ptr& symboltable )

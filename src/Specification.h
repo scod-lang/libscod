@@ -44,6 +44,7 @@
 #define _LIBSCOD_SPECIFICATION_H_
 
 // #include <libscod/Namespace>
+#include <libscod/ast/Root>
 #include <libscod/cst/Root>
 
 #include <libstdhl/std/rfc3986>
@@ -70,6 +71,10 @@ namespace libscod
 
         const CST::Root::Ptr& cst( void ) const;
 
+        void setAst( const AST::Root::Ptr& ast );
+
+        const AST::Root::Ptr& ast( void ) const;
+
         // void setSymboltable( const Namespace::Ptr& symboltable );
 
         // const Namespace::Ptr& symboltable( void ) const;
@@ -78,6 +83,7 @@ namespace libscod
         std::string m_name;
         libstdhl::Standard::RFC3986::URI::Ptr m_location;
         CST::Root::Ptr m_cst;
+        AST::Root::Ptr m_ast;
         // Namespace::Ptr m_symboltable;
     };
 }
