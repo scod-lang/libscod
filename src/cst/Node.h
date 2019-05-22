@@ -40,8 +40,8 @@
 //  statement from your version.
 //
 
-#ifndef _LIBSCOD_NODE_H_
-#define _LIBSCOD_NODE_H_
+#ifndef _LIBSCOD_CST_NODE_H_
+#define _LIBSCOD_CST_NODE_H_
 
 #include <libscod/Scod>
 #include <libscod/cst/Visitor>
@@ -198,7 +198,7 @@ namespace libscod
     }
 }
 
-#endif  // _LIBSCOD_NODE_H_
+#endif  // _LIBSCOD_CST_NODE_H_
 
 //
 //  Local variables:
