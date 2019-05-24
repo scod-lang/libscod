@@ -43,6 +43,8 @@
 #ifndef _LIBSCOD_AST_DEFINITION_H_
 #define _LIBSCOD_AST_DEFINITION_H_
 
+#include <libscod/cst/Definition>
+
 #include <libscod/ast/Node>
 
 #include <libscod/ast/Literal>
@@ -156,12 +158,7 @@ namespace libscod
         class OptionDefinition final : public Definition
         {
           public:
-            enum class Kind
-            {
-                DECODING,
-                SYNTAX,
-                EXPANSION
-            };
+            using Kind = CST::OptionDefinition::Kind;
 
             using Ptr = std::shared_ptr< OptionDefinition >;
 
