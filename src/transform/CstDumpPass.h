@@ -48,7 +48,7 @@
 namespace libscod
 {
     /**
-       @brief Generates a DOT graph of the AST
+       @brief Generates a DOT graph of the CST
      */
     class CstDumpPass final : public libpass::Pass
     {
