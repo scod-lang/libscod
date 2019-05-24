@@ -43,6 +43,8 @@
 #ifndef _LIBSCOD_AST_LITERAL_H_
 #define _LIBSCOD_AST_LITERAL_H_
 
+#include <libscod/cst/Literal>
+
 #include <libscod/ast/Expression>
 
 #include <libstdhl/data/type/Boolean>
@@ -67,13 +69,7 @@ namespace libscod
         class ValueLiteral final : public Literal
         {
           public:
-            enum class Kind
-            {
-                BOOLEAN,
-                INTEGER,
-                BINARY,
-                STRING
-            };
+            using Kind = CST::ValueLiteral::Kind;
 
             using Ptr = std::shared_ptr< ValueLiteral >;
 
