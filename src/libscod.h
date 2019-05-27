@@ -45,8 +45,11 @@
 
 #include <libscod/Specification>
 #include <libscod/Version>
+#include <libscod/transform/AstDumpPass>
+#include <libscod/transform/AstToCasmPass>
 #include <libscod/transform/CstDumpPass>
 #include <libscod/transform/CstEmitPass>
+#include <libscod/transform/CstToAstPass>
 #include <libscod/transform/SourceToCstPass>
 
 namespace libscod
