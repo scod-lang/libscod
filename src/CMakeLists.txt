@@ -68,13 +68,28 @@ add_library( ${PROJECT}-cpp OBJECT
   cst/Type.cpp
   cst/Visitor.cpp
 
+  ast/Root.cpp
+  ast/Binding.cpp
+  ast/Definition.cpp
+  ast/Expression.cpp
+  ast/Identifier.cpp
+  ast/Literal.cpp
+  ast/Node.cpp
+  ast/Option.cpp
+  ast/Statement.cpp
+  ast/Type.cpp
+  ast/Visitor.cpp
+
 #  analyze/TODO.cpp
 
-#  execute/TODO.cpp
+  transform/SourceToCstPass.cpp
 
   transform/CstDumpPass.cpp
   transform/CstEmitPass.cpp
-  transform/SourceToCstPass.cpp
+  transform/CstToAstPass.cpp
+
+  transform/AstDumpPass.cpp
+  transform/AstToCasmPass.cpp
 
   various/GrammarParser.cpp
   )
@@ -159,6 +174,37 @@ install(
   )
 
 
+ecm_generate_headers( ${PROJECT}_AST_HEADERS_CPP
+  ORIGINAL
+    CAMELCASE
+  HEADER_NAMES
+    Root
+    Binding
+    Definition
+    Expression
+    Identifier
+    Literal
+    Node
+    Option
+    Statement
+    Type
+    Visitor
+  PREFIX
+    ${PROJECT}/ast
+  RELATIVE
+    ast
+  REQUIRED_HEADERS
+    ${PROJECT}_AST_HEADERS
+  )
+install(
+  FILES
+    ${${PROJECT}_AST_HEADERS}
+    ${${PROJECT}_AST_HEADERS_CPP}
+  DESTINATION
+    "include/${PROJECT}/ast"
+  )
+
+
 # ecm_generate_headers( ${PROJECT}_ANALYZE_HEADERS_CPP
 #   ORIGINAL
 #     CAMELCASE
@@ -180,34 +226,16 @@ install(
 #   )
 
 
-# ecm_generate_headers( ${PROJECT}_EXECUTE_HEADERS_CPP
-#   ORIGINAL
-#     CAMELCASE
-#   HEADER_NAMES
-#     TODO
-#   PREFIX
-#     ${PROJECT}/execute
-#   RELATIVE
-#     execute
-#   REQUIRED_HEADERS
-#     ${PROJECT}_EXECUTE_HEADERS
-#   )
-# install(
-#   FILES
-#     ${${PROJECT}_EXECUTE_HEADERS}
-#     ${${PROJECT}_EXECUTE_HEADERS_CPP}
-#   DESTINATION
-#     "include/${PROJECT}/execute"
-#   )
-
-
 ecm_generate_headers( ${PROJECT}_TRANSFORM_HEADERS_CPP
   ORIGINAL
     CAMELCASE
   HEADER_NAMES
+    SourceToCstPass
     CstDumpPass
     CstEmitPass
-    SourceToCstPass
+    CstToAstPass
+    AstDumpPass
+    AstToCasmPass
   PREFIX
     ${PROJECT}/transform
   RELATIVE
