@@ -216,6 +216,12 @@ SOURCE_TEST( transform, CstDumpPass, source, true, , );
 
 SOURCE_TEST( transform, CstEmitPass, source, true, , );
 
+SOURCE_TEST( transform, CstToAstPass, source, true, , );
+
+SOURCE_TEST( transform, AstDumpPass, source, true, , );
+
+SOURCE_TEST( transform, AstToCasmPass, source, true, , );
+
 //
 //  Local variables:
 //  mode: c++
