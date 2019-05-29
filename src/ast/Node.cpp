@@ -105,7 +105,7 @@ std::string Node::description( void ) const
         }
         case ID::INSTRUCTION_DEFINITION:
         {
-            return "memory definition";
+            return "instruction definition";
         }
         case ID::MICRO_PROCESSOR_DEFINITION:
         {
@@ -147,7 +147,7 @@ std::string Node::description( void ) const
         }
         case ID::SYNTAX_OPTION:
         {
-            return "decoding option";
+            return "syntax option";
         }
         case ID::EXPANSION_OPTION:
         {
