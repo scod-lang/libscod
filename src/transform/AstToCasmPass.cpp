@@ -42,6 +42,8 @@
 
 #include "AstToCasmPass.h"
 
+#include "../various/GrammarToken.h"
+
 #include <libscod/Logger>
 #include <libscod/ast/Visitor>
 #include <libscod/transform/CstToAstPass>
@@ -72,7 +74,10 @@ namespace libscod
         {
           public:
             AstToCasmVisitor(
-                std::ostream& stream, const std::string& name, const std::string& location );
+                Logger& log,
+                std::ostream& stream,
+                const std::string& name,
+                const std::string& location );
 
             void visit( Root& node ) override;
 
@@ -134,6 +139,7 @@ namespace libscod
             void dumpNode( const Node& node );
 
           private:
+            Logger& m_log;
             std::ostream& m_stream;
             const std::string m_name;
             const std::string m_location;
@@ -143,8 +149,9 @@ namespace libscod
 }
 
 AstToCasmVisitor::AstToCasmVisitor(
-    std::ostream& stream, const std::string& name, const std::string& location )
-: m_stream( stream )
+    Logger& log, std::ostream& stream, const std::string& name, const std::string& location )
+: m_log( log )
+, m_stream( stream )
 , m_name( name )
 , m_location( location )
 , m_parentNodes()
@@ -153,292 +160,480 @@ AstToCasmVisitor::AstToCasmVisitor(
 
 void AstToCasmVisitor::visit( Root& node )
 {
-    m_stream << "// " << m_name << "\n";
-    m_stream << "// " << m_location << "\n";
+    m_stream << "// source: " << m_location << "\n";
+    m_stream << "\n";
+    m_stream << "CASM\n";
+    m_stream << "\n";
 
     RecursiveVisitor::visit( node );
 }
 
 void AstToCasmVisitor::visit( MemoryDefinition& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "function ";
+    node.identifier()->accept( *this );
+    m_stream << " : ";
+    node.mappingType()->accept( *this );
+    m_stream << "\n";
+    m_stream << "\n";
 }
 
 void AstToCasmVisitor::visit( RegisterDefinition& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "function ";
+    node.identifier()->accept( *this );
+    m_stream << " : ";
+    if( node.mappingType()->id() != Node::ID::MAPPING_TYPE )
+    {
+        m_stream << "-> ";
+    }
+    node.mappingType()->accept( *this );
+    m_stream << "\n";
+    m_stream << "\n";
 }
 
 void AstToCasmVisitor::visit( FieldDefinition& node )
 {
-    dumpNode( node );
+    m_stream << "/* TODO: " << node.description() << " @ " << node.sourceLocation() << " ";
     RecursiveVisitor::visit( node );
+    m_stream << " */\n";
 }
 
 void AstToCasmVisitor::visit( FormatDefinition& node )
 {
-    dumpNode( node );
+    m_stream << "/* TODO: " << node.description() << " @ " << node.sourceLocation() << " ";
     RecursiveVisitor::visit( node );
+    m_stream << " */\n";
 }
 
 void AstToCasmVisitor::visit( BufferDefinition& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "derived ";
+    node.identifier()->accept( *this );
+    m_stream << " -> Void /* TODO: use correct type signature */";
+    m_stream << " = ";
+    node.expression()->accept( *this );
+    m_stream << "\n";
+    m_stream << "\n";
 }
 
 void AstToCasmVisitor::visit( InstructionDefinition& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "rule Instruction_";
+    node.identifier()->accept( *this );
+    m_stream << " = ";
+    node.statement()->accept( *this );
+    m_stream << "\n";
+    m_stream << "\n";
 }
 
 void AstToCasmVisitor::visit( MicroProcessorDefinition& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "rule Microprocessor_";
+    node.identifier()->accept( *this );
+    m_stream << " = ";
+    node.statement()->accept( *this );
+    m_stream << "\n";
+    m_stream << "\n";
 }
 
 void AstToCasmVisitor::visit( CacheDefinition& node )
 {
-    dumpNode( node );
+    m_stream << "/* TODO: " << node.description() << " @ " << node.sourceLocation() << " ";
     RecursiveVisitor::visit( node );
+    m_stream << " */\n";
 }
 
 void AstToCasmVisitor::visit( InterconnectDefinition& node )
 {
-    dumpNode( node );
+    m_stream << "/* TODO: " << node.description() << " @ " << node.sourceLocation() << " ";
     RecursiveVisitor::visit( node );
+    m_stream << " */\n";
 }
 
 void AstToCasmVisitor::visit( OptionDefinition& node )
 {
-    dumpNode( node );
+    m_stream << "/* TODO: " << node.description() << " @ " << node.sourceLocation() << " ";
     RecursiveVisitor::visit( node );
+    m_stream << " */\n";
 }
 
 void AstToCasmVisitor::visit( EnumerationDefinition& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "enumeration ";
+    node.identifier()->accept( *this );
+    m_stream << " = ";
+    node.enumerators()->accept( *this );
 }
 
 void AstToCasmVisitor::visit( UsingDefinition& node )
 {
     dumpNode( node );
-    RecursiveVisitor::visit( node );
+
+    m_stream << "using ";
+    node.identifier()->accept( *this );
+    m_stream << " = ";
+    node.alias()->accept( *this );
+    m_stream << "\n";
+    m_stream << "\n";
 }
 
 void AstToCasmVisitor::visit( VariableDefinition& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    node.identifier()->accept( *this );
+    if( node.variableType()->id() == Node::ID::UNRESOLVED_TYPE )
+    {
+        return;
+    }
+
+    m_stream << " : ";
+    node.variableType()->accept( *this );
 }
 
 void AstToCasmVisitor::visit( UnresolvedOption& node )
 {
-    dumpNode( node );
+    m_stream << "/* TODO: " << node.description() << " @ " << node.sourceLocation() << " ";
     RecursiveVisitor::visit( node );
+    m_stream << " */\n";
 }
 
 void AstToCasmVisitor::visit( DecodingOption& node )
 {
-    dumpNode( node );
+    m_stream << "/* TODO: " << node.description() << " @ " << node.sourceLocation() << " ";
     RecursiveVisitor::visit( node );
+    m_stream << " */\n";
 }
 
 void AstToCasmVisitor::visit( SyntaxOption& node )
 {
-    dumpNode( node );
+    m_stream << "/* TODO: " << node.description() << " @ " << node.sourceLocation() << " ";
     RecursiveVisitor::visit( node );
+    m_stream << " */\n";
 }
 
 void AstToCasmVisitor::visit( ExpansionOption& node )
 {
-    dumpNode( node );
+    m_stream << "/* TODO: " << node.description() << " @ " << node.sourceLocation() << " ";
     RecursiveVisitor::visit( node );
+    m_stream << " */\n";
 }
 
 void AstToCasmVisitor::visit( StageOption& node )
 {
-    dumpNode( node );
+    m_stream << "/* TODO: " << node.description() << " @ " << node.sourceLocation() << " ";
     RecursiveVisitor::visit( node );
+    m_stream << " */\n";
 }
 
 void AstToCasmVisitor::visit( SkipStatement& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "skip";
+    m_stream << "\n";
 }
 
 void AstToCasmVisitor::visit( BlockStatement& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "{|\n";
+    node.statements()->accept( *this );
+    m_stream << "|}\n";
 }
 
 void AstToCasmVisitor::visit( CallStatement& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    node.target()->accept( *this );
+    m_stream << "\n";
 }
 
 void AstToCasmVisitor::visit( LetStatement& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "let ";
+    node.variableBinding()->accept( *this );
+    m_stream << " in ";
+    node.statement()->accept( *this );
+    m_stream << "\n";
 }
 
 void AstToCasmVisitor::visit( AssignmentStatement& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    node.target()->accept( *this );
+    m_stream << " := ";
+    node.expression()->accept( *this );
+    m_stream << "\n";
 }
 
 void AstToCasmVisitor::visit( ConditionalStatement& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "if ";
+    node.condition()->accept( *this );
+    m_stream << " then\n";
+    node.thenStatement()->accept( *this );
+    if( node.elseStatement()->id() != Node::ID::SKIP_STATEMENT )
+    {
+        m_stream << "else\n";
+        node.elseStatement()->accept( *this );
+    }
+    m_stream << "\n";
 }
 
 void AstToCasmVisitor::visit( NamedExpression& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    node.identifier()->accept( *this );
+    m_stream << " : ";
+    node.expression()->accept( *this );
 }
 
 void AstToCasmVisitor::visit( MappedExpression& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "( ";
+    u1 first = true;
+    for( const auto& argument : *node.arguments() )
+    {
+        if( not first )
+        {
+            m_stream << ", ";
+        }
+        argument->accept( *this );
+        first = false;
+    }
+    m_stream << " ) -> ";
+    node.value()->accept( *this );
 }
 
 void AstToCasmVisitor::visit( LetExpression& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "let ";
+    node.variableBinding()->accept( *this );
+    m_stream << " in ";
+    node.expression()->accept( *this );
 }
 
 void AstToCasmVisitor::visit( ConditionalExpression& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "if ";
+    node.condition()->accept( *this );
+    m_stream << " then\n";
+    node.thenExpression()->accept( *this );
+    m_stream << "else\n";
+    node.elseExpression()->accept( *this );
+    m_stream << "\n";
 }
 
 void AstToCasmVisitor::visit( DirectCallExpression& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    node.name()->accept( *this );
+
+    const auto& arguments = *node.arguments();
+    if( arguments.size() == 0 )
+    {
+        return;
+    }
+
+    m_stream << "( ";
+    u1 first = true;
+    for( const auto& argument : *node.arguments() )
+    {
+        if( not first )
+        {
+            m_stream << ", ";
+        }
+        argument->accept( *this );
+        first = false;
+    }
+    m_stream << " )";
 }
 
 void AstToCasmVisitor::visit( MethodCallExpression& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    node.object()->accept( *this );
+    m_stream << ".";
+    node.method()->accept( *this );
+
+    const auto& arguments = *node.arguments();
+    if( arguments.size() == 0 )
+    {
+        return;
+    }
+
+    m_stream << "( ";
+    u1 first = true;
+    for( const auto& argument : *node.arguments() )
+    {
+        if( not first )
+        {
+            m_stream << ", ";
+        }
+        argument->accept( *this );
+        first = false;
+    }
+    m_stream << " )";
 }
 
 void AstToCasmVisitor::visit( UnaryExpression& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << Grammar::tokenAsString( Grammar::Token::PLUS );
+    node.expression()->accept( *this );
 }
 
 void AstToCasmVisitor::visit( BinaryExpression& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    node.leftExpression()->accept( *this );
+    m_stream << " ";
+    m_stream << Grammar::tokenAsString( Grammar::Token::PLUS );
+    m_stream << " ";
+    node.rightExpression()->accept( *this );
 }
 
 void AstToCasmVisitor::visit( ValueLiteral& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << node.toString();
 }
 
 void AstToCasmVisitor::visit( SetLiteral& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "{ ";
+    u1 first = true;
+    for( const auto& expression : *node.expressions() )
+    {
+        if( not first )
+        {
+            m_stream << ", ";
+        }
+        expression->accept( *this );
+        first = false;
+    }
+    m_stream << " }";
 }
 
 void AstToCasmVisitor::visit( ListLiteral& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "[ ";
+    u1 first = true;
+    for( const auto& expression : *node.expressions() )
+    {
+        if( not first )
+        {
+            m_stream << ", ";
+        }
+        expression->accept( *this );
+        first = false;
+    }
+    m_stream << " ]";
 }
 
 void AstToCasmVisitor::visit( RangeLiteral& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "[ ";
+    node.from()->accept( *this );
+    m_stream << " .. ";
+    node.to()->accept( *this );
+    m_stream << " ]";
 }
 
 void AstToCasmVisitor::visit( RecordLiteral& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "{ ";
+    u1 first = true;
+    for( const auto& namedExpression : *node.namedExpressions() )
+    {
+        if( not first )
+        {
+            m_stream << ", ";
+        }
+        namedExpression->accept( *this );
+        first = false;
+    }
+    m_stream << " }";
 }
 
 void AstToCasmVisitor::visit( MappingLiteral& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "{ ";
+    u1 first = true;
+    for( const auto& mappedExpression : *node.mappedExpressions() )
+    {
+        if( not first )
+        {
+            m_stream << ", ";
+        }
+        mappedExpression->accept( *this );
+        first = false;
+    }
+    m_stream << " }";
 }
 
 void AstToCasmVisitor::visit( ReferenceLiteral& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << "@";
+    node.target()->accept( *this );
 }
 
 void AstToCasmVisitor::visit( GrammarLiteral& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    // omit
 }
 
 void AstToCasmVisitor::visit( UnresolvedType& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_log.error( { node.sourceLocation() }, "invalid for CASM transformation" );
 }
 
 void AstToCasmVisitor::visit( BasicType& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    node.name()->accept( *this );
 }
 
 void AstToCasmVisitor::visit( PropertyType& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    node.name()->accept( *this );
+    m_stream << "'";
+    node.size()->accept( *this );
 }
 
 void AstToCasmVisitor::visit( MappingType& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    const auto& argumentTypes = *node.argumentTypes();
+    if( argumentTypes.size() > 0 )
+    {
+        u1 first = true;
+        for( const auto& argumentType : argumentTypes )
+        {
+            if( not first )
+            {
+                m_stream << " * ";
+            }
+            argumentType->accept( *this );
+            first = false;
+        }
+        m_stream << " ";
+    }
+    m_stream << "-> ";
+    node.returnType()->accept( *this );
 }
 
 void AstToCasmVisitor::visit( VariableBinding& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    node.variable()->accept( *this );
+    m_stream << " = ";
+    node.expression()->accept( *this );
 }
 
 void AstToCasmVisitor::visit( Identifier& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    m_stream << node.name();
 }
 
 void AstToCasmVisitor::visit( IdentifierPath& node )
 {
-    dumpNode( node );
-    RecursiveVisitor::visit( node );
+    u1 first = true;
+    for( const auto& identifier : *node.identifiers() )
+    {
+        if( not first )
+        {
+            m_stream << "::";
+        }
+        identifier->accept( *this );
+        first = false;
+    }
 }
 
 void AstToCasmVisitor::dumpNode( const Node& node )
@@ -459,9 +654,9 @@ u1 AstToCasmPass::run( libpass::PassResult& pr )
     const auto& specification = data->specification();
 
     const auto printCasmSpecification = [ & ]( std::ostream& out ) {
-        AstToCasmVisitor visitor{ out,
-                                  specification->name(),
-                                  specification->location()->toString() };
+        AstToCasmVisitor visitor{
+            log, out, specification->name(), specification->location()->toString()
+        };
         specification->ast()->accept( visitor );
     };
 
@@ -472,8 +667,7 @@ u1 AstToCasmPass::run( libpass::PassResult& pr )
     }
     else
     {
-        const auto previousPass = libpass::PassRegistry::passInfo( pr.previousPass() );
-        const std::string outputFile = specification->name() + "." + previousPass.name() + ".casm";
+        const std::string outputFile = specification->name() + ".casm";
 
         if( not libstdhl::File::Path::exists( outputPath() ) )
         {
