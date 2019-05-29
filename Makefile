@@ -44,6 +44,7 @@ TARGET = libscod
 
 FORMAT  = src
 FORMAT += src/analyze
+FORMAT += src/ast
 FORMAT += src/cst
 FORMAT += src/transform
 FORMAT += etc
