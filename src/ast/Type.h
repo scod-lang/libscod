@@ -188,7 +188,7 @@ namespace libscod
           public:
             using Ptr = std::shared_ptr< PropertyType >;
 
-            PropertyType( const IdentifierPath::Ptr& identifier, const ValueLiteral::Ptr& size );
+            PropertyType( const IdentifierPath::Ptr& name, const ValueLiteral::Ptr& size );
 
             const ValueLiteral::Ptr& size( void ) const;
 
