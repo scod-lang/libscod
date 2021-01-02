@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#   Copyright (C) 2019-2020 SCOD Organization <https://scod-lang.org>
+#   Copyright (C) 2019-2021 SCOD Organization <https://scod-lang.org>
 #   All rights reserved.
 #
 #   Developed by: Philipp Paulweber
