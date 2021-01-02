@@ -627,7 +627,7 @@ static const flex_int16_t yy_chk[495] =
 #line 1 "obj/src/GrammarLexer.l"
 #line 2 "obj/src/GrammarLexer.l"
 //
-//  Copyright (C) 2019-2020 SCOD Organization <https://scod-lang.org>
+//  Copyright (C) 2019-2021 SCOD Organization <https://scod-lang.org>
 //  All rights reserved.
 //
 //  Developed by: Philipp Paulweber

@@ -582,7 +582,7 @@ Nonterminals, with rules where they appear
 
 State 0
 
-    0 $accept: . Specification "end of file"
+    0 $accept: • Specification "end of file"
 
     "SCOD"  shift, and go to state 1
     "["     shift, and go to state 2
@@ -595,16 +595,16 @@ State 0
 
 State 1
 
-    3 Header: "SCOD" .
+    3 Header: "SCOD" •
 
     $default  reduce using rule 3 (Header)
 
 
 State 2
 
-  174 Attribute: "[" . BasicAttribute "]"
-  175          | "[" . ExpressionAttribute "]"
-  176          | "[" . error "]"
+  174 Attribute: "[" • BasicAttribute "]"
+  175          | "[" • ExpressionAttribute "]"
+  176          | "[" • error "]"
 
     error          shift, and go to state 7
     "instruction"  shift, and go to state 8
@@ -618,14 +618,14 @@ State 2
 
 State 3
 
-    0 $accept: Specification . "end of file"
+    0 $accept: Specification • "end of file"
 
     "end of file"  shift, and go to state 14
 
 
 State 4
 
-    1 Specification: Header . Definitions
+    1 Specification: Header • Definitions
 
     error             shift, and go to state 15
     "memory"          shift, and go to state 16
@@ -664,8 +664,8 @@ State 4
 
 State 5
 
-    2 Header: Attributes . "SCOD"
-  172 Attributes: Attributes . Attribute
+    2 Header: Attributes • "SCOD"
+  172 Attributes: Attributes • Attribute
 
     "SCOD"  shift, and go to state 45
     "["     shift, and go to state 2
@@ -675,43 +675,43 @@ State 5
 
 State 6
 
-  173 Attributes: Attribute .
+  173 Attributes: Attribute •
 
     $default  reduce using rule 173 (Attributes)
 
 
 State 7
 
-  176 Attribute: "[" error . "]"
+  176 Attribute: "[" error • "]"
 
     "]"  shift, and go to state 47
 
 
 State 8
 
-  168 Identifier: "instruction" .
+  168 Identifier: "instruction" •
 
     $default  reduce using rule 168 (Identifier)
 
 
 State 9
 
-  169 Identifier: "decoding" .
+  169 Identifier: "decoding" •
 
     $default  reduce using rule 169 (Identifier)
 
 
 State 10
 
-  167 Identifier: "identifier" .
+  167 Identifier: "identifier" •
 
     $default  reduce using rule 167 (Identifier)
 
 
 State 11
 
-  177 BasicAttribute: Identifier .
-  178 ExpressionAttribute: Identifier . Term
+  177 BasicAttribute: Identifier •
+  178 ExpressionAttribute: Identifier • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -761,35 +761,35 @@ State 11
 
 State 12
 
-  174 Attribute: "[" BasicAttribute . "]"
+  174 Attribute: "[" BasicAttribute • "]"
 
     "]"  shift, and go to state 85
 
 
 State 13
 
-  175 Attribute: "[" ExpressionAttribute . "]"
+  175 Attribute: "[" ExpressionAttribute • "]"
 
     "]"  shift, and go to state 86
 
 
 State 14
 
-    0 $accept: Specification "end of file" .
+    0 $accept: Specification "end of file" •
 
     $default  accept
 
 
 State 15
 
-    8 AttributedDefinition: error .
+    8 AttributedDefinition: error •
 
     $default  reduce using rule 8 (AttributedDefinition)
 
 
 State 16
 
-   21 MemoryDefinition: "memory" . Identifier ":" MappingType
+   21 MemoryDefinition: "memory" • Identifier ":" MappingType
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -800,7 +800,7 @@ State 16
 
 State 17
 
-   22 RegisterDefinition: "register" . Identifier ":" Type
+   22 RegisterDefinition: "register" • Identifier ":" Type
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -811,7 +811,7 @@ State 17
 
 State 18
 
-   23 FieldDefinition: "field" . Identifier ":" Type
+   23 FieldDefinition: "field" • Identifier ":" Type
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -822,7 +822,7 @@ State 18
 
 State 19
 
-   24 FormatDefinition: "format" . Identifier ":" BasicType "=" FormatFields
+   24 FormatDefinition: "format" • Identifier ":" BasicType "=" FormatFields
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -833,7 +833,7 @@ State 19
 
 State 20
 
-   26 BufferDefinition: "buffer" . Identifier ":" Type "=" Term
+   26 BufferDefinition: "buffer" • Identifier ":" Type "=" Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -844,8 +844,8 @@ State 20
 
 State 21
 
-   27 InstructionDefinition: "instruction" . Identifier ":" BasicType "=" Statement
-   28                      | "instruction" . Identifier ":" BasicType "=" Statement InstructionOptions
+   27 InstructionDefinition: "instruction" • Identifier ":" BasicType "=" Statement
+   28                      | "instruction" • Identifier ":" BasicType "=" Statement InstructionOptions
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -856,8 +856,8 @@ State 21
 
 State 22
 
-   29 MicroProcessorDefinition: "microprocessor" . Identifier ":" IdentifierPath "=" Statement
-   30                         | "microprocessor" . Identifier ":" IdentifierPath "=" Statement MicroProcessorOptions
+   29 MicroProcessorDefinition: "microprocessor" • Identifier ":" IdentifierPath "=" Statement
+   30                         | "microprocessor" • Identifier ":" IdentifierPath "=" Statement MicroProcessorOptions
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -868,7 +868,7 @@ State 22
 
 State 23
 
-   31 CacheDefinition: "cache" . Identifier ":" Type "=" MappingLiteral
+   31 CacheDefinition: "cache" • Identifier ":" Type "=" MappingLiteral
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -879,7 +879,7 @@ State 23
 
 State 24
 
-   32 InterconnectDefinition: "interconnect" . Identifier ":" Type "=" MappingLiteral
+   32 InterconnectDefinition: "interconnect" • Identifier ":" Type "=" MappingLiteral
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -890,7 +890,7 @@ State 24
 
 State 25
 
-   36 EnumerationDefinition: "enumeration" . Identifier "=" Enumerators
+   36 EnumerationDefinition: "enumeration" • Identifier "=" Enumerators
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -901,7 +901,7 @@ State 25
 
 State 26
 
-   38 UsingDefinition: "using" . Identifier "=" Type
+   38 UsingDefinition: "using" • Identifier "=" Type
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -912,7 +912,7 @@ State 26
 
 State 27
 
-  142 ReferenceLiteral: "@" . IdentifierPath
+  142 ReferenceLiteral: "@" • IdentifierPath
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -924,8 +924,8 @@ State 27
 
 State 28
 
-    1 Specification: Header Definitions .
-    4 Definitions: Definitions . AttributedDefinition
+    1 Specification: Header Definitions •
+    4 Definitions: Definitions • AttributedDefinition
 
     error             shift, and go to state 15
     "memory"          shift, and go to state 16
@@ -965,107 +965,107 @@ State 28
 
 State 29
 
-    5 Definitions: AttributedDefinition .
+    5 Definitions: AttributedDefinition •
 
     $default  reduce using rule 5 (Definitions)
 
 
 State 30
 
-    7 AttributedDefinition: Definition .
+    7 AttributedDefinition: Definition •
 
     $default  reduce using rule 7 (AttributedDefinition)
 
 
 State 31
 
-    9 Definition: MemoryDefinition .
+    9 Definition: MemoryDefinition •
 
     $default  reduce using rule 9 (Definition)
 
 
 State 32
 
-   10 Definition: RegisterDefinition .
+   10 Definition: RegisterDefinition •
 
     $default  reduce using rule 10 (Definition)
 
 
 State 33
 
-   11 Definition: FieldDefinition .
+   11 Definition: FieldDefinition •
 
     $default  reduce using rule 11 (Definition)
 
 
 State 34
 
-   12 Definition: FormatDefinition .
+   12 Definition: FormatDefinition •
 
     $default  reduce using rule 12 (Definition)
 
 
 State 35
 
-   13 Definition: BufferDefinition .
+   13 Definition: BufferDefinition •
 
     $default  reduce using rule 13 (Definition)
 
 
 State 36
 
-   14 Definition: InstructionDefinition .
+   14 Definition: InstructionDefinition •
 
     $default  reduce using rule 14 (Definition)
 
 
 State 37
 
-   15 Definition: MicroProcessorDefinition .
+   15 Definition: MicroProcessorDefinition •
 
     $default  reduce using rule 15 (Definition)
 
 
 State 38
 
-   16 Definition: CacheDefinition .
+   16 Definition: CacheDefinition •
 
     $default  reduce using rule 16 (Definition)
 
 
 State 39
 
-   17 Definition: InterconnectDefinition .
+   17 Definition: InterconnectDefinition •
 
     $default  reduce using rule 17 (Definition)
 
 
 State 40
 
-   18 Definition: OptionDefinition .
+   18 Definition: OptionDefinition •
 
     $default  reduce using rule 18 (Definition)
 
 
 State 41
 
-   19 Definition: EnumerationDefinition .
+   19 Definition: EnumerationDefinition •
 
     $default  reduce using rule 19 (Definition)
 
 
 State 42
 
-   20 Definition: UsingDefinition .
+   20 Definition: UsingDefinition •
 
     $default  reduce using rule 20 (Definition)
 
 
 State 43
 
-   33 OptionDefinition: ReferenceLiteral . DecodingOption
-   34                 | ReferenceLiteral . SyntaxOption
-   35                 | ReferenceLiteral . ExpansionOption
+   33 OptionDefinition: ReferenceLiteral • DecodingOption
+   34                 | ReferenceLiteral • SyntaxOption
+   35                 | ReferenceLiteral • ExpansionOption
 
     "decoding"   shift, and go to state 100
     "syntax"     shift, and go to state 101
@@ -1078,8 +1078,8 @@ State 43
 
 State 44
 
-    6 AttributedDefinition: Attributes . Definition
-  172 Attributes: Attributes . Attribute
+    6 AttributedDefinition: Attributes • Definition
+  172 Attributes: Attributes • Attribute
 
     "memory"          shift, and go to state 16
     "register"        shift, and go to state 17
@@ -1114,28 +1114,28 @@ State 44
 
 State 45
 
-    2 Header: Attributes "SCOD" .
+    2 Header: Attributes "SCOD" •
 
     $default  reduce using rule 2 (Header)
 
 
 State 46
 
-  172 Attributes: Attributes Attribute .
+  172 Attributes: Attributes Attribute •
 
     $default  reduce using rule 172 (Attributes)
 
 
 State 47
 
-  176 Attribute: "[" error "]" .
+  176 Attribute: "[" error "]" •
 
     $default  reduce using rule 176 (Attribute)
 
 
 State 48
 
-   80 LetExpression: "let" . VariableBindings "in" Term
+   80 LetExpression: "let" • VariableBindings "in" Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -1154,7 +1154,7 @@ State 48
 
 State 49
 
-   81 ConditionalExpression: "if" . Term "then" Expression "else" Expression
+   81 ConditionalExpression: "if" • Term "then" Expression "else" Expression
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -1202,21 +1202,21 @@ State 49
 
 State 50
 
-  125 BooleanLiteral: "false" .
+  125 BooleanLiteral: "false" •
 
     $default  reduce using rule 125 (BooleanLiteral)
 
 
 State 51
 
-  124 BooleanLiteral: "true" .
+  124 BooleanLiteral: "true" •
 
     $default  reduce using rule 124 (BooleanLiteral)
 
 
 State 52
 
-   82 OperatorExpression: "not" . Term
+   82 OperatorExpression: "not" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -1264,7 +1264,7 @@ State 52
 
 State 53
 
-   78 Expression: "+" . Term
+   78 Expression: "+" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -1312,7 +1312,7 @@ State 53
 
 State 54
 
-   79 Expression: "-" . Term
+   79 Expression: "-" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -1360,7 +1360,7 @@ State 54
 
 State 55
 
-  143 GrammarLiteral: "::" . Terminals ";"
+  143 GrammarLiteral: "::" • Terminals ";"
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -1384,7 +1384,7 @@ State 55
 
 State 56
 
-   75 Expression: "(" . Term ")"
+   75 Expression: "(" • Term ")"
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -1432,8 +1432,8 @@ State 56
 
 State 57
 
-  131 ListLiteral: "[" . Terms "]"
-  132 RangeLiteral: "[" . Term ".." Term "]"
+  131 ListLiteral: "[" • Terms "]"
+  132 RangeLiteral: "[" • Term ".." Term "]"
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -1482,9 +1482,9 @@ State 57
 
 State 58
 
-  130 SetLiteral: "{" . Terms "}"
-  133 RecordLiteral: "{" . Assignments "}"
-  137 MappingLiteral: "{" . Mappings "}"
+  130 SetLiteral: "{" • Terms "}"
+  133 RecordLiteral: "{" • Assignments "}"
+  137 MappingLiteral: "{" • Mappings "}"
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -1537,55 +1537,55 @@ State 58
 
 State 59
 
-  126 IntegerLiteral: "integer" .
+  126 IntegerLiteral: "integer" •
 
     $default  reduce using rule 126 (IntegerLiteral)
 
 
 State 60
 
-  127 BinaryLiteral: "binary" .
+  127 BinaryLiteral: "binary" •
 
     $default  reduce using rule 127 (BinaryLiteral)
 
 
 State 61
 
-  128 BinaryLiteral: "hexadecimal" .
+  128 BinaryLiteral: "hexadecimal" •
 
     $default  reduce using rule 128 (BinaryLiteral)
 
 
 State 62
 
-  129 StringLiteral: "string" .
+  129 StringLiteral: "string" •
 
     $default  reduce using rule 129 (StringLiteral)
 
 
 State 63
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
-  178 ExpressionAttribute: Identifier Term .
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
+  178 ExpressionAttribute: Identifier Term •
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -1613,11 +1613,11 @@ State 63
 
 State 64
 
-   71 Term: Expression .
-  109 MethodCallExpression: Expression . "." Identifier
-  110                     | Expression . "." Identifier "(" ")"
-  111                     | Expression . "." Identifier "(" Terms ")"
-  112                     | Expression . "." Identifier "(" error ")"
+   71 Term: Expression •
+  109 MethodCallExpression: Expression • "." Identifier
+  110                     | Expression • "." Identifier "(" ")"
+  111                     | Expression • "." Identifier "(" Terms ")"
+  112                     | Expression • "." Identifier "(" error ")"
 
     "."  shift, and go to state 156
 
@@ -1627,144 +1627,144 @@ State 64
 
 State 65
 
-   72 Term: LetExpression .
+   72 Term: LetExpression •
 
     $default  reduce using rule 72 (Term)
 
 
 State 66
 
-   73 Term: ConditionalExpression .
+   73 Term: ConditionalExpression •
 
     $default  reduce using rule 73 (Term)
 
 
 State 67
 
-   74 Term: OperatorExpression .
+   74 Term: OperatorExpression •
 
     $default  reduce using rule 74 (Term)
 
 
 State 68
 
-   76 Expression: CallExpression .
+   76 Expression: CallExpression •
 
     $default  reduce using rule 76 (Expression)
 
 
 State 69
 
-  103 CallExpression: DirectCallExpression .
+  103 CallExpression: DirectCallExpression •
 
     $default  reduce using rule 103 (CallExpression)
 
 
 State 70
 
-  104 CallExpression: MethodCallExpression .
+  104 CallExpression: MethodCallExpression •
 
     $default  reduce using rule 104 (CallExpression)
 
 
 State 71
 
-   77 Expression: Literal .
+   77 Expression: Literal •
 
     $default  reduce using rule 77 (Expression)
 
 
 State 72
 
-  113 Literal: BooleanLiteral .
+  113 Literal: BooleanLiteral •
 
     $default  reduce using rule 113 (Literal)
 
 
 State 73
 
-  114 Literal: IntegerLiteral .
+  114 Literal: IntegerLiteral •
 
     $default  reduce using rule 114 (Literal)
 
 
 State 74
 
-  115 Literal: BinaryLiteral .
+  115 Literal: BinaryLiteral •
 
     $default  reduce using rule 115 (Literal)
 
 
 State 75
 
-  116 Literal: StringLiteral .
+  116 Literal: StringLiteral •
 
     $default  reduce using rule 116 (Literal)
 
 
 State 76
 
-  117 Literal: SetLiteral .
+  117 Literal: SetLiteral •
 
     $default  reduce using rule 117 (Literal)
 
 
 State 77
 
-  118 Literal: ListLiteral .
+  118 Literal: ListLiteral •
 
     $default  reduce using rule 118 (Literal)
 
 
 State 78
 
-  119 Literal: RangeLiteral .
+  119 Literal: RangeLiteral •
 
     $default  reduce using rule 119 (Literal)
 
 
 State 79
 
-  120 Literal: RecordLiteral .
+  120 Literal: RecordLiteral •
 
     $default  reduce using rule 120 (Literal)
 
 
 State 80
 
-  121 Literal: MappingLiteral .
+  121 Literal: MappingLiteral •
 
     $default  reduce using rule 121 (Literal)
 
 
 State 81
 
-  122 Literal: ReferenceLiteral .
+  122 Literal: ReferenceLiteral •
 
     $default  reduce using rule 122 (Literal)
 
 
 State 82
 
-  123 Literal: GrammarLiteral .
+  123 Literal: GrammarLiteral •
 
     $default  reduce using rule 123 (Literal)
 
 
 State 83
 
-  171 IdentifierPath: Identifier .
+  171 IdentifierPath: Identifier •
 
     $default  reduce using rule 171 (IdentifierPath)
 
 
 State 84
 
-  105 DirectCallExpression: IdentifierPath .
-  106                     | IdentifierPath . "(" ")"
-  107                     | IdentifierPath . "(" Terms ")"
-  108                     | IdentifierPath . "(" error ")"
-  170 IdentifierPath: IdentifierPath . "::" Identifier
+  105 DirectCallExpression: IdentifierPath •
+  106                     | IdentifierPath • "(" ")"
+  107                     | IdentifierPath • "(" Terms ")"
+  108                     | IdentifierPath • "(" error ")"
+  170 IdentifierPath: IdentifierPath • "::" Identifier
 
     "::"  shift, and go to state 157
     "("   shift, and go to state 158
@@ -1774,101 +1774,101 @@ State 84
 
 State 85
 
-  174 Attribute: "[" BasicAttribute "]" .
+  174 Attribute: "[" BasicAttribute "]" •
 
     $default  reduce using rule 174 (Attribute)
 
 
 State 86
 
-  175 Attribute: "[" ExpressionAttribute "]" .
+  175 Attribute: "[" ExpressionAttribute "]" •
 
     $default  reduce using rule 175 (Attribute)
 
 
 State 87
 
-   21 MemoryDefinition: "memory" Identifier . ":" MappingType
+   21 MemoryDefinition: "memory" Identifier • ":" MappingType
 
     ":"  shift, and go to state 159
 
 
 State 88
 
-   22 RegisterDefinition: "register" Identifier . ":" Type
+   22 RegisterDefinition: "register" Identifier • ":" Type
 
     ":"  shift, and go to state 160
 
 
 State 89
 
-   23 FieldDefinition: "field" Identifier . ":" Type
+   23 FieldDefinition: "field" Identifier • ":" Type
 
     ":"  shift, and go to state 161
 
 
 State 90
 
-   24 FormatDefinition: "format" Identifier . ":" BasicType "=" FormatFields
+   24 FormatDefinition: "format" Identifier • ":" BasicType "=" FormatFields
 
     ":"  shift, and go to state 162
 
 
 State 91
 
-   26 BufferDefinition: "buffer" Identifier . ":" Type "=" Term
+   26 BufferDefinition: "buffer" Identifier • ":" Type "=" Term
 
     ":"  shift, and go to state 163
 
 
 State 92
 
-   27 InstructionDefinition: "instruction" Identifier . ":" BasicType "=" Statement
-   28                      | "instruction" Identifier . ":" BasicType "=" Statement InstructionOptions
+   27 InstructionDefinition: "instruction" Identifier • ":" BasicType "=" Statement
+   28                      | "instruction" Identifier • ":" BasicType "=" Statement InstructionOptions
 
     ":"  shift, and go to state 164
 
 
 State 93
 
-   29 MicroProcessorDefinition: "microprocessor" Identifier . ":" IdentifierPath "=" Statement
-   30                         | "microprocessor" Identifier . ":" IdentifierPath "=" Statement MicroProcessorOptions
+   29 MicroProcessorDefinition: "microprocessor" Identifier • ":" IdentifierPath "=" Statement
+   30                         | "microprocessor" Identifier • ":" IdentifierPath "=" Statement MicroProcessorOptions
 
     ":"  shift, and go to state 165
 
 
 State 94
 
-   31 CacheDefinition: "cache" Identifier . ":" Type "=" MappingLiteral
+   31 CacheDefinition: "cache" Identifier • ":" Type "=" MappingLiteral
 
     ":"  shift, and go to state 166
 
 
 State 95
 
-   32 InterconnectDefinition: "interconnect" Identifier . ":" Type "=" MappingLiteral
+   32 InterconnectDefinition: "interconnect" Identifier • ":" Type "=" MappingLiteral
 
     ":"  shift, and go to state 167
 
 
 State 96
 
-   36 EnumerationDefinition: "enumeration" Identifier . "=" Enumerators
+   36 EnumerationDefinition: "enumeration" Identifier • "=" Enumerators
 
     "="  shift, and go to state 168
 
 
 State 97
 
-   38 UsingDefinition: "using" Identifier . "=" Type
+   38 UsingDefinition: "using" Identifier • "=" Type
 
     "="  shift, and go to state 169
 
 
 State 98
 
-  142 ReferenceLiteral: "@" IdentifierPath .
-  170 IdentifierPath: IdentifierPath . "::" Identifier
+  142 ReferenceLiteral: "@" IdentifierPath •
+  170 IdentifierPath: IdentifierPath • "::" Identifier
 
     "::"  shift, and go to state 157
 
@@ -1877,64 +1877,64 @@ State 98
 
 State 99
 
-    4 Definitions: Definitions AttributedDefinition .
+    4 Definitions: Definitions AttributedDefinition •
 
     $default  reduce using rule 4 (Definitions)
 
 
 State 100
 
-   44 DecodingOption: "decoding" . "=" RecordLiteral
+   44 DecodingOption: "decoding" • "=" RecordLiteral
 
     "="  shift, and go to state 170
 
 
 State 101
 
-   45 SyntaxOption: "syntax" . "=" SetLiteral
+   45 SyntaxOption: "syntax" • "=" SetLiteral
 
     "="  shift, and go to state 171
 
 
 State 102
 
-   46 ExpansionOption: "expansion" . "=" SetLiteral
+   46 ExpansionOption: "expansion" • "=" SetLiteral
 
     "="  shift, and go to state 172
 
 
 State 103
 
-   33 OptionDefinition: ReferenceLiteral DecodingOption .
+   33 OptionDefinition: ReferenceLiteral DecodingOption •
 
     $default  reduce using rule 33 (OptionDefinition)
 
 
 State 104
 
-   34 OptionDefinition: ReferenceLiteral SyntaxOption .
+   34 OptionDefinition: ReferenceLiteral SyntaxOption •
 
     $default  reduce using rule 34 (OptionDefinition)
 
 
 State 105
 
-   35 OptionDefinition: ReferenceLiteral ExpansionOption .
+   35 OptionDefinition: ReferenceLiteral ExpansionOption •
 
     $default  reduce using rule 35 (OptionDefinition)
 
 
 State 106
 
-    6 AttributedDefinition: Attributes Definition .
+    6 AttributedDefinition: Attributes Definition •
 
     $default  reduce using rule 6 (AttributedDefinition)
 
 
 State 107
 
-   80 LetExpression: "let" VariableBindings . "in" Term
-  159 VariableBindings: VariableBindings . "," VariableBinding
+   80 LetExpression: "let" VariableBindings • "in" Term
+  159 VariableBindings: VariableBindings • "," VariableBinding
 
     "in"  shift, and go to state 173
     ","   shift, and go to state 174
@@ -1942,36 +1942,36 @@ State 107
 
 State 108
 
-  160 VariableBindings: VariableBinding .
+  160 VariableBindings: VariableBinding •
 
     $default  reduce using rule 160 (VariableBindings)
 
 
 State 109
 
-  161 VariableBinding: AttributedVariable . "=" Term
+  161 VariableBinding: AttributedVariable • "=" Term
 
     "="  shift, and go to state 175
 
 
 State 110
 
-  163 AttributedVariable: Variable .
+  163 AttributedVariable: Variable •
 
     $default  reduce using rule 163 (AttributedVariable)
 
 
 State 111
 
-  164 Variable: TypedVariable .
+  164 Variable: TypedVariable •
 
     $default  reduce using rule 164 (Variable)
 
 
 State 112
 
-  165 Variable: Identifier .
-  166 TypedVariable: Identifier . ":" Type
+  165 Variable: Identifier •
+  166 TypedVariable: Identifier • ":" Type
 
     ":"  shift, and go to state 176
 
@@ -1980,8 +1980,8 @@ State 112
 
 State 113
 
-  162 AttributedVariable: Attributes . Variable
-  172 Attributes: Attributes . Attribute
+  162 AttributedVariable: Attributes • Variable
+  172 Attributes: Attributes • Attribute
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -1996,27 +1996,27 @@ State 113
 
 State 114
 
-   81 ConditionalExpression: "if" Term . "then" Expression "else" Expression
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   81 ConditionalExpression: "if" Term • "then" Expression "else" Expression
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "then"     shift, and go to state 178
     "and"      shift, and go to state 136
@@ -2043,54 +2043,54 @@ State 114
 
 State 115
 
-   82 OperatorExpression: "not" Term .
-   83                   | Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   82 OperatorExpression: "not" Term •
+   83                   | Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     $default  reduce using rule 82 (OperatorExpression)
 
 
 State 116
 
-   78 Expression: "+" Term .
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   78 Expression: "+" Term •
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "*"  shift, and go to state 145
 
@@ -2099,27 +2099,27 @@ State 116
 
 State 117
 
-   79 Expression: "-" Term .
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   79 Expression: "-" Term •
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "*"  shift, and go to state 145
 
@@ -2128,43 +2128,43 @@ State 117
 
 State 118
 
-  146 Terminal: DirectCallExpression .
+  146 Terminal: DirectCallExpression •
 
     $default  reduce using rule 146 (Terminal)
 
 
 State 119
 
-  147 Terminal: IntegerLiteral .
+  147 Terminal: IntegerLiteral •
 
     $default  reduce using rule 147 (Terminal)
 
 
 State 120
 
-  148 Terminal: BinaryLiteral .
+  148 Terminal: BinaryLiteral •
 
     $default  reduce using rule 148 (Terminal)
 
 
 State 121
 
-  149 Terminal: StringLiteral .
+  149 Terminal: StringLiteral •
 
     $default  reduce using rule 149 (Terminal)
 
 
 State 122
 
-  150 Terminal: ReferenceLiteral .
+  150 Terminal: ReferenceLiteral •
 
     $default  reduce using rule 150 (Terminal)
 
 
 State 123
 
-  143 GrammarLiteral: "::" Terminals . ";"
-  144 Terminals: Terminals . Terminal
+  143 GrammarLiteral: "::" Terminals • ";"
+  144 Terminals: Terminals • Terminal
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2188,34 +2188,34 @@ State 123
 
 State 124
 
-  145 Terminals: Terminal .
+  145 Terminals: Terminal •
 
     $default  reduce using rule 145 (Terminals)
 
 
 State 125
 
-   75 Expression: "(" Term . ")"
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   75 Expression: "(" Term • ")"
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -2242,8 +2242,8 @@ State 125
 
 State 126
 
-   69 Terms: Terms . "," Term
-  131 ListLiteral: "[" Terms . "]"
+   69 Terms: Terms • "," Term
+  131 ListLiteral: "[" Terms • "]"
 
     "]"  shift, and go to state 182
     ","  shift, and go to state 183
@@ -2251,28 +2251,28 @@ State 126
 
 State 127
 
-   70 Terms: Term .
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
-  132 RangeLiteral: "[" Term . ".." Term "]"
+   70 Terms: Term •
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
+  132 RangeLiteral: "[" Term • ".." Term "]"
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -2301,8 +2301,8 @@ State 127
 
 State 128
 
-   75 Expression: "(" . Term ")"
-  141 Mapping: "(" . Terms ")" "->" Term
+   75 Expression: "(" • Term ")"
+  141 Mapping: "(" • Terms ")" "->" Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2351,8 +2351,8 @@ State 128
 
 State 129
 
-   69 Terms: Terms . "," Term
-  130 SetLiteral: "{" Terms . "}"
+   69 Terms: Terms • "," Term
+  130 SetLiteral: "{" Terms • "}"
 
     "}"  shift, and go to state 187
     ","  shift, and go to state 183
@@ -2360,28 +2360,28 @@ State 129
 
 State 130
 
-   70 Terms: Term .
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
-  140 Mapping: Term . "->" Term
+   70 Terms: Term •
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
+  140 Mapping: Term • "->" Term
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -2410,8 +2410,8 @@ State 130
 
 State 131
 
-  133 RecordLiteral: "{" Assignments . "}"
-  134 Assignments: Assignments . "," Assignment
+  133 RecordLiteral: "{" Assignments • "}"
+  134 Assignments: Assignments • "," Assignment
 
     "}"  shift, and go to state 189
     ","  shift, and go to state 190
@@ -2419,15 +2419,15 @@ State 131
 
 State 132
 
-  135 Assignments: Assignment .
+  135 Assignments: Assignment •
 
     $default  reduce using rule 135 (Assignments)
 
 
 State 133
 
-  137 MappingLiteral: "{" Mappings . "}"
-  138 Mappings: Mappings . "," Mapping
+  137 MappingLiteral: "{" Mappings • "}"
+  138 Mappings: Mappings • "," Mapping
 
     "}"  shift, and go to state 191
     ","  shift, and go to state 192
@@ -2435,15 +2435,15 @@ State 133
 
 State 134
 
-  139 Mappings: Mapping .
+  139 Mappings: Mapping •
 
     $default  reduce using rule 139 (Mappings)
 
 
 State 135
 
-  136 Assignment: Identifier . ":" Term
-  171 IdentifierPath: Identifier .
+  136 Assignment: Identifier • ":" Term
+  171 IdentifierPath: Identifier •
 
     ":"  shift, and go to state 193
 
@@ -2452,7 +2452,7 @@ State 135
 
 State 136
 
-   83 OperatorExpression: Term "and" . Term
+   83 OperatorExpression: Term "and" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2500,7 +2500,7 @@ State 136
 
 State 137
 
-   84 OperatorExpression: Term "or" . Term
+   84 OperatorExpression: Term "or" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2548,7 +2548,7 @@ State 137
 
 State 138
 
-   85 OperatorExpression: Term "xor" . Term
+   85 OperatorExpression: Term "xor" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2596,7 +2596,7 @@ State 138
 
 State 139
 
-   86 OperatorExpression: Term "implies" . Term
+   86 OperatorExpression: Term "implies" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2644,7 +2644,7 @@ State 139
 
 State 140
 
-   87 OperatorExpression: Term "=>" . Term
+   87 OperatorExpression: Term "=>" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2692,7 +2692,7 @@ State 140
 
 State 141
 
-   88 OperatorExpression: Term "+" . Term
+   88 OperatorExpression: Term "+" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2740,7 +2740,7 @@ State 141
 
 State 142
 
-   89 OperatorExpression: Term "(+)" . Term
+   89 OperatorExpression: Term "(+)" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2788,7 +2788,7 @@ State 142
 
 State 143
 
-   90 OperatorExpression: Term "-" . Term
+   90 OperatorExpression: Term "-" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2836,7 +2836,7 @@ State 143
 
 State 144
 
-   91 OperatorExpression: Term "(-)" . Term
+   91 OperatorExpression: Term "(-)" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2884,7 +2884,7 @@ State 144
 
 State 145
 
-   92 OperatorExpression: Term "*" . Term
+   92 OperatorExpression: Term "*" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2932,7 +2932,7 @@ State 145
 
 State 146
 
-   93 OperatorExpression: Term "<<" . Term
+   93 OperatorExpression: Term "<<" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -2980,7 +2980,7 @@ State 146
 
 State 147
 
-   94 OperatorExpression: Term "(<<)" . Term
+   94 OperatorExpression: Term "(<<)" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3028,7 +3028,7 @@ State 147
 
 State 148
 
-   95 OperatorExpression: Term ">>" . Term
+   95 OperatorExpression: Term ">>" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3076,7 +3076,7 @@ State 148
 
 State 149
 
-   96 OperatorExpression: Term "(>>)" . Term
+   96 OperatorExpression: Term "(>>)" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3124,7 +3124,7 @@ State 149
 
 State 150
 
-   97 OperatorExpression: Term "=" . Term
+   97 OperatorExpression: Term "=" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3172,7 +3172,7 @@ State 150
 
 State 151
 
-   98 OperatorExpression: Term "!=" . Term
+   98 OperatorExpression: Term "!=" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3220,7 +3220,7 @@ State 151
 
 State 152
 
-   99 OperatorExpression: Term "<" . Term
+   99 OperatorExpression: Term "<" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3268,7 +3268,7 @@ State 152
 
 State 153
 
-  100 OperatorExpression: Term "<=" . Term
+  100 OperatorExpression: Term "<=" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3316,7 +3316,7 @@ State 153
 
 State 154
 
-  101 OperatorExpression: Term ">" . Term
+  101 OperatorExpression: Term ">" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3364,7 +3364,7 @@ State 154
 
 State 155
 
-  102 OperatorExpression: Term ">=" . Term
+  102 OperatorExpression: Term ">=" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3412,10 +3412,10 @@ State 155
 
 State 156
 
-  109 MethodCallExpression: Expression "." . Identifier
-  110                     | Expression "." . Identifier "(" ")"
-  111                     | Expression "." . Identifier "(" Terms ")"
-  112                     | Expression "." . Identifier "(" error ")"
+  109 MethodCallExpression: Expression "." • Identifier
+  110                     | Expression "." • Identifier "(" ")"
+  111                     | Expression "." • Identifier "(" Terms ")"
+  112                     | Expression "." • Identifier "(" error ")"
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3426,7 +3426,7 @@ State 156
 
 State 157
 
-  170 IdentifierPath: IdentifierPath "::" . Identifier
+  170 IdentifierPath: IdentifierPath "::" • Identifier
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3437,9 +3437,9 @@ State 157
 
 State 158
 
-  106 DirectCallExpression: IdentifierPath "(" . ")"
-  107                     | IdentifierPath "(" . Terms ")"
-  108                     | IdentifierPath "(" . error ")"
+  106 DirectCallExpression: IdentifierPath "(" • ")"
+  107                     | IdentifierPath "(" • Terms ")"
+  108                     | IdentifierPath "(" • error ")"
 
     error          shift, and go to state 216
     "instruction"  shift, and go to state 8
@@ -3490,7 +3490,7 @@ State 158
 
 State 159
 
-   21 MemoryDefinition: "memory" Identifier ":" . MappingType
+   21 MemoryDefinition: "memory" Identifier ":" • MappingType
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3507,7 +3507,7 @@ State 159
 
 State 160
 
-   22 RegisterDefinition: "register" Identifier ":" . Type
+   22 RegisterDefinition: "register" Identifier ":" • Type
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3524,7 +3524,7 @@ State 160
 
 State 161
 
-   23 FieldDefinition: "field" Identifier ":" . Type
+   23 FieldDefinition: "field" Identifier ":" • Type
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3541,7 +3541,7 @@ State 161
 
 State 162
 
-   24 FormatDefinition: "format" Identifier ":" . BasicType "=" FormatFields
+   24 FormatDefinition: "format" Identifier ":" • BasicType "=" FormatFields
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3555,7 +3555,7 @@ State 162
 
 State 163
 
-   26 BufferDefinition: "buffer" Identifier ":" . Type "=" Term
+   26 BufferDefinition: "buffer" Identifier ":" • Type "=" Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3572,8 +3572,8 @@ State 163
 
 State 164
 
-   27 InstructionDefinition: "instruction" Identifier ":" . BasicType "=" Statement
-   28                      | "instruction" Identifier ":" . BasicType "=" Statement InstructionOptions
+   27 InstructionDefinition: "instruction" Identifier ":" • BasicType "=" Statement
+   28                      | "instruction" Identifier ":" • BasicType "=" Statement InstructionOptions
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3587,8 +3587,8 @@ State 164
 
 State 165
 
-   29 MicroProcessorDefinition: "microprocessor" Identifier ":" . IdentifierPath "=" Statement
-   30                         | "microprocessor" Identifier ":" . IdentifierPath "=" Statement MicroProcessorOptions
+   29 MicroProcessorDefinition: "microprocessor" Identifier ":" • IdentifierPath "=" Statement
+   30                         | "microprocessor" Identifier ":" • IdentifierPath "=" Statement MicroProcessorOptions
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3600,7 +3600,7 @@ State 165
 
 State 166
 
-   31 CacheDefinition: "cache" Identifier ":" . Type "=" MappingLiteral
+   31 CacheDefinition: "cache" Identifier ":" • Type "=" MappingLiteral
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3617,7 +3617,7 @@ State 166
 
 State 167
 
-   32 InterconnectDefinition: "interconnect" Identifier ":" . Type "=" MappingLiteral
+   32 InterconnectDefinition: "interconnect" Identifier ":" • Type "=" MappingLiteral
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3634,7 +3634,7 @@ State 167
 
 State 168
 
-   36 EnumerationDefinition: "enumeration" Identifier "=" . Enumerators
+   36 EnumerationDefinition: "enumeration" Identifier "=" • Enumerators
 
     "{"  shift, and go to state 235
 
@@ -3644,7 +3644,7 @@ State 168
 
 State 169
 
-   38 UsingDefinition: "using" Identifier "=" . Type
+   38 UsingDefinition: "using" Identifier "=" • Type
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3661,7 +3661,7 @@ State 169
 
 State 170
 
-   44 DecodingOption: "decoding" "=" . RecordLiteral
+   44 DecodingOption: "decoding" "=" • RecordLiteral
 
     "{"  shift, and go to state 239
 
@@ -3670,7 +3670,7 @@ State 170
 
 State 171
 
-   45 SyntaxOption: "syntax" "=" . SetLiteral
+   45 SyntaxOption: "syntax" "=" • SetLiteral
 
     "{"  shift, and go to state 235
 
@@ -3679,7 +3679,7 @@ State 171
 
 State 172
 
-   46 ExpansionOption: "expansion" "=" . SetLiteral
+   46 ExpansionOption: "expansion" "=" • SetLiteral
 
     "{"  shift, and go to state 235
 
@@ -3688,7 +3688,7 @@ State 172
 
 State 173
 
-   80 LetExpression: "let" VariableBindings "in" . Term
+   80 LetExpression: "let" VariableBindings "in" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3736,7 +3736,7 @@ State 173
 
 State 174
 
-  159 VariableBindings: VariableBindings "," . VariableBinding
+  159 VariableBindings: VariableBindings "," • VariableBinding
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3754,7 +3754,7 @@ State 174
 
 State 175
 
-  161 VariableBinding: AttributedVariable "=" . Term
+  161 VariableBinding: AttributedVariable "=" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3802,7 +3802,7 @@ State 175
 
 State 176
 
-  166 TypedVariable: Identifier ":" . Type
+  166 TypedVariable: Identifier ":" • Type
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3819,14 +3819,14 @@ State 176
 
 State 177
 
-  162 AttributedVariable: Attributes Variable .
+  162 AttributedVariable: Attributes Variable •
 
     $default  reduce using rule 162 (AttributedVariable)
 
 
 State 178
 
-   81 ConditionalExpression: "if" Term "then" . Expression "else" Expression
+   81 ConditionalExpression: "if" Term "then" • Expression "else" Expression
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3867,35 +3867,35 @@ State 178
 
 State 179
 
-  143 GrammarLiteral: "::" Terminals ";" .
+  143 GrammarLiteral: "::" Terminals ";" •
 
     $default  reduce using rule 143 (GrammarLiteral)
 
 
 State 180
 
-  144 Terminals: Terminals Terminal .
+  144 Terminals: Terminals Terminal •
 
     $default  reduce using rule 144 (Terminals)
 
 
 State 181
 
-   75 Expression: "(" Term ")" .
+   75 Expression: "(" Term ")" •
 
     $default  reduce using rule 75 (Expression)
 
 
 State 182
 
-  131 ListLiteral: "[" Terms "]" .
+  131 ListLiteral: "[" Terms "]" •
 
     $default  reduce using rule 131 (ListLiteral)
 
 
 State 183
 
-   69 Terms: Terms "," . Term
+   69 Terms: Terms "," • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3943,7 +3943,7 @@ State 183
 
 State 184
 
-  132 RangeLiteral: "[" Term ".." . Term "]"
+  132 RangeLiteral: "[" Term ".." • Term "]"
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -3991,8 +3991,8 @@ State 184
 
 State 185
 
-   69 Terms: Terms . "," Term
-  141 Mapping: "(" Terms . ")" "->" Term
+   69 Terms: Terms • "," Term
+  141 Mapping: "(" Terms • ")" "->" Term
 
     ")"  shift, and go to state 250
     ","  shift, and go to state 183
@@ -4000,28 +4000,28 @@ State 185
 
 State 186
 
-   70 Terms: Term .
-   75 Expression: "(" Term . ")"
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   70 Terms: Term •
+   75 Expression: "(" Term • ")"
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -4051,14 +4051,14 @@ State 186
 
 State 187
 
-  130 SetLiteral: "{" Terms "}" .
+  130 SetLiteral: "{" Terms "}" •
 
     $default  reduce using rule 130 (SetLiteral)
 
 
 State 188
 
-  140 Mapping: Term "->" . Term
+  140 Mapping: Term "->" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -4106,14 +4106,14 @@ State 188
 
 State 189
 
-  133 RecordLiteral: "{" Assignments "}" .
+  133 RecordLiteral: "{" Assignments "}" •
 
     $default  reduce using rule 133 (RecordLiteral)
 
 
 State 190
 
-  134 Assignments: Assignments "," . Assignment
+  134 Assignments: Assignments "," • Assignment
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -4125,14 +4125,14 @@ State 190
 
 State 191
 
-  137 MappingLiteral: "{" Mappings "}" .
+  137 MappingLiteral: "{" Mappings "}" •
 
     $default  reduce using rule 137 (MappingLiteral)
 
 
 State 192
 
-  138 Mappings: Mappings "," . Mapping
+  138 Mappings: Mappings "," • Mapping
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -4181,7 +4181,7 @@ State 192
 
 State 193
 
-  136 Assignment: Identifier ":" . Term
+  136 Assignment: Identifier ":" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -4229,27 +4229,27 @@ State 193
 
 State 194
 
-   83 OperatorExpression: Term . "and" Term
-   83                   | Term "and" Term .
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   83                   | Term "and" Term •
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "+"     shift, and go to state 141
     "(+)"   shift, and go to state 142
@@ -4272,27 +4272,27 @@ State 194
 
 State 195
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   84                   | Term "or" Term .
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   84                   | Term "or" Term •
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "and"   shift, and go to state 136
     "xor"   shift, and go to state 138
@@ -4317,27 +4317,27 @@ State 195
 
 State 196
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   85                   | Term "xor" Term .
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   85                   | Term "xor" Term •
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "and"   shift, and go to state 136
     "+"     shift, and go to state 141
@@ -4361,27 +4361,27 @@ State 196
 
 State 197
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   86                   | Term "implies" Term .
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   86                   | Term "implies" Term •
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "and"   shift, and go to state 136
     "or"    shift, and go to state 137
@@ -4407,27 +4407,27 @@ State 197
 
 State 198
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   87                   | Term "=>" Term .
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   87                   | Term "=>" Term •
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "and"   shift, and go to state 136
     "or"    shift, and go to state 137
@@ -4453,27 +4453,27 @@ State 198
 
 State 199
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   88                   | Term "+" Term .
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   88                   | Term "+" Term •
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "*"  shift, and go to state 145
 
@@ -4482,27 +4482,27 @@ State 199
 
 State 200
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   89                   | Term "(+)" Term .
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   89                   | Term "(+)" Term •
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "*"  shift, and go to state 145
 
@@ -4511,27 +4511,27 @@ State 200
 
 State 201
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   90                   | Term "-" Term .
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   90                   | Term "-" Term •
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "*"  shift, and go to state 145
 
@@ -4540,27 +4540,27 @@ State 201
 
 State 202
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   91                   | Term "(-)" Term .
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   91                   | Term "(-)" Term •
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "*"  shift, and go to state 145
 
@@ -4569,54 +4569,54 @@ State 202
 
 State 203
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   92                   | Term "*" Term .
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   92                   | Term "*" Term •
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     $default  reduce using rule 92 (OperatorExpression)
 
 
 State 204
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   93                   | Term "<<" Term .
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   93                   | Term "<<" Term •
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "+"    shift, and go to state 141
     "(+)"  shift, and go to state 142
@@ -4629,27 +4629,27 @@ State 204
 
 State 205
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   94                   | Term "(<<)" Term .
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   94                   | Term "(<<)" Term •
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "+"    shift, and go to state 141
     "(+)"  shift, and go to state 142
@@ -4662,27 +4662,27 @@ State 205
 
 State 206
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   95                   | Term ">>" Term .
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   95                   | Term ">>" Term •
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "+"    shift, and go to state 141
     "(+)"  shift, and go to state 142
@@ -4695,27 +4695,27 @@ State 206
 
 State 207
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   96                   | Term "(>>)" Term .
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   96                   | Term "(>>)" Term •
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "+"    shift, and go to state 141
     "(+)"  shift, and go to state 142
@@ -4728,27 +4728,27 @@ State 207
 
 State 208
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   97                   | Term "=" Term .
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   97                   | Term "=" Term •
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "+"     shift, and go to state 141
     "(+)"   shift, and go to state 142
@@ -4769,27 +4769,27 @@ State 208
 
 State 209
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   98                   | Term "!=" Term .
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   98                   | Term "!=" Term •
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "+"     shift, and go to state 141
     "(+)"   shift, and go to state 142
@@ -4810,27 +4810,27 @@ State 209
 
 State 210
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-   99                   | Term "<" Term .
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+   99                   | Term "<" Term •
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "+"     shift, and go to state 141
     "(+)"   shift, and go to state 142
@@ -4847,27 +4847,27 @@ State 210
 
 State 211
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  100                   | Term "<=" Term .
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  100                   | Term "<=" Term •
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "+"     shift, and go to state 141
     "(+)"   shift, and go to state 142
@@ -4884,27 +4884,27 @@ State 211
 
 State 212
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  101                   | Term ">" Term .
-  102                   | Term . ">=" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  101                   | Term ">" Term •
+  102                   | Term • ">=" Term
 
     "+"     shift, and go to state 141
     "(+)"   shift, and go to state 142
@@ -4921,27 +4921,27 @@ State 212
 
 State 213
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
-  102                   | Term ">=" Term .
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
+  102                   | Term ">=" Term •
 
     "+"     shift, and go to state 141
     "(+)"   shift, and go to state 142
@@ -4958,10 +4958,10 @@ State 213
 
 State 214
 
-  109 MethodCallExpression: Expression "." Identifier .
-  110                     | Expression "." Identifier . "(" ")"
-  111                     | Expression "." Identifier . "(" Terms ")"
-  112                     | Expression "." Identifier . "(" error ")"
+  109 MethodCallExpression: Expression "." Identifier •
+  110                     | Expression "." Identifier • "(" ")"
+  111                     | Expression "." Identifier • "(" Terms ")"
+  112                     | Expression "." Identifier • "(" error ")"
 
     "("  shift, and go to state 257
 
@@ -4970,29 +4970,29 @@ State 214
 
 State 215
 
-  170 IdentifierPath: IdentifierPath "::" Identifier .
+  170 IdentifierPath: IdentifierPath "::" Identifier •
 
     $default  reduce using rule 170 (IdentifierPath)
 
 
 State 216
 
-  108 DirectCallExpression: IdentifierPath "(" error . ")"
+  108 DirectCallExpression: IdentifierPath "(" error • ")"
 
     ")"  shift, and go to state 258
 
 
 State 217
 
-  106 DirectCallExpression: IdentifierPath "(" ")" .
+  106 DirectCallExpression: IdentifierPath "(" ")" •
 
     $default  reduce using rule 106 (DirectCallExpression)
 
 
 State 218
 
-   69 Terms: Terms . "," Term
-  107 DirectCallExpression: IdentifierPath "(" Terms . ")"
+   69 Terms: Terms • "," Term
+  107 DirectCallExpression: IdentifierPath "(" Terms • ")"
 
     ")"  shift, and go to state 259
     ","  shift, and go to state 183
@@ -5000,27 +5000,27 @@ State 218
 
 State 219
 
-   70 Terms: Term .
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   70 Terms: Term •
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -5048,29 +5048,29 @@ State 219
 
 State 220
 
-  158 ArgumentTypes: Type .
+  158 ArgumentTypes: Type •
 
     $default  reduce using rule 158 (ArgumentTypes)
 
 
 State 221
 
-  151 Type: BasicType .
+  151 Type: BasicType •
 
     $default  reduce using rule 151 (Type)
 
 
 State 222
 
-  154 BasicType: PropertyType .
+  154 BasicType: PropertyType •
 
     $default  reduce using rule 154 (BasicType)
 
 
 State 223
 
-   21 MemoryDefinition: "memory" Identifier ":" MappingType .
-  152 Type: MappingType .
+   21 MemoryDefinition: "memory" Identifier ":" MappingType •
+  152 Type: MappingType •
 
     "*"       reduce using rule 152 (Type)
     "->"      reduce using rule 152 (Type)
@@ -5079,8 +5079,8 @@ State 223
 
 State 224
 
-  156 MappingType: ArgumentTypes . "->" BasicType
-  157 ArgumentTypes: ArgumentTypes . "*" BasicType
+  156 MappingType: ArgumentTypes • "->" BasicType
+  157 ArgumentTypes: ArgumentTypes • "*" BasicType
 
     "*"   shift, and go to state 260
     "->"  shift, and go to state 261
@@ -5088,9 +5088,9 @@ State 224
 
 State 225
 
-  153 BasicType: IdentifierPath .
-  155 PropertyType: IdentifierPath . "'" IntegerLiteral
-  170 IdentifierPath: IdentifierPath . "::" Identifier
+  153 BasicType: IdentifierPath •
+  155 PropertyType: IdentifierPath • "'" IntegerLiteral
+  170 IdentifierPath: IdentifierPath • "::" Identifier
 
     "'"   shift, and go to state 262
     "::"  shift, and go to state 157
@@ -5100,8 +5100,8 @@ State 225
 
 State 226
 
-   22 RegisterDefinition: "register" Identifier ":" Type .
-  158 ArgumentTypes: Type .
+   22 RegisterDefinition: "register" Identifier ":" Type •
+  158 ArgumentTypes: Type •
 
     "*"       reduce using rule 158 (ArgumentTypes)
     "->"      reduce using rule 158 (ArgumentTypes)
@@ -5110,15 +5110,15 @@ State 226
 
 State 227
 
-  152 Type: MappingType .
+  152 Type: MappingType •
 
     $default  reduce using rule 152 (Type)
 
 
 State 228
 
-   23 FieldDefinition: "field" Identifier ":" Type .
-  158 ArgumentTypes: Type .
+   23 FieldDefinition: "field" Identifier ":" Type •
+  158 ArgumentTypes: Type •
 
     "*"       reduce using rule 158 (ArgumentTypes)
     "->"      reduce using rule 158 (ArgumentTypes)
@@ -5127,15 +5127,15 @@ State 228
 
 State 229
 
-   24 FormatDefinition: "format" Identifier ":" BasicType . "=" FormatFields
+   24 FormatDefinition: "format" Identifier ":" BasicType • "=" FormatFields
 
     "="  shift, and go to state 263
 
 
 State 230
 
-   26 BufferDefinition: "buffer" Identifier ":" Type . "=" Term
-  158 ArgumentTypes: Type .
+   26 BufferDefinition: "buffer" Identifier ":" Type • "=" Term
+  158 ArgumentTypes: Type •
 
     "="  shift, and go to state 264
 
@@ -5144,17 +5144,17 @@ State 230
 
 State 231
 
-   27 InstructionDefinition: "instruction" Identifier ":" BasicType . "=" Statement
-   28                      | "instruction" Identifier ":" BasicType . "=" Statement InstructionOptions
+   27 InstructionDefinition: "instruction" Identifier ":" BasicType • "=" Statement
+   28                      | "instruction" Identifier ":" BasicType • "=" Statement InstructionOptions
 
     "="  shift, and go to state 265
 
 
 State 232
 
-   29 MicroProcessorDefinition: "microprocessor" Identifier ":" IdentifierPath . "=" Statement
-   30                         | "microprocessor" Identifier ":" IdentifierPath . "=" Statement MicroProcessorOptions
-  170 IdentifierPath: IdentifierPath . "::" Identifier
+   29 MicroProcessorDefinition: "microprocessor" Identifier ":" IdentifierPath • "=" Statement
+   30                         | "microprocessor" Identifier ":" IdentifierPath • "=" Statement MicroProcessorOptions
+  170 IdentifierPath: IdentifierPath • "::" Identifier
 
     "="   shift, and go to state 266
     "::"  shift, and go to state 157
@@ -5162,8 +5162,8 @@ State 232
 
 State 233
 
-   31 CacheDefinition: "cache" Identifier ":" Type . "=" MappingLiteral
-  158 ArgumentTypes: Type .
+   31 CacheDefinition: "cache" Identifier ":" Type • "=" MappingLiteral
+  158 ArgumentTypes: Type •
 
     "="  shift, and go to state 267
 
@@ -5172,8 +5172,8 @@ State 233
 
 State 234
 
-   32 InterconnectDefinition: "interconnect" Identifier ":" Type . "=" MappingLiteral
-  158 ArgumentTypes: Type .
+   32 InterconnectDefinition: "interconnect" Identifier ":" Type • "=" MappingLiteral
+  158 ArgumentTypes: Type •
 
     "="  shift, and go to state 268
 
@@ -5182,7 +5182,7 @@ State 234
 
 State 235
 
-  130 SetLiteral: "{" . Terms "}"
+  130 SetLiteral: "{" • Terms "}"
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -5231,22 +5231,22 @@ State 235
 
 State 236
 
-   36 EnumerationDefinition: "enumeration" Identifier "=" Enumerators .
+   36 EnumerationDefinition: "enumeration" Identifier "=" Enumerators •
 
     $default  reduce using rule 36 (EnumerationDefinition)
 
 
 State 237
 
-   37 Enumerators: SetLiteral .
+   37 Enumerators: SetLiteral •
 
     $default  reduce using rule 37 (Enumerators)
 
 
 State 238
 
-   38 UsingDefinition: "using" Identifier "=" Type .
-  158 ArgumentTypes: Type .
+   38 UsingDefinition: "using" Identifier "=" Type •
+  158 ArgumentTypes: Type •
 
     "*"       reduce using rule 158 (ArgumentTypes)
     "->"      reduce using rule 158 (ArgumentTypes)
@@ -5255,7 +5255,7 @@ State 238
 
 State 239
 
-  133 RecordLiteral: "{" . Assignments "}"
+  133 RecordLiteral: "{" • Assignments "}"
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -5268,48 +5268,48 @@ State 239
 
 State 240
 
-   44 DecodingOption: "decoding" "=" RecordLiteral .
+   44 DecodingOption: "decoding" "=" RecordLiteral •
 
     $default  reduce using rule 44 (DecodingOption)
 
 
 State 241
 
-   45 SyntaxOption: "syntax" "=" SetLiteral .
+   45 SyntaxOption: "syntax" "=" SetLiteral •
 
     $default  reduce using rule 45 (SyntaxOption)
 
 
 State 242
 
-   46 ExpansionOption: "expansion" "=" SetLiteral .
+   46 ExpansionOption: "expansion" "=" SetLiteral •
 
     $default  reduce using rule 46 (ExpansionOption)
 
 
 State 243
 
-   80 LetExpression: "let" VariableBindings "in" Term .
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   80 LetExpression: "let" VariableBindings "in" Term •
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -5337,34 +5337,34 @@ State 243
 
 State 244
 
-  159 VariableBindings: VariableBindings "," VariableBinding .
+  159 VariableBindings: VariableBindings "," VariableBinding •
 
     $default  reduce using rule 159 (VariableBindings)
 
 
 State 245
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
-  161 VariableBinding: AttributedVariable "=" Term .
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
+  161 VariableBinding: AttributedVariable "=" Term •
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -5392,8 +5392,8 @@ State 245
 
 State 246
 
-  158 ArgumentTypes: Type .
-  166 TypedVariable: Identifier ":" Type .
+  158 ArgumentTypes: Type •
+  166 TypedVariable: Identifier ":" Type •
 
     "="       reduce using rule 166 (TypedVariable)
     $default  reduce using rule 158 (ArgumentTypes)
@@ -5401,11 +5401,11 @@ State 246
 
 State 247
 
-   81 ConditionalExpression: "if" Term "then" Expression . "else" Expression
-  109 MethodCallExpression: Expression . "." Identifier
-  110                     | Expression . "." Identifier "(" ")"
-  111                     | Expression . "." Identifier "(" Terms ")"
-  112                     | Expression . "." Identifier "(" error ")"
+   81 ConditionalExpression: "if" Term "then" Expression • "else" Expression
+  109 MethodCallExpression: Expression • "." Identifier
+  110                     | Expression • "." Identifier "(" ")"
+  111                     | Expression • "." Identifier "(" Terms ")"
+  112                     | Expression • "." Identifier "(" error ")"
 
     "else"  shift, and go to state 269
     "."     shift, and go to state 156
@@ -5413,27 +5413,27 @@ State 247
 
 State 248
 
-   69 Terms: Terms "," Term .
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   69 Terms: Terms "," Term •
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -5461,27 +5461,27 @@ State 248
 
 State 249
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
-  132 RangeLiteral: "[" Term ".." Term . "]"
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
+  132 RangeLiteral: "[" Term ".." Term • "]"
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -5508,34 +5508,34 @@ State 249
 
 State 250
 
-  141 Mapping: "(" Terms ")" . "->" Term
+  141 Mapping: "(" Terms ")" • "->" Term
 
     "->"  shift, and go to state 271
 
 
 State 251
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
-  140 Mapping: Term "->" Term .
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
+  140 Mapping: Term "->" Term •
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -5563,41 +5563,41 @@ State 251
 
 State 252
 
-  134 Assignments: Assignments "," Assignment .
+  134 Assignments: Assignments "," Assignment •
 
     $default  reduce using rule 134 (Assignments)
 
 
 State 253
 
-  136 Assignment: Identifier . ":" Term
+  136 Assignment: Identifier • ":" Term
 
     ":"  shift, and go to state 193
 
 
 State 254
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
-  140 Mapping: Term . "->" Term
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
+  140 Mapping: Term • "->" Term
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -5624,34 +5624,34 @@ State 254
 
 State 255
 
-  138 Mappings: Mappings "," Mapping .
+  138 Mappings: Mappings "," Mapping •
 
     $default  reduce using rule 138 (Mappings)
 
 
 State 256
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
-  136 Assignment: Identifier ":" Term .
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
+  136 Assignment: Identifier ":" Term •
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -5679,9 +5679,9 @@ State 256
 
 State 257
 
-  110 MethodCallExpression: Expression "." Identifier "(" . ")"
-  111                     | Expression "." Identifier "(" . Terms ")"
-  112                     | Expression "." Identifier "(" . error ")"
+  110 MethodCallExpression: Expression "." Identifier "(" • ")"
+  111                     | Expression "." Identifier "(" • Terms ")"
+  112                     | Expression "." Identifier "(" • error ")"
 
     error          shift, and go to state 272
     "instruction"  shift, and go to state 8
@@ -5732,21 +5732,21 @@ State 257
 
 State 258
 
-  108 DirectCallExpression: IdentifierPath "(" error ")" .
+  108 DirectCallExpression: IdentifierPath "(" error ")" •
 
     $default  reduce using rule 108 (DirectCallExpression)
 
 
 State 259
 
-  107 DirectCallExpression: IdentifierPath "(" Terms ")" .
+  107 DirectCallExpression: IdentifierPath "(" Terms ")" •
 
     $default  reduce using rule 107 (DirectCallExpression)
 
 
 State 260
 
-  157 ArgumentTypes: ArgumentTypes "*" . BasicType
+  157 ArgumentTypes: ArgumentTypes "*" • BasicType
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -5760,7 +5760,7 @@ State 260
 
 State 261
 
-  156 MappingType: ArgumentTypes "->" . BasicType
+  156 MappingType: ArgumentTypes "->" • BasicType
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -5774,7 +5774,7 @@ State 261
 
 State 262
 
-  155 PropertyType: IdentifierPath "'" . IntegerLiteral
+  155 PropertyType: IdentifierPath "'" • IntegerLiteral
 
     "integer"  shift, and go to state 59
 
@@ -5783,7 +5783,7 @@ State 262
 
 State 263
 
-   24 FormatDefinition: "format" Identifier ":" BasicType "=" . FormatFields
+   24 FormatDefinition: "format" Identifier ":" BasicType "=" • FormatFields
 
     "{"  shift, and go to state 278
 
@@ -5793,7 +5793,7 @@ State 263
 
 State 264
 
-   26 BufferDefinition: "buffer" Identifier ":" Type "=" . Term
+   26 BufferDefinition: "buffer" Identifier ":" Type "=" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -5841,8 +5841,8 @@ State 264
 
 State 265
 
-   27 InstructionDefinition: "instruction" Identifier ":" BasicType "=" . Statement
-   28                      | "instruction" Identifier ":" BasicType "=" . Statement InstructionOptions
+   27 InstructionDefinition: "instruction" Identifier ":" BasicType "=" • Statement
+   28                      | "instruction" Identifier ":" BasicType "=" • Statement InstructionOptions
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -5868,8 +5868,8 @@ State 265
 
 State 266
 
-   29 MicroProcessorDefinition: "microprocessor" Identifier ":" IdentifierPath "=" . Statement
-   30                         | "microprocessor" Identifier ":" IdentifierPath "=" . Statement MicroProcessorOptions
+   29 MicroProcessorDefinition: "microprocessor" Identifier ":" IdentifierPath "=" • Statement
+   30                         | "microprocessor" Identifier ":" IdentifierPath "=" • Statement MicroProcessorOptions
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -5895,7 +5895,7 @@ State 266
 
 State 267
 
-   31 CacheDefinition: "cache" Identifier ":" Type "=" . MappingLiteral
+   31 CacheDefinition: "cache" Identifier ":" Type "=" • MappingLiteral
 
     "{"  shift, and go to state 278
 
@@ -5904,7 +5904,7 @@ State 267
 
 State 268
 
-   32 InterconnectDefinition: "interconnect" Identifier ":" Type "=" . MappingLiteral
+   32 InterconnectDefinition: "interconnect" Identifier ":" Type "=" • MappingLiteral
 
     "{"  shift, and go to state 278
 
@@ -5913,7 +5913,7 @@ State 268
 
 State 269
 
-   81 ConditionalExpression: "if" Term "then" Expression "else" . Expression
+   81 ConditionalExpression: "if" Term "then" Expression "else" • Expression
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -5954,14 +5954,14 @@ State 269
 
 State 270
 
-  132 RangeLiteral: "[" Term ".." Term "]" .
+  132 RangeLiteral: "[" Term ".." Term "]" •
 
     $default  reduce using rule 132 (RangeLiteral)
 
 
 State 271
 
-  141 Mapping: "(" Terms ")" "->" . Term
+  141 Mapping: "(" Terms ")" "->" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -6009,22 +6009,22 @@ State 271
 
 State 272
 
-  112 MethodCallExpression: Expression "." Identifier "(" error . ")"
+  112 MethodCallExpression: Expression "." Identifier "(" error • ")"
 
     ")"  shift, and go to state 301
 
 
 State 273
 
-  110 MethodCallExpression: Expression "." Identifier "(" ")" .
+  110 MethodCallExpression: Expression "." Identifier "(" ")" •
 
     $default  reduce using rule 110 (MethodCallExpression)
 
 
 State 274
 
-   69 Terms: Terms . "," Term
-  111 MethodCallExpression: Expression "." Identifier "(" Terms . ")"
+   69 Terms: Terms • "," Term
+  111 MethodCallExpression: Expression "." Identifier "(" Terms • ")"
 
     ")"  shift, and go to state 302
     ","  shift, and go to state 183
@@ -6032,28 +6032,28 @@ State 274
 
 State 275
 
-  157 ArgumentTypes: ArgumentTypes "*" BasicType .
+  157 ArgumentTypes: ArgumentTypes "*" BasicType •
 
     $default  reduce using rule 157 (ArgumentTypes)
 
 
 State 276
 
-  156 MappingType: ArgumentTypes "->" BasicType .
+  156 MappingType: ArgumentTypes "->" BasicType •
 
     $default  reduce using rule 156 (MappingType)
 
 
 State 277
 
-  155 PropertyType: IdentifierPath "'" IntegerLiteral .
+  155 PropertyType: IdentifierPath "'" IntegerLiteral •
 
     $default  reduce using rule 155 (PropertyType)
 
 
 State 278
 
-  137 MappingLiteral: "{" . Mappings "}"
+  137 MappingLiteral: "{" • Mappings "}"
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -6103,41 +6103,41 @@ State 278
 
 State 279
 
-   24 FormatDefinition: "format" Identifier ":" BasicType "=" FormatFields .
+   24 FormatDefinition: "format" Identifier ":" BasicType "=" FormatFields •
 
     $default  reduce using rule 24 (FormatDefinition)
 
 
 State 280
 
-   25 FormatFields: MappingLiteral .
+   25 FormatFields: MappingLiteral •
 
     $default  reduce using rule 25 (FormatFields)
 
 
 State 281
 
-   26 BufferDefinition: "buffer" Identifier ":" Type "=" Term .
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   26 BufferDefinition: "buffer" Identifier ":" Type "=" Term •
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -6165,21 +6165,21 @@ State 281
 
 State 282
 
-   60 SkipStatement: "skip" .
+   60 SkipStatement: "skip" •
 
     $default  reduce using rule 60 (SkipStatement)
 
 
 State 283
 
-   61 AbstractStatement: "abstract" .
+   61 AbstractStatement: "abstract" •
 
     $default  reduce using rule 61 (AbstractStatement)
 
 
 State 284
 
-   65 LetStatement: "let" . VariableBindings "in" Statement
+   65 LetStatement: "let" • VariableBindings "in" Statement
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -6198,8 +6198,8 @@ State 284
 
 State 285
 
-   67 ConditionalStatement: "if" . Term "then" Statement
-   68                     | "if" . Term "then" Statement "else" Statement
+   67 ConditionalStatement: "if" • Term "then" Statement
+   68                     | "if" • Term "then" Statement "else" Statement
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -6247,8 +6247,8 @@ State 285
 
 State 286
 
-   62 BlockStatement: "{" . Statements "}"
-   63               | "{" . error "}"
+   62 BlockStatement: "{" • Statements "}"
+   63               | "{" • error "}"
 
     error          shift, and go to state 305
     "instruction"  shift, and go to state 8
@@ -6276,8 +6276,8 @@ State 286
 
 State 287
 
-   27 InstructionDefinition: "instruction" Identifier ":" BasicType "=" Statement .
-   28                      | "instruction" Identifier ":" BasicType "=" Statement . InstructionOptions
+   27 InstructionDefinition: "instruction" Identifier ":" BasicType "=" Statement •
+   28                      | "instruction" Identifier ":" BasicType "=" Statement • InstructionOptions
 
     "decoding"   shift, and go to state 100
     "syntax"     shift, and go to state 101
@@ -6294,57 +6294,57 @@ State 287
 
 State 288
 
-   53 Statement: SkipStatement .
+   53 Statement: SkipStatement •
 
     $default  reduce using rule 53 (Statement)
 
 
 State 289
 
-   54 Statement: AbstractStatement .
+   54 Statement: AbstractStatement •
 
     $default  reduce using rule 54 (Statement)
 
 
 State 290
 
-   55 Statement: BlockStatement .
+   55 Statement: BlockStatement •
 
     $default  reduce using rule 55 (Statement)
 
 
 State 291
 
-   56 Statement: CallStatement .
+   56 Statement: CallStatement •
 
     $default  reduce using rule 56 (Statement)
 
 
 State 292
 
-   57 Statement: LetStatement .
+   57 Statement: LetStatement •
 
     $default  reduce using rule 57 (Statement)
 
 
 State 293
 
-   58 Statement: AssignmentStatement .
+   58 Statement: AssignmentStatement •
 
     $default  reduce using rule 58 (Statement)
 
 
 State 294
 
-   59 Statement: ConditionalStatement .
+   59 Statement: ConditionalStatement •
 
     $default  reduce using rule 59 (Statement)
 
 
 State 295
 
-   64 CallStatement: DirectCallExpression .
-   66 AssignmentStatement: DirectCallExpression . ":=" Term
+   64 CallStatement: DirectCallExpression •
+   66 AssignmentStatement: DirectCallExpression • ":=" Term
 
     ":="  shift, and go to state 313
 
@@ -6353,8 +6353,8 @@ State 295
 
 State 296
 
-   29 MicroProcessorDefinition: "microprocessor" Identifier ":" IdentifierPath "=" Statement .
-   30                         | "microprocessor" Identifier ":" IdentifierPath "=" Statement . MicroProcessorOptions
+   29 MicroProcessorDefinition: "microprocessor" Identifier ":" IdentifierPath "=" Statement •
+   30                         | "microprocessor" Identifier ":" IdentifierPath "=" Statement • MicroProcessorOptions
 
     "stage"  shift, and go to state 314
 
@@ -6367,25 +6367,25 @@ State 296
 
 State 297
 
-   31 CacheDefinition: "cache" Identifier ":" Type "=" MappingLiteral .
+   31 CacheDefinition: "cache" Identifier ":" Type "=" MappingLiteral •
 
     $default  reduce using rule 31 (CacheDefinition)
 
 
 State 298
 
-   32 InterconnectDefinition: "interconnect" Identifier ":" Type "=" MappingLiteral .
+   32 InterconnectDefinition: "interconnect" Identifier ":" Type "=" MappingLiteral •
 
     $default  reduce using rule 32 (InterconnectDefinition)
 
 
 State 299
 
-   81 ConditionalExpression: "if" Term "then" Expression "else" Expression .
-  109 MethodCallExpression: Expression . "." Identifier
-  110                     | Expression . "." Identifier "(" ")"
-  111                     | Expression . "." Identifier "(" Terms ")"
-  112                     | Expression . "." Identifier "(" error ")"
+   81 ConditionalExpression: "if" Term "then" Expression "else" Expression •
+  109 MethodCallExpression: Expression • "." Identifier
+  110                     | Expression • "." Identifier "(" ")"
+  111                     | Expression • "." Identifier "(" Terms ")"
+  112                     | Expression • "." Identifier "(" error ")"
 
     "."  shift, and go to state 156
 
@@ -6394,27 +6394,27 @@ State 299
 
 State 300
 
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
-  141 Mapping: "(" Terms ")" "->" Term .
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
+  141 Mapping: "(" Terms ")" "->" Term •
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -6442,22 +6442,22 @@ State 300
 
 State 301
 
-  112 MethodCallExpression: Expression "." Identifier "(" error ")" .
+  112 MethodCallExpression: Expression "." Identifier "(" error ")" •
 
     $default  reduce using rule 112 (MethodCallExpression)
 
 
 State 302
 
-  111 MethodCallExpression: Expression "." Identifier "(" Terms ")" .
+  111 MethodCallExpression: Expression "." Identifier "(" Terms ")" •
 
     $default  reduce using rule 111 (MethodCallExpression)
 
 
 State 303
 
-   65 LetStatement: "let" VariableBindings . "in" Statement
-  159 VariableBindings: VariableBindings . "," VariableBinding
+   65 LetStatement: "let" VariableBindings • "in" Statement
+  159 VariableBindings: VariableBindings • "," VariableBinding
 
     "in"  shift, and go to state 318
     ","   shift, and go to state 174
@@ -6465,28 +6465,28 @@ State 303
 
 State 304
 
-   67 ConditionalStatement: "if" Term . "then" Statement
-   68                     | "if" Term . "then" Statement "else" Statement
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   67 ConditionalStatement: "if" Term • "then" Statement
+   68                     | "if" Term • "then" Statement "else" Statement
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "then"     shift, and go to state 319
     "and"      shift, and go to state 136
@@ -6513,15 +6513,15 @@ State 304
 
 State 305
 
-   63 BlockStatement: "{" error . "}"
+   63 BlockStatement: "{" error • "}"
 
     "}"  shift, and go to state 320
 
 
 State 306
 
-   51 Statements: Statements . Statement
-   62 BlockStatement: "{" Statements . "}"
+   51 Statements: Statements • Statement
+   62 BlockStatement: "{" Statements • "}"
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -6548,15 +6548,15 @@ State 306
 
 State 307
 
-   52 Statements: Statement .
+   52 Statements: Statement •
 
     $default  reduce using rule 52 (Statements)
 
 
 State 308
 
-   28 InstructionDefinition: "instruction" Identifier ":" BasicType "=" Statement InstructionOptions .
-   39 InstructionOptions: InstructionOptions . InstructionOption
+   28 InstructionDefinition: "instruction" Identifier ":" BasicType "=" Statement InstructionOptions •
+   39 InstructionOptions: InstructionOptions • InstructionOption
 
     "decoding"   shift, and go to state 100
     "syntax"     shift, and go to state 101
@@ -6572,35 +6572,35 @@ State 308
 
 State 309
 
-   40 InstructionOptions: InstructionOption .
+   40 InstructionOptions: InstructionOption •
 
     $default  reduce using rule 40 (InstructionOptions)
 
 
 State 310
 
-   41 InstructionOption: DecodingOption .
+   41 InstructionOption: DecodingOption •
 
     $default  reduce using rule 41 (InstructionOption)
 
 
 State 311
 
-   42 InstructionOption: SyntaxOption .
+   42 InstructionOption: SyntaxOption •
 
     $default  reduce using rule 42 (InstructionOption)
 
 
 State 312
 
-   43 InstructionOption: ExpansionOption .
+   43 InstructionOption: ExpansionOption •
 
     $default  reduce using rule 43 (InstructionOption)
 
 
 State 313
 
-   66 AssignmentStatement: DirectCallExpression ":=" . Term
+   66 AssignmentStatement: DirectCallExpression ":=" • Term
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -6648,7 +6648,7 @@ State 313
 
 State 314
 
-   50 StageOption: "stage" . Identifier "=" BlockStatement
+   50 StageOption: "stage" • Identifier "=" BlockStatement
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -6659,8 +6659,8 @@ State 314
 
 State 315
 
-   30 MicroProcessorDefinition: "microprocessor" Identifier ":" IdentifierPath "=" Statement MicroProcessorOptions .
-   47 MicroProcessorOptions: MicroProcessorOptions . MicroProcessorOption
+   30 MicroProcessorDefinition: "microprocessor" Identifier ":" IdentifierPath "=" Statement MicroProcessorOptions •
+   47 MicroProcessorOptions: MicroProcessorOptions • MicroProcessorOption
 
     "stage"  shift, and go to state 314
 
@@ -6672,21 +6672,21 @@ State 315
 
 State 316
 
-   48 MicroProcessorOptions: MicroProcessorOption .
+   48 MicroProcessorOptions: MicroProcessorOption •
 
     $default  reduce using rule 48 (MicroProcessorOptions)
 
 
 State 317
 
-   49 MicroProcessorOption: StageOption .
+   49 MicroProcessorOption: StageOption •
 
     $default  reduce using rule 49 (MicroProcessorOption)
 
 
 State 318
 
-   65 LetStatement: "let" VariableBindings "in" . Statement
+   65 LetStatement: "let" VariableBindings "in" • Statement
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -6712,8 +6712,8 @@ State 318
 
 State 319
 
-   67 ConditionalStatement: "if" Term "then" . Statement
-   68                     | "if" Term "then" . Statement "else" Statement
+   67 ConditionalStatement: "if" Term "then" • Statement
+   68                     | "if" Term "then" • Statement "else" Statement
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -6739,55 +6739,55 @@ State 319
 
 State 320
 
-   63 BlockStatement: "{" error "}" .
+   63 BlockStatement: "{" error "}" •
 
     $default  reduce using rule 63 (BlockStatement)
 
 
 State 321
 
-   62 BlockStatement: "{" Statements "}" .
+   62 BlockStatement: "{" Statements "}" •
 
     $default  reduce using rule 62 (BlockStatement)
 
 
 State 322
 
-   51 Statements: Statements Statement .
+   51 Statements: Statements Statement •
 
     $default  reduce using rule 51 (Statements)
 
 
 State 323
 
-   39 InstructionOptions: InstructionOptions InstructionOption .
+   39 InstructionOptions: InstructionOptions InstructionOption •
 
     $default  reduce using rule 39 (InstructionOptions)
 
 
 State 324
 
-   66 AssignmentStatement: DirectCallExpression ":=" Term .
-   83 OperatorExpression: Term . "and" Term
-   84                   | Term . "or" Term
-   85                   | Term . "xor" Term
-   86                   | Term . "implies" Term
-   87                   | Term . "=>" Term
-   88                   | Term . "+" Term
-   89                   | Term . "(+)" Term
-   90                   | Term . "-" Term
-   91                   | Term . "(-)" Term
-   92                   | Term . "*" Term
-   93                   | Term . "<<" Term
-   94                   | Term . "(<<)" Term
-   95                   | Term . ">>" Term
-   96                   | Term . "(>>)" Term
-   97                   | Term . "=" Term
-   98                   | Term . "!=" Term
-   99                   | Term . "<" Term
-  100                   | Term . "<=" Term
-  101                   | Term . ">" Term
-  102                   | Term . ">=" Term
+   66 AssignmentStatement: DirectCallExpression ":=" Term •
+   83 OperatorExpression: Term • "and" Term
+   84                   | Term • "or" Term
+   85                   | Term • "xor" Term
+   86                   | Term • "implies" Term
+   87                   | Term • "=>" Term
+   88                   | Term • "+" Term
+   89                   | Term • "(+)" Term
+   90                   | Term • "-" Term
+   91                   | Term • "(-)" Term
+   92                   | Term • "*" Term
+   93                   | Term • "<<" Term
+   94                   | Term • "(<<)" Term
+   95                   | Term • ">>" Term
+   96                   | Term • "(>>)" Term
+   97                   | Term • "=" Term
+   98                   | Term • "!=" Term
+   99                   | Term • "<" Term
+  100                   | Term • "<=" Term
+  101                   | Term • ">" Term
+  102                   | Term • ">=" Term
 
     "and"      shift, and go to state 136
     "or"       shift, and go to state 137
@@ -6815,29 +6815,29 @@ State 324
 
 State 325
 
-   50 StageOption: "stage" Identifier . "=" BlockStatement
+   50 StageOption: "stage" Identifier • "=" BlockStatement
 
     "="  shift, and go to state 329
 
 
 State 326
 
-   47 MicroProcessorOptions: MicroProcessorOptions MicroProcessorOption .
+   47 MicroProcessorOptions: MicroProcessorOptions MicroProcessorOption •
 
     $default  reduce using rule 47 (MicroProcessorOptions)
 
 
 State 327
 
-   65 LetStatement: "let" VariableBindings "in" Statement .
+   65 LetStatement: "let" VariableBindings "in" Statement •
 
     $default  reduce using rule 65 (LetStatement)
 
 
 State 328
 
-   67 ConditionalStatement: "if" Term "then" Statement .
-   68                     | "if" Term "then" Statement . "else" Statement
+   67 ConditionalStatement: "if" Term "then" Statement •
+   68                     | "if" Term "then" Statement • "else" Statement
 
     "else"  shift, and go to state 330
 
@@ -6846,7 +6846,7 @@ State 328
 
 State 329
 
-   50 StageOption: "stage" Identifier "=" . BlockStatement
+   50 StageOption: "stage" Identifier "=" • BlockStatement
 
     "{"  shift, and go to state 286
 
@@ -6855,7 +6855,7 @@ State 329
 
 State 330
 
-   68 ConditionalStatement: "if" Term "then" Statement "else" . Statement
+   68 ConditionalStatement: "if" Term "then" Statement "else" • Statement
 
     "instruction"  shift, and go to state 8
     "decoding"     shift, and go to state 9
@@ -6881,13 +6881,13 @@ State 330
 
 State 331
 
-   50 StageOption: "stage" Identifier "=" BlockStatement .
+   50 StageOption: "stage" Identifier "=" BlockStatement •
 
     $default  reduce using rule 50 (StageOption)
 
 
 State 332
 
-   68 ConditionalStatement: "if" Term "then" Statement "else" Statement .
+   68 ConditionalStatement: "if" Term "then" Statement "else" Statement •
 
     $default  reduce using rule 68 (ConditionalStatement)
